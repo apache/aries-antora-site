@@ -17,7 +17,7 @@ only pre-reqs (in addition to the zip/tar.gz) are:
 
 To build the tutorial zip/tar.gz you will need to:
 
-* Check out and build Aries, see [here](http://incubator.apache.org/aries/buildingaries.html)
+* Check out and build Aries, see [here](/development/buildingaries.html)
 * cd trunk/tutorials/blueprint/tutorial-modules
 * mvn clean install
 * cd ../tutorial-assembly

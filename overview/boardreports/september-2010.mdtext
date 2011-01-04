@@ -27,7 +27,7 @@ release since entering incubation. This release is in support of Geronimo
 
 The OSGi Enterprise Compliance Tests have been run against Blueprint, JMX,
 JNDI and transactions modules and the results have been published to the
-aries-dev mailing list and are available from the [Aries web site](-http://incubator.apache.org/aries/testresults.html.html)
+aries-dev mailing list and are available from the [Aries web site](/downloads/testresults.html)
 
 Top 2 or 3 things to resolve before graduation:
 

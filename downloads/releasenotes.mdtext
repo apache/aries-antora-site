@@ -8,8 +8,8 @@ Title: ReleaseNotes
 Welcome to the 0.2-incubating release. For this release we started running
 the OSGi Enterprise Compliance tests for relevant components. 
 
- * [Test Results](-http://incubator.apache.org/aries/testresults.html.html)
- * [JIRA Release Notes ](-https://issues.apache.org/jira/secure/releasenote.jspa?projectid=12310981&stylename=html&version=12314941.html)
+ * [Test Results](/downloads/testresults.html)
+ * [JIRA Release Notes ](https://issues.apache.org/jira/secure/releasenote.jspa?projectid=12310981&stylename=html&version=12314941.html)
 
 <a name="ReleaseNotes-NewComponents"></a>
 ### New Components
