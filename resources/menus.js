@@ -31,8 +31,7 @@ function SetMenu() {
 	var open = 'url("http://aries.apache.org/images/BigBulletOpen.png")';
 	var path = document.location.href;
 	var fields = path.split("/"); 
-        //will need to switch to 3 when website changes on graduation
-	var ident = fields[4];
+	var ident = fields[3];
     if(ident != "") {
     	var docel = document.getElementById(ident);
         var title = document.getElementById(ident+'Title');
