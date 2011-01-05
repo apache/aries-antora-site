@@ -1,4 +1,5 @@
 Title: MaintainingTheWebPages
+
 <a name="MaintainingTheWebPages-HowtheArieswebsiteworks"></a>
 # How the Aries web site works
 
@@ -6,6 +7,8 @@ The Aries site is built using CMS. To edit the site you must be an Aries committ
 ID and password are the same ones as you use for Aries SVN.
 
 The easiest way to edit pages is to install the CMS bookmarklet as described [here](https://cms.apache.org/#bookmark)
+
+Navigate to the web page you would like to edit and then click the CMS bookmarklet.
 
 The steps in making a change to the site are:
 
