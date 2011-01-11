@@ -1,4 +1,5 @@
 Title: BuildingAries
+
 <a name="BuildingAries-ExtractingandbuildingAries"></a>
 # Extracting and building Aries
 
@@ -23,8 +24,8 @@ Integration and Maven optional components)
 This is the easiest way to build Aries and then work on the modules using
 Eclipse. If you don't care about Eclipse go to the next section.
 
- * check out from the command line {{svn co
-https://svn.apache.org/repos/asf/incubator/aries/trunk aries}}
+ * check out from the command line: svn co
+https://svn.apache.org/repos/asf/aries/trunk aries
  * cd aries
  * mvn clean
  * cd parent
@@ -54,8 +55,8 @@ test failures, try 'mvn install -fae'
 - - - 
 <a name="BuildingAries-Justbuildit-noEclipse"></a>
 ## Just build it - no Eclipse
- * check out from the command line {{svn co
-https://svn.apache.org/repos/asf/incubator/aries/trunk aries}}
+ * check out from the command line: svn co
+https://svn.apache.org/repos/asf/aries/trunk aries
  * cd aries
  * mvn clean
  * cd parent
@@ -74,7 +75,7 @@ This should work if you are command-line averse. On the other hand it seems
 to be the best way to get into a mess with the M2Eclipse plugin.
 
  * In the SVN view, add the aries repository
-https://svn.apache.org/repos/asf/incubator/aries
+https://svn.apache.org/repos/asf/aries
  * Expand the repository, right click on trunk and take 'check out as Maven
 project'
 There will be errors in the projects. To fix these:
