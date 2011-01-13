@@ -1,4 +1,5 @@
 Title: AriesTrader
+
 <a name="AriesTrader-TheAriesTraderSample"></a>
 # The AriesTrader Sample
 
@@ -61,8 +62,8 @@ test harness for convenience).
 <a name="AriesTrader-InstallingAriesTraderintheEquinoxTestHarness"></a>
 ### Installing AriesTrader in the Equinox Test Harness
 To install the AriesTrader application simply copy the eba for AriesTrader
-into the target/load directory which was created when test harness
-containing Aries was started.  For convenience the AriesTraders EBAs are
+into the target/load directory, you will need to create this directory first.  
+For convenience the AriesTraders EBAs are
 copied into the target directory as part of creating the OSGi Equinox test
 harness. 
 
@@ -88,7 +89,7 @@ directory the application will be uninstalled.
 
 <a name="AriesTrader-AccessingandusingtheAriesTradersample"></a>
 ### Accessing and using the AriesTrader sample
-Point your browser at [http://localhost:8080/org.apache.aries.samples.ariestrader.web/](http://localhost:8080/org.apache.aries.samples.ariestrader.web/)
+Point your browser at [http://localhost:8080/ariestrader/](http://localhost:8080/ariestrader/)
 
 Select the "Configuration" tab and the "Configure AriesTrader run-time
 parameters" choice.  Then select from among the available runtime modes
