@@ -1,4 +1,5 @@
 Title: Blog Sample
+
 <a name="BlogSample-TheBlogSample"></a>
 # The Blog Sample
 
@@ -53,10 +54,10 @@ case)
 The OSGi console should start up, the 'ss' command should show all of the
 Blog bundles in state 'ACTIVE'.
 
-Now start the blog application (.eba file) you downloaded earlier, by
-copying it into the load directory which was created when Aries started.
+To start the blog application (.eba file) you downloaded earlier, create a directory
+call load and copying it into the load directory.
 
-Point your browser to [http://localhost:8080/org.apache.aries.samples.blog.web/](http://localhost:8080/org.apache.aries.samples.blog.web/)
+Point your browser to [http://localhost:8080/blog/](http://localhost:8080/blog/)
 
 If you subsequently delete the .eba from the load directory the application
 will be uninstalled.
@@ -73,7 +74,7 @@ framework, remove any previous copies of the blog sample from the
 target/load directory, then copy the Blog sample JPA .eba file into the
 load directory.
 
-Finally, after typing 'refresh' at the OSGi console, point your browser at [http://localhost:8080/org.apache.aries.samples.blog.web/](http://localhost:8080/org.apache.aries.samples.blog.web/)
+Finally, after typing 'refresh' at the OSGi console, point your browser at [http://localhost:8080/blog/](http://localhost:8080/blog/)
 . You should see something that looks precisely the same as the blog sample
 running with the JDBC persistence layer, but this time running using the
 JPA persistence layer.
