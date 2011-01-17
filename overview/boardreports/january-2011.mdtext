@@ -21,8 +21,11 @@ Aries delivers a set of pluggable Java components enabling an enterprise OSGi ap
 
 Aries graduated from the Incubator on 15th December 2010. The majority of the items on the Incubator transfer to TLP list have been completed but not all.
 
-We are preparing our 0.3 release and are at the stage of removing snapshot dependencies by working with the dependency project(s) to cut releases themselves. This has only just started.
+We are preparing our 0.3 release and are at the stage of removing snapshot dependencies by working with the projects Aries depends on to cut releases themselves. This is making good progress.
 
-The mailing list continues to be active. No new committers or PMC members since the December report.
+The Aries web site has now moved from Confluence to CMS. The speed to put a page into production is much improved and very welcome.
 
-The Aries web site has now moved from Confluence to CMS.
+Community update: dev@ 118 subscribers, user@ 127 subscribers. The dev@ list continues to be active with less traffic on the user@ list. No new committers or PMC members since the December report.
+
+There are no board level issues.
+
