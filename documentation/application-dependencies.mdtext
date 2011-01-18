@@ -16,7 +16,6 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-Title: Application Modules 
 <a name="Applications-AriesApplicationModules"></a>
 # Aries Application Modules
 Below are the list of bundles in the format of mavenBundle(groupId, artifactId) required if using Apache Aries application module.
