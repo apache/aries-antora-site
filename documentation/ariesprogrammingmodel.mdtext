@@ -10,7 +10,7 @@ The programming model use in Apache Aries is described in sections under each mo
 
   -  [Application introduction](/modules/applications.html)
  
-  -  [Application module overview](/application-dependencies.html)
+  -  [Application module overview](/documentation/application-dependencies.html)
 
  4. [Blueprint](/modules/blueprint.html)
 
