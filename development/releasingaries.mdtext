@@ -137,7 +137,7 @@ failures, the easiest way I've found so far is:
 
 This will pick out the failing file names. Some of the files that rat fails
 do not require an Apache license, eg MANIFEST.MF, but any *.java or *.js
-file does need one.
+file does need one. As an alternative you can use 'mvn -Prat install'.
 
 <a name="ReleasingAries-Creatingasnapshotrelease"></a>
 ### Creating a snapshot release
@@ -175,7 +175,7 @@ because everything else depends on it. Run the following commands:
 
 
 *Note* The prepare step will make some assumptions about the version of the
-development steam that is left after the release has been made. When
+development stream that is left after the release has been made. When
 releasing from a branch it may not be a good idea to accept the default for
 this, it will very likely conflict with the development version in use in
 trunk.
