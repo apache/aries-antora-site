@@ -6,11 +6,9 @@ Title: AriesProgrammingModel
 
 The programming model use in Apache Aries is described in sections under each module, here are links:
 
- 1. Application 
-
-  + [Application introduction](/modules/applications.html)</li>
+ 1. [Application introduction](/modules/applications.html)</li>
  
-  + [Application module overview](application-dependencies.html)</li>
+ 1. [Application module overview](application-dependencies.html)</li>
  
  1. [Blueprint](/modules/blueprint.html)
 
