@@ -224,17 +224,18 @@ The next step is to release the eba-maven-plugin.
 
 Then for each project, in the order given below:
 
-testsupport
-util
-blueprint 
-jndi
-transaction
-web
-application
-jmx
-quiesce
-jpa
-samples *See Note 1 below*
+    testsupport
+    util
+    proxy
+    blueprint 
+    jndi
+    transaction
+    web
+    application
+    jmx
+    quiesce
+    jpa
+    samples *See Note 1 below*
 
 Run the following commands:
 
