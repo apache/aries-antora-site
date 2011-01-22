@@ -255,7 +255,7 @@ the version element for the module itself.
   * Note 2: -DpreparationGoals="clean install"	is needed for all modules
 that have sub modules with dependencies between them, in practice this is
 most modules.
-  * This step may fail sometimes if pom.xml.versionsBackup is still around. This is a backup taken in the first step, it's safe to delete it.
+  * Note 3: This step may fail sometimes if pom.xml.versionsBackup is still around. This is a backup taken in the first step, it's safe to delete it.
 
 <a name="ReleasingAries-Closingthestagingrepository"></a>
 ##### Closing the staging repository
