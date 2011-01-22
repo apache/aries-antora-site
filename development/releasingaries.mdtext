@@ -244,6 +244,7 @@ Run the following commands:
     svn commit -m "updated to latest releases"
     mvn release:prepare -Papache-release -DpreparationGoals="clean install"
     *See Note 2 below*
+    *See Note 3 below*
     mvn release:perform -Papache-release
 
 
@@ -254,6 +255,7 @@ the version element for the module itself.
   * Note 2: -DpreparationGoals="clean install"	is needed for all modules
 that have sub modules with dependencies between them, in practice this is
 most modules.
+  * This step may fail sometimes if pom.xml.versionsBackup is still around. This is a backup taken in the first step, it's safe to delete it.
 
 <a name="ReleasingAries-Closingthestagingrepository"></a>
 ##### Closing the staging repository
