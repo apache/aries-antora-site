@@ -227,13 +227,13 @@ Then for each project, in the order given below:
     testsupport
     util
     proxy
+    quiesce
     blueprint 
     jndi
     transaction
     web
     application
     jmx
-    quiesce
     jpa
     samples *See Note 1 below*
 
