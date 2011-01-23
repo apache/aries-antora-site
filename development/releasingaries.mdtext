@@ -340,8 +340,9 @@ every module.
 
 
 The release process makes changes to project poms and adds a tag in svn.
-The first step is to revert the changes to the poms in the problem modules.
-The following steps work on a *ix like platform:
+The first step is to revert the changes to the poms in the problem modules. Hopefully (see Note 3 above)
+it will only be necessary to revert the top level module pom. If you have to revert other poms in the 
+module this works on *ix:
 
 Determine which revision you want to go back to (eg XXXXX)
 
