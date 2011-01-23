@@ -249,7 +249,7 @@ Run the following commands:
 
 
   * Note 1: when doing mvn versions:* actions in samples, you must also
-manually change the version properties that are hard coded in the top level
+manually change the version properties that are coded as properties in the top level
 pom.xml. The only '-SNAPSHOT' you should have left in samples/pom.xml is
 the version element for the module itself.
   * Note 2: -DpreparationGoals="clean install"	is needed for all modules
