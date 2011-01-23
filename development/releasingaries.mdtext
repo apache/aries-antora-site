@@ -240,7 +240,7 @@ Then for each project, in the order given below:
 Run the following commands:
 
     mvn versions:update-parent
-    mvn versions:use-releases
+    mvn versions:use-releases *See Note 3 below*
     svn commit -m "updated to latest releases"
     rm pom.xml.versionsBackup
     mvn release:prepare -Papache-release -DpreparationGoals="clean install"
@@ -255,6 +255,9 @@ the version element for the module itself.
   * Note 2: -DpreparationGoals="clean install"	is needed for all modules
 that have sub modules with dependencies between them, in practice this is
 most modules.
+  * Note 3: These two commands should only make changes to the top level pom.xml. However, this relies on people having 
+understood that all the modules' dependencies go in the top level pom. If they haven't it's better 
+to fix the poms before releasing.
 
 
 <a name="ReleasingAries-Closingthestagingrepository"></a>
