@@ -267,16 +267,12 @@ expect you should close the staging repository. This will make it available
 so that people can check the release.
 
 <a name="ReleasingAries-Runningthevote(s)"></a>
-### Running the vote(s)
+### Running the vote.
 
-Two votes are required for an incubator release. The first from the
-aries-dev@incubator.apache.org list, the second from
-general@incubator.apache.org. These run consecutively, 72 hours is required
-for each vote.
 
 After all the modules are present in the staging repository you will need
 to close the repository so that reviewers can access the modules. At this
-point you should write two notes to the aries-dev mailing list.
+point you should write two notes to the dev@aries.apache.org mailing list.
 
  * Subject \[VOTE\]
  Apache Aries (Incubating) version 0.X-incubating release candidate 02
