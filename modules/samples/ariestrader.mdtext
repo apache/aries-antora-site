@@ -52,6 +52,7 @@ an Equinox assembly that pulls in all of the necessary dependencies.
 The first task is to start the Apache Aries modules in an OSGi framework
 using the Eclipse Equinox test harness
 
+    cd samples-0.2-incubating/ariestrader/assemblies/equinox-test-harness/target
     java -jar osgi-3.5.0.v20090520.jar -console
 
 The OSGi console should start up, the 'ss' command should show the active
