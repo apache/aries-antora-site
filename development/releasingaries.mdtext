@@ -352,8 +352,7 @@ Determine which revision you want to go back to (eg XXXXX)
 
 Next - delete the tag relating to the module from SVN
 
-Finally - delete the folder from the staging repository (this seems to take
-several attempts and a very long time to achieve)
+Finally - delete the folder from the staging repository (Right-click over the folder and select delete)
 
 Make the fixes that you need to in the project, commit them and work
 through the release process again. 
