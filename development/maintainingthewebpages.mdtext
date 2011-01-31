@@ -23,3 +23,14 @@ the CMS system (eg tables, syntax highlighting).
 
 More information on CMS is 
 available [here](http://wiki.apache.org/general/ApacheCms2010)
+
+# Making major changes
+Because the site is all in SVN its possible to check it out, make and test changes locally and then check in again much as you woudl with code changes.
+To do this you will need:
+
+  - A local copy of the cms build tools
+  - A local setup of Apache
+
+First, checkout the site , like this:
+
+svn co https://svn.apache.org/repos/asf/aries/site/trunk/ site
