@@ -1,4 +1,5 @@
 Title: ReleaseNotes
+
 <a name="ReleaseNotes-ReleaseNotes"></a>
 # Release Notes
 
@@ -8,7 +9,7 @@ Title: ReleaseNotes
 Welcome to the 0.2-incubating release. For this release we started running
 the OSGi Enterprise Compliance tests for relevant components. 
 
- * [Test Results](/downloads/testresults.html)
+ * [Test Results](/downloads/archived-releases/0.2-incubating/0.2-incubating-testresults.html)
  * [JIRA Release Notes ](https://issues.apache.org/jira/secure/releasenote.jspa?projectid=12310981&stylename=html&version=12314941.html)
 
 <a name="ReleaseNotes-NewComponents"></a>
