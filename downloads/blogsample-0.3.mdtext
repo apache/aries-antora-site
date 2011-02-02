@@ -26,10 +26,10 @@ blog-datasource) as indicated in the comments and then rebuild the sample.
 <a name="BlogSample-CreatetheOSGiplatformfortheBlogsample"></a>
 ### Create the OSGi platform for the Blog sample
 
-Download and unzip the source zip for the [latest release](aries:downloads.html)
+Download and unzip the source zip for the [latest release](/downloads/currentrelease.html)
  of Aries Samples and build the blog-assembly module:
 
-    cd samples-0.2-incubating/blog/blog-assembly
+    cd samples-0.3/blog/blog-assembly
     mvn install
 
 This procedure will pull in the binaries from the latest release and its
@@ -42,7 +42,7 @@ Download the JDBC based Blog sample application (.eba file) from the [latest rel
 . Change directory to the blog-assembly target directory:
 
 
-    cd samples-0.2-incubating/blog-sample/blog-assembly/target
+    cd samples-0.3/blog-sample/blog-assembly/target
 
 
 now start Aries in an OSGi framework (we're using Eclipse Equinox in this
