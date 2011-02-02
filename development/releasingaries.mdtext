@@ -239,7 +239,7 @@ Then for each project, in the order given below:
 
 Run the following commands:
 
-    mvn versions:update-parent
+    mvn versions:update-parent   !Update parent to latest available
     mvn versions:use-releases *See Note 3 below*
     svn commit -m "updated to latest releases"
     rm pom.xml.versionsBackup
