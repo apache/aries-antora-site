@@ -62,9 +62,12 @@ layer. There is a second application implemented to demonstrate the JPA
 capability
 
 To run the blog sample which uses the JPA persistence layer, start the OSGi
-framework, remove any previous copies of the blog sample from the
-target/load directory, then copy the Blog sample JPA .eba file into the
-load directory.
+framework as before, remove any previous copies of the blog sample from the
+target/load directory, then copy 
+
+    samples/blog/blog-jpa-eba/target/*.eba
+
+into the load directory.
 
 Finally, after typing 'refresh' at the OSGi console, point your browser at [http://localhost:8080/blog/](http://localhost:8080/blog/)
 . You should see something that looks precisely the same as the blog sample
