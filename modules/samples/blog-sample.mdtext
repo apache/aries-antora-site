@@ -12,13 +12,9 @@ Title: Blog Sample
 
 - - -
 **Note:**
-These instructions are for the 0.3 release of Aries.
-Instructions for older releases can be found [here](/downloads/archivedrelease.html)
-. In the 0.2-incubating release the sample was changed to use an in-memory
-database to avoid dependency on an explicit version of Derby. If you would
-prefer to use a database on disk check the instructions for the
-0.1-incubating release. You will also need to modify datasource.xml (under
-blog-datasource) as indicated in the comments and then rebuild the sample.
+These instructions are for the current development stream of Aries.
+Instructions for older releases can be found [here](/downloads/archivedreleases.html)
+Instructions for the current release of Aries can be found [here](/downloads/blogsample-0.3.html)
 
 - - - 
 
@@ -26,36 +22,32 @@ blog-datasource) as indicated in the comments and then rebuild the sample.
 <a name="BlogSample-CreatetheOSGiplatformfortheBlogsample"></a>
 ### Create the OSGi platform for the Blog sample
 
-Download and unzip the source zip for the [latest release](aries:downloads.html)
- of Aries Samples and build the blog-assembly module:
+Download and build the development stream of Aries, see [here](/development/buildingaries.html)
 
-    cd samples-0.2-incubating/blog/blog-assembly
-    mvn install
+    cd samples/blog/blog-assembly/target
+    mkdir load
 
-This procedure will pull in the binaries from the latest release and its
-dependencies.
-
+The full Aries build builds the blog sample by default, all of the platform pre-reqs will be available in the target directory.
+Create the load directory. This used to be done automatically by Felix file install, but in more recent
+versions yo have to create your own.
 <a name="BlogSample-RunningtheBlogsample"></a>
 ### Running the Blog sample
 
-Download the JDBC based Blog sample application (.eba file) from the [latest release](aries:downloads.html)
-. Change directory to the blog-assembly target directory:
 
-
-    cd samples-0.2-incubating/blog-sample/blog-assembly/target
-
-
-now start Aries in an OSGi framework (we're using Eclipse Equinox in this
+Start Aries in an OSGi framework (we're using Eclipse Equinox in this
 case)
 
     java -jar osgi-3.5.0.v20090520.jar -console
 
 
 The OSGi console should start up, the 'ss' command should show all of the
-Blog bundles in state 'ACTIVE'.
+platform bundles in state 'ACTIVE'.
 
-To start the blog application (.eba file) you downloaded earlier, create a directory
-call load and copying it into the load directory.
+To run the blog application (.eba file) copy 
+
+    samples/blog/blog-jdbc-eba/target/*.eba
+
+into the load directory.
 
 Point your browser to [http://localhost:8080/blog/](http://localhost:8080/blog/)
 
@@ -79,12 +71,6 @@ Finally, after typing 'refresh' at the OSGi console, point your browser at [http
 running with the JDBC persistence layer, but this time running using the
 JPA persistence layer.
 
-<a name="BlogSample-Usingthelatest,unreleasedcode"></a>
-## Using the latest, unreleased code
-
-If you prefer to use the very latest code from subversion, checkout and
-build the Aries trunk by following the [Building Aries instructions](aries:buildingaries.html)
-.
 
 <a name="BlogSample-AbouttheBlogsample"></a>
 ## About the Blog sample
