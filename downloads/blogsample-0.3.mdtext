@@ -38,7 +38,7 @@ dependencies.
 <a name="BlogSample-RunningtheBlogsample"></a>
 ### Running the Blog sample
 
-Download the JDBC based Blog sample application (.eba file) from the [latest release](aries:downloads.html)
+Download the JDBC based Blog sample application (.eba file) from the [latest release](/downloads/currentrelrease.html)
 . Change directory to the blog-assembly target directory:
 
 
