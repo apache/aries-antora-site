@@ -321,6 +321,11 @@ First, delete the previous distribution from the distribution directory.
 Download the release artifacts using a script like [this](release-0.2)
 . Next, update the Aries Downloads pages to refer to the new artifacts.
 
+### Tidying up tasks
+  * Move trunk to a new level, useful *ix commands:
+    * find . -name "pom.xml" -exec sed -ie "s#0.3-SNAPSHOT#0.4-SNAPSHOT#g" {} \;
+    * find . -name pom.xmle | xargs -I {} rm {} <br/>
+   or use a fancy editor.
 
 
 <a name="ReleasingAries-Whattodowhenpeoplefindproblemswiththerelease"></a>
