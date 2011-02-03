@@ -326,6 +326,9 @@ Download the release artifacts using a script like [this](release-0.2)
     * find . -name "pom.xml" -exec sed -ie "s#0.3-SNAPSHOT#0.4-SNAPSHOT#g" {} \;
     * find . -name pom.xmle | xargs -I {} rm {} <br/>
    or use a fancy editor.
+  * Get the compliance tests run
+  * Release notes
+  * Tidy up JIRA
 
 
 <a name="ReleasingAries-Whattodowhenpeoplefindproblemswiththerelease"></a>
