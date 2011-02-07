@@ -1,13 +1,15 @@
 # Release process requirements
 
+This is a page to help with the discussion of the requirements of a release from Aries.
+
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> No. </th><th class="confluenceTh"> Description </th><th class="confluenceTh"> Met currently </th></tr>
-<tr><td class="confluenceTd">  1 </td><td class="confluenceTd"> Follows OSGi semantic versioining</td><td class="confluenceTd"> No </td></tr>
-<tr><td class="confluenceTd">  2 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
-<tr><td class="confluenceTd">  3 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
-<tr><td class="confluenceTd">  4 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
-<tr><td class="confluenceTd">  5 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
-<tr><td class="confluenceTd">  6 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
-<tr><td class="confluenceTd">  7 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
-<tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  1 </td><td class="confluenceTd"> Follows OSGi semantic versioning</td><td class="confluenceTd"> No </td></tr>
+<tr><td class="confluenceTd">  2 </td><td class="confluenceTd"> Must have a buildable source distribution </td><td class="confluenceTd"> Yes </td></tr>
+<tr><td class="confluenceTd">  3 </td><td class="confluenceTd"> Must have release notes</td><td class="confluenceTd"> Yes </td></tr>
+<tr><td class="confluenceTd">  4 </td><td class="confluenceTd"> Must be publicly announced </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  5 </td><td class="confluenceTd"> An easy way for users to download the bundles for a given component</td><td class="confluenceTd"> Yes </td></tr>
+<tr><td class="confluenceTd">  6 </td><td class="confluenceTd"> Easy tagging/branching mechanism</td><td class="confluenceTd"> ? </td></tr>
+<tr><td class="confluenceTd">  7 </td><td class="confluenceTd"> A way to provide bug fixes</td><td class="confluenceTd"> Yes  </td></tr>
+<tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> A way to ensure that a given component doesn't have conflicting dependencies </td><td class="confluenceTd"> ?  </td></tr>
 </table>
