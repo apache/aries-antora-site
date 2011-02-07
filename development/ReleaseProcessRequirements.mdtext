@@ -1,1 +1,13 @@
 # Release process requirements
+
+<table class="confluenceTable">
+<tr><th class="confluenceTh"> No. </th><th class="confluenceTh"> Description </th><th class="confluenceTh"> Met currently </th></tr>
+<tr><td class="confluenceTd">  1 </td><td class="confluenceTd"> Follows OSGi semantic versioining</td><td class="confluenceTd"> No </td></tr>
+<tr><td class="confluenceTd">  2 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  3 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  4 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  5 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  6 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  7 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> </td><td class="confluenceTd">  </td></tr>
+</table>
