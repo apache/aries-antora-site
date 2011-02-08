@@ -1,30 +1,30 @@
 Title: ReleaseNotes
+
 <a name="ReleaseNotes-ReleaseNotes"></a>
 # Release Notes
 
 <a name="ReleaseNotes-NewandNoteworthy"></a>
 ### New and Noteworthy
 
-Welcome to the 0.2-incubating release. For this release we started running
-the OSGi Enterprise Compliance tests for relevant components. 
+Welcome to the 0.3 release. 
 
  * [Test Results](/downloads/testresults.html)
- * [JIRA Release Notes ](https://issues.apache.org/jira/secure/releasenote.jspa?projectid=12310981&stylename=html&version=12314941.html)
+ * [JIRA Release Notes ](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310981&version=12315310)
 
 <a name="ReleaseNotes-NewComponents"></a>
 ### New Components
-Quiesce.
-The Quiesce component co-ordinates a graceful shutdown across a number of
-bundles. Quiesce participants respond to quiesce operations and clean up
-resources. In this release, only the JPA component implements a quiesce
-participant.
+Proxy.
+
+### Major updates
+Application.
+
 
 <a name="ReleaseNotes-Modulesinthisrelease"></a>
 ### Modules in this release
 
 <table>
 <tr><th> Module </th><th> Version </th><th> Depends (build)  on Aries module </th><th> Version</th></tr>
-<tr><td> Application </td><td> 0.2-incubating </td><td> Util </td><td>  0.2-incubating</td></tr>
+<tr><td> Application </td><td> 0.3 </td><td> Util </td><td>  0.2-incubating</td></tr>
 <tr><td> - </td><td> - </td><td> Blueprint </td><td>  0.2-incubating</td></tr>
 <tr><td> - </td><td> - </td><td> Testsupport </td><td>  0.2-incubating</td></tr>
 <tr><td> - </td><td> - </td><td> Web </td><td>  0.2-incubating</td></tr>
@@ -61,7 +61,7 @@ None.
 
 <a name="ReleaseNotes-KnownIssues"></a>
 ### Known Issues
-[JIRA query for known issues in the 0.2-incubating release ](-https://issues.apache.org/jira/secure/issuenavigator.jspa?mode=hide&requestid=12314569.html)
+[JIRA query for known issues in the 0.2-incubating release ](https://issues.apache.org/jira/secure/issuenavigator.jspa?mode=hide&requestid=12314569.html)
 
 <a name="ReleaseNotes-Importantchangestoconsiderwhenupgrading"></a>
 ### Important changes to consider when upgrading
