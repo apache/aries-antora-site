@@ -14,18 +14,18 @@ Welcome to the 0.3 release.
 <a name="ReleaseNotes-NewComponents"></a>
 ### New Components
 #### Proxy
-The proxy component was added in 0.3. Proxy allows you to generate proxys based on interfaces or classes, eg object damping. Proxy
-provides a service to both blueprint and JNDI
+The proxy component was added in 0.3. Proxy allows you to generate proxyies based on interfaces or classes, eg object damping. Proxy
+provides a service to both blueprint and JNDI.
 
 ### Major updates
 #### Application.
-The application component in 0.3 provides a runtime in which osgi applications are isolated from
+The application component in 0.3 provides a runtime in which OSGi applications are isolated from
 each other, and the provisioning support that it requires. These changes mean that the 0.3 release of aplication is significantly different 
 from the 0.2 release.
 <p>The resolver also supports external bundle repositories in 0.3.</p>
 
 #### Blueprint
-Blueprint namespace support has been added. This makes it possible to look up Blueprint services from Web or 
+Blueprint namespace support has been added. This makes it possible to look up Blueprint components from Web or 
 Persistence bundles.
 
 
