@@ -204,6 +204,24 @@ into one </td></tr>
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.context-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.context-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.context-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.context-0.3-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> Proxy </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/proxy-0.3-source-release.zip">zip</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/proxy-0.3-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/proxy-0.3-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/proxy-0.3-source-release.zip.sha1">sha1</A>) 
+</td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> proxy-bundle </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy-0.3-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> proxy-api </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.api-0.3-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> proxy-impl </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.proxy.impl-0.3-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> </td></tr>
 <tr><td class="confluenceTd"> Quiesce </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/quiesce-0.3-source-release.zip">zip</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/quiesce-0.3-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/quiesce-0.3-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/quiesce-0.3-source-release.zip.sha1">sha1</A>) 
 </td><td class="confluenceTd"> </td></tr>
@@ -217,6 +235,8 @@ into one </td></tr>
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.quiesce.manager-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.quiesce.manager-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.quiesce.manager-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.quiesce.manager-0.3-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> </td></tr>
+
+....
 <tr><td class="confluenceTd"> Transaction </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/transaction-0.3-source-release.zip">zip</A> (<A href="http://www.apache.org/dyn/closer.cgi/aries/transaction-0.3-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/transaction-0.3-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dyn/closer.cgi/aries/transaction-0.3-source-release.zip.sha1">sha1</A>) 
 </td><td class="confluenceTd"> </td></tr>
