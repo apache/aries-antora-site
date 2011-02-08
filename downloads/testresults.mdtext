@@ -2,20 +2,5 @@ Title: TestResults
 
 These are the test results for the current Aries release.
 
-### Blueprint
- * [Blueprint ](ct/current-release/org.osgi.test.cases.blueprint.html)
- * [Blueprint-java5 ](ct/current-release/org.osgi.test.cases.blueprint.java5.html)
- * [Blueprint-security ](ct/current-release/org.osgi.test.cases.blueprint.security.html)
-
-## JNDI
- * [JNDI ](ct/current-release/org.osgi.test.cases.jndi.html)
-
-## JMX
- * [JMX ](ct/current-release/org.osgi.test.cases.jmx.html)
-
-## JPA
-Not run. The Aries container managed JPA implementation is not expected to
-pass the existing compliance tests for user managed JPA.
-
-## Transaction
- * [Transaction ](ct/current-release/org.osgi.test.cases.transaction.html)
+The compliance tests have not been run against 0.3 yet. If you require them please request on the
+de@aries mailing list.
