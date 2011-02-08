@@ -43,7 +43,7 @@ First check the cms build tools out of SVN:
     svn co https://svn.apache.org/repos/infra/websites/cms/build/ buildtools
 
 To run the build_site.pl script you will need to install the Python version 
-of Markup. The instructions for finding and installing Python pre-reqs are given [here] (http://wiki.apache.org/general/ApacheCMSFAQ)
+of Markup. The instructions for finding and installing Python pre-reqs are given [here](http://wiki.apache.org/general/ApacheCMSFAQ)
 
 Then to build the site use this command:
 
