@@ -62,7 +62,7 @@ Other OSGi projects, for example Sling and Felix, release by bundle.
 ### Disadvantages of releasing by bundle
  1. It is more difficult for a consumer of Aries modules to understand which bundles form a logical grouping
  1. There are a lot of bundles to manage independently. This has implications:<br/>
-    - Releasing - mvn release:prepare an so on,  needs to be run for each bundle separately. However, many bundles could be rolled up into one vote.
+    - Releasing - mvn release:prepare, and so on,  needs to be run for each bundle separately. However, many bundles could be rolled up into one vote.
     - Each bundle has to have its own JIRA component
     - Our svn tree would need to be restructured - probably in a similar way to the Sling tree. Each bundle would have its own trunk & branches.
 1. There are still some issues with branching and it is still possible to get into a situation similar to that described above. 
