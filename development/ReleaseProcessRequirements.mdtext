@@ -4,7 +4,7 @@
 <p>After release 0.3 we wanted to rexamine the release process, the primary motivation for this was the observation that our 
 current process did not use semantic versioning, and, as an OSGi project we should be demonstrating best OSGi practice.</p>
 
-<p>We started with the following set of requirements for any Aries release: </p>
+<p>We started with the following set of requirements for any Aries release: 
 
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> No. </th><th class="confluenceTh"> Description </th><th class="confluenceTh"> Met currently </th></tr>
@@ -18,18 +18,20 @@ current process did not use semantic versioning, and, as an OSGi project we shou
 <tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> A way to ensure that a given component doesn't have conflicting dependencies </td><td class="confluenceTd"> ?  </td></tr>
 </table>
 
-<p>Our ideal for a release process would involve to release by module, one might visualise the process like this: </p>
+<p>Our ideal for a release process would involve to release by module, one might visualise the process like this:
 
 ![rel](release_by_module.png)
 
 <p>In this case, we have a module version (independent of the version of its sub-modules) and a set of sub-modules which may each be indepndently versioned.
 
 ## Advantages of release by module
+
  1. Releasing a coherent set of bundles that have been built and run together
  1. Releasing a buildable set of source for all constituent bundles in one zip file
  1. A more consumable unit than a set of single bundles - easier for Aries consumers. A smaller number of discrete downloads.
 
 ## Disadvantages of the release by module process
+
  1. We would want to release a whole module at once, this would mean re-releasing bundles at the same level 
  (and with the same content) as a previous release. This is not a major issue
  1. Developer would need to be careful to version submodules poms independently from the parent/reactor pom. Again, 
