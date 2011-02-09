@@ -18,6 +18,23 @@ current process did not use semantic versioning, and, as an OSGi project we shou
 <tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> A way to ensure that a given component doesn't have conflicting dependencies </td><td class="confluenceTd"> ?  </td></tr>
 </table>
 
+## Release all Aries components at once.
+
+### Advantages of releasing everything at once and at the same level
+
+ 1. Conceptually very simple of consumers. For example, if as a consumer I pick up something called Blueprint version 0.4 I know that I
+will need to get Util version 0.4 to go with it.
+ 1. A relatively simple release process, one JIRA component, one set of release notes.i
+ 1. We can release a set of samples at the same version with some guarentee that the samples all work with the release.
+
+### Disadvantages of releasing everything at once
+
+ 1. Not using of OSGi semantic versioning of bundles.i After every we release we bump the major versions of all bundles in trunk.
+
+ Package versions are managed separately and the Maven bundle plugin will ensure packges are imported in the correct range based of
+ the projects dependencies. Implementors need to use "provide:=true" to get the correct range. Package export version should be maintained either using package.info or in the pom.
+
+
 ## Releasing by module
 <p>Our ideal for a release process would involve to release by module, one might visualise the process like this: </p>
 
