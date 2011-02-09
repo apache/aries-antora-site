@@ -1,7 +1,7 @@
 # Release process requirements
 
 <p>Up to release 0.3 of Aries we released all of the modules at once, along with a set of samples which demonstrated how the Aries components could be used together.</p>
-<p>After release 0.3 we wanted to rexamine the release process, the priimary motivation for this was the observation that our 
+<p>After release 0.3 we wanted to rexamine the release process, the primary motivation for this was the observation that our 
 current process did not use semantic versioning, and, as an OSGi project we should be demonstrating best OSGi practice.</p>
 
 <p>We started with the following set of requirements for any Aries release: </p>
@@ -11,9 +11,9 @@ current process did not use semantic versioning, and, as an OSGi project we shou
 <tr><td class="confluenceTd">  1 </td><td class="confluenceTd"> Follows OSGi semantic versioning</td><td class="confluenceTd"> No </td></tr>
 <tr><td class="confluenceTd">  2 </td><td class="confluenceTd"> Must have a buildable source distribution </td><td class="confluenceTd"> Yes </td></tr>
 <tr><td class="confluenceTd">  3 </td><td class="confluenceTd"> Must have release notes</td><td class="confluenceTd"> Yes </td></tr>
-<tr><td class="confluenceTd">  4 </td><td class="confluenceTd"> Must be publicly announced </td><td class="confluenceTd">  </td></tr>
+<tr><td class="confluenceTd">  4 </td><td class="confluenceTd"> Must be publicly announced </td><td class="confluenceTd"> Yes </td></tr>
 <tr><td class="confluenceTd">  5 </td><td class="confluenceTd"> An easy way for users to download the bundles for a given component</td><td class="confluenceTd"> Yes </td></tr>
-<tr><td class="confluenceTd">  6 </td><td class="confluenceTd"> Easy tagging/branching mechanism</td><td class="confluenceTd"> ? </td></tr>
+<tr><td class="confluenceTd">  6 </td><td class="confluenceTd"> Easy tagging/branching mechanism</td><td class="confluenceTd"> Yes </td></tr>
 <tr><td class="confluenceTd">  7 </td><td class="confluenceTd"> A way to provide bug fixes</td><td class="confluenceTd"> Yes  </td></tr>
 <tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> A way to ensure that a given component doesn't have conflicting dependencies </td><td class="confluenceTd"> ?  </td></tr>
 </table>
