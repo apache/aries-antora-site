@@ -40,13 +40,13 @@ current process did not use semantic versioning, and, as an OSGi project we shou
 Therefore we would either require changes in the Maven release plugin or we would have to stop using it 
 and maintain our own alternative, to allow us to release by module.
  1. It's not all clear what the strategy for branching would be. For example, consider the following scenario: 
-![rel](branches_and_modules.png)
-<p>The bundles in trunk should be versioned differently from the versions in branch. This really mandates a bump in the major version.
-<p>The consequence of not bumping the major version and using the versioning tool to compare versions in trunk (for the next release from trunk)
-and using the versioning tool to create bug fix versions from the branch has the potential to lead to the situation in which bundles with the
-same version number have different content.</p>
-<p>For example, as time goes on another release (version 6) of the proxy module is created, the version compare tool dictates that proxy-impl 
-should be released at version 0.4.2. But now, someone who wants a fix to proxy-impl in 0.4.1 (in proxy module version 5) which would be provided
-from the branch, would also get a proxy-impl bundle at version 0.4.2 with different content. This is a situation which must be avoided.</p>
+![rel](dual_component_module.png)
+<p>In this case a release of the blueprint module at version 1.5 contains bundles blueprint-core at version 1.0.1 and blueprint-cm
+at version 1.0.2.</p>
+<p>Over a period of time, development in trunk continues and a change is made to blueprint-core which mandates an increase in
+the major version. Another release of blueprint (version 1.6) is made containing blueprint-cm at version 1.0i.3 and blueprint-core at version 1.1.0.</p>
+<p>Meanwhile a customer finds a problem in blueprint module version 1.5 in the blueprint-cm module. They would like a release of the blueprint module
+at version 1.5.1 with blueprint-cm at 1.0.3. Unfortunately this is impossible because we have already released blueprint-cm at 1.0.3
+and it works with blueprint-core 1.1.0. So, we have no way to meet the requirement </p>
 
 
