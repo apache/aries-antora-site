@@ -23,11 +23,13 @@ current process did not use semantic versioning, and, as an OSGi project we shou
 ![rel](release_by_module.png)
 
 <p>In this case, we have a module version (independent of the version of its sub-modules) and a set of sub-modules which may each be indepndently versioned.
+
 ## Advantages of release by module
- 1. Releaseing a coherent set of bundles that have been built and run together
- 1. Releaseing a buildable set of source for all constituent bundles in one zip file
+ 1. Releasing a coherent set of bundles that have been built and run together
+ 1. Releasing a buildable set of source for all constituent bundles in one zip file
  1. A more consumable unit than a set of single bundles - easier for Aries consumers. A smaller number of discrete downloads.
-## Disadvantages of teh release by module process
+
+## Disadvantages of the release by module process
  1. We would want to release a whole module at once, this would mean re-releasing bundles at the same level 
  (and with the same content) as a previous release. This is not a major issue
  1. Developer would need to be careful to version submodules poms independently from the parent/reactor pom. Again, 
@@ -38,11 +40,11 @@ and maintain our own alternative, to allow us to release by module.
  1. It's not all clear what the strategy for branching would be. For example, consider the following scenario: 
 ![rel](branches_and_modules.png)
 <p>The bundles in trunk should be versioned differently from the versions in branch. This really mandates a bump in the major version.
-The consequence of not bumping the major version and using the versioning tool to compare versions in trunk (for the next release from trunk)
-and using the versioning tool to create bug fix versios from the branch has the potential to lead to the situation in which bundles with the
+<p>The consequence of not bumping the major version and using the versioning tool to compare versions in trunk (for the next release from trunk)
+and using the versioning tool to create bug fix versions from the branch has the potential to lead to the situation in which bundles with the
 same version number have different content.
-For example, as time goes on you create another release (version 6) of the proxy module, the version compare tool tells you that proxy-impl 
-should be released at version 0.4.2, so that is released in a module release at version 6. But now, somone who wants a fix to proxy-impl in 0.4.1 which we would want to do 
-from the branch, would also get a proxy-impl bundle at version 0.4.2 with different content.
+For example, as time goes on another release (version 6) of the proxy module is created, the version compare tool dictates that proxy-impl 
+should be released at version 0.4.2. But now, someone who wants a fix to proxy-impl in 0.4.1 (in proxy module version 5) which would be provided
+from the branch, would also get a proxy-impl bundle at version 0.4.2 with different content. This is a situation which must be avoided.
 
 
