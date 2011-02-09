@@ -1,6 +1,10 @@
 # Release process requirements
 
-This is a page to help with the discussion of the requirements of a release from Aries.
+<p>Up to release 0.3 of Aries we released all of the modules at once, along with a set of samples which demonstrated how the Aries components could be used together.</p>
+<p>After release 0.3 we wanted to rexamine the release process, the priimary motivation for this was the observation that our 
+current process did not use semantic versioning, and, as an OSGi project we should be demonstrating best OSGi practice.</p>
+
+<p>We started with the following set of requirements for any Aries release: </p>
 
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> No. </th><th class="confluenceTh"> Description </th><th class="confluenceTh"> Met currently </th></tr>
@@ -13,3 +17,32 @@ This is a page to help with the discussion of the requirements of a release from
 <tr><td class="confluenceTd">  7 </td><td class="confluenceTd"> A way to provide bug fixes</td><td class="confluenceTd"> Yes  </td></tr>
 <tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> A way to ensure that a given component doesn't have conflicting dependencies </td><td class="confluenceTd"> ?  </td></tr>
 </table>
+
+<p>Our ideal for a release process would involve to release by module, one might visualise the process like this: </p>
+
+![rel](release_by_module.png)
+
+<p>In this case, we have a module version (independent of the version of its sub-modules) and a set of sub-modules which may each be indepndently versioned.
+## Advantages of release by module
+ 1. Releaseing a coherent set of bundles that have been built and run together
+ 1. Releaseing a buildable set of source for all constituent bundles in one zip file
+ 1. A more consumable unit than a set of single bundles - easier for Aries consumers. A smaller number of discrete downloads.
+## Disadvantages of teh release by module process
+ 1. We would want to release a whole module at once, this would mean re-releasing bundles at the same level 
+ (and with the same content) as a previous release. This is not a major issue
+ 1. Developer would need to be careful to version submodules poms independently from the parent/reactor pom. Again, 
+ not a major issue but a change from the way we work at the moment.
+ 1. The Maven release plugin will not cope with having different levels of snapshot in the same release. 
+Therefore we would either require changes in the Maven release plugin or we would have to stop using it 
+and maintain our own alternative, to allow us to release by module.
+ 1. It's not all clear what the strategy for branching would be. For example, consider the following scenario: 
+![rel](branches_and_modules.png)
+<p>The bundles in trunk should be versioned differently from the versions in branch. This really mandates a bump in the major version.
+The consequence of not bumping the major version and using the versioning tool to compare versions in trunk (for the next release from trunk)
+and using the versioning tool to create bug fix versios from the branch has the potential to lead to the situation in which bundles with the
+same version number have different content.
+For example, as time goes on you create another release (version 6) of the proxy module, the version compare tool tells you that proxy-impl 
+should be released at version 0.4.2, so that is released in a module release at version 6. But now, somone who wants a fix to proxy-impl in 0.4.1 which we would want to do 
+from the branch, would also get a proxy-impl bundle at version 0.4.2 with different content.
+
+
