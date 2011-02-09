@@ -18,19 +18,20 @@ current process did not use semantic versioning, and, as an OSGi project we shou
 <tr><td class="confluenceTd">  8 </td><td class="confluenceTd"> A way to ensure that a given component doesn't have conflicting dependencies </td><td class="confluenceTd"> ?  </td></tr>
 </table>
 
+## Releasing by module
 <p>Our ideal for a release process would involve to release by module, one might visualise the process like this: </p>
 
 ![rel](release_by_module.png)
 
 <p>In this case, we have a module version (independent of the version of its sub-modules) and a set of sub-modules which may each be indepndently versioned.</p>
 
-## Advantages of release by module
+### Advantages of release by module
 
  1. Releasing a coherent set of bundles that have been built and run together
  1. Releasing a buildable set of source for all constituent bundles in one zip file
  1. A more consumable unit than a set of single bundles - easier for Aries consumers. A smaller number of discrete downloads.
 
-## Disadvantages of the release by module process
+### Disadvantages of the release by module process
 
  1. We would want to release a whole module at once, this would mean re-releasing bundles at the same level 
  (and with the same content) as a previous release. This is not a major issue
@@ -49,4 +50,19 @@ the major version. Another release of blueprint (version 1.6) is made containing
 at version 1.5.1 with blueprint-cm at 1.0.3. Unfortunately this is impossible because we have already released blueprint-cm at 1.0.3
 and it works with blueprint-core 1.1.0. So, we have no way to meet the requirement </p>
 
+## Releasing by bundle
 
+Other OSGi projects, for example Sling and Felix, release by module.
+
+### Advantages of releasing by bundle
+ 1. Other projects already do it so there is a well understood model
+ 1. All the existing tools work
+ 1. OSGi semantic versioning can be used properly
+
+### Disadvantages of releasing by bundle
+ 1. It is more dificult for a consumer of Aries modules to understand which bundles form a logical grouping
+ 1. There are a lot of bundles to manage independently. This has implications:
+   1. Releasing - mvn release:prepare an so on,  needs to be run for each bundle seperately. However, many bundles could be rolled up into one vote.
+   1. Each bundle has to have its own JIRA component
+   1. Our svn tree would need to be restructured - probably in a similar way to the Sling tree. Each bundle would have its own trunk & branches.
+ 1. There are still some issues with branching and it is still possible to get into a situation similar to that described above. 
