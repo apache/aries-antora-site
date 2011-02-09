@@ -43,7 +43,7 @@ and maintain our own alternative, to allow us to release by module.
 <p>The consequence of not bumping the major version and using the versioning tool to compare versions in trunk (for the next release from trunk)
 and using the versioning tool to create bug fix versions from the branch has the potential to lead to the situation in which bundles with the
 same version number have different content.
-For example, as time goes on another release (version 6) of the proxy module is created, the version compare tool dictates that proxy-impl 
+<p>For example, as time goes on another release (version 6) of the proxy module is created, the version compare tool dictates that proxy-impl 
 should be released at version 0.4.2. But now, someone who wants a fix to proxy-impl in 0.4.1 (in proxy module version 5) which would be provided
 from the branch, would also get a proxy-impl bundle at version 0.4.2 with different content. This is a situation which must be avoided.
 
