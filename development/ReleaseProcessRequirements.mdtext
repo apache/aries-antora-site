@@ -53,8 +53,9 @@ using semantic versioning of bundles. One might visualise the process like this:
 
 ### Disadvantages of the release by module process
 
- 1. We would want to release a whole module at once, this would mean re-releasing bundles at the same level 
- (and with the same content) as a previous release. This is not a major issue
+ 1. We would have to release a whole module at once, this would mean re-releasing bundles at the same level 
+ (and with the same content) as a previous release. This is not a major issue but we would probably not want them in the 
+www.apache.org/dist/aries directory.
  1. Developer would need to be careful to version submodules poms independently from the parent/reactor pom. Again, 
  not a major issue but a change from the way we work at the moment.
  1. The Maven release plugin will not cope with having different levels of snapshot in the same release. 
