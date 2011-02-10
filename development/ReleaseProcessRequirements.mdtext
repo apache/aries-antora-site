@@ -31,7 +31,7 @@ will need to get Util version 0.4 to go with it.
 
  1. Not using of OSGi semantic versioning of bundles. After every we release we bump the major versions of all bundles in trunk.
 
- Package versions are managed separately (correctly) and the Maven bundle plugin will ensure packges are imported in the correct range based of
+ Package versions are managed separately (correctly) and the Maven bundle plugin will ensure packages are imported in the correct range based of
  the projects dependencies. Implementers need to use "provide:=true" to get the correct range. Package export version should be maintained 
 either using package.info or in the pom.xml.
 
@@ -43,7 +43,7 @@ using semantic versioning of bundles. One might visualise the process like this:
 
 ![rel](release_by_module.png)
 
-<p>In this case, we have a module version (independent of the version of its sub-modules) and a set of sub-modules which may each be indepndently versioned.</p>
+<p>In this case, we have a module version (independent of the version of its sub-modules) and a set of sub-modules which may each be independently versioned.</p>
 
 ### Advantages of release by module
 
