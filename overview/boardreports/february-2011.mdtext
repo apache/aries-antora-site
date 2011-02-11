@@ -19,9 +19,11 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 # February 2011 Board report
 Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
-Aries 0.3 has now been released. Aries Application 0.2.1 is being released to assist Geronimo. Now that the first full Aries release since graduation has happened, and that there is a desire to consider OSGi semantic versioning guidelines we are discussing whether releasing at a finer grained level is more appropriate.
+Aries 0.3 has now been released. Aries Application 0.2.1 is being released to assist Geronimo. This is the first time Aries has released a single module.
 
-Community update: dev@ 117 subscribers (-1), user@ 129 subscribers (+2). The dev@ list continues to be active with less traffic on the user@ list. No new committers or PMC members since the January report.
+Now that the first full Aries release since graduation has happened, and that there is a desire to consider OSGi semantic versioning guidelines we are discussing whether releasing at a finer grained level is more appropriate. There is much good discussion about what makes sense for Aries, with input from what happens in Felix, Sling and ACE.
+
+Community update: largely unchanged since last month dev@ 117 subscribers, user@ 127 subscribers. The dev@ list continues to be active with less traffic on the user@ list. No new committers or PMC members since the January report.
 
 There are no board level issues.
 
