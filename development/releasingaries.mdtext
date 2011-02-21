@@ -27,6 +27,7 @@ There are a few steps to the process:
  1. Creating and storing GPG keys
  1. Setting up your environment
  1. Creating a branch to release from
+ 1. JIRA preparation
  1. Checking release artifacts on your local system
  1. Creating a snapshot release (optional - not really part of the release
 process, uses mvn deploy)
@@ -36,6 +37,7 @@ release:perform)
  1. Promoting the release artifacts to the Apache release repository
  1. Making the release artifacts available from the Aries web pages
  1. What to do when people find problems with the release artifacts
+ 1. JIRA tasks
 
 The best current documentation for releases is [here](http://apache.org/dev/publishing-maven-artifacts.html)
  - but this isn't released yet. It covers all the steps listed above so on
@@ -143,6 +145,12 @@ file does need one. As an alternative you can use 'mvn -Prat install'.
 ### Creating a snapshot release
 TBD. This isn't a necessary step in the release process but should still be
 documented here.
+
+### JIRA preparation
+  * After initial release discussion on the mailing list you should have a list of JIRA issues that are required in the release. If not, the default assumption is 'everything that has been fixed since the last release'.
+  * Make sure that there is a JIRA component that matches the name of the release, if not, create one.
+  * Check through defects, make sure that anything that is included in the release has been closed. If there are open issues move them to the next release.
+
 
 <a name="ReleasingAries-Creatingtherelease"></a>
 ### Creating the release
@@ -329,7 +337,7 @@ Download the release artifacts using a script like [this](release-0.2)
    or use a fancy editor.
   * Get the compliance tests run
   * Release notes
-  * Tidy up JIRA
+  * Release the component in JIRA (manage components), check the JIRA release notes.
 
 
 <a name="ReleasingAries-Whattodowhenpeoplefindproblemswiththerelease"></a>
