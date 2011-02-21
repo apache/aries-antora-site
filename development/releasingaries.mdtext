@@ -53,7 +53,7 @@ agree its content. Allow at least a week for this discussion.
 <a name="ReleasingAries-CreatingandstoringGPGkeys"></a>
 ### Creating and storing GPG keys
 For Aries your GPG key will need to be in this file:
-https://svn.apache.org/repos/asf/incubator/aries/KEYS (follow the
+https://svn.apache.org/repos/asf/aries/KEYS (follow the
 instructions in the file) and checkin
 
 <a name="ReleasingAries-Settingupyourenvironment"></a>
@@ -70,9 +70,9 @@ working in your own branch and not in trunk where other people may be
 committing code.
 
 
-    svn copy https://svn.apache.org/repos/asf/incubator/aries/trunk \
-	  
-    https://svn.apache.org/repos/asf/incubator/aries/branches/0.X-incubating-RCx \
+    svn copy https://svn.apache.org/repos/asf/aries/trunk \
+
+    https://svn.apache.org/repos/asf/aries/branches/0.X-incubating-RCx \
   
       -m "Creating a release branch of /aries/trunk."
 
@@ -82,7 +82,7 @@ Where '0.X' is the number of the release.
 Checkout the new branch, for example, for the 0.2-incubating  release:
 
 
-    svn co https://svn.apache.org/repos/asf/incubator/aries/branches/0.2-incubating-RCx aries-0.2-candidate
+    svn co https://svn.apache.org/repos/asf/aries/branches/0.2-incubating-RCx aries-0.2-candidate
 
 
 *IMPORTANT* If you are using a branch to release you *must* edit the top
@@ -90,11 +90,11 @@ level pom.xml for each module to change the SCM references to point to the
 branch and not to trunk. For example:
 
 
-    <connection>scm:svn:http://svn.apache.org/repos/asf/incubator/aries/branches/0.2-incubating-RCx/parent</connection>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/aries/branches/0.2-RCx/parent</connection>
        
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/incubator/aries/branches/0.2-incubating-RCx/parent</developerConnection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/aries/branches/0.2-RCx/parent</developerConnection>
        
-    <url>scm:svn:http://svn.apache.org/repos/asf/incubator/aries/branches/0.2-incubating-RCx/parent</url>
+    <url>scm:svn:http://svn.apache.org/repos/asf/aries/branches/0.2-RCx/parent</url>
 
 
 The consequence of forgetting this is that the commands that create the
@@ -314,8 +314,8 @@ there they will be automatically moved to the Maven repository.
 <a name="ReleasingAries-MakingthereleaseartifactsavailablefromtheArieswebpages."></a>
 ### Making the release artifacts available from the Aries web pages. 
 Anything that is to be downloaded must be put in
-/www/www.apache.org/dist/incubator/aries on minotaur. The distributions are
-archived here /www/archive.apache.org/dist/incubator/aries.
+/www/www.apache.org/dist/aries on minotaur. The distributions are
+archived here /www/archive.apache.org/dist/aries.
 
 First, delete the previous distribution from the distribution directory.
 Download the release artifacts using a script like [this](release-0.2)
@@ -368,7 +368,7 @@ through the release process again.
 In some cases you may also want to merge from trunk into the release
 branch. The syntax to do this is:
 
-    svn merge -c ZZZZZZ https://svn.apache.org/repos/asf/incubator/aries/trunk
+    svn merge -c ZZZZZZ https://svn.apache.org/repos/asf/aries/trunk
 
 Where ZZZZZZ is the revision associated with the fix.
 Note that you will be creating a new staging repository. The commands are
