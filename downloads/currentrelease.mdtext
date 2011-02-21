@@ -1,4 +1,5 @@
 Title: Downloads
+
 <a name="Downloads-ApacheAriesDownloads"></a>
 # Apache Aries Downloads
 
@@ -91,16 +92,11 @@ source.
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.application.runtime-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.application.runtime-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.runtime-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.runtime-0.3-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> </td></tr>
-
-zzzzzzzzzzzz
-
 <tr><td class="confluenceTd"> </td><td class="confluenceTd"> application-utils </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.application.utils-0.3.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.application.utils-0.3.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.utils-0.3.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.utils-0.3.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.application.utils-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.application.utils-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.utils-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.utils-0.3-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> </td></tr>
-
-zzzzzzzzzzzzz
 <tr><td class="confluenceTd"> </td><td class="confluenceTd"> application-default-local-platform </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.application.default.local.platform-0.3.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.application.default.local.platform-0.3.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.default.local.platform-0.3.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.application.default.local.platform-0.3.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd">
