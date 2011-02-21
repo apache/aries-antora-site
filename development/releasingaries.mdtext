@@ -314,7 +314,8 @@ there they will be automatically moved to the Maven repository.
 <a name="ReleasingAries-MakingthereleaseartifactsavailablefromtheArieswebpages."></a>
 ### Making the release artifacts available from the Aries web pages. 
 Anything that is to be downloaded must be put in
-/www/www.apache.org/dist/aries on minotaur. The distributions are
+/www/www.apache.org/dist/aries on minotaur. Don't forget to changes the file permissions to '664' so that other 
+members of the group can access them. The distributions are
 archived here /www/archive.apache.org/dist/aries.
 
 First, delete the previous distribution from the distribution directory.
