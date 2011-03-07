@@ -17,3 +17,5 @@ The programming model use in Apache Aries is described in sections under each mo
  4. [Blueprint](/modules/blueprint.html)
 
  5. [Transactions](/modules/transactionsproject.html)
+ 
+ 6. [JPA](/modules/jpaproject.html)
