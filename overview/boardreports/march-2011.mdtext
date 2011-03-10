@@ -16,6 +16,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
+#DRAFT - not yet submitted to the Board
 # March 2011 Board report
 Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
