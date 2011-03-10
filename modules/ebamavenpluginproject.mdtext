@@ -1,4 +1,5 @@
 Title: EBAMavenPluginProject
+
 <a name="EBAMavenPluginProject-EBAMavenPlugin"></a>
 # EBA Maven Plugin
 
@@ -62,13 +63,13 @@ The pom to application manfiest header mapping is as follows:
 ## Overriding Application-SymbolicName
 
 The application symbolic name defaults to the
-$\{pom.groupId\}.$\{pom.artifaceId\}.  The following shows how to override
+$\{project.groupId\}.$\{project.artifaceId\}.  The following shows how to override
 this:
 
 
     <configuration>
       <instructions>
-        <Application-SymbolicName>${pom.artifaceId}</Application-SymbolicName>
+        <Application-SymbolicName>${project.artifaceId}</Application-SymbolicName>
       </instructions>
     </configuration>
 
