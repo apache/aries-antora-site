@@ -1,0 +1,34 @@
+Versioning policy - DRAFT
+
+This projecst aims to implement OSGi semantic versioning as described here: www.osgi.org/wiki/uploads/Links/SemanticVersioning.pdf.
+
+The implementation of semantic versioning has a number of practical implications for managing a project. These are
+outlined in this section. 
+
+Bundle version.
+OSGi semantic versioning applies to bundles as well as packages. When releaseing a new version of a bundle
+the change in the bundle version should give some indication of nature of the changes to the bundle.
+In Aries the bundle version is always the same as version of the Maven artifact that relates to the bundle. 
+During development teh Maven artifact version may be either:
+
+  * x.y.z Where x.y.z is the most recent release of the bundle
+  * x.y.(z+1)-SNAPSHOT Indicating that the bundle has changed since it was last released.
+
+Immediately after a release the Maven version is  set the same as the release. Bundles which depend
+on the bundle will pick up the released version. When a developer first makes a change to the bundle the version
+is changed to be a SNAPSHOT version, indicating to a release manager that the bundle is a candidate for release.
+
+At release time the release version of the bundle must be assigned by the release manager after reviewing
+the changes since the last release.
+
+
+Package versions
+
+Exported packages
+Versions specified in packageinfo files with teh source code.
+The location of pacgageinfo is configured in build resounces in the default-parent pom. If your pom has a build resources section it replaces what is inherited from teh default-parent, so you may need to reproduce the section which specifies where packageinf can be found.
+
+Imports
+The bnd defualt verion range policy for imports is teh consumer policy (==, +), you may need to override this if you want to be more prescriptove about secific aries imports.
+
+
