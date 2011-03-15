@@ -1,4 +1,5 @@
 Title: JPAProject
+
 # JPA 
 The Aries JPA project will make it easy for JPA persistence providers such
 as [Apache OpenJPA](http://openjpa.apache.org/)
@@ -22,19 +23,17 @@ Step 1 : Module
 Every jar deployed on an OSGI platform must be adapted to be conform to OSGI standard. That means that the maven
 packaging which is defined as the default value must be defined to bundle
 
-{code}
+
 	<groupId>org.apache.aries.samples.blog</groupId>
 	<artifactId>org.apache.aries.samples.blog.persistence.jpa</artifactId>
 	<name>Apache Aries blog sample persistence</name>
 	<packaging>bundle</packaging>
-{code} 
 
 and that you must configure the maven-bundle-plugin (http://felix.apache.org/site/apache-felix-maven-bundle-plugin-bnd.html)
 to generate the MANIFEST.MF file required by OSGI platform.
 
 Remark : the modification to be made (packages to be imported or exported depends on your project setting)
 
-{code}
     <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -46,13 +45,11 @@ Remark : the modification to be made (packages to be imported or exported depend
             </instructions>
         </configuration>
     </plugin>
-{code}
 
 To allow the Aries JPA Container to setup your persistence layer (akka : instantiate the entityFactory with the information
 provided into the persistence.xml file), an additional modification must be made in your pom.xml file to package this file
 into the META-INF directory
 
-{code}
     <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -63,7 +60,6 @@ into the META-INF directory
             </instructions>
         </configuration>
     </plugin>
-{code}
 
 When this step is done, your pom.xml file is ready to be used to package and install your bundle into the maven repository
 and next into a OSGI container (Apache Felix, Apache Karaf, Eclipse Equinox)
@@ -79,12 +75,10 @@ specification has made a proposition to provide a similar mechanism that Aries J
 To access to the datasource, you must provide within the <jta-data-source> or <non-jta-data-source> depending if you use a JTA
 transaction manager or not.
 
-{code}
     <persistence-unit name="ReportIncident" transaction-type="JTA">
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 
         <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/reportincidentdb)</jta-data-source>
-{code}
 
 With J2EE applications, you simply use the jdbc key with the name of the datasource associated (jdbc/reportincidentdb). As OSGI uses a
  different mechanism, we must define two parameters, the "osgi:service" wich will allow to find from the OSGI Service registry (aka proxy)
@@ -100,7 +94,6 @@ embed existing projects into ARIES sphere without modifications
 
 Here are the modifications to do in the blueprint xml file located under OSGI-INF/blueprint
 
-{code}
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
@@ -134,17 +127,16 @@ Here are the modifications to do in the blueprint xml file located under OSGI-IN
     </service>
 
 </blueprint>
-{code}
 
-(1) The <tx:transaction> tag allows to inject in your DAO layer the transactional aspect and using the following symbol
+(1) The &lt;tx:transaction&gt; tag allows to inject in your DAO layer the transactional aspect and using the following symbol
 "*", Aries Transaction manager will create for each method a session to begin / commit or rollback a transaction in your class
-The scope of the transaction can be defined using the attribute value.
-(2) The JPA context is created using <jpa:context>. The entityManager (which corresponds to the property of your DAO class) will be
+The scope of the transaction can be defined using the attribute value.<br />
+(2) The JPA context is created using &lt;jpa:context&gt;. The entityManager (which corresponds to the property of your DAO class) will be
 injected using the property="entityManager". The reference to your unit name (defined in the persistence.xml file) is passed with the
  attribute unitname.
-file.
-(3) The <service> allows to expose an interface on the OSGI Registry Service using as key the name of the interface ("javax,sql.Datasource").
-The <service-properties> will let to define a property that we will use to retrieve the datasource from the registry
+file.<br />
+(3) The &lt;service&gt; allows to expose an interface on the OSGI Registry Service using as key the name of the interface ("javax,sql.Datasource").
+The &lt;service-properties&gt; will let to define a property that we will use to retrieve the datasource from the registry
 
 
 Step 4 : Package the solution
