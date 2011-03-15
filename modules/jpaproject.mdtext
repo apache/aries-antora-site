@@ -39,7 +39,7 @@ Remark : the modification to be made (packages to be imported or exported depend
         <artifactId>maven-bundle-plugin</artifactId>
         <configuration>
             <instructions>
-                <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                 <Private-Package>org.apache.aries.samples.blog.persistence.jpa.*</Private-Package>
                 <Export-Package>!org.apache.aries.samples.blog.persistence.jpa.*</Export-Package>
             </instructions>
