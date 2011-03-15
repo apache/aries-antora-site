@@ -18,8 +18,16 @@ Immediately after a release the Maven version is set the same as the release. Bu
 on the bundle will pick up the released version. When a developer first makes a change to the bundle the version
 is changed to be a SNAPSHOT version, indicating to a release manager that the bundle is a candidate for release.
 
+**EITHER**
 At release time the release version of the bundle must be assigned by the release manager after reviewing
 the changes to the bundle's package versions since the last release.
+
+**OR**
+Whenever a developer makes a change to a package version they must check the bundle version and, if necessary, modify the bundle
+version in line with changes that have been made to packages. In this case the RM has no
+additional work - correct bundle semantic versioning is the responsibility of the developer making the code changes
+
+
 
 
 ## Package versions
@@ -35,21 +43,21 @@ semantic versioning when they make changes to a package. The version should rela
 recent release of the package and not to the version found in trunk. For example:
 
  * Scenario 1, making changes to a package with released version a.b.c
-  * Developer A fixes a bug in the package and increments it's version to a.b.c+1
-  * Developer B fixes another bug in the package but leaves the version at a.b.c+1 
+   * Developer A fixes a bug in the package and increments it's version to a.b.c+1
+   * Developer B fixes another bug in the package but leaves the version at a.b.c+1 
 
  * Scenario 2, making changes to a package with released version a.b.c
-  * Developer A adds a method to an interface in the package and increments it's version to a.b+1.0
-  * Developer B fixes a bug in the package, leaves its version at a.b+1.0
+   * Developer A adds a method to an interface in the package and increments it's version to a.b+1.0
+   * Developer B fixes a bug in the package, leaves its version at a.b+1.0
 
 * Scenario 3, making changes to a package with released version a.b.c
-  * Developer A fixes a bug in the package, and increments its version to a.b.c+1
-  * Developer B deletes a method from an interface and increases the package version to a+1.0.0
+   * Developer A fixes a bug in the package, and increments its version to a.b.c+1
+   * Developer B deletes a method from an interface and increases the package version to a+1.0.0
  
 
 
 
-## Importing packages
+### Importing packages
 The bnd default version range policy for imports is the consumer policy (==, +), you may need to 
 override this if you want to be more prescriptive about specific Aries imports.
 The policy can be set by using the Maven property <aries.osgi.version.policy>, see the default-parent
