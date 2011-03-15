@@ -39,8 +39,12 @@ recent release of the package and not to the version found in trunk. For example
   * Developer B fixes another bug in the package but leaves the version at a.b.c+1 
 
  * Scenario 2, making changes to a package with released version a.b.c
-  * Developer A fixes a bug in the package and increments it's version to a.b.c+1
-  * Developer B makes an API breaking change and increases the package version to (a+1).0.0
+  * Developer A adds a method to an interface in the package and increments it's version to a.b+1.0
+  * Developer B fixes a bug in the package, leaves its version at a.b+1.0
+
+* Scenario 3, making changes to a package with released version a.b.c
+  * Developer A fixes a bug in the package, and increments its version to a.b.c+1
+  * Developer B deletes a method from an interface and increases the package version to a+1.0.0
  
 
 
