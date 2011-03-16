@@ -5,30 +5,6 @@ The Aries  project aims to implement OSGi semantic versioning as described [here
 The implementation of semantic versioning has a number of practical implications for managing a project. These are
 outlined in this section. 
 
-## Bundle versions
-OSGi semantic versioning applies to bundles as well as packages. When releasing a new version of a bundle
-the change in the bundle version should give some indication of nature of the changes to the bundle.
-In Aries the bundle version is the same as version of the Maven artifact version. 
-During development, in trunk, the Maven artifact version may be:
-
-  * either x.y.z Where x.y.z is the most recent release of the bundle
-  * or x.y.(z+1)-SNAPSHOT Indicating that the bundle has changed since it was last released.
-
-Immediately after a release the Maven version is set the same as the release. Bundles which depend
-on the bundle will pick up the released version. When a developer first makes a change to the bundle the version
-is changed to be a SNAPSHOT version, indicating to a release manager that the bundle is a candidate for release.
-
-**EITHER**
-At release time the release version of the bundle must be assigned by the release manager after reviewing
-the changes to the bundle's package versions since the last release.
-
-**OR**
-Whenever a developer makes a change to a package version they must check the bundle version and, if necessary, modify the bundle
-version in line with changes that have been made to packages. In this case the RM has no
-additional work - correct bundle semantic versioning is the responsibility of the developer making the code changes
-
-
-
 
 ## Package versions
 
@@ -39,8 +15,8 @@ resources section it replaces what is inherited from the default-parent, so you 
 the section which specifies where packageinfo can be found.
 
 Developers **must** increment the versions in packageinfo files in strict accordance with OSGi
-semantic versioning when they make changes to a package. The version should relate to the most
-recent release of the package and not to the version found in trunk. For example:
+semantic versioning when they make changes to a package. The version should relate to the **most
+recent release of the package** and not to the version found in trunk. For example:
 
 #### Scenario 1, making changes to a package with released version a.b.c
 
@@ -57,15 +33,45 @@ recent release of the package and not to the version found in trunk. For example
 #### Scenario 3, making changes to a package with released version a.b.c
 
    * Developer A fixes a bug in the package, and increments its version to a.b.c+1
-   * Developer B deletes a method from an interface and increases the package version to a+1.0.0
+   * Developer B deletes a method from an interface and increases the package version to a+1.0.0. Note the final '0' here, developer B's change is more significant
+so there is no need to reflect Developer A's change with a micro version of '1'. Indeed, a version of a+1.0.1 would imply a bug fix to version a+1.0.0.
  
 
 
 
 ### Importing packages
-The bnd default version range policy for imports is the consumer policy (==, +), you may need to 
-override this if you want to be more prescriptive about specific Aries imports.
+The bnd default version range policy for imports is the consumer policy (==, +). Implementers of interfaces will need to 
+override this. For example as an implementer of an interface the version range 
+would be the provider policy (==,=+).
 The policy can be set by using the Maven property <aries.osgi.version.policy>, see the default-parent
 pom for an example.
+
+## Bundle versions
+OSGi semantic versioning applies to bundles as well as packages. When releasing a new version of a bundle
+the change in the bundle version should give some indication of nature of the changes to the bundle.
+In Aries the bundle version is the same as version of the Maven artifact version. 
+During development, in trunk, the Maven artifact version may be:
+
+  * either x.y.z Where x.y.z is the most recent release of the bundle
+  * or x.y.(z+1)-SNAPSHOT Indicating that the bundle has changed since it was last released.
+
+Immediately after a release the Maven version is set the same as the release. Bundles which depend
+on the bundle will pick up the released version. When a developer first makes a change to the bundle the version
+is changed to be a SNAPSHOT version and some change made to the bundle version number, 
+indicating to a release manager that the bundle is a candidate for release.
+
+<p>There are two possibilities for assigning a bundle version number at release time:</p>
+
+**EITHER**
+At release time the release version of the bundle must be assigned by the release manager after reviewing
+the changes to the bundle's package versions since the last release. This is not a particularly time consuming task as long as 
+packageinfo files are used for versioning packages.
+
+**OR**
+Whenever a developer makes a change to a package version they must check the bundle version and, if necessary, modify the bundle
+version in line with changes that have been made to packages. In this case the RM has no
+additional work (although it might be argues that an RM should check the bundle version - this is then pretty much the same amount of work as actually assigning it)
+- correct bundle semantic versioning is the primary responsibility of the developer making the code changes.
+
 
 
