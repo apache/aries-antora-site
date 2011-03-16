@@ -74,4 +74,9 @@ additional work (although it might be argues that an RM should check the bundle 
 - correct bundle semantic versioning is the primary responsibility of the developer making the code changes.
 
 
+NB Of course, bundles that don't export any packages will still change version when bugs are fixed. In this case
+the new release version will always be x.y.(z+1) if the last release was x.y.z.
+
+
+
 
