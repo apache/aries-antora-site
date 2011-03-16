@@ -1,7 +1,7 @@
 Title: ReleasingAries
 
 <a name="ReleasingAries-HowtodoanAriesRelease"></a>
-# How to do an Aries Release
+# How to do an Aries Release - Draft release by bundle process
 
 
 To create a release you will need to create the release artifacts and move
@@ -26,11 +26,10 @@ There are a few steps to the process:
  1. Discussion of the release and its content on the aries-dev mailing list.
  1. Creating and storing GPG keys
  1. Setting up your environment
- 1. Creating a branch to release from
  1. JIRA preparation
+ 1. Checking the release version of the bundle
  1. Checking release artifacts on your local system
- 1. Creating a snapshot release (optional - not really part of the release
-process, uses mvn deploy)
+ 1. Creating a snapshot release 
  1. Releasing to a staging repository (uses mvn release:prepare and mvn
 release:perform)
  1. Running a vote
@@ -65,16 +64,12 @@ Follow the general instructions linked to above.
 
 <a name="ReleasingAries-Creatingabranchtoreleasefrom"></a>
 ### Creating a branch to release from
-Although this isn't strictly speaking a necessary step it's pretty useful
-to do it. Running the commands to create the release can take some time,
-especially if you have to revert anything. This is much easier if you are
-working in your own branch and not in trunk where other people may be
-committing code.
+The recommendation is to avoid this unless you absolutely have to. 
 
 
     svn copy https://svn.apache.org/repos/asf/aries/trunk \
 
-    https://svn.apache.org/repos/asf/aries/branches/0.X-incubating-RCx \
+    https://svn.apache.org/repos/asf/aries/branches/0.X-RCx \
   
       -m "Creating a release branch of /aries/trunk."
 
@@ -84,7 +79,7 @@ Where '0.X' is the number of the release.
 Checkout the new branch, for example, for the 0.2-incubating  release:
 
 
-    svn co https://svn.apache.org/repos/asf/aries/branches/0.2-incubating-RCx aries-0.2-candidate
+    svn co https://svn.apache.org/repos/asf/aries/branches/0.2-RCx aries-0.2-candidate
 
 
 *IMPORTANT* If you are using a branch to release you *must* edit the top
@@ -107,9 +102,21 @@ repository :-/.
 After taking the branch, change the pom versions in trunk to, say,
 0.3-incubating or whatever you want to call the next development version.
 
+<a name="ReleasingAries-Checkingbundleversion"></a>
+### Checking which version of the bundle to release
+If the Maven version of the bundle ends -SNAPSHOT then some change has been made which may require a release.
+To get a summary of the changes, use svn to compare with the most recently released tag, 
+for example:
+
+
+     svn diff https://svn.apache.org/repos/asf/aries/tags/testsupport-0.3/  https://svn.apache.org/repos/asf/aries/trunk/testsupport/ --summarize
+
+
+In general, if no Java files have changed there is nothing to release (??? check this).
+
 <a name="ReleasingAries-Checkingreleaseartifacts"></a>
 ### Checking release artifacts
-I recommend deleting everything under ...org/apache/aries in your local
+Delete everything under ...org/apache/aries in your local
 Maven repo. For linux/Mac users you will find this under ~/.m2/repository/.
 
 Check that the code builds using the usual [sequence](buildingaries.html)
@@ -132,7 +139,7 @@ To perform legal checks, in each subproject, run:
 This will run through the project and its sub projects generating a file
 called rat.txt in each target directory.
 The 'fn' means it will carry on even if it find a failure. To inspect the
-failures, the easiest way I've found so far is:
+failures, use:
 
     find . -name rat.txt | xargs grep \!\?\?
 
@@ -143,8 +150,8 @@ file does need one. As an alternative you can use 'mvn -Prat install'.
 
 <a name="ReleasingAries-Creatingasnapshotrelease"></a>
 ### Creating a snapshot release
-TBD. This isn't a necessary step in the release process but should still be
-documented here.
+This is important to do when releasing from trunk as other bundles may want
+to continue to depend on the -SNAPSHOT version while the release is voted through.
 
 ### JIRA preparation
   * After initial release discussion on the mailing list you should have a list of JIRA issues that are required in the release. If not, the default assumption is 'everything that has been fixed since the last release'.
