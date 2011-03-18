@@ -141,7 +141,7 @@ The &lt;service-properties&gt; will let to define a property that we will use to
 
 **Step 4 : Package the solution**
 
-To package and deploy the solution, execute a "maven clean install" instruction and deploy your project on you OSGI platform. Depending in which OSGI container
+To package and deploy the solution, execute a "maven clean install" instruction and deploy your project into your favorite OSGI platform. Depending in which OSGI container
 you plan to deploy your projects, the bundles (Aries JPA, OpenJPA, Aries Transaction, ....) to be used will be
 different and you will have to identify them. The Aries samples project provides you a list of [bundles][1] and you 
 can use them as a starting point to create your first project.
