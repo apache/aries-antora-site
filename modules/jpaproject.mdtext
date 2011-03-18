@@ -76,9 +76,9 @@ To access to the datasource, you must provide within the <jta-data-source> or <n
 transaction manager or not.
 
     <persistence-unit name="ReportIncident" transaction-type="JTA">
-        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+    <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 
-        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/reportincidentdb)</jta-data-source>
+    <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/reportincidentdb)</jta-data-source>
 
 With J2EE applications, you simply use the jdbc key with the name of the datasource associated (jdbc/reportincidentdb). As OSGI uses a
  different mechanism, we must define two parameters, the "osgi:service" wich will allow to find from the OSGI Service registry (aka proxy)
