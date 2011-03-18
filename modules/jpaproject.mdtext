@@ -13,12 +13,12 @@ Release 4, Version 4.2" available for public download from the [OSGi Alliance](h
 
 Developing an Aries JPA project is very easy and can be achieved with simple steps described hereafter.
 
-# Maven Project Creation
+# Creation of a JPA project using Maven
 The first step consist in to create a maven module and make the following modifications to allow to deploy
  it as OSGI bundle on the platform and reference where the persistence XML file must loaded by the classpath to
  allow to the JPA container to configure the project accordingly.
 
-Step 1 : Module
+**Step 1 : Module**
 
 Every jar deployed on an OSGI platform must be adapted to be conform to OSGI standard. That means that the maven
 packaging which is defined as the default value must be defined to bundle
@@ -64,7 +64,7 @@ into the META-INF directory
 When this step is done, your pom.xml file is ready to be used to package and install your bundle into the maven repository
 and next into a OSGI container (Apache Felix, Apache Karaf, Eclipse Equinox)
 
-Step 2 : Adapt the persistence file
+**Step 2 : Adapt the persistence file**
 
 We will not cover how to define the different parameters of the persistence file but present you what you should modify to
 deploy it on non J2EE platform, which is the case by definition for OSGI kernel. Curiously, there is only one think
@@ -86,7 +86,7 @@ With J2EE applications, you simply use the jdbc key with the name of the datasou
 
 The other tags of the xml file are defined according to JPA specification
 
-Step 3 : Define the services and expose them
+**Step 3 : Define the services and expose them**
 
 The last step consist in to use Annotations and Injection mechanism to let the Aries JPA container to create the entity Manager
 with the classes of your DAO layer and add Transactional aspect into the methods. This way of work allows to complety
@@ -139,6 +139,11 @@ file.<br />
 The &lt;service-properties&gt; will let to define a property that we will use to retrieve the datasource from the registry
 
 
-Step 4 : Package the solution
+**Step 4 : Package the solution**
 
-To package and deploy the solution, execute a "maven clean install" instruction and deploy your project on you OSGI platform
+To package and deploy the solution, execute a "maven clean install" instruction and deploy your project on you OSGI platform. Depending in which OSGI container
+you plan to deploy your projects, the bundles (Aries JPA, OpenJPA, Aries Transaction, ....) to be used will be
+different and you will have to identify them. The Aries samples project provides you a list of [bundles][1] and you 
+can use them as a starting point to create your first project.
+
+[1]: https://svn.apache.org/repos/asf/aries/trunk/samples/blog/blog-itests/src/test/java/org/apache/aries/samples/blog/itests/JpaBlogSampleWithEbaTest.java
