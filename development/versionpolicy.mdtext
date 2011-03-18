@@ -50,32 +50,34 @@ pom for an example.
 OSGi semantic versioning applies to bundles as well as packages. When releasing a new version of a bundle
 the change in the bundle version should give some indication of nature of the changes to the bundle.
 In Aries the bundle version is the same as version of the Maven artifact version. 
-During development, in trunk, the Maven artifact version may be:
+During development, in trunk, the Maven artifact version will be:
 
-  * either x.y.z Where x.y.z is the most recent release of the bundle
-  * or x.y.(z+1)-SNAPSHOT Indicating that the bundle has changed since it was last released.
+  * either x.y.(z+1)-SNAPSHOT 
 
-Immediately after a release the Maven version is set the same as the release. Bundles which depend
-on the bundle will pick up the released version. When a developer first makes a change to the bundle the version
-is changed to be a SNAPSHOT version and some change made to the bundle version number, 
-indicating to a release manager that the bundle is a candidate for release.
+Where x.y.z is the most recent release of the bundle
 
-<p>There are two possibilities for assigning a bundle version number at release time:</p>
+During the release process release Maven version is set to a minor increment of the release version by default. 
 
-**EITHER**
+For example, if proxy is released at version 1.0.0, the development version of proxy in trunk will become 1.0.1.
+
+Bundles which depend on proxy (for example blueprint) will be set to depend on the released version of proxy, so for example, immediately after 
+a release of proxy at 1.0.0 and a release of blueprint at, say, 1.2.0, the development version of blueprint in trunk will be 1.2.1-SNAPSHOT
+but the version of proxy that it depends on will be 1.0.0.
+
+
+###Assigning a bundle version number at release time
+
 At release time the release version of the bundle must be assigned by the release manager after reviewing
 the changes to the bundle's package versions since the last release. This is not a particularly time consuming task as long as 
 packageinfo files are used for versioning packages.
 
-**OR**
-Whenever a developer makes a change to a package version they must check the bundle version and, if necessary, modify the bundle
-version in line with changes that have been made to packages. In this case the RM has no
-additional work (although it might be argues that an RM should check the bundle version - this is then pretty much the same amount of work as actually assigning it)
-- correct bundle semantic versioning is the primary responsibility of the developer making the code changes.
+So, for example, if proxy has a version of 1.0.1-SNAPSHOT in trunk but one of the API's that is exported by proxy 
+has changed its package version from 1.3.4 to 2.0.0 in trunk, the bundle version would be incremented
+to 2.0.0 on release to indicate an incompatible change in (at least) one of its packages.
 
 
-NB Of course, bundles that don't export any packages will still change version when bugs are fixed. In this case
-the new release version will always be x.y.(z+1) if the last release was x.y.z.
+Bundles that don't export any packages will still change version when bugs are fixed. In this case
+the new release version will be x.y.(z+1) if the last release was x.y.z.
 
 
 
