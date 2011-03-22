@@ -1,0 +1,15 @@
+Creating the current release table is a pig.
+
+The file called current_release.mdtext is the one that needs to be created/refreshed at each release.
+
+The parts relating to samples and teh eba maven blugi are small and can be hand edited, however, the table
+of bundle versions is much to big to be edited by hand.
+
+Steps to generate:
+
+1. Edit the file aries-release-versions.txt to get the right release versions.
+2. Run 'perl create_modules_table.pl > modules_table.txt'
+3. Edit current_release.mdtext_body to insert modules_table.txt just before teh final </table>
+4  Copy current_release.mdtext_body to current_release.mdtext and checkin
+
+
