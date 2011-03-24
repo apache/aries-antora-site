@@ -60,6 +60,7 @@ A distribution is just a collection of Aries bundles which have already been rel
 The distribution is just a convenient way for consumers to download aries bundles and all
 of the Aries bundles that they depend on.
 There are three distributions:
+
   * Blueprint
   * Application (isolating framework)
   * Application (non-isolating framework)
@@ -86,7 +87,7 @@ all of the bundle version information is up to date in aries_release_versions.tx
 
 <p>It is critically important that the samples are all tested before making release. Some have itests
 but others (blueprint) are only tested manually. In fact it's wise to run through
-a quick manual check for the blog and aries trader samples as the itests do not catch everything.
+a quick manual check for the blog and aries trader samples as the itests do not catch everything.</p>
 
 
 
