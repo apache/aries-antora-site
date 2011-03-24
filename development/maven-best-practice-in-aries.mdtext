@@ -6,32 +6,24 @@ Title: Maven best practice in Aries
 <a name="MavenbestpracticeinAries-Overallstructure"></a>
 ### Overall structure
 
-The Aries project is a collection of loosely couple modules, therefore
-it must be possible to build each module on its own. This implies:
+The Aries project is a collection of loosely couple bundles, therefore
+it must be possible to build each bundle on its own. This implies:
 
 1. A parent pom that isn't at the root of the SVN trunk.
-1. Each module has enough pom info so that it can be released
+1. Each bundle has enough pom info so that it can be released
 independently.
 1. parent/default-parent has dependency management for basic osgi-dependencies that
 all projects are almost certain to use (this includes PAX dependencies for
 testing).
-1. Each module has legal files in its checkout root.
-1. Each module has an SCM element in its top level pom and _not_ in any other pom in the module.
-1. Each module has dependency management for everything included in it. 
-In addition, it has its sub-projects listed in dependency management.  This
-means that
-   1. sub-project poms should not include versions for use of other
-modules
-   1. you can get dependency management for all the modules in a subproject by
-depending on the subproject pom with scope import  (see the samples pom for
-an example).
-1. As a result of the above, modules don't have any versions in any
-dependency elements
+1. Each bundle has legal files in its checkout root.
+1. Each bundle has an SCM element in its top level pom.
+1. Bundles do not (except samples) have sub-modules.
+
 
 <a name="MavenbestpracticeinAries-Goodpracticeinthepom"></a>
 ### Good practice in the pom
 
-1. Alphabetic ordering in dependency management
+1. Alphabetic ordering in dependency management is helpful
 1. Include a brief description of the project
 1. Commenting in platform dependencies, see samples assembly projects.
 1. Use ${project.version} _not_ ${version} for Maven 3 compatibility.
