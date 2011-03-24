@@ -54,11 +54,16 @@ the release process it is necessary to copy the new bundles to the dist dir and 
 ## Releasing a distribution
 
 A distribution is just a collection of Aries bundles which have already been released.
-The distribution is just a convenient way for consumers to download related bundles.
+The distribution is just a convenient way for consumers to download aries bundles and all
+of the Aries bundles that they depend on.
 There are three distributions:
   * Blueprint
   * Application (isolating framework)
   * Application (non-isolating framework)
+
+The release process is just the same as for everything else, again, the right time to release these is
+immediately after a bundle(s) release when you have a collection of artifacts that 
+work together.
 
 
 
