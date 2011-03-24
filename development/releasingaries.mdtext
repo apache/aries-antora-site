@@ -53,8 +53,33 @@ the release process it is necessary to copy the new bundles to the dist dir and 
 
 ## Releasing a distribution
 
+A distribution is just a collection of Aries bundles which have already been released.
+The distribution is just a convenient way for consumers to download related bundles.
+There are three distributions:
+  * Blueprint
+  * Application (isolating framework)
+  * Application (non-isolating framework)
 
-## Releasing the samples.
+
+
+
+## Releasing the samples
+
+The Aries samples are designed to work across all the Aries modules. Samples are released as a single
+module. All of the Aries dependencies are listed in the top level samples pom. In 
+trunk, the version of all the dependencies should always point the SNAPSHOT versions 
+in trunk. At release time these must all be modified to the latest released version of 
+each bundle. *It is very important the versions are set **only** in the top level 
+sample pom*. Both sub-modules and filtered resources need the version information, setting it in
+one place is the only way to avoid a mess.
+
+<p>The best time to do a samples release is usually at the end of a bundle release when 
+all of the bundle version information is up to date in aries_release_versions.txt. </p>
+
+<p>It is critically important that the samples are all tested before making release. Some have itests
+but others (blueprint) are only tested manually. In fact it's wise to run through
+a quick manual check for the blog and aries trader samples as the itests do not catch everything.
+
 
 
 
