@@ -59,7 +59,7 @@ the release process it is necessary to copy the new bundles to the dist dir and 
 
 
 
-
+# Background information on the Apache Release process
 
 
 To create a release you will need to create the release artifacts and move
@@ -68,20 +68,17 @@ commands and general outline of the process looks like this:
 
 ![rel](AriesRelease.png)
 
-The picture assumes that you are releasing from a branch rather than from
-trunk. The full maven commands are not shown - the intention is just to
+ The full maven commands are not shown - the intention is just to
 give an indication of which maven commands you will need to use to create
-assets in different places.
+release artifacts in different places.
 
-Performing a release is described in detail [here](http://apache.org/dev/publishing-maven-artifacts.html.html)
+Performing a release is described in detail [here](http://apache.org/dev/publishing-maven-artifacts.html)
 . This document It covers all the steps listed above so on these pages we
-will only add things which are specific to the Apache Aries release. Note:
-the document has not been release and this link will need to be updated
-when it has.
+will only add things which are specific to the Apache Aries release. 
 
 There are a few steps to the process:
 
- 1. Discussion of the release and its content on the aries-dev mailing list.
+ 1. Discussion of the release and its content on the dev@aries mailing list.
  1. Creating and storing GPG keys
  1. Setting up your environment
  1. JIRA preparation
@@ -94,18 +91,17 @@ release:perform)
  1. Promoting the release artifacts to the Apache release repository
  1. Making the release artifacts available from the Aries web pages
  1. What to do when people find problems with the release artifacts
- 1. JIRA tasks
 
-The best current documentation for releases is [here](http://apache.org/dev/publishing-maven-artifacts.html)
- - but this isn't released yet. It covers all the steps listed above so on
+
+The best current documentation for releases is [here](http://apache.org/dev/publishing-maven-artifacts.html). It covers all the steps listed above so on
 these pages we will only add things which are specific to the Apache Aries
 release.
 
 
 <a name="ReleasingAries-Discussionofthereleaseandit'scontentontheAriesmailinglist"></a>
 ### Discussion of the release and its content on the Aries mailing list
-Before starting off the release process it is essential to gain concensus
-on the aries-dev list that this is the right time for a release and to
+Before starting off the release process it is essential to gain consensus
+on the dev@aries list that this is the right time for a release and to
 agree its content. Allow at least a week for this discussion. 
 
 
@@ -122,7 +118,8 @@ Follow the general instructions linked to above.
 
 <a name="ReleasingAries-Creatingabranchtoreleasefrom"></a>
 ### Creating a branch to release from
-The recommendation is to avoid this unless you absolutely have to. 
+It is strongly recomended that releases are made from trunk and NEVER from a branch. But, if you have to release from a branch this is what 
+you will need to do:
 
 
     svn copy https://svn.apache.org/repos/asf/aries/trunk \
@@ -140,8 +137,8 @@ Checkout the new branch, for example, for the 0.2-incubating  release:
     svn co https://svn.apache.org/repos/asf/aries/branches/0.2-RCx aries-0.2-candidate
 
 
-*IMPORTANT* If you are using a branch to release you *must* edit the top
-level pom.xml for each module to change the SCM references to point to the
+*IMPORTANT* If you are using a branch to release you **must** edit the 
+pom.xml for **each** bundle to change the SCM references to point to the
 branch and not to trunk. For example:
 
 
@@ -170,7 +167,9 @@ for example:
      svn diff https://svn.apache.org/repos/asf/aries/tags/testsupport-0.3/  https://svn.apache.org/repos/asf/aries/trunk/testsupport/ --summarize
 
 
-In general, if no Java files have changed there is nothing to release (??? check this).
+In general, if no Java files have changed only the micro version of the bundle will need to be incremented on release. If Java 
+code has changed it is important to check the packageinfo files to see whether package versions have changed. If so
+these might lead to the requirement to increment the major or minor versions the bundle.
 
 <a name="ReleasingAries-Checkingreleaseartifacts"></a>
 ### Checking release artifacts
@@ -211,6 +210,8 @@ file does need one. As an alternative you can use 'mvn -Prat install'.
 This is important to do when releasing from trunk as other bundles may want
 to continue to depend on the -SNAPSHOT version while the release is voted through.
 
+   mvn deploy (check exact format)
+
 ### JIRA preparation
   * After initial release discussion on the mailing list you should have a list of JIRA issues that are required in the release. If not, the default assumption is 'everything that has been fixed since the last release'.
   * Make sure that there is a JIRA component that matches the name of the release, if not, create one.
@@ -223,9 +224,8 @@ to continue to depend on the -SNAPSHOT version while the release is voted throug
 <a name="ReleasingAries-Creatingthereleaseartifactsinastagingrepository"></a>
 ##### Creating the release artifacts in a staging repository
 
-Aries is released as a set of modules, not all the modules in Aries are
-part of the release. Some modules depend on other modules. The release is
-created by releasing each module separately and in a specific order. It is
+The release is
+created by releasing each bundle separately and in a specific order. It is
 also desirable to maintain the same IP address for the entire process (the
 staging repository is associated with your IP address, changing it results
 in the creation of a second staging repository).
@@ -236,15 +236,6 @@ the next few steps.
 From the top level directory in your branch run:
 
     mvn clean
-
-
-Then, change directory to 'parent'. It is necessary to release parent first
-because everything else depends on it. Run the following commands:
-
-
-    mvn install -Papache-release
-    mvn release:prepare -Papache-release
-    mvn release:perform -Papache-release
 
 
 *Note* The prepare step will make some assumptions about the version of the
