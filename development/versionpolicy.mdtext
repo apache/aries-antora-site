@@ -1,4 +1,4 @@
-# Versioning policy - DRAFT
+# Aries versioning policy
 
 The Aries  project aims to implement OSGi semantic versioning as described [here](http://www.osgi.org/wiki/uploads/Links/SemanticVersioning.pdf).
 
