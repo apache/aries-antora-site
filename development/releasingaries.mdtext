@@ -244,13 +244,23 @@ releasing from a branch it may not be a good idea to accept the default for
 this, it will very likely conflict with the development version in use in
 trunk.
 
-The install command is required to make sure that you have a copy of the
-parent in your local repository - it's required for releasing the
-eba-maven-plugin.
+For each bundle that needs to be release perform the following commands:
 
-This _should _ start to put release artifacts into an Apache [staging repository ](https://repository.apache.org/index.html#view-repositories;staging.html). You will need to log in to see it.
-If nothing appears in a staging repo you should stop here and work out why
-:-). If you have made a mistake it's quite easy to revert. The release
+    Check that there are no depndencies on -SNAPSHOT versions.
+    Ensure that everything is committed in SVN
+    mvn release:prepare -Papache-release -DpreparationGoals="clean install" 
+    mvn release:perform -Papache-release
+
+
+  * Note 1: Use the -DdryRun option to check that release-prepare works.
+  * Note 2: mvn release:prepare makes and commits changes in SVN. 
+  * Note 3: mvn release:clean will do *most* of the cleaning up in the event of failures.
+ 
+
+
+This will put release artifacts into an Apache [staging repository ](https://repository.apache.org/index.html#view-repositories;staging.html). You will need to log in to see it.
+If nothing appears in a staging repo you should stop here and work out why. 
+If you have made a mistake it's quite easy to revert. The release
 commands make and commit changes to the project's pom.xml files and they
 create a tag in SVN. To revert the changes you will need to revert the
 pom.xml files and delete the tag from svn.
@@ -276,54 +286,6 @@ svn up to. Just wait 10 secs and repeat the mvn release:prepare command for
 it to restart where it left off.
 
 
-The next step is to release the eba-maven-plugin.
-
-    cd ../eba/maven-plugin
-    mvn versions:update-parent
-    mvn versions:use-releases
-    svn commit -m "updated to latest releases"
-    mvn release:prepare -Papache-release
-    mvn release:perform -Papache-release
-
-
-Then for each project, in the order given below:
-
-    testsupport
-    util
-    proxy
-    quiesce
-    blueprint 
-    jndi
-    transaction
-    web
-    application
-    jmx
-    jpa
-    samples *See Note 1 below*
-
-Run the following commands:
-
-    mvn versions:update-parent   !Update parent to latest available
-    mvn versions:use-releases *See Note 3 below*
-    svn commit -m "updated to latest releases"
-    rm pom.xml.versionsBackup
-    mvn release:prepare -Papache-release -DpreparationGoals="clean install"
-    *See Note 2 below*
-    mvn release:perform -Papache-release
-
-
-  * Note 1: when doing mvn versions:* actions in samples, you must also
-manually change the version properties that are coded as properties in the top level
-pom.xml. The only '-SNAPSHOT' you should have left in samples/pom.xml is
-the version element for the module itself.
-  * Note 2: -DpreparationGoals="clean install"	is needed for all modules
-that have sub modules with dependencies between them, in practice this is
-most modules.
-  * Note 3: These two commands should only make changes to the top level pom.xml. However, this relies on people having 
-understood that all the modules' dependencies go in the top level pom. If they haven't it's better 
-to fix the poms before releasing.
-
-
 <a name="ReleasingAries-Closingthestagingrepository"></a>
 ##### Closing the staging repository
 After checking that the staging repository contains the artifacts that you
@@ -333,13 +295,11 @@ so that people can check the release.
 <a name="ReleasingAries-Runningthevote(s)"></a>
 ### Running the vote.
 
-
-After all the modules are present in the staging repository you will need
-to close the repository so that reviewers can access the modules. At this
+ At this
 point you should write two notes to the dev@aries.apache.org mailing list.
 
  * Subject \[VOTE\]
- Apache Aries (Incubating) version 0.X-incubating release candidate 02
+ Apache Aries release candidate 0N
 
 The the source archive files should be explicitly called out by release
 manager in any release vote. From an Apache legal standpoint, this is what
@@ -349,24 +309,19 @@ this [sample note](devlistvote.txt)
 
 
  * Subject \[DISCUSS\]
- Apache Aries (Incubating) version 0.X-incubating release candidate 0X
+ Apache Aries  release candidate 0X
 
 The content should just indicate that the note starts a thread to discuss
-the Aries 0.X-incubating release.
+the Aries release.
 
 
 After 72 hours, if no problems have been found in the release artifacts,
-the aries-dev vote can be summarised and closed. Note that at least three
-+1 votes from Aries IPMC members are required. 
+the dev@aries vote can be summarised and closed. Note that at least three
++1 votes from Aries PMC members are required. 
 
-After closing the vote on the aries-dev list, the second vote (on the
-general@) can be started. Here is a [sample note](generallistvote.txt)
-, the subject of the note is \[VOTE\]Approval to release Apache Aries
-(Incubating) version 0.X-incubating
+Finally - ensure that the file aries_release_version.txt is completely up to date and accurate. 
+You will use this file in the following steps to help build the release web pages.
 
-
-After another 72 hours, assuming there are no objections, this vote can
-also be summarised and closed.
 
 <a name="ReleasingAries-Promotingthereleaseartifacts"></a>
 ### Promoting the release artifacts
@@ -383,14 +338,12 @@ members of the group can access them. The distributions are
 archived here /www/archive.apache.org/dist/aries.
 
 First, delete the previous distribution from the distribution directory.
-Download the release artifacts using a script like [this](release-0.2)
-. Next, update the Aries Downloads pages to refer to the new artifacts.
+Download the release artifacts This is best done using a script, the script can be generated uing
+the perl script download_release_artifacts.pl. 
+
+Next, update the Aries Downloads pages to refer to the new artifacts.
 
 ### Tidying up tasks
-  * Move trunk to a new level, useful *ix commands:
-    * find . -name "pom.xml" -exec sed -ie "s#0.3-SNAPSHOT#0.4-SNAPSHOT#g" {} \;
-    * find . -name pom.xmle | xargs -I {} rm {} <br/>
-   or use a fancy editor.
   * Get the compliance tests run
   * Release notes
   * Release the component in JIRA (manage components), check the JIRA release notes.
@@ -404,47 +357,6 @@ The good news here is that it isn't necessarily essential to re-release
 every module. 
 
 
-<a name="ReleasingAries-Cleaningup,fixingandre-releasing"></a>
-### Cleaning up, fixing and re-releasing
-
-
-The release process makes changes to project poms and adds a tag in svn.
-The first step is to revert the changes to the poms in the problem modules. Hopefully (see Note 3 above)
-it will only be necessary to revert the top level module pom. If you have to revert other poms in the 
-module this works on *ix:
-
-Determine which revision you want to go back to (eg XXXXX)
-
-    svn up -r XXXXXX
-    find . -name pom.xml | xargs -I {} mv {} {}_old
-    svn up
-    find . -name pom.xml | xargs -I {} mv {}_old {}
-    svn status #Check what you have changed!
-    svn commit -m "reverting release changes"
-
-
-Next - delete the tag relating to the module from SVN
-
-Finally - delete the folder from the staging repository (Right-click over the folder and select delete)
-
-Make the fixes that you need to in the project, commit them and work
-through the release process again. 
-
-In some cases you may also want to merge from trunk into the release
-branch. The syntax to do this is:
-
-    svn merge -c ZZZZZZ https://svn.apache.org/repos/asf/aries/trunk
-
-Where ZZZZZZ is the revision associated with the fix.
-Note that you will be creating a new staging repository. The commands are
-repeated here for convenience:
-
-
-    mvn versions:update-parent
-    mvn versions:use-releases
-    svn commit -m "<version> RC<#>: updated to latest releases"
-    mvn release:prepare -Papache-release -DpreparationGoals="clean install"
-    mvn release:perform -Papache-release
 
 
 
