@@ -41,11 +41,12 @@ Before actually doing any releasing work through the list of bundles and underst
 For each bundle on the list check how its package versions have changed since the last release.
 Based on this, use the [versioning policy](versionpolicy) to determine the version of the bundle that should be released.
 
-### Then, for each bundle
+### Releasing bundles.
+For each bundle:
   * Deploy a SNAPSHOT to the maven snapshot repository (mvn deploy)
   * Build each module and run RAT checks
-  * Create the release artifacts (mvn release prepare)
-  * Upload release artifacts to a staging repository (mvn release perform)
+  * Create the release artifacts (mvn release:prepare)
+  * Upload release artifacts to a staging repository (mvn release:perform)
 
 ### Complete the process
 Once the bundles are in the staging repository, start a vote on the release. After 72 hours close the vote. To complete
