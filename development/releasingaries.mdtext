@@ -17,7 +17,7 @@ next few paragraphs to perform releases.
 
 ## Releasing a single bundle or group of bundles.
 
-### What to release? Make a list!
+### What to release? Make a list
 The Apache release process will not release any bundle that has dependencies on -SNAPSHOTS. If, for example,
 a release of the blueprint API bundle is required the first step is to find and release any of
 its -SNAPSHOT dependencies. Because Aries bundles are quite interdependent (see [here](ModuleDependencies) 
