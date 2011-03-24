@@ -9,8 +9,8 @@ There are three types of Aries release:
  1. Releasing a distribution - a group of bundles that work together
  1. Releasing the samples
 
-The outline process is the same in all three cases, further on down this page there are a lot of details about how the
-Apache release process works and how to get yourself set up to run it, you should read thos section first if this is 
+The outline process is the same in all three cases, further on down this page there are details about how the
+Apache release process works and how to get set up to run it, read those sections first if this is 
 your first release. If you are already familiar with the Apache process just use the high level descriptions in the
 next few paragraphs to perform releases.
 
@@ -18,10 +18,19 @@ next few paragraphs to perform releases.
 ## Releasing a single bundle or group of bundles.
 
 ### What to release? Make a list.
-The Apache release process will not let you release any bundle that has dependencies in -SNAPSHOTS. If, for example,
+The Apache release process will not release any bundle that has dependencies on -SNAPSHOTS. If, for example,
 a release of the blueprint API bundle is required the first step is to find and release any of
-its dependencies. Because Aries bundles are quite interdependent (see [here](ModuleDependencies) for an idea
-of how the modules relate to each other, it may be necessary to release quite a large number of bundles.
+its -SNAPSHOT dependencies. Because Aries bundles are quite interdependent (see [here](ModuleDependencies) 
+for an idea
+of how the modules relate to each other, it may be necessary to release quite a large number of bundles. So,
+step one is to make a list. 
+<p>To help with this, there is a file called aries_release_versions.txt in the top level
+aries directory - this contains a list of all the Aries modules and their current release versions. The file
+can be recreated (if necessary)
+using the perl script list_bundles_in_aries.pl, checked into SVN under the scripts directory. The text file
+is used for later steps in the release process, so by the end of the process it will have been updated to have
+a complete list
+of all Aries modules and their most recent version numbers after the release.</p>
 
 
 ### How to deal with JIRA
@@ -29,12 +38,14 @@ Before actually doing any releasing work through the list of bundles and underst
 (add more about JIRA versions here)
 
 ### What version will be released?
-For each bundle on the list check how it's package versions have changed since the last release.
+For each bundle on the list check how its package versions have changed since the last release.
 Based on this, use the versioning policy to determine the version of the bundle that should be released.
 
 ### Then, for each bundle
-  * mvn release prepare
-  * mvn release perform
+  * Deploy a SNAPSHOT to the maven snapshot repository (mvn deploy)
+  * Build each module and run RAT checks
+  * Create the release artifacts (mvn release prepare)
+  * Upload release artifacts to a staging repository (mvn release perform)
 
 ### Complete the process
 Once the bundles are in the staging repository, start a vote on the release. After 72 hours close the vote. To complete
