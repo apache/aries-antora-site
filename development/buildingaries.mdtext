@@ -57,12 +57,12 @@ test failures, try 'mvn install -fae'
  * check out from the command line: svn co
 https://svn.apache.org/repos/asf/aries/trunk aries
  * cd aries
- * mvn clean
  * cd parent
- * mvn install
+ * mvn clean install
  * cd ../eba-maven-plugin
- * mvn install
+ * mvn clean install
  * cd ..
+ * mvn clean
  * *mvn -fn install* (-fn continues after failures), or {{mvn -fn
 package}} (alternatively, you can disable the tests with {{mvn
 -Dmaven.test.skip=true install}} with the side-effect of making the build
