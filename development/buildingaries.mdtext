@@ -27,13 +27,12 @@ Eclipse. If you don't care about Eclipse go to the next section.
  * check out from the command line: svn co
 https://svn.apache.org/repos/asf/aries/trunk aries
  * cd aries
- * mvn clean
  * cd parent
- * mvn install
+ * mvn clean install
  * cd ../eba-maven-plugin
- * mvn install (*See note below*)
+ * mvn clean install (*See note below*)
  * cd ..
- * mvn install
+ * mvn clean install
  * mvn eclipse:eclipse (should see 'BUILD SUCCESSFUL' message)
  * fire up eclipse and switch to the Java perspective
  * import the projects. File->import->General->existing projects into
