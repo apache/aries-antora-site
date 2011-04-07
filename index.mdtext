@@ -20,7 +20,7 @@ proposal document on the [incubator wiki](http://wiki.apache.org/incubator/Aries
 
 <a name="Index-BuildingandUsingAriesComponents"></a>
 
-To understand how to _use_ Aries components, take a look at the [BlueprintHelloWorldTutorial](blueprinthelloworldtutorial.html)
+To understand how to _use_ Aries components, take a look at the [BlueprintHelloWorldTutorial](documentation/tutorials/blueprinthelloworldtutorial.html)
  pages which guides you through how to build the Aries code, provides
 sample applications and describes how to set up an environment in which to
 run the consuming application.
