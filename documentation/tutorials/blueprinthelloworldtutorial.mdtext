@@ -1,4 +1,5 @@
 Title: BlueprintHelloWorldTutorial
+
 <a name="BlueprintHelloWorldTutorial-Blueprinttutorial"></a>
 # Blueprint tutorial
 
@@ -15,7 +16,7 @@ The tutorial assumes a basic working knowledge of Java development, Eclipse
 and some understanding of OSGi.
 
 In order to work through the tutorial you will need to do checkout and
-build copy of Aries, the instructions are [here](/development/building-aries.html)
+build copy of Aries, the instructions are [here](/development/buildingaries.html)
 . This tutorial assumes that you have built Aries and imported the
 samples/helloworld projects into Eclipse. 
 
