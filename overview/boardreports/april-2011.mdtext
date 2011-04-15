@@ -16,23 +16,16 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# March 2011 Board report
+# April 2011 Board report
 Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
-New releases
-------------
-These bug fix releases have been completed since the last board report:
+Since the last board report, there have been enhancements to the 'proxy' module to which has improved its performance by making use of the new 'Weaving Hook Service' OSGi specification (in 4.3) as an alternative to ASM. This also removes some restrictions on final classes/methods imposed by use the use of ASM. The 'spi-fly' module's OSGi service approach to META-INF/services has also been updated to make use of the Weavking Hook Service gaining similar benefits.
 
-* Aries Application 0.2.1
-* Aries Blueprint 0.2.1
-* Aries Blueprint 0.3.1
 
-Release by bundle
------------------
-After some significant investigation and discussion, we recently concluded a vote to switch to a release-by-bundle scheme. This is to enable us to follow the guidance set out in the OSGi Alliance Semantic Versioning white paper. 
+Some more documentation on the new release-by-bundle release process has been written. This positions us nicely to demonstrate and make use of the OSGi Semantic Versioning scheme. Now that the parent-0.4 module has been released, we are in a position to use it for the next release.
 
 Community update
 ----------------
-Largely unchanged since last month dev@ 117 subscribers, user@ 129 subscribers. The dev@ list continues to be active with less traffic on the user@ list. No new committers or PMC members.
+Small increase in since last month dev@ 118 subscribers, user@ 134 subscribers. There has been a slight increase in user list traffic. The dev@ list continues to be active with less traffic on the user@ list. No new committers or PMC members.
 
 There are no board level issues.
