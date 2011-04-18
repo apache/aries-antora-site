@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.2  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Emily Jiang">
+	<META NAME="CREATED" CONTENT="20110418;14320100">
+	<META NAME="CHANGEDBY" CONTENT="Emily Jiang">
+	<META NAME="CHANGED" CONTENT="20110418;15381600">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		P.western { so-language: en-GB }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: en-GB }
+		H1.cjk { font-family: "SimSun"; font-size: 16pt }
+		H1.ctl { font-family: "Tahoma"; font-size: 16pt }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<H1 CLASS="western">Repository Generation Tool</H1>
+<P CLASS="western">It is a command line tool to generate a repository
+xml for a list of bundles. The instruction is as follows.</P>
+<UL>
+	<LI><P CLASS="western">Obtain the tool</P>
+	<UL>
+		<LI><P CLASS="western">Build the tool from Aries trunk</P>
+	</UL>
+	<P CLASS="western">The easiest way to obtain the tool is to download
+	the aries trunk, navigate</P>
+	<UL>
+		<P CLASS="western">to the 
+		'application-&gt;application-tooling-repository-generator', and
+		then run mvn install, copy all jars from the the target directory. 
+		</P>
+		<LI><P CLASS="western">Download the tool</P>
+	</UL>
+</UL>
+<P CLASS="western" STYLE="text-indent: -0.64cm">		The tool can be
+downloaded from here. Unzip the zip to a directory and change the
+current directory to that directory.</P>
+<UL>
+	<LI><P CLASS="western">Execute the command line tool</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm">&gt;java -jar
+		<B>org.apache.aries.application.tooling.repository.generator-xxx.jar
+		[repository xml location] url1 [url2...]</B></P>
+	</UL>
+</UL>
+<P CLASS="western" STYLE="margin-bottom: 0cm">   Note: The text under
+the [] is optional. If [repository xml loaction] is absent, the
+repository.xml file will be generated under the current directory.
+The xxx is the maven version of bundle  
+<I>org.apache.aries.application.tooling.repository.generator</I>,
+e.g. <FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=3><I><B><SPAN STYLE="text-decoration: none">0.1.0-SNAPSHOT</SPAN></B></I></FONT></FONT></SPAN></FONT>.
+</P>
+<UL>
+	<UL>
+		<P CLASS="western"></P>
+		<LI><P CLASS="western">Following is an example of generating a
+		repository xml for all the bundles under the directory of 
+		<FONT COLOR="#000080"><I>c:\temp\test\jars</I></FONT> recursively
+		and a bundle located under
+		<FONT COLOR="#008000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=3><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">http://aaa.com/public/Aries/obr/test.b1/test.b1_1.0.0.jar.
+		</SPAN></SPAN></I></FONT></FONT></SPAN></FONT>
+		</P>
+		<P CLASS="western" STYLE="font-style: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN STYLE="text-decoration: none"><FONT SIZE=3><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">The
+		repository xml is saved under c:\temp\test with the file name of
+		repo.xml.</SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
+		<P CLASS="western"><FONT COLOR="#008000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">&gt;</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">java
+		-jar
+		</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><B><SPAN STYLE="text-decoration: none">org.apache.aries.application.tooling.repository.generator-0.1.0-SNAPSHOT.jar</SPAN></B></I></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+		</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#99284c"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">c:\temp\test\repo.xml</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+		</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#2323dc"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">file:///C:/temp/test/jars</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+		</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#008000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">http://aaa.com/public/Aries/obr/test.b1/test.b1_1.0.0.jar</SPAN></SPAN></I></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Courier New, monospace"><FONT SIZE=4 STYLE="font-size: 16pt"><I><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+		</SPAN></SPAN></I></FONT></FONT></SPAN></FONT>
+		</P>
+	</UL>
+</UL>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<UL>
+	<UL>
+		<P CLASS="western"></P>
+	</UL>
+</UL>
+</BODY>
+</HTML>
