@@ -29,7 +29,7 @@ to the  '*application->application-tooling-repository-generator*', and then run 
 b) Download the tool <br/>
 The tool can be downloaded from [here](repositorygenerator.zip). Unzip the zip to a directory and change the current directory to that directory.<br/><br/>
  2. Execute the command line tool<br/>
->*java -jar org.apache.aries.application.tooling.repository.generator-xxx.jar [repository xml location] url1 [url2...]*");`*java -jar org.apache.aries.application.tooling.repository.generator-xxx.jar [repository xml location] url1 [url2...]*
+>*java -jar org.apache.aries.application.tooling.repository.generator-xxx.jar [repository xml location] url1 [url2...]*
    
 Note: The text under the [] is optional. If [repository xml loaction] is absent, the repository.xml file will be generated under the current directory. 
 
