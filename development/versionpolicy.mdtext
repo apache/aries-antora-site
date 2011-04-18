@@ -47,6 +47,9 @@ The policy can be set by using the Maven property <aries.osgi.version.policy>, s
 pom for an example.
 
 ## Bundle versions
+
+**Note: Bundle versions are changed at release time and only by the release manager. Bundle versions are not updated during development.**
+
 OSGi semantic versioning applies to bundles as well as packages. When releasing a new version of a bundle
 the change in the bundle version should give some indication of nature of the changes to the bundle.
 In Aries the bundle version is the same as version of the Maven artifact version. 
