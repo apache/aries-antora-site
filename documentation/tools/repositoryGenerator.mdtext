@@ -27,7 +27,7 @@ Build the tool from Aries trunk. The easiest way to obtain the tool is to downlo
 to the  '*application->application-tooling-repository-generator*', and then run *mvn install*, copy all jars from the the target directory. 
 
  2. Download the tool <br/>
-The tool can be downloaded from here. Unzip the zip to a directory and change the current directory to that directory.
+The tool can be downloaded from [here](repositorygenerator.zip). Unzip the zip to a directory and change the current directory to that directory.
 
  3. Execute the command line tool
 >*java -jar org.apache.aries.application.tooling.repository.generator-xxx.jar [repository xml location] url1 [url2...]*
