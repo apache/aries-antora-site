@@ -69,3 +69,21 @@ To test the site,  move it like this:
 mv /path/to/output/content /Users/zoe/Sites/zaries/www
 
 Then navigate to http://zaries in a browser.
+
+#Add menuitem 
+Check out the site by using 
+svn co https://svn.apache.org/repos/asf/aries/site/trunk/ site
+
+update the file under site/templates/navigation.mdtext
+
+check in the changes by using svn commit
+
+The following steps may not needed if the changes were displayed ok.
+
+Navigate to a lower level page in Apache Aries site and click the CMS bookmarklet.
+
+Check the staging page to verify the menuitem is displayed correct. 
+
+Publish the site.
+
+
