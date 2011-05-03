@@ -1,42 +1,56 @@
 Title: SPI Fly
+
+#SPI-Fly#
+
 This page describes the SPI Fly component.
 The SPI Fly component is aimed at providing general support for the JRE SPI
 mechanism (including the usage of META-INF/services) in OSGi.
 
 The code can be found in
-http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly
+http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly however, the implementation is 
+currently not yet finished. 
 
 Currently the implementation does the following:
 
-* It only considers bundles that have the following Manifest (opt-in)
-header: *SPI-Provider* (the value is not used at the moment).
+Providers:
+
+* It only considers provider bundles that have the following Manifest (opt-in)
+header: **SPI-Provider = ***
 * For every new bundle being installed that has the opt-in header, it
 checks the META-INF/services directory for any files. If found it registers
 a service in the Service Registry for each implementation found with the
 following property
  *spi.provider.url = <the URL to the associated META-INF/services file>*
 
-Additional ideas/concerns:
+Consumers:
 
-* We need to find a mechanism to find any SPI implementations that are part
-of the JRE itself and register these in the Service Registry. Since there
-is typically not a META-INF/services file for these mechanisms nor do they
-implement a common interface we need another mechanism.
-** Can anyone think of a generic mechanism?
-** An ugly alternative could be to manually enumerate these, but this is a
-bit of a maintenance nightmare.
+* It only considers consumer bundles that have the following Manifest (opt-in) header:
+**SPI-Consumer = ***
+* When found, every call to java.util.ServiceLoader.load() will be modified automatically 
+to have the ThreadContextClassLoader set to have visibility of the right bundles.
 
-* *gnodet:* the javamail spec do use the META-INF/services discovery
-mechanism, but to detect and instantiate classes using constructors
-that have arguments. We need to investigate if it could cause any real
-problem with the design ... or find a specific way for javamail maybe ...
+##How to use##
+There are currently two ways to use the SPI-Fly component. If you have an OSGi 
+4.3 compliant framework that supports WeavingHooks you can use the dynamic weaving bundle. 
 
-We need to support 'traditional' clients that don't look in the OSGi
-service registry to obtain their SPI implementation. Some ideas in this
-area are: 
+If you have an pre-4.3 OSGi framework or don't want to use bytecode weaving at runtime you 
+can use the static weaving approach.
 
-* We could automatically set a System Property for every SPI implementation
-found. That would typically shift the 'default' choice for an
-implementation to the last one found. 
-* Classloader problems around loading an implementation?
-* Various Lifecycle issues when using the traditional way.
+##Dynamic use##
+Install and start the <tt>org.apache.aries.spifly.dynamic.bundle</tt> into the system. This bundle 
+has a dependency on <tt>org.objectweb.asm</tt> version 3.2 or newer.
+
+<pre>osgi> ss    
+Framework is launched.    
+id	State       Bundle
+0	ACTIVE      org.eclipse.osgi_3.7.0.v20110304
+1	ACTIVE      org.objectweb.asm_3.2.0.v200909071300
+2	ACTIVE      org.apache.aries.spifly.dynamic.bundle_0.4.0.SNAPSHOT</pre>
+
+##Static use##
+For static use, you need to modify the client bundle before installing it into the system. 
+The modification changes the byte code around java.util.ServiceLoader.load() calls in the 
+bundle and inserts calls to set the correct ThreadContextClassLoader around it.
+Provider bundles are still handles dynamically.
+
+##Example##
