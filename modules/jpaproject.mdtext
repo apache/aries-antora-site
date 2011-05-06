@@ -1,5 +1,7 @@
 Title: JPAProject
 
+Title: JPAProject
+
 # JPA 
 The Aries JPA project will make it easy for JPA persistence providers such
 as [Apache OpenJPA](http://openjpa.apache.org/)
@@ -11,7 +13,152 @@ Version 1.0" in the "OSGi Service Platform Enterprise Specification,
 Release 4, Version 4.2" available for public download from the [OSGi Alliance](http://www.osgi.org/Download/Release4V42)
 .
 
-Developing an Aries JPA project is very easy and can be achieved with simple steps described hereafter.
+Developing an Aries JPA project is very easy and can be achieved with simple steps described in the 
+"Creation of a JPA project using Maven" section. First, however it is useful to understand some of
+the basic concepts.
+
+## Persistence bundles
+The Aries JPA container provides managed JPA support in an OSGi framework for OSGi persistence bundles.
+A persistence bundle is an OSGi bundle with three special characteristics:
+
+* It contains one or more JPA mapped classes (Entity classes, Mapped superclasses and Embeddables)
+* It contains a JPA persistence descriptor describing one or more persistence units
+* The bundle manifest contains the header **Meta-Persistence:** 
+
+The value of the Meta-Persistence: header is a comma separated list of locations where JPA persistence 
+descriptors can be found. If the header value is empty then a default of META-INF/persistence.xml is used.
+(This behaviour is taken from the JPA service specification).
+
+For example:
+
+	Meta-Persistence: 
+
+means that META-INF/persistence.xml will be searched for. For non standard locations:
+
+	Meta-Persistence: persistence/myPu.xml, pUnit.jar!/someFolder/anotherPu.xml
+
+means that the locations "persistence/myPu.xml" (relative to the root of the bundle), and 
+"someFolder/anotherPu.xml" (relative to the root of pUnit.jar, which is in the root of
+the bundle) will be searched.
+
+## The Aries JPA container 
+
+The Aries JPA container consists of four main pieces, the two most important of which are the API bundle
+and the container bundle.
+
+### The Aries JPA API bundle
+
+The Aries JPA container API bundle is **not** the JPA API, it is a set of interfaces for interacting with
+the Aries JPA container. Clients are unlikely to use this API, but you may need it if you are building
+your own runtime. This bundle also defines the interfaces that the Aries JPA container bundles use to
+talk to each other, as a result it is a mandatory dependency of all of the other Aries JPA container bundles.
+
+### The Aries JPA container bundle
+
+The Aries JPA container bundle provides basic support for application managed JPA. It is responsible for
+locating and parsing persistence descriptors. Any persistence units found will be processed and used to
+create EntityManagerFactory services, which will be registered on behalf of the persistence bundle when
+it starts.
+
+The EntityManagerFactory services will be registered with the following properties: 
+
+	osgi.unit.name - this is the name of the persistence unit
+	osgi.unit.provider - this is the class name of the JPA PersistenceProvider that was used to create the EntityManagerFactory
+	org.apache.aries.jpa.container.managed - this property will be set to true, indicating this is a managed EntityManagerFactory.
+
+Useful notes: 
+
+* Older versions of the Aries JPA container (below 0.4) do not support classpath scanning or load-time weaving, 
+this means that you must list all of your entity classes in your persistence descriptor, and that you must 
+pre-enhance your entities. This restriction does not apply to versions newer than 0.4 when running on OSGi
+frameworks implementing version 4.3 of the OSGi specification.
+
+* You should never call close on the EntityManagerFactory service. This call will be made by the container when
+the persistence bundle is removed or refreshed. If you do close the EntityManagerFactory service then it will be 
+closed for **all** users of the service.
+
+
+### The Aries JPA container context bundle
+
+This bundle provides managed persistence context support. In order to function it requires the Aries JPA container
+bundle to be running as it makes use of the managed EntityManagerFactory services.
+
+This bundle also depends on the presence of a JTA service specification implementation, as it makes use of the
+TransactionSynchronizationRegistry service.
+
+It is unlikely that clients will use this bundle directly. To actually use managed persistence contexts a client
+should use blueprint to inject one.
+
+## The Aries JPA container blueprint integration bundle
+
+This bundle provides a blueprint custom namespace for persistence unit and persistence context injection. To
+inject persistence units the Aries JPA container bundle is required. To inject persistence contexts the Aries
+JPA container context bundle is also required.
+
+Example blueprint follows showing the full breadth of allowable injection syntax:
+
+	<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" 
+	  xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0">
+	
+	  <!-- Inject a persistence unit called "myUnit" using the bean property "setEmf" -->
+	  <bean id="unit">
+	    <jpa:unit property="emf" unitname="myUnit" />
+	  </bean>
+	  
+	  <!-- Inject an unnamed persistence unit using the bean property "setEmf2" -->
+	  <bean id="unitNoName">
+	    <jpa:unit property="emf2" />
+	  </bean>
+	  
+	  <!-- Inject a persistence unit with name "" using the bean property "setEmf3" -->
+	  <bean id="emptyUnitName">
+	    <jpa:unit property="emf3" unitname="" />
+	  </bean>
+	  
+	  <!-- Inject a persistence context for the unit called "myUnit" using the bean property "setEm" -->
+	  <bean id="context">
+	    <jpa:context property="em" unitname="myUnit"/>
+	  </bean>
+	  
+	  <!-- 
+	      Inject an Extended persistence context for an unnamed persistence unit that is constructed
+	      passing in the supplied properties and injected using the bean property "setEm" 
+	  -->
+	  <bean id="contextWithProps">
+	    <jpa:context property="em" type="EXTENDED">
+	      <map>
+	        <entry key="one" value="eins" />
+	        <entry key="two" value="zwo" />
+	      </map>
+	    </jpa:context>
+	  </bean>
+	
+	  <!-- Inject a persistence unit called "myUnit" using constructor injection -->
+	  <bean id="withUnitArg">
+	    <jpa:unit unitname="myUnit"/>
+	  </bean>
+	  
+	  <!-- Inject a persistence context using the unit called "myUnit" using constructor injection -->
+	  <bean id="withContextArg">
+	    <jpa:context unitname="myUnit"/>
+	  </bean>
+	
+	  <!-- Inject a persistence unit called "myUnit" using constructor injection and argument index 0 -->
+	  <bean id="withIndexedUnitArg">
+	    <jpa:unit index="0" unitname="myUnit"/>
+	  </bean>
+	  
+	  <!-- Inject a persistence context using the unit called "myUnit" using constructor injection and argument index 1 -->
+	  <bean id="withIndexedContextArg">
+	    <jpa:context index="1" unitname="myUnit"/>
+	  </bean>
+	</blueprint>
+
+
+This blueprint namespace can be used by any blueprint bundle (not just the persistence bundle), and as the injection
+occurs via the service registry your blueprint will not start until the relevant JPA resources are available there.
+
+
 
 # Creation of a JPA project using Maven
 The first step consist in to create a maven module and make the following modifications to allow to deploy
