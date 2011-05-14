@@ -74,7 +74,7 @@ Then navigate to http://zaries in a browser.
 Check out the site by using 
 svn co https://svn.apache.org/repos/asf/aries/site/trunk/ site
 
-update the file under site/templates/navigation.mdtext
+update the file under templates/navigation.mdtext
 
 check in the changes by using svn commit
 
