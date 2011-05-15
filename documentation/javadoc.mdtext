@@ -11,12 +11,12 @@ enterprise OSGi application programming model.
     <th>Last Release</th>
   </thead>
   <tbody>
-    <tr><td>Application<td></td><td><a href="javadocs/application/0.3/index.html">0.3</a></td></tr>
-    <tr><td>Blueprint<td></td><td><a href="javadocs/blueprint/0.3/index.html">0.3</a></td></tr>
-    <tr><td>JNDI<td></td><td><a href="javadocs/jndi/0.3/index.html">0.3</a></td></tr>
-    <tr><td>JPA<td></td><td><a href="javadocs/jpa/0.3/index.html">0.3</a></td></tr>
-    <tr><td>Proxy<td></td><td><a href="javadocs/proxy/0.3/index.html">0.3</a></td></tr>
-    <tr><td>Quiesce<td></td><td><a href="javadocs/quiesce/0.3/index.html">0.3</a></td></tr>
-    <tr><td>Util<td></td><td><a href="javadocs/util/0.3/index.html">0.3</a></td></tr>
+    <tr><td>Application<td></td><td><a href="/downloads/javadocs/application/0.3/index.html">0.3</a></td></tr>
+    <tr><td>Blueprint<td></td><td><a href="/downloads/javadocs/blueprint/0.3/index.html">0.3</a></td></tr>
+    <tr><td>JNDI<td></td><td><a href="/downloads/javadocs/jndi/0.3/index.html">0.3</a></td></tr>
+    <tr><td>JPA<td></td><td><a href="/downloads/javadocs/jpa/0.3/index.html">0.3</a></td></tr>
+    <tr><td>Proxy<td></td><td><a href="/downloads/javadocs/proxy/0.3/index.html">0.3</a></td></tr>
+    <tr><td>Quiesce<td></td><td><a href="/downloads/javadocs/quiesce/0.3/index.html">0.3</a></td></tr>
+    <tr><td>Util<td></td><td><a href="/downloads/javadocs/util/0.3/index.html">0.3</a></td></tr>
   </tbody>
 </table>
