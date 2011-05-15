@@ -1,0 +1,22 @@
+Title: Javadocs
+<a name="Downloads-ApacheAriesDownloads"></a>
+# Apache Aries Javadocs
+
+Apache Aries delivers a set of pluggable Java components enabling an
+enterprise OSGi application programming model.
+
+<table>
+  <thead>
+    <th>Module</th>
+    <th>Last Release</th>
+  </thead>
+  <tbody>
+    <tr>Application<td></td><td><a href="javadocs/application/0.3/index.html">0.3</a></td></tr>
+    <tr>Blueprint<td></td><td><a href="javadocs/blueprint/0.3/index.html">0.3</a></td></tr>
+    <tr>JNDI<td></td><td><a href="javadocs/jndi/0.3/index.html">0.3</a></td></tr>
+    <tr>JPA<td></td><td><a href="javadocs/jpa/0.3/index.html">0.3</a></td></tr>
+    <tr>Proxy<td></td><td><a href="javadocs/proxy/0.3/index.html">0.3</a></td></tr>
+    <tr>Quiesce<td></td><td><a href="javadocs/quiesce/0.3/index.html">0.3</a></td></tr>
+    <tr>Util<td></td><td><a href="javadocs/util/0.3/index.html">0.3</a></td></tr>
+  </tbody>
+</table>
