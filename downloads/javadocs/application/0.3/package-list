@@ -1,0 +1,11 @@
+org.apache.aries.application
+org.apache.aries.application.filesystem
+org.apache.aries.application.management
+org.apache.aries.application.management.spi.convert
+org.apache.aries.application.management.spi.framework
+org.apache.aries.application.management.spi.repository
+org.apache.aries.application.management.spi.resolve
+org.apache.aries.application.management.spi.runtime
+org.apache.aries.application.management.spi.update
+org.apache.aries.application.modelling
+org.apache.aries.application.modelling.utils
