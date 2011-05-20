@@ -7,8 +7,7 @@ The SPI Fly component is aimed at providing general support for the JRE SPI
 mechanism (including the usage of META-INF/services) in OSGi.
 
 The code can be found in
-http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly however, the implementation is 
-currently not yet finished. 
+http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly
 
 Currently the implementation does the following:
 
@@ -36,7 +35,7 @@ There are currently two ways to use the SPI-Fly component. If you have an OSGi
 If you have an pre-4.3 OSGi framework or don't want to use bytecode weaving at runtime you 
 can use the static weaving approach.
 
-##Dynamic use##
+##Use with Dynamic Weaving##
 Install and start the <tt>org.apache.aries.spifly.dynamic.bundle</tt> into the system. This bundle 
 has a dependency on <tt>org.objectweb.asm</tt> version 3.2 or newer.
 
@@ -47,10 +46,45 @@ id	State       Bundle
 1	ACTIVE      org.objectweb.asm_3.2.0.v200909071300
 2	ACTIVE      org.apache.aries.spifly.dynamic.bundle_0.4.0.SNAPSHOT</pre>
 
-##Static use##
+##Use with Static Weaving##
 For static use, you need to modify the client bundle before installing it into the system. 
 The modification changes the byte code around java.util.ServiceLoader.load() calls in the 
 bundle and inserts calls to set the correct ThreadContextClassLoader around it.
-Provider bundles are still handles dynamically.
+Provider bundles are still handled dynamically.
 
-##Example##
+###To statically weave a bundle###
+The easiest way to invoke the static weaver is to take the <tt>org.apache.aries.spifly.static.tool</tt>
+jar with dependencies. This jar can be created by running <tt>mvn assembly:single</tt> in this maven module.
+
+Then run the static tool on any bundle that needs processing:
+<pre>
+java -jar org.apache.aries.spifly.static.tool-0.4-with-dependencies.jar mybundle.jar
+</pre>
+
+This will produce a second bundle with the same name with the _spifly suffix appended, so 
+in this case the generated bundle will be called mybundle_spifly.jar.
+
+At runtime, install the <tt>org.apache.aries.spifly.static.bundle</tt> into the system:
+<pre>osgi> ss
+Framework is launched.
+id	State       Bundle
+0	ACTIVE      org.eclipse.osgi_3.6.1.R36x_v20100806
+1	ACTIVE      org.eclipse.osgi.services_3.2.100.v20100503
+2	ACTIVE      org.apache.aries.spifly.static.bundle_0.4.0.SNAPSHOT</pre>
+
+Then install and start the statically woven bundle into the system.
+
+##Examples##
+The <tt>spi-fly-examples</tt> directory contains a number of example bundles that can be 
+used for testing or experimenting.
+
+The following modules can be found in this directory:
+
+* **spi-fly-example-spi-bundle** - a bundle providing an SPI interface used by the other example bundles.
+* **spi-fly-example-provider1-jar** - a plain jar file providing an implementation of the SPI (via <tt>META-INF/services</tt>).
+* **spi-fly-example-provider1-bundle** - a bundle that wraps the jar file from the previous bullet and specifies it in its Bundle-ClassPath. This example represents the common case where an existing SPI provider is wrapped as-is in an OSGi bundle.
+* **spi-fly-example-provider2-bundle** - a bundle that directly provides an SPI service (via <tt>META-INF/services</tt>).
+* **spi-fly-example-client1-jar** - a plain jar using java.util.ServiceLoader.load() to obtain and invoke all services provided of a certain SPI.
+* **spi-fly-example-client1-bundle** - a bundle that wraps the jar file from the previous bullet and lists it in its Bundle-ClassPath. This example represents the common case where an existing SPI consumer is wrapped as-is in an OSGi bundle.
+* **spi-fly-example-client2-bundle** - a bundle that has code that invokes <tt>java.util.ServiceLoader.load()</tt> directly.
+
