@@ -33,8 +33,8 @@ mavenBundle("org.apache.aries.application","org.apache.aries.application.managem
 mavenBundle("org.apache.aries.application","org.apache.aries.application.utils" ),<br/>
 mavenBundle("org.apache.aries.application","org.apache.aries.application.modeller"),<br/>
 mavenBundle("org.apache.aries.application","org.apache.aries.application.default.local.platform"),<br/>
-mavenBundle("org.apache.aries.application","org.apache.aries.application.noop.platform.repo"),<br/>
-mavenBundle("org.apache.aries.application","org.apache.aries.application.noop.postresolve.process"),<br/>
+mavenBundle("org.apache.aries.application","org.apache.aries.application.noop.platform.repo"), &lt;-- This module no longer exists in 0.3.1-SNAPSHOT<br/>
+mavenBundle("org.apache.aries.application","org.apache.aries.application.noop.postresolve.process"), &lt;-- This module no longer exists in 0.3.1-SNAPSHOT<br/>
 mavenBundle("org.apache.aries.application","org.apache.aries.application.deployment.management"),<br/>
 
 Besides the above bundles, either the non-isolated runtime or isolated runtime is also required.
@@ -55,6 +55,8 @@ mavenBundle("org.apache.aries.application","org.apache.aries.application.runtime
 If the application modules are used in a application server, the following bundles should/can be replaced and the services should/can be implemented by the application server.
 ####org.apache.aries.application.default.local.platform
 This bundle should be replaced with an alternative bundle by the application server. This bundle provides the temp directory location.
+
+Note - The following two bundles no longer exist in 0.3.1-SNAPSHOT
 
 The following two bundles can be replaced by the application server if necessary. 
 ####org.apache.aries.application.noop.platform.repo
