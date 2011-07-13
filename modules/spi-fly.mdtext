@@ -4,10 +4,13 @@ Title: SPI Fly
 
 This page describes the SPI Fly component.
 The SPI Fly component is aimed at providing general support for the JRE SPI
-mechanism (including the usage of META-INF/services) in OSGi.
+mechanism (including the usage of <tt>java.util.ServiceLoader</tt> and <tt>META-INF/services</tt>) in OSGi.
+
+There are currently standardization efforts ongoing in the OSGi Alliance for which the SPI-Fly project is a prototype. 
+For more information, see RFC 167 in the OSGi Enterprise 4.4 EA draft: [http://www.osgi.org/download/osgi-early-draft-2011-05.pdf][1]
 
 The code can be found in
-http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly
+[http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly][2]
 
 Currently the implementation does the following:
 
@@ -88,3 +91,6 @@ The following modules can be found in this directory:
 * **spi-fly-example-client1-bundle** - a bundle that wraps the jar file from the previous bullet and lists it in its Bundle-ClassPath. This example represents the common case where an existing SPI consumer is wrapped as-is in an OSGi bundle.
 * **spi-fly-example-client2-bundle** - a bundle that has code that invokes <tt>java.util.ServiceLoader.load()</tt> directly.
 
+
+  [1]: http://www.osgi.org/download/osgi-early-draft-2011-05.pdf
+  [2]: http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly
