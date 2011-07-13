@@ -10,7 +10,7 @@ There are currently standardization efforts ongoing in the OSGi Alliance for whi
 For more information, see RFC 167 in the OSGi Enterprise 4.4 EA draft: [http://www.osgi.org/download/osgi-early-draft-2011-05.pdf][1]
 
 The code can be found in
-[http://svn.apache.org/repos/asf/incubator/aries/trunk/spi-fly][2]
+[http://svn.apache.org/repos/asf/aries/trunk/spi-fly][2]
 
 Currently the implementation does the following:
 
