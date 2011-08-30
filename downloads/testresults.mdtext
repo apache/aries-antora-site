@@ -14,4 +14,4 @@ These are the test results for the current Aries release.
 
 [Transaction](ct/0.3/org.osgi.test.cases.transaction.html) - 0 failures
 
-The JMX suite was run, but the tests did not complete.
+[JMX](ct/0.3/org.osgi.test.cases.jmx.html) - 18  failures
