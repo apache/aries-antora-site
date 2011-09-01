@@ -88,16 +88,50 @@ follows.  The text inside the elements is included as-is.
       </instructions>
     </configuration>
 
+<a name="EBAMavenPluginProject-AddingUseBundleheader"></a>
+## Adding the Use-Bundle header
+
+The application Use-Bundle header can be set as
+follows.  The text inside the elements is included as-is.
+
+
+    <configuration>
+      <instructions>
+        <Use-Bundle>...</Use-Bundle>
+      </instructions>
+    </configuration>
 
 <a name="EBAMavenPluginProject-Includingtransitivedependencies"></a>
-## Including transitive dependencies
+## Including transitive dependencies (deprecated)
+
+This configuration option is deprecated in favor of <archiveContent />.
 
 By default, the archive will only include the direct dependencies of the
 project.  Transitive dependencies can be includes as follows:
 
-
-
     <configuration>
       <useTransitiveDependencies>true</useTransitiveDependencies>
     </configuration>
+
+<a name="EBAMavenPluginProject-Archivecontent"></a>
+## Including bundles in the archive
+
+By default, the archive will only include the direct dependencies of the project.  The `<archiveContent/>` element can be used to control the archive artifact contents.  The following shows how to include all direct and transitive dependencies.
+
+    <configuration>
+      <archiveContent>all</archiveContent>
+    </configuration>
+
+The following shows how to exclude all dependencies from the archive.  This is useful if you just want the application definition and will use a bundle repository to provision the bundles during deployment.
+
+    <configuration>
+      <archiveContent>none</archiveContent>
+    </configuration>
+
+The following specifies the default of including only the direct dependencies (assumes the application contents and direct dependencies are the same).
+
+    <configuration>
+      <archiveContent>applicationContent</archiveContent>
+    </configuration>
+
 
