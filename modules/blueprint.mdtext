@@ -106,13 +106,13 @@ example, the *class* attribute specifies the name of the Java class to
 instantiate. The Blueprint Container will create the *Account* object by
 passing *1* as the argument to the constructor. 
 
-   :::java
-   public class Account {      
-       public Account(long number) {
-	  ...
+       :::java
+       public class Account {      
+           public Account(long number) {
+	          ...
+           }
+           ...
        }
-       ...
-   }
 
 
 
