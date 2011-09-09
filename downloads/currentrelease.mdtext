@@ -16,6 +16,9 @@ Software License (version 2.0). See the LICENSE file included in each
 distribution for additional license information.
 
 The release notes for the current release are [here](releasenotes.html)
+
+[TOC]
+
 .
 
 <a name="Downloads-Samples"></a>
@@ -54,7 +57,7 @@ source.
 
 
 <table class="confluenceTable">
-<tr><th class="confluenceTh"> Sub project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Binary </th><th class="confluenceTh"> Source </th><th class="confluenceTh"> Comments </th></tr>
+<tr><th class="confluenceTh"> Sub Project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Binary </th><th class="confluenceTh"> Source </th><th class="confluenceTh"> Comments </th></tr>
 <tr><td class="confluenceTd"> eba-maven-plugin </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-0.3-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"> </td></tr>
@@ -66,9 +69,14 @@ source.
 </td></tr>
 </table>
 
-<a name="Downloads-Projectcomponents"></a>
-### Project components
+### Util
 
+Bunde | Version | Binary | Source | Comments
+----- | ------ | ----- | ------ | ---------
+org.apache.aries.util | 0.3 | [jar](http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.util-0.3.jar) ([asc](http://www.apache.org/dist/aries/org.apache.aries.util-0.3.jar.asc), [md5](http://www.apache.org/dist/aries/org.apache.aries.util-0.3.jar.md5), [sha1](http://www.apache.org/dist/aries/org.apache.aries.util-0.3.jar.sha1)) |  [jar](http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.util-0.3.sources.jar) ([asc](http://www.apache.org/dist/aries/org.apache.aries.util-0.3.sources.jar.asc), [md5](http://www.apache.org/dist/aries/org.apache.aries.util-0.3.sources.jar.md5), [sha1](http://www.apache.org/dist/aries/org.apache.aries.util-0.3.sources.jar.sha1))  |
+
+<a name="Downloads-Projectcomponents"></a>
+### Project Components
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> Sub project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Binary </th><th class="confluenceTh"> Source </th><th class="confluenceTh"> Comments </th></tr>
 <tr><td class="confluenceTd"> application </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
