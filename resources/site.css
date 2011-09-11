@@ -1562,3 +1562,11 @@ div.auto_complete ul strong.highlight {
 .leftnav li a:active {color:white;}
 .leftnav li a:visited {color:white;}
 .leftnav li a:hover {background-color: #3c4672; color:white;}
+
+
+/*******  Java syntax highlighting *********/
+.kd {
+    color: rgc(127,0,85);
+    font-weight: bold;
+    font-family: Lucida Console, Courier New, monospace;
+}
