@@ -37,11 +37,11 @@ Once the extender determines that a bundle is a Blueprint bundle, it
 creates a Blueprint Container on behalf of that bundle. The Blueprint
 Container is responsible for:
 
-    * Parsing the Blueprint XML files
-    * Instantiating the components
-    * Wiring the components together
-    * Registering services
-    * Looking up service references
+* Parsing the Blueprint XML files
+* Instantiating the components
+* Wiring the components together
+* Registering services
+* Looking up service references
 
 During initialization, the Blueprint Container ensures that mandatory
 service references are satisfied, registers all the services into the
