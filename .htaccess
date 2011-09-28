@@ -1,10 +1,10 @@
-RedirectMatch Permanent blueprint/xmlns/blueprint-cm/v1i\.0\.0  schemas/blueprint-cm/blueprint-cm-1.0.0.xsd
-RedirectMatch Permanent blueprint/xmlns/blueprint-cm/v1\.1\.0  schemas/blueprint-cm/blueprint-cm-1.1.0.xsd
-RedirectMatch Permanent blueprint/xmlns/blueprint-ext/v1\.1\.0 schemas/blueprint-ext/blueprint-ext-1.1.xsd
-RedirectMatch Permanent blueprint/xmlns/blueprint-ext/v1\.0\.0 schemas/blueprint-ext/blueprint-ext.xsd
-RedirectMatch Permanent xmlns/transactions/v1\.0\.0 schemas/transaction/transactionv10.xsd
-RedirectMatch Permanent xmlns/transactions/v1\.1\.0 schemas/transaction/transactionv11.xsd
-RedirectMatch Permanent xmlns/jpa/v1\.0\.0 schemas/jpa/jpa.xsd
-RedirectMatch Permanent xmlns/jpa/v1\.1\.0 schemas/jpa/jpa_110.xsd
+RedirectMatch Permanent /blueprint/xmlns/blueprint-cm/v1i\.0\.0  /schemas/blueprint-cm/blueprint-cm-1.0.0.xsd
+RedirectMatch Permanent /blueprint/xmlns/blueprint-cm/v1\.1\.0  /schemas/blueprint-cm/blueprint-cm-1.1.0.xsd
+RedirectMatch Permanent /blueprint/xmlns/blueprint-ext/v1\.1\.0 /schemas/blueprint-ext/blueprint-ext-1.1.xsd
+RedirectMatch Permanent /blueprint/xmlns/blueprint-ext/v1\.0\.0 /schemas/blueprint-ext/blueprint-ext.xsd
+RedirectMatch Permanent /xmlns/transactions/v1\.0\.0 /schemas/transaction/transactionv10.xsd
+RedirectMatch Permanent /xmlns/transactions/v1\.1\.0 /schemas/transaction/transactionv11.xsd
+RedirectMatch Permanent /xmlns/jpa/v1\.0\.0 /schemas/jpa/jpa.xsd
+RedirectMatch Permanent /xmlns/jpa/v1\.1\.0 /schemas/jpa/jpa_110.xsd
 
 
