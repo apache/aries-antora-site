@@ -371,9 +371,10 @@ Anything that is to be downloaded must be put in
 members of the group can access them. The distributions are
 archived here /www/archive.apache.org/dist/aries.
 
-First, delete the previous distribution from the distribution directory.
-Download the release artifacts This is best done using a script, the script can be generated uing
-the perl script download_release_artifacts.pl. 
+First, delete the artifacts of the previous release from the distribution directory. You don't need to worry about putting the previous release artifacts in the archive as they will already have been rsync'd from the distribution directory.
+
+Then, put new release artifacts in the distribution directory. This is best done using a script, the script can be generated uing
+the perl script [download_release_artifacts.pl](http://svn.apache.org/repos/asf/aries/scripts/download_release_artifacts.pl). 
 
 Next, update the Aries Downloads pages to refer to the new artifacts.
 
