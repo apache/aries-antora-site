@@ -294,6 +294,7 @@ For each bundle that needs to be release perform the following commands:
     1. What is the new development version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.6-SNAPSHOT: : 0.5
 
     i.e. take the default for the first two questions, and set the new development version to be the same as the one you are releasing! This is because you don't know whether the next version released from the trunk will have a major, minor or micro version number change - you won't know until those changes are made! - so leave it for the person making those changes to make the decision and move to <new version>-SNAPSHOT.
+
   * Note 3: mvn release:clean will do *most* of the cleaning up in the event of failures.
  
 
