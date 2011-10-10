@@ -248,7 +248,7 @@ to continue to depend on the -SNAPSHOT version while the release is voted throug
 
 ### JIRA preparation
   * After initial release discussion on the mailing list you should have a list of JIRA issues that are required in the release. If not, the default assumption is 'everything that has been fixed since the last release'.
-  * Make sure that there is a JIRA component that matches the name of the release, if not, create one.
+  * Make sure that there is a JIRA version that matches the name of the release, if not, create one.
   * Check through defects, make sure that anything that is included in the release has been closed. If there are open issues move them to the next release.
 
 
