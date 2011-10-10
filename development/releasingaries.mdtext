@@ -288,6 +288,7 @@ For each bundle that needs to be release perform the following commands:
 
   * Note 1: Use the -DdryRun option to check that release-prepare works.
   * Note 2: mvn release:prepare makes and commits changes in SVN. You'll be asked three questions. Here they are with answers for the 'parent' module release: 
+
     1. What is the release version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.5: :    
     1. What is SCM release tag or label for "Aries :: Top Parent POM"? (org.apache.aries:parent) parent-0.5: :
     1. What is the new development version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.6-SNAPSHOT: : 0.5
