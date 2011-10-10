@@ -287,7 +287,12 @@ For each bundle that needs to be release perform the following commands:
 
 
   * Note 1: Use the -DdryRun option to check that release-prepare works.
-  * Note 2: mvn release:prepare makes and commits changes in SVN. 
+  * Note 2: mvn release:prepare makes and commits changes in SVN. You'll be asked three questions. Here they are with answers for the 'parent' module release: 
+    1. What is the release version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.5: :    
+    1. What is SCM release tag or label for "Aries :: Top Parent POM"? (org.apache.aries:parent) parent-0.5: :
+    1. What is the new development version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.6-SNAPSHOT: : 0.5
+
+    i.e. take the default for the first two questions, and set the new development version to be the same as the one you are releasing! This is because you don't know whether the next version released from the trunk will have a major, minor or micro version number change - you won't know until those changes are made! - so leave it for the person making those changes to make the decision and move to <new version>-SNAPSHOT.
   * Note 3: mvn release:clean will do *most* of the cleaning up in the event of failures.
  
 
