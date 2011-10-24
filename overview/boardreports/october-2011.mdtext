@@ -16,33 +16,33 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# July 2011 Board report
+# October 2011 Board report
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
-Users have asked for a release of the Aries JPA bundles and hence the snapshot bundles it depends on (Aries Util) - in particular due to:
+A new module called versionsing has been created for a utility to byte code analyse latest binaries with the last release of those binaries to find changes that should cause an OSGi Export-Package version attribute change, according to the OSGi Semantic Versioning whitepaper.
 
-* the new 'runtime enhancer' that will mean entities can be enhanced as they are used in the runtime, rather than at development time.
-* the support for EclipseLink (in addition to Apache OpenJPA) as a JPA provider
+Releases
+-
+Bug fix releases:
 
-The release process has just started. This will exercise our per bundle release process adhering to the OSGi Alliance Semantic Versioning recommendations.
+* Apache Aries Application 0.2.2
+* Apache Aries Util 0.2.1
 
-There have also been enhancements to the Aries JMX (whiteboard pattern) and Aries Subsystem (to use OSGi Core 4.3).
-
-Apache Geronimo, which consumes Apache Aries to implement its enterprise OSGi application programming model, has been readying a release. The performance enhancements in the Aries Proxy module which now makes use of the new Weaving Hooks OSGi specification, has had a few teething problems for Geronimo. All known problems are now resolved.
+We have been putting together a functional release from trunk but it's taking longer than we'd hoped. Due to our objective of getting the OSGi versioning correct, we're having to release more modules and correct more OSGi version ranges than we had hoped. A fully staged release of Apache Aries Blueprint and its dependencies is imminent.
 
 ##Project Branding Board Report Checklist 
 
-We've been reminded of this work and are reporting this checklist for the first time. We appreciate we're a bit behind the curve here, and are doing our best to catch up.
+A little progress here. Unfortunately there's been little progress here.
 
 * Project Website Basics : homepage is aries.apache.org (done)
 * Project Naming And Descriptions : use proper Apache forms, describe product, etc. (pending)
 * Website Navigation Links : navbar links included, link to www.apache.org included (pending - feather link done)
 * Trademark Attributions : attribution for all ASF marks included in footers, etc. (pending)
 * Logos and Graphics : include TM, use consistent product logo on your site (pending)
-* Project Metadata : DOAP file checkedin and up to date (pending - some minor updates needed)
+* Project Metadata : DOAP file checkedin and up to date (done)
 
 ##Community update
 
-Roughly same number of dev@ subscribers at 119, user@ 148 subscribers up 14 since last report. John Ross was voted in as a committer after his significant work to the 'subsystem' module.
+No new committers since the last report.
 
 There are no board level issues.
