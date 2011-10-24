@@ -23,8 +23,8 @@ A new module called versionsing has been created for a utility to byte code anal
 
 It looks as though Apache Aries JMS will become the reference implementation of the update to the OSGi JMX spec for which an early draft was released by the OSGi Alliance in September.
 
-Releases
--
+##Releases
+
 Bug fix releases:
 
 * Apache Aries Application 0.2.2
