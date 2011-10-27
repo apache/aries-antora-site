@@ -21,7 +21,7 @@ Apache Aries delivers a set of pluggable Java components enabling an enterprise 
 
 A new module called versionsing has been created for a utility to byte code analyse latest binaries with the last release of those binaries to find changes that should cause an OSGi Export-Package version attribute change, according to the OSGi Semantic Versioning whitepaper.
 
-It looks as though Apache Aries JMS will become the reference implementation of the update to the OSGi JMX spec for which an early draft was released by the OSGi Alliance in September.
+It looks as though Apache Aries JMX will become the reference implementation of the update to the OSGi JMX spec for which an early draft was released by the OSGi Alliance in September.
 
 ##Releases
 
