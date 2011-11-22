@@ -55,16 +55,21 @@ the change in the bundle version should give some indication of nature of the ch
 In Aries the bundle version is the same as version of the Maven artifact version. 
 During development, in trunk, the Maven artifact version will be:
 
-  * either x.y.(z+1)-SNAPSHOT 
+  * x.y.(z+1)-SNAPSHOT 
 
 Where x.y.z is the most recent release of the bundle
 
-During the release process release Maven version is set to a minor increment of the release version by default. 
+During the release process the Maven release plugin asks for a the subsequent version to use in the module's pom after the release has taken place. The default is to increment the last digit and add -SNAPSHOT.
 
-For example, if proxy is released at version 1.0.0, the development version of proxy in trunk will become 1.0.1.
+For example, if proxy is released at version 1.0.0, the development version of proxy in trunk will become 1.0.1-SNAPSHOT.
 
-Bundles which depend on proxy (for example blueprint) will be set to depend on the released version of proxy, so for example, immediately after 
-a release of proxy at 1.0.0 and a release of blueprint at, say, 1.2.0, the development version of blueprint in trunk will be 1.2.1-SNAPSHOT
+In addition, after a release, modules dependencies should refer to the lowest
+released version providing enough exported functionality the bundle
+requires. This ensures the import version is automatically set correctly
+to allow for loose coupling supported by OSGi.
+
+For example, bundles which depend on proxy (e.g. blueprint) will be set to depend on the released version of proxy. Immediately after 
+a release of proxy at say 1.0.0 and a release of blueprint at 1.2.0, the development version of blueprint in trunk will be 1.2.1-SNAPSHOT
 but the version of proxy that it depends on will be 1.0.0.
 
 
