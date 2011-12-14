@@ -40,14 +40,16 @@ can use the static weaving approach.
 
 ##Use with Dynamic Weaving##
 Install and start the <tt>org.apache.aries.spifly.dynamic.bundle</tt> into the system. This bundle 
-has a dependency on <tt>org.objectweb.asm</tt> version 3.2 or newer.
+has a dependency on <tt>[org.objectweb.asm][3]</tt> version 3.2 or newer and on the Aries 
+Util bundle.
 
 <pre>osgi> ss    
 Framework is launched.    
 id	State       Bundle
-0	ACTIVE      org.eclipse.osgi_3.7.0.v20110304
-1	ACTIVE      org.objectweb.asm_3.2.0.v200909071300
-2	ACTIVE      org.apache.aries.spifly.dynamic.bundle_0.4.0.SNAPSHOT</pre>
+0	ACTIVE      org.eclipse.osgi_3.7.1.R37x_v20110808-1106
+1	ACTIVE      org.objectweb.asm.all_3.2.0
+2	ACTIVE      org.apache.aries.util_0.5.0.SNAPSHOT
+3	ACTIVE      org.apache.aries.spifly.dynamic.bundle_0.4.0.SNAPSHOT
 
 ##Use with Static Weaving##
 For static use, you need to modify the client bundle before installing it into the system. 
@@ -67,13 +69,15 @@ java -jar org.apache.aries.spifly.static.tool-0.4-with-dependencies.jar mybundle
 This will produce a second bundle with the same name with the _spifly suffix appended, so 
 in this case the generated bundle will be called mybundle_spifly.jar.
 
-At runtime, install the <tt>org.apache.aries.spifly.static.bundle</tt> into the system:
+At runtime, install the <tt>org.apache.aries.spifly.static.bundle</tt> into the system, like
+the dynamic weaving bundle it has a dependency on the Aries Util bundle:
 <pre>osgi> ss
 Framework is launched.
 id	State       Bundle
-0	ACTIVE      org.eclipse.osgi_3.6.1.R36x_v20100806
+0	ACTIVE      org.eclipse.osgi_3.6.2.R36x_v20110210
 1	ACTIVE      org.eclipse.osgi.services_3.2.100.v20100503
-2	ACTIVE      org.apache.aries.spifly.static.bundle_0.4.0.SNAPSHOT</pre>
+2	ACTIVE      org.apache.aries.util_0.5.0.SNAPSHOT
+3	ACTIVE      org.apache.aries.spifly.static.bundle_0.4.0.SNAPSHOT
 
 Then install and start the statically woven bundle into the system.
 
@@ -94,3 +98,4 @@ The following modules can be found in this directory:
 
   [1]: http://www.osgi.org/download/osgi-early-draft-2011-05.pdf
   [2]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly
+  [3]: http://search.maven.org/#artifactdetails|asm|asm-all|3.2|jar
