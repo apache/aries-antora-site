@@ -50,6 +50,7 @@ id	State       Bundle
 1	ACTIVE      org.objectweb.asm.all_3.2.0
 2	ACTIVE      org.apache.aries.util_0.5.0.SNAPSHOT
 3	ACTIVE      org.apache.aries.spifly.dynamic.bundle_0.4.0.SNAPSHOT
+</pre>
 
 ##Use with Static Weaving##
 For static use, you need to modify the client bundle before installing it into the system. 
@@ -77,7 +78,7 @@ id	State       Bundle
 0	ACTIVE      org.eclipse.osgi_3.6.2.R36x_v20110210
 1	ACTIVE      org.eclipse.osgi.services_3.2.100.v20100503
 2	ACTIVE      org.apache.aries.util_0.5.0.SNAPSHOT
-3	ACTIVE      org.apache.aries.spifly.static.bundle_0.4.0.SNAPSHOT
+3	ACTIVE      org.apache.aries.spifly.static.bundle_0.4.0.SNAPSHOT</pre>
 
 Then install and start the statically woven bundle into the system.
 
