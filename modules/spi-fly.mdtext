@@ -6,6 +6,25 @@ This page describes the SPI Fly component.
 The SPI Fly component is aimed at providing general support for the JRE SPI
 mechanism (including the usage of <tt>java.util.ServiceLoader</tt> and <tt>META-INF/services</tt>) in OSGi.
 
+
+##The Problem##
+<tt>java.util.ServiceLoader.load()</tt> and other similar methods such as 
+<tt>sun.misc.Service.providers()</tt>, but also other static finder methods such as the 
+<tt>FactoryFinder.find()</tt> methods try to locate service implementations by looking for 
+resources in the META-INF/services directory of all the jars visible to the 
+***Thread Context ClassLoader***.
+
+There are a number of issues with this approach in OSGi:
+
+ 1. The Thread Context Classloader is not defined in general in an OSGi context. It can and has to be set by the caller and OSGi cannot enforce that. 
+ 2. A bundle can't Import-Package META-INF/services as potentially many bundles will contain this pseudo-package and the OSGi framework will only bind a single exporter to an importer for a given package.
+ 3. Instantiating an SPI provider generally requires access to internal implementation classes, by exporting these classes an implementing bundle would break its encapsulation. 
+ 4. Even if an implementation class was exported, importing this class in a consumer bundle would bind it to the specific implementation package provided, which violates the principle of loose coupling.
+ 5. Bundles have a dynamic life-cycle which means that provided services could disappear when a bundle is updated or uninstalled. The java.util.ServiceLoader API does not provide a mechanism to inform service consumers of such an event.
+
+The SPI Fly project makes it possible to use existing code that uses ServiceLoader.load()
+and other methods that 
+
 There are currently standardization efforts ongoing in the OSGi Alliance for which the SPI-Fly project is a prototype. 
 For more information, see RFC 167 in the OSGi Enterprise 4.4 EA draft: [http://www.osgi.org/download/osgi-early-draft-2011-05.pdf][1]
 
