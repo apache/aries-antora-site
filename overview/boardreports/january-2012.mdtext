@@ -16,25 +16,50 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# October 2011 Board report
+# January 2012 Board report
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
-A new module called versionsing has been created for a utility to byte code analyse latest binaries with the last release of those binaries to find changes that should cause an OSGi Export-Package version attribute change, according to the OSGi Semantic Versioning whitepaper.
-
-It looks as though Apache Aries JMX will become the reference implementation of the update to the OSGi JMX spec for which an early draft was released by the OSGi Alliance in September.
+We have successfully executed on our 'release by bundle' approach. This will help our users who would like to take updates of individual bundles: "Small releases". Distribution releases containing sets of bundles that combine well together will come later: "Big releases".
 
 ##Releases
 
-Bug fix releases:
-
-* Apache Aries Application 0.2.2
-* Apache Aries Util 0.2.1
-
-We have been putting together a functional release from trunk but it's taking longer than we'd hoped. Due to our objective of getting the OSGi versioning correct, we're having to release more modules and correct more OSGi version ranges than we had hoped. A fully staged release of Apache Aries Blueprint and its dependencies is imminent.
+* Apache Aries Unit Test Support 0.4
+* Apache Aries Util 0.4
+* Apache Aries Proxy:
+  * Apache Aries Proxy API 0.4
+  * Apache Aries Proxy Service 0.4
+  * Apache Aries Proxy iTests 0.4
+  * Apache Aries Proxy Bundle 0.4
+* Apache Aries Quiesce
+  * Apache Aries Quiesce Manager 0.3.1
+  * Apache Aries Quiesce Manager iTests 0.3.1
+* Apache Aries Blueprint
+  * Apache Aries Blueprint Annotation API 0.3.2
+  * Apache Aries Blueprint Annotation Impl 0.3.2
+  * Apache Aries Blueprint Annotation iTests 0.3.2
+  * Apache Aries Blueprint CM 0.3.2
+  * Apache Aries Blueprint Core 0.4
+  * Apache Aries Blueprint iTests 0.4
+  * Apache Aries Blueprint JEXL evaluator 0.1.0
+  * Apache Aries Blueprint Sample 0.4
+  * Apache Aries Blueprint Sample for Testing Annotation 0.3.2
+  * Apache Aries Blueprint Sample Fragment for Testing Annotation 0.3.2
+  * Apache Aries Blueprint Test Bundle A 0.3.2
+  * Apache Aries Blueprint Test Bundle B 0.3.2
+  * Apache Aries Blueprint Test Quiesce Bundle 0.3.2
+  * Apache Aries Blueprint Bundle 0.4
+  * Apache Aries Blueprint Parser 0.4
+* Apache Aries JNDI
+  * Apache Aries JNDI Core 0.3.1
+  * Apache Aries JNDI URL Handler 0.3.1
+  * Apache Aries JNDI RMI Handler 0.3.1
+  * Apache Aries JNDI Bundle 0.3.1
+  * Apache Aries JNDI Support for Legacy Runtimes 0.3.1
+  * Apache Aries JNDI "business logic" test bundle for Aries jndi-url iTests 0.3.1
+  * Apache Aries JNDI Test Bundle for Aries jndi-url iTests 0.3.1
+  * Apache Aries JNDI iTests for jndi-url 0.3.1
 
 ##Project Branding Board Report Checklist 
-
-A little progress here. Unfortunately there's been little progress here.
 
 * Project Website Basics : homepage is aries.apache.org (done)
 * Project Naming And Descriptions : use proper Apache forms, describe product, etc. (pending)
