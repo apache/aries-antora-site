@@ -23,6 +23,17 @@ Apache Aries delivers a set of pluggable Java components enabling an enterprise 
 
 After the significant number of releases last quarter there were no new releases this quarter. Work is going on in a branch in preparation for a 1.0 release. Bundles and packages will be brought up from 0.x to 1.0 to better reflect the stability and level of confidence we have in them. This will also bring our versioning policy inline with that described in the OSGi Alliance semantic versioning whitepaper.
 
+##Project Branding Board Report Checklist 
+
+Little progress:
+
+* Project Website Basics : homepage is aries.apache.org (done)
+* Project Naming And Descriptions : use proper Apache forms, describe product, etc. (pending)
+* Website Navigation Links : navbar links included, link to www.apache.org included (pending - feather link done)
+* Trademark Attributions : attribution for all ASF marks included in footers, etc. (pending)
+* Logos and Graphics : include TM, use consistent product logo on your site (pending)
+* Project Metadata : DOAP file checkedin and up to date (done)
+
 ##Community update
 
 No new committers since the last report. The user/dev lists and JIRAs continue to be moderately active.
