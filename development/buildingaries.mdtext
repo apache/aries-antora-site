@@ -14,7 +14,7 @@ can leave you with some fixing up to do on the projects.
 the 3.4 version)
  * Install Subversion client http://subclipse.tigris.org/update_1.6.x (Just
 the Subclipse and Core)
- * Install m2eclipse http://m2eclipse.sonatype.org/update/ (Maven
+ * Install m2eclipse http://download.eclipse.org/technology/m2e/releases (Maven
 Integration and Maven optional components)
 
 
