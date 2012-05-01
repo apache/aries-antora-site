@@ -135,8 +135,9 @@ Then install and start the statically woven bundle into the system.
 
 ##Special Cases##
 SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain
-implementations. However, some cases some *special treatment* is needed. This section
-lists the known cases.
+implementations. However, some cases some *special treatment* is needed. This special treatment is often needed when the API itself does not 
+match the name of the resources in META-INF/services, java.util.ServiceLoader is such a case, however SPI-Fly has built-in knowledge of ServiceLoader.
+Other APIs that require special treatment are listed below:
 
   - **javax.imageio.spi.ServiceRegistry**: This class is very much like
 java.util.ServiceLoader in that it can load any kind of API implementation.
