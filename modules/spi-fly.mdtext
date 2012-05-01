@@ -133,6 +133,19 @@ id	State       Bundle
 
 Then install and start the statically woven bundle into the system.
 
+##Special Cases##
+SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain
+implementations. However, some cases some *special treatment* is needed. This section
+lists the known cases.
+
+  - **javax.imageio.spi.ServiceRegistry**: This class is very much like
+java.util.ServiceLoader in that it can load any kind of API implementation.
+While SPI Fly knows about ServiceLoader and treats it specially, the ServiceRegistry
+class currently does not have special treatment. It can still be made to work
+but this requires the following header in the provider bundle:
+<tt>SPI-Provider:&nbsp;javax.imageio.spi.ServiceRegistry</tt>
+
+
 ##Examples##
 The <tt>spi-fly-examples</tt> directory contains a number of example bundles that can be 
 used for testing or experimenting.
