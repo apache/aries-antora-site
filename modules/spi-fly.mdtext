@@ -143,7 +143,10 @@ java.util.ServiceLoader in that it can load any kind of API implementation.
 While SPI Fly knows about ServiceLoader and treats it specially, the ServiceRegistry
 class currently does not have special treatment. It can still be made to work
 but this requires the following header in the provider bundle:
-<tt>SPI-Provider:&nbsp;javax.imageio.spi.ServiceRegistry</tt>
+<tt>SPI-Provider:&nbsp;javax.imageio.spi.ServiceRegistry</tt> on the client
+side you can use <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders(java.l
+ ang.Class) </tt>
+ or <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders<tt>
 
 
 ##Examples##
