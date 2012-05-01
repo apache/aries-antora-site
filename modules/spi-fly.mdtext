@@ -146,7 +146,13 @@ but this requires the following header in the provider bundle:
 <tt>SPI-Provider:&nbsp;javax.imageio.spi.ServiceRegistry</tt> on the client
 side you can use <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders(java.lang.Class)</tt>
  or <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders</tt>
-
+  - **javax.sound.sampled.AudioSystem**: This class uses sun.misc.Service under the covers (via com.sun.media.sound.JDK13Services) 
+which is a predecessor to java.util.ServiceLoader. There is no special treatment for sun.misc.Service
+in SPI Fly (yet), but the AudioSystem.getAudioInputStream() API can be made to work by explicitly listing it in the provider bundle 
+(the one that contains the relevant META-INF/services resources):
+<tt>SPI-Provider:&nbsp;javax.sound.sampled.AudioSystem</tt> on the consumer side you can use
+<tt>SPI-Consumer:&nbsp;javax.sound.sampled.AudioSystem#getAudioInputStream
+</tt>
 
 ##Examples##
 The <tt>spi-fly-examples</tt> directory contains a number of example bundles that can be 
