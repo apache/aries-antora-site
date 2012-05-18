@@ -16,11 +16,12 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
+#Verifying Release Artifacts
 This page provides some help for anyone who wants to verify release candidate artifacts so they feel they can genuinely vote on the related vote thread on the dev list. It is not intended to be exhaustive instructions. It's a list of things people have generally found to be useful to do when checking the artifacts.
 
 It is essential that the signatures and hashsums are good. Please do read [Verifying Apache HTTP Server Releases][1] for information on why you should verify releases.. 
 
-#Have I got the KEYS?
+##Have I got the KEYS?
 
 To verify Aries release artifacts you need the public keys for the Aries committers.
 The master KEYS file is in Subversion. The easiest way of getting it from the command line is to non-recursively check-out the files in the top level of the Aries location using:
@@ -31,7 +32,7 @@ You then need to import the keys into PGP:
 
     pgp --import KEYS
 
-#Download artifacts
+##Download artifacts
 
 For each 'useful' file there are several others created to help you determine whether it's genuine. The PGP signature .asc file shows who created the 'useful' file. Then there are checksum files (.md5 and .sha1) for both the 'useful' file and the .asc file. To download the content for the repository you're verifying try this:
 
@@ -41,7 +42,7 @@ where xxx is the number of the repository you're verifying.
 
 wget will download the files into a directory called content. The following use of the 'find' command assumes the downloads are in the 'content' directory.
 
-#Verify the artifacts
+##Verify the artifacts
 
 Ensure the checksums are right for the released files. Copy/paste this into the command line:
 
@@ -80,7 +81,7 @@ Ensure the PGP signature files are good. See the [Validating section of Verifyin
 
 You shouldn't get any errors.
 
-#Build the code
+##Build the code
 
 It's a good idea to check the source release zip builds. Unzip it first:
 
@@ -90,7 +91,7 @@ Go into each subdir created and run:
 
     mvn clean install
 
-#RAT check
+##RAT check
 
 It's also a good idea to run the [Apache RAT (Release Audit Tool)][3]. The Aries POMs are set up so you can do:
 
