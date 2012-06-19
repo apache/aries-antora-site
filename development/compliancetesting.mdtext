@@ -13,7 +13,6 @@ configuration files require some modification to run the tests against
 Aries components.
 
 Instructions for obtaining and running the tests are given [here](http://felix.apache.org/site/using-the-osgi-compliance-tests.html), or see below.
-.
 
 <a name="ComplianceTesting-Testresults"></a>
 ## Test results
@@ -117,10 +116,8 @@ The *.bnd files that are used to run the tests assume that the person
 running the tests has access to org.osgi.impl* jars. In general this is not
 the case - so wherever an org.osgi.impl* jar has been used it must be
 replaced with an equivalent implementation. Such implementations can
-usually be found in either [Felix](http://felix.apache.org/site/downloads.cgi)
-, [Equinox](http://download.eclipse.org/equinox/)
- or [Knopflerfish](http://www.knopflerfish.org/releases/3.0.0/osgi/jars/)
-.
+usually be found in either [Felix](http://felix.apache.org/site/downloads.cgi), [Equinox](http://download.eclipse.org/equinox/)
+ or [Knopflerfish](http://www.knopflerfish.org/releases/3.0.0/osgi/jars/).
 
 <a name="HowtoruntheOSGiEnterpriseCT-Blueprint"></a>
 #### Blueprint
