@@ -12,7 +12,7 @@ tests against the OSGi implementation of the Enterprise Specification. The
 configuration files require some modification to run the tests against
 Aries components.
 
-Instructions for obtaining and running the tests are given [here](how-to-run-the-osgi-enterprise-ct.html)
+Instructions for obtaining and running the tests are given [here](http://felix.apache.org/site/using-the-osgi-compliance-tests.html), or see below.
 .
 
 <a name="ComplianceTesting-Testresults"></a>
@@ -41,7 +41,7 @@ note will languish in 'moderation' forever :-)
 <a name="HowtoruntheOSGiEnterpriseCT-Getthetests"></a>
 ### Get the tests
 
-Anyone with an NDA on file should be able to get access to the tests [here ](-https://svn.apache.org/repos/tck/osgi-cts.html)
+Anyone with an NDA on file should be able to get access to the tests [here ](https://svn.apache.org/repos/tck/osgi-cts/)
 .
 
 The group of tests that are required for Aries is called
@@ -118,8 +118,8 @@ running the tests has access to org.osgi.impl* jars. In general this is not
 the case - so wherever an org.osgi.impl* jar has been used it must be
 replaced with an equivalent implementation. Such implementations can
 usually be found in either [Felix](http://felix.apache.org/site/downloads.cgi)
-, [Equinox|http://download.eclipse.org/equinox/]
- or [Knopflerfish|http://www.knopflerfish.org/releases/3.0.0/osgi/jars/]
+, [Equinox](http://download.eclipse.org/equinox/)
+ or [Knopflerfish](http://www.knopflerfish.org/releases/3.0.0/osgi/jars/)
 .
 
 <a name="HowtoruntheOSGiEnterpriseCT-Blueprint"></a>
