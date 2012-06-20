@@ -1,0 +1,226 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Test</title>
+<link rel="stylesheet" href="http://www.osgi.org/www/osgi.css" type="text/css">
+<style type="text/css">
+					.code { font-family: Courier,
+					sans-serif; }
+					.error,.ok, .info,
+					.warning {
+					background-position: 4 4;
+					background-repeat:no-repeat;
+					width:10px; }
+					.ok {
+					background-image:url("http://www.osgi.org/www/greenball.png"); }
+					.warning {
+					background-image:url("http://www.osgi.org/www/orangeball.png"); }
+					.error {
+					background-image:url("http://www.osgi.org/www/redball.png"); }
+					.info {
+					background-image:url("http://www.osgi.org/www/info.png"); }
+					.class { padding-top:20px; padding-bottom: 10px; font-size:12;
+					font-weight:bold; }
+
+					h2 { margin-top : 20px; margin-bottom:10px; }
+					table, th, td { border: 1px solid black; padding:5px; }
+					table {
+					border-collapse:collapse; width:100%; margin-top:20px;}
+					th { height:20px; }
+					} 
+				</style>
+<script language="javascript">
+					function toggle(name) {
+					var el =
+					document.getElementById(name);
+					if ( el.style.display != 'none' ) {
+					el.style.display = 'none';
+					}
+					else {
+					el.style.display = '';
+					}
+					}				
+				</script>
+</head>
+<body style="width:800px">
+<h2>Summary</h2>
+<p>The following table provides a sumary of the test information.</p>
+<table>
+<tr>
+<th>Property Key</th><th>Property Value</th>
+</tr>
+<tr>
+<td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.blueprint.secure-4.2.0.jar</td>
+</tr>
+<tr>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@35f38fc6</td>
+</tr>
+<tr>
+<td width="50%">Testrun</td><td>Wed Jun 20 11:51:57 BST 2012</td>
+</tr>
+<tr>
+<th colspan="2">Bundles</th>
+</tr>
+<tr>
+<td>org.eclipse.osgi</td><td>3.5.0.v20090520</td>
+</tr>
+<tr>
+<td>osgi.cmpn</td><td>4.2.0.200908310645</td>
+</tr>
+<tr>
+<td>org.eclipse.equinox.cm</td><td>3.2.0.v20070116</td>
+</tr>
+<tr>
+<td>org.eclipse.equinox.event</td><td>1.1.100.v20090513</td>
+</tr>
+<tr>
+<td>org.ops4j.pax.logging.pax-logging-api</td><td>1.5.0</td>
+</tr>
+<tr>
+<td>org.apache.aries.util</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.proxy</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.blueprint</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.osgi.test.cases.blueprint</td><td>4.2.0.201004301237</td>
+</tr>
+<tr>
+<td>org.osgi.test.cases.blueprint.secure</td><td>4.2.0.201004301237</td>
+</tr>
+</table>
+<h2>Testcases</h2>
+<p>The following table shows the results of each test. A red icon indicates that the 
+					test failed or had an error. A green icon
+					indicates success. Any errors or failure messages 
+					will be displayed as a list beneath the test name. To see the 
+					exception, click on the info icon on the right.</p>
+<table width="100%">
+<tr>
+<th width="15px"><img src="http://www.osgi.org/www/colorball.png" title="Status. red=bad, orange=almost good, green is perfect"></th><th>Test</th><th>Failures</th><th>Error</th><th>Info</th>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testNoBlueprintPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testNoSystemPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testBeanConstructorPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testBeanInstanceFactoryPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testBeanStaticFactoryPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testBeanInitMethodPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testBeanDestroyMethodPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testNoExportPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testNoImportPermission<ul>
+<li>Unexpected event ServiceTestEvent org/osgi/framework/ServiceEvent/REGISTERED for bundle org.osgi.test.cases.blueprint.secure.ServiceOne_import_denied for interfaces {org.osgi.service.blueprint.container.BlueprintContainer} was received:</li>
+</ul>
+<pre id="testNoImportPermission" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Unexpected event ServiceTestEvent org/osgi/framework/ServiceEvent/REGISTERED for bundle org.osgi.test.cases.blueprint.secure.ServiceOne_import_denied for interfaces {org.osgi.service.blueprint.container.BlueprintContainer} was received:
+	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
+	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
+	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
+	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
+	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
+	at org.osgi.test.cases.blueprint.secure.tests.TestPermissions.testNoImportPermission(TestPermissions.java:162)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testNoImportPermission')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testBindMethodPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testUnbindMethodPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testRegistrationMethodPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testUnegistrationMethodPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testCanConvertPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testConvertPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testImportExportPermission</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testSingleInterfaceExport</td><td>0</td><td>0</td><td></td>
+</tr>
+</table>
+<br>
+</body>
+</html>

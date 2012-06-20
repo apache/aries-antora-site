@@ -1,0 +1,759 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Test</title>
+<link rel="stylesheet" href="http://www.osgi.org/www/osgi.css" type="text/css">
+<style type="text/css">
+					.code { font-family: Courier,
+					sans-serif; }
+					.error,.ok, .info,
+					.warning {
+					background-position: 4 4;
+					background-repeat:no-repeat;
+					width:10px; }
+					.ok {
+					background-image:url("http://www.osgi.org/www/greenball.png"); }
+					.warning {
+					background-image:url("http://www.osgi.org/www/orangeball.png"); }
+					.error {
+					background-image:url("http://www.osgi.org/www/redball.png"); }
+					.info {
+					background-image:url("http://www.osgi.org/www/info.png"); }
+					.class { padding-top:20px; padding-bottom: 10px; font-size:12;
+					font-weight:bold; }
+
+					h2 { margin-top : 20px; margin-bottom:10px; }
+					table, th, td { border: 1px solid black; padding:5px; }
+					table {
+					border-collapse:collapse; width:100%; margin-top:20px;}
+					th { height:20px; }
+					} 
+				</style>
+<script language="javascript">
+					function toggle(name) {
+					var el =
+					document.getElementById(name);
+					if ( el.style.display != 'none' ) {
+					el.style.display = 'none';
+					}
+					else {
+					el.style.display = '';
+					}
+					}				
+				</script>
+</head>
+<body style="width:800px">
+<h2>Summary</h2>
+<p>The following table provides a sumary of the test information.</p>
+<table>
+<tr>
+<th>Property Key</th><th>Property Value</th>
+</tr>
+<tr>
+<td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.jpa-4.2.0.jar</td>
+</tr>
+<tr>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@2980f96c</td>
+</tr>
+<tr>
+<td width="50%">Testrun</td><td>Wed Jun 20 21:33:24 BST 2012</td>
+</tr>
+<tr>
+<th colspan="2">Bundles</th>
+</tr>
+<tr>
+<td>org.eclipse.osgi</td><td>3.5.0.v20090520</td>
+</tr>
+<tr>
+<td>osgi.enterprise</td><td>4.2.0.201003190513</td>
+</tr>
+<tr>
+<td>org.apache.geronimo.specs.geronimo-jpa_2.0_spec</td><td>1.1</td>
+</tr>
+<tr>
+<td>org.eclipse.persistence.asm</td><td>2.3.2.v20111125-r10461</td>
+</tr>
+<tr>
+<td>org.ops4j.pax.logging.pax-logging-api</td><td>1.5.0</td>
+</tr>
+<tr>
+<td>org.apache.commons.pool</td><td>1.5.4</td>
+</tr>
+<tr>
+<td>org.apache.commons.lang</td><td>2.5</td>
+</tr>
+<tr>
+<td>org.apache.commons.collections</td><td>3.2.1</td>
+</tr>
+<tr>
+<td>org.apache.openjpa</td><td>2.0.0</td>
+</tr>
+<tr>
+<td>org.apache.aries.util</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.proxy</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.transaction.manager</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.transaction.wrappers</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.jpa.api</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.jpa.container</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.apache.aries.jpa.container.context</td><td>1.0.0.SNAPSHOT</td>
+</tr>
+<tr>
+<td>org.osgi.test.cases.jpa</td><td>4.2.0.201004301238</td>
+</tr>
+</table>
+<h2>Testcases</h2>
+<p>The following table shows the results of each test. A red icon indicates that the 
+					test failed or had an error. A green icon
+					indicates success. Any errors or failure messages 
+					will be displayed as a list beneath the test name. To see the 
+					exception, click on the info icon on the right.</p>
+<table width="100%">
+<tr>
+<th width="15px"><img src="http://www.osgi.org/www/colorball.png" title="Status. red=bad, orange=almost good, green is perfect"></th><th>Test</th><th>Failures</th><th>Error</th><th>Info</th>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testDefaultPersistenceLocation<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testDefaultPersistenceLocation" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.waitForService(PersistenceUnitTests.java:223)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.testDefaultPersistenceLocation(PersistenceUnitTests.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testDefaultPersistenceLocation')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testNonStandardPersistenceLocation<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testNonStandardPersistenceLocation" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.waitForService(PersistenceUnitTests.java:223)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.testNonStandardPersistenceLocation(PersistenceUnitTests.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testNonStandardPersistenceLocation')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testMultiplePersistenceLocations<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testMultiplePersistenceLocations" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.waitForService(PersistenceUnitTests.java:223)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.testMultiplePersistenceLocations(PersistenceUnitTests.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testMultiplePersistenceLocations')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testNestedJarPersistenceLocation<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testNestedJarPersistenceLocation" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.waitForService(PersistenceUnitTests.java:223)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.testNestedJarPersistenceLocation(PersistenceUnitTests.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testNestedJarPersistenceLocation')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testPersistenceBundleWithNoHeader</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testPersistenceWithUnavailableDatasource<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testPersistenceWithUnavailableDatasource" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.waitForService(PersistenceUnitTests.java:223)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.testPersistenceWithUnavailableDatasource(PersistenceUnitTests.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testPersistenceWithUnavailableDatasource')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testPersistenceBundleWithProviderDependency</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testPesistenceUnitServiceProperties<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testPesistenceUnitServiceProperties" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.waitForService(PersistenceUnitTests.java:223)
+	at org.osgi.test.cases.jpa.junit.PersistenceUnitTests.testPesistenceUnitServiceProperties(PersistenceUnitTests.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testPesistenceUnitServiceProperties')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testPersistenceClass<ul>
+<li>Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testPersistenceClass" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testPersistenceClass(JPATestCase.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testPersistenceClass')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testPersistenceClassWithMap<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testPersistenceClassWithMap" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testPersistenceClassWithMap(JPATestCase.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testPersistenceClassWithMap')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testEntityManagerFactory<ul>
+<li>Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testEntityManagerFactory" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testEntityManagerFactory(JPATestCase.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testEntityManagerFactory')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testEntityManagerFactoryWithIncompletePersistenceUnit<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testEntityManagerFactoryWithIncompletePersistenceUnit" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testEntityManagerFactoryWithIncompletePersistenceUnit(JPATestCase.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testEntityManagerFactoryWithIncompletePersistenceUnit')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testEntityManagerFactoryBuilder<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testEntityManagerFactoryBuilder" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testEntityManagerFactoryBuilder(JPATestCase.java:115)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testEntityManagerFactoryBuilder')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testEntityManagerFactoryBuilderRebinding<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testEntityManagerFactoryBuilderRebinding" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testEntityManagerFactoryBuilderRebinding(JPATestCase.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testEntityManagerFactoryBuilderRebinding')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testEntityManagerFactoryRebindingWithBuilder<ul>
+<li>Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testEntityManagerFactoryRebindingWithBuilder" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testEntityManagerFactoryRebindingWithBuilder(JPATestCase.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testEntityManagerFactoryRebindingWithBuilder')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testConfigPropertiesWithEntityManagerFactoryBuilder<ul>
+<li>Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testConfigPropertiesWithEntityManagerFactoryBuilder" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for org.osgi.service.jpa.EntityManagerFactoryBuilder was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testConfigPropertiesWithEntityManagerFactoryBuilder(JPATestCase.java:207)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testConfigPropertiesWithEntityManagerFactoryBuilder')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testDataSourceFactoryUnregistration<ul>
+<li>Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testDataSourceFactoryUnregistration" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testDataSourceFactoryUnregistration(JPATestCase.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testDataSourceFactoryUnregistration')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        warning
+                                    "></td><td class="code">testPersistenceBundleStopping<ul>
+<li>Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds</li>
+</ul>
+<pre id="testPersistenceBundleStopping" style="display:none">
+<div class="code">
+
+junit.framework.AssertionFailedError: Service for javax.persistence.EntityManagerFactory was not registered after waiting 5000 milliseconds
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertNotNull(Assert.java:217)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.waitForService(JPATestCase.java:314)
+	at org.osgi.test.cases.jpa.junit.JPATestCase.testPersistenceBundleStopping(JPATestCase.java:261)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:164)
+	at junit.framework.TestCase.runBare(TestCase.java:130)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at aQute.junit.runtime.Target.doTesting(Target.java:234)
+	at aQute.junit.runtime.Target.run(Target.java:57)
+	at aQute.junit.runtime.Target.main(Target.java:37)
+
+ </div>
+</pre>
+</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testPersistenceBundleStopping')" title="Show Exceptions"></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testPersistenceProviderRegistration</td><td>0</td><td>0</td><td></td>
+</tr>
+<tr>
+<td width="15px" class="
+                                        ok
+                                    "></td><td class="code">testSignature</td><td>0</td><td>0</td><td></td>
+</tr>
+</table>
+<br>
+<h2>Coverage</h2>
+<p>The following table provides a sumary of the coverage based on static analysis.
+					A red icon indicates the method is never referred. An orange icon indicates there is
+					only one method referring to the method and a green icon indicates there are 2 or more
+					references. The references are shown by clicking on the info icon. This table is based on static analysis so it is not possible to see
+					how often the method is called and with what parameters.</p>
+<table width="100%">
+<tr>
+<th width="15px"></th><th>org.osgi.service.jpa.EntityManagerFactoryBuilder</th><th></th><th></th>
+</tr>
+<tr>
+<td width="15px" class="
+													ok
+												"></td><td class="code">EntityManagerFactory EntityManagerFactoryBuilder.createEntityManagerFactory(Map)<div class="code" style="display:none;margin:4;padding:8; background-color: #FFFFCC;" id="EntityManagerFactory EntityManagerFactoryBuilder.createEntityManagerFactory(Map)" title="Callers">void JPATestCase.testEntityManagerFactoryBuilder()<br>void JPATestCase.testEntityManagerFactoryBuilderRebinding()<br>void JPATestCase.testEntityManagerFactoryBuilderRebinding()<br>void JPATestCase.testEntityManagerFactoryRebindingWithBuilder()<br>void JPATestCase.testConfigPropertiesWithEntityManagerFactoryBuilder()<br>
+</div>
+</td><td>5</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('EntityManagerFactory EntityManagerFactoryBuilder.createEntityManagerFactory(Map)')" title="Show/Hide Callers"></td>
+</tr>
+</table>
+</body>
+</html>

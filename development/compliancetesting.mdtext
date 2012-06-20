@@ -51,8 +51,10 @@ currently 4.2.0.
 ### Running the tests
 Extract the jar into a test directory, say ~/AriesTests. After you have
 extracted the file you will find:
+
  * A subdirectory call 'jar' which contains all the tests
  * A set of *.bnd files which are used to run the tests
+
 The tests are run using bnd, the command line used to run a set of tests
 looks like this:
 
@@ -103,6 +105,7 @@ from the 'runproperties' section.
 
 It's convenient (but not necessary) to keep the the jars required to run
 the test jars and the code being tested in separate subdirectories. Create:
+
  * commonjars - any common dependencies, eg pax-logging
  * ariesjars - the aries code to be tested
 
@@ -204,10 +207,8 @@ The .bnd file required to run the JNDI tests looks like this:
 
 It is necessary to download the following:
 
- *
-http://www.knopflerfish.org/releases/3.0.0/osgi/jars/useradmin/useradmin_all-3.0.1.jar
- *
-http://www.knopflerfish.org/releases/3.0.0/osgi/jars/log/log_api-3.0.1.jar
+ * http://www.knopflerfish.org/releases/3.0.0/osgi/jars/useradmin/useradmin_all-3.0.1.jar
+ * http://www.knopflerfish.org/releases/3.0.0/osgi/jars/log/log_api-3.0.1.jar
  * org.apache.felix.log-1.0.0.jar
  * org.apache.felix.http.bundle-2.0.4.jar
 
@@ -224,7 +225,7 @@ section.
     -runpath = \
         commonjars/osgi-3.5.0.v20090520.jar;version=file, \
    
-    commonjars/com.springsource.junit-3.8.2.jar;version=file;export="junit.framework;version=3.8",
+    jar/com.springsource.junit-3.8.2.jar;version=file;export="junit.framework;version=3.8",
 
     -runbundles = \
         commonjars/osgi.enterprise-4.2.0.jar;version=file;strategy="lowest", \
