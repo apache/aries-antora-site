@@ -53,10 +53,10 @@
 <td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.blueprint.secure-4.2.0.jar</td>
 </tr>
 <tr>
-<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@35f38fc6</td>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@38c52200</td>
 </tr>
 <tr>
-<td width="50%">Testrun</td><td>Wed Jun 20 11:51:57 BST 2012</td>
+<td width="50%">Testrun</td><td>Fri Jun 22 14:14:38 BST 2012</td>
 </tr>
 <tr>
 <th colspan="2">Bundles</th>
@@ -74,7 +74,13 @@
 <td>org.eclipse.equinox.event</td><td>1.1.100.v20090513</td>
 </tr>
 <tr>
+<td>org.apache.felix.configadmin</td><td>1.2.8</td>
+</tr>
+<tr>
 <td>org.ops4j.pax.logging.pax-logging-api</td><td>1.5.0</td>
+</tr>
+<tr>
+<td>org.objectweb.asm.all</td><td>3.2</td>
 </tr>
 <tr>
 <td>org.apache.aries.util</td><td>1.0.0.SNAPSHOT</td>
@@ -144,41 +150,8 @@
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testNoImportPermission<ul>
-<li>Unexpected event ServiceTestEvent org/osgi/framework/ServiceEvent/REGISTERED for bundle org.osgi.test.cases.blueprint.secure.ServiceOne_import_denied for interfaces {org.osgi.service.blueprint.container.BlueprintContainer} was received:</li>
-</ul>
-<pre id="testNoImportPermission" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event ServiceTestEvent org/osgi/framework/ServiceEvent/REGISTERED for bundle org.osgi.test.cases.blueprint.secure.ServiceOne_import_denied for interfaces {org.osgi.service.blueprint.container.BlueprintContainer} was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.secure.tests.TestPermissions.testNoImportPermission(TestPermissions.java:162)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testNoImportPermission')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testNoImportPermission</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
