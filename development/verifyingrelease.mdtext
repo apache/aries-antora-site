@@ -21,6 +21,14 @@ This page provides some help for anyone who wants to verify release candidate ar
 
 It is essential that the signatures and hashsums are good. Please do read [Verifying Apache HTTP Server Releases][1] for information on why you should verify releases.. 
 
+These instructions have been rolled up into a script, which you can run instead. Cut and paste the following:
+
+    wget --no-check-certificate https://svn.apache.org/repos/asf/aries/scripts/verify_staged_release.sh
+    chmod a+x verify_staged_release.sh
+    ./verify_staged_release.sh [RELEASE-NUM] mytempdirectory &> verifyresults.txt
+    grep FAIL verifyresults.txt
+
+
 ##Have I got the KEYS?
 
 To verify Aries release artifacts you need the public keys for the Aries committers.
@@ -58,6 +66,8 @@ Ensure the checksums are right for the released files. Copy/paste this into the 
         fi
     done
 
+(On the Mac, use `md5 -q` instead of `md5sum` and the cut.)
+
 Do something similar for sha1:
 
     for i in `find content -type f | egrep -v '.md5$|.sha1$|index.html|maven-metadata.xml'`
@@ -71,6 +81,8 @@ Do something similar for sha1:
             echo "*BAD SHA1 for $i *****"
         fi
     done
+
+(On the Mac, use `openssl sha1` instead of `sha1sum`.)
 
 Ensure the PGP signature files are good. See the [Validating section of Verifying Apache HTTP Server Releases][2] for background on validating the authenticity of a key.
 
@@ -97,7 +109,9 @@ It's also a good idea to run the [Apache RAT (Release Audit Tool)][3]. The Aries
 
     mvn -fn -Prat
 
-Note: currently RAT fails due to the generated DEPENDENCIES file not containing a license. It's safe to ignore this as the file is generated. So in order to ensure RAT checks all subdirectories, use the -fn.
+Note: currently RAT fails due to the generated DEPENDENCIES file not containing a license. It's safe to ignore this as the file is generated. So in order to ensure RAT checks all subdirectories, use the -fn. Then check any failures with
+   
+    find . -name \*.rat | xargs grep \!\?\?
 
 
   [1]: http://httpd.apache.org/dev/verification.html

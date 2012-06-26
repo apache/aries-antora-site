@@ -151,7 +151,7 @@ instructions in the file) and checkin
 Follow the general instructions linked to above. 
 
 <a name="ReleasingAries-Creatingabranchtoreleasefrom"></a>
-### Creating a branch to release from
+### Creating a branch to release from (if needed)
 It is strongly recomended that releases are made from trunk and NEVER from a branch. But, if you have to release from a branch this is what 
 you will need to do:
 
@@ -282,7 +282,7 @@ For each bundle that needs to be release perform the following commands:
 
     Check that there are no depndencies on -SNAPSHOT versions.
     Ensure that everything is committed in SVN
-    mvn release:prepare -Papache-release -DpreparationGoals="clean install" 
+    mvn release:prepare -Papache-release -DpreparationGoals="clean install" -DwaitBeforeTagging="10" -DscmCommentPrefix="[ARIES-xxx][maven-release-plugin]"
     mvn release:perform -Papache-release
 
 
@@ -291,11 +291,12 @@ For each bundle that needs to be release perform the following commands:
 
     1. What is the release version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.5: :    
     1. What is SCM release tag or label for "Aries :: Top Parent POM"? (org.apache.aries:parent) parent-0.5: :
-    1. What is the new development version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.6-SNAPSHOT: : 0.5
+    1. What is the new development version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.6-SNAPSHOT: : 0.5.1
 
-    i.e. take the default for the first two questions, and set the new development version to be the same as the one you are releasing! This is because you don't know whether the next version released from the trunk will have a major, minor or micro version number change - you won't know until those changes are made! - so leave it for the person making those changes to make the decision and move to *module*-*new version*-SNAPSHOT.
-
-  * Note 3: mvn release:clean will do *most* of the cleaning up in the event of failures.
+    i.e. take the defaults for the last two questions, but change the release version if required. You don't know whether the next version released from the trunk will have a major, minor or micro version number change - you won't know until those changes are made! - but you have to make a guess. The person doing the next release can make the decision and move to *module*-*new version*-SNAPSHOT.
+  * Note 3: Since the release plugin makes changes in SCM, use a JIRA for the release (ARIES-XXX here) in the commit comment to make it easier to see what's changed
+  * Note 4: The task will appear to hang at the end. It's waiting ten seconds to do the tagging, to ensure everything works in Europe, where svn is mirrored from a US master
+* Note 3: mvn release:clean will do *most* of the cleaning up in the event of failures.
   * Note 4: If on mvn release:prepare you get an error from SVN similar to https://svn.apache.org/repos/asf/!svn/bc/1182408/aries/tags/parent-0.5/default-parent/java5-parent/org.apache.aries.bundle.i.am.releasing does not exist then it's because there's no scm element in the pom.xml for the module you're releasing.
  
 
@@ -307,27 +308,6 @@ commands make and commit changes to the project's pom.xml files and they
 create a tag in SVN. To revert the changes you will need to revert the
 pom.xml files and delete the tag from svn.
 
-If you are in Europe the mvn release:prepare command almost always fails at
-the last step, with a message like:
-
-
-    [ERROR]
-     BUILD FAILURE
-    [INFO]
-     ------------------------------------------------------------------------
-    [INFO]
-     Unable to tag SCM
-    Provider message:
-    The svn tag command failed.
-    Command output:
-    svn: No such revision 936951
-
-This is due to the SVN mirroring in place between Europe and the master in
-the US. When you make a commit, it isn't immediately available in Europe to
-svn up to. Just wait 10 secs and repeat the mvn release:prepare command for
-it to restart where it left off.
-
-
 <a name="ReleasingAries-Closingthestagingrepository"></a>
 ##### Closing the staging repository
 After checking that the staging repository contains the artifacts that you
@@ -338,7 +318,7 @@ so that people can check the release.
 ### Running the vote.
 
  At this
-point you should write two notes to the dev@aries.apache.org mailing list.
+point you should write two notes to the dev@aries.apache.org mailing list. You may wish to ensure they have slightly different subjects, since googlemail seems to ignore anything in brackets when threading. 
 
  * Subject \[VOTE\]
  Apache Aries release candidate 0N
@@ -386,8 +366,15 @@ the perl script [download_release_artifacts.pl](http://svn.apache.org/repos/asf/
 
 Next, update the Aries Downloads pages to refer to the new artifacts.
 
+### Updating dependencies
+
+Once the release is promoted, change all the bundles which depend on the SNAPSHOT to depend on the released version. Deployed snapshots get regularly cleaned from the repositories if there's a released version available, so building against them isn't reliable. 
+
+Don't move bundles which depend on earlier releases to depend on the new release, or they won't be able to run in an environment with the older bundles. 
+
+
 ### Tidying up tasks
-  * Get the compliance tests run
+  * Get the [compliance tests](http://aries.apache.org/development/compliancetesting.html) run
   * Release notes
   * Release the component in JIRA (manage components), check the JIRA release notes.
 
