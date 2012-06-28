@@ -143,7 +143,8 @@ agree its content. Allow at least a week for this discussion.
 ### Creating and storing GPG keys
 For Aries your GPG key will need to be in this file:
 https://svn.apache.org/repos/asf/aries/KEYS (follow the
-instructions in the file) and checkin
+instructions in the file) and checkin. Then ensure the file is mirrored to
+http://www.apache.org/dist/aries/KEYS by following the instructions [here](http://www.apache.org/dev/release.html#upload-scp).
 
 <a name="ReleasingAries-Settingupyourenvironment"></a>
 ### Setting up your environment
