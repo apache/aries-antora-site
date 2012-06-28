@@ -38,7 +38,7 @@ The master KEYS file is in Subversion. The easiest way of getting it from the co
 
 You then need to import the keys into PGP:
 
-    pgp --import KEYS
+   gpg --import KEYS
 
 ##Download artifacts
 
