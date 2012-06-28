@@ -2,7 +2,7 @@ I've staged a release candidate for the Aries 1.0.0 test support module. The
 module is staged and tagged in
 https://svn.apache.org/repos/asf/aries/tags/org.apache.aries.testsupport.unit-1.0.0/.
 
-Instructions for doing a verifying the release are at http://aries.apache.org/development/verifyingrelease.html. Alternately, cut and paste the following to run a full check:
+Instructions for verifying the release are at http://aries.apache.org/development/verifyingrelease.html. Alternately, cut and paste the following to run a full check:
 
 wget --no-check-certificate https://svn.apache.org/repos/asf/aries/scripts/verify_staged_release.sh
 chmod a+x verify_staged_release.sh
