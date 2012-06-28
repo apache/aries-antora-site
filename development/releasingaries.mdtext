@@ -294,11 +294,13 @@ For each bundle that needs to be release perform the following commands:
     1. What is SCM release tag or label for "Aries :: Top Parent POM"? (org.apache.aries:parent) parent-0.5: :
     1. What is the new development version for "Aries :: Top Parent POM"? (org.apache.aries:parent) 0.6-SNAPSHOT: : 0.5.1
 
-    i.e. take the defaults for the last two questions, but change the release version if required. You don't know whether the next version released from the trunk will have a major, minor or micro version number change - you won't know until those changes are made! - but you have to make a guess. The person doing the next release can make the decision and move to *module*-*new version*-SNAPSHOT.
-  * Note 3: Since the release plugin makes changes in SCM, use a JIRA for the release (ARIES-XXX here) in the commit comment to make it easier to see what's changed
-  * Note 4: The task will appear to hang at the end. It's waiting ten seconds to do the tagging, to ensure everything works in Europe, where svn is mirrored from a US master
-* Note 3: mvn release:clean will do *most* of the cleaning up in the event of failures.
-  * Note 4: If on mvn release:prepare you get an error from SVN similar to https://svn.apache.org/repos/asf/!svn/bc/1182408/aries/tags/parent-0.5/default-parent/java5-parent/org.apache.aries.bundle.i.am.releasing does not exist then it's because there's no scm element in the pom.xml for the module you're releasing.
+    i.e. take the defaults for the last two questions, but change the release version if required. The last person doing a release didn't know whether the next version released from the trunk would have a major, minor or micro version number change - they couldn't know until those changes were made! - but they had to make a guess. Now is the time 
+to correct their guess. Similarly, you won't know what the next release number should be, but you need to use /something/, so accept the default. 
+
+  * Note 3: Since the release plugin makes changes in SCM, use a JIRA for the release (ARIES-XXX here) in the commit comment to make it easier to see what's changed.
+  * Note 4: The task will appear to hang at the end. It's waiting ten seconds to do the tagging, to ensure everything works in Europe, where svn is mirrored from a US master.
+  * Note 5: mvn release:clean will do *most* of the cleaning up in the event of failures.
+  * Note 6: If on mvn release:prepare you get an error from SVN similar to https://svn.apache.org/repos/asf/!svn/bc/1182408/aries/tags/parent-0.5/default-parent/java5-parent/org.apache.aries.bundle.i.am.releasing does not exist then it's because there's no scm element in the pom.xml for the module you're releasing.
  
 
 
