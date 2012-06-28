@@ -6,8 +6,9 @@ Instructions for verifying the release are at http://aries.apache.org/developmen
 
 wget --no-check-certificate https://svn.apache.org/repos/asf/aries/scripts/verify_staged_release.sh
 chmod a+x verify_staged_release.sh
-./verify_staged_release.sh 256 mytempdirectory &> verifyresults.txt
+./verify_staged_release.sh 256 mytempdirectory 2>&1 | tee verifyresults.txt
 grep FAIL verifyresults.txt
+grep ERROR verifyresults.txt
 
 
 Artifacts are in one staged repo,
