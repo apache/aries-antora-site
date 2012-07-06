@@ -33,6 +33,29 @@ a complete list
 of all Aries modules and their most recent version numbers after the release.</p>
 
 
+### Choosing a strategy for the release
+Even when releasing a large number of bundles, in Aries we release bundles individually. If there are dependencies
+between the bundles you want to release, you have three strategies for how to release them.
+* **Release incrementally.** 
+   * Release bundles in dependency order, updating dependencies only after releases are promoted.
+   * This has the advantage that trunk always builds cleanly.
+   * The disadvantage is that each release needs to be open for voting for at least 72 hours, so the elapsed time for a large release can be very long.
+   * The list may get fed up of voting on multiple vote threads, although the [verification script](http://aries.apache.org/development/verifyingrelease.html) may help.
+* **Release all at once, then patch up trunk, then fix trunk**
+   * Release api bundles release and have them
+uploaded to nexus, then upgrade the implementations  and all other
+components to use those releases, commit,  release those other
+projects, then close the staging repo and call for a vote.
+   * Bundles in the staging repo will need to compiled in a set order, which makes the verification script less useful.
+   * Trunk will be broken, unless you back out everything which you changed to use the released version back to using the old snapshot (*not* the new snapshot created by the release plugin). Then once the release has been promoted, change everything using the old snapshot back to using the released version.
+   * Doing a release this way can really reduce the amount of time spent waiting for votes.
+   * However, getting everything right without breaking trunk can be complex.
+* **Release from a branch**
+   * This is similar to the second procedure, except there's no need to patch trunk up to keep it compiling
+   * You will need to merge the branch across once the release has been promoted, which is extra complexity
+   * Doing mainline releases from branches plays havoc with git mirroring, so we promised to try and avoid doing it 
+   * See below for extra instructions on releasing from a branch
+
 ### How to deal with JIRA
 Before actually doing any releasing work through the list of bundles and understand what defects have been fixed
 (add more about JIRA versions here)
