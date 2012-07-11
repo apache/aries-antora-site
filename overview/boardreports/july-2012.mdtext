@@ -30,11 +30,11 @@ The following bug fix releases:
 As indicated in the last report, bundles and packages are now being  brought up from 0.x to 1.0 to better reflect the stability and level of confidence we have in them. This will also bring our versioning policy inline with that described in the OSGi Alliance semantic versioning whitepaper.
 The 1.0 releases have started. We have approx 118 OSGi bundles so these are being done in logical phases. These have completed:
 
-Apache Aries Test Support 1.0.0
-Apache Aries JNDI API 1.0.0
-Apache Aries JMX API 1.0.0
-Apache Aries JPA Container API 1.0.0
-Apache Aries Quiesce API 1.0.0
+* Apache Aries Test Support 1.0.0
+* Apache Aries JNDI API 1.0.0
+* Apache Aries JMX API 1.0.0
+* Apache Aries JPA Container API 1.0.0
+* Apache Aries Quiesce API 1.0.0
 
 In addition there has been significant activity in the Aries Subsystems module which will be an implementation of the OSGi Subsystem Service Specification.
 
