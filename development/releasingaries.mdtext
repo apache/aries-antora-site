@@ -35,7 +35,8 @@ of all Aries modules and their most recent version numbers after the release.</p
 
 ### Choosing a strategy for the release
 Even when releasing a large number of bundles, in Aries we release bundles individually. If there are dependencies
-between the bundles you want to release, you have three strategies for how to release them.
+between the bundles you want to release, you have four strategies for how to release them.
+
   * **Release incrementally.** 
     * Release bundles in dependency order, updating dependencies only after releases are promoted.
     * This has the advantage that trunk always builds cleanly.
@@ -60,6 +61,8 @@ projects, then close the staging repo and call for a vote.
     * You will need to merge the branch across once the release has been promoted, which is extra complexity
     * Doing mainline releases from branches plays havoc with git mirroring, so we promised to try and avoid doing it 
     * See below for extra instructions on releasing from a branch
+
+In many cases with semantically versioned bundles there won't be dependencies on the latest and greatest snapshots, which makes everything much easier. 
 
 ### How to deal with JIRA
 Before actually doing any releasing work through the list of bundles and understand what defects have been fixed
