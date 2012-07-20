@@ -53,10 +53,10 @@
 <td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.blueprint-4.2.0.jar</td>
 </tr>
 <tr>
-<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@20968fda</td>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@5773ec72</td>
 </tr>
 <tr>
-<td width="50%">Testrun</td><td>Tue Jun 19 22:41:02 BST 2012</td>
+<td width="50%">Testrun</td><td>Sun Jul 15 17:42:23 BST 2012</td>
 </tr>
 <tr>
 <th colspan="2">Bundles</th>
@@ -398,12 +398,12 @@
 <td width="15px" class="
                                         warning
                                     "></td><td class="code">testExtenderStop<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_one with properties: [bundle.id=76, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: two, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setTwo(interface org.osgi.test.cases.blueprint.services.TestServiceTwo], event=org.osgi.service.blueprint.container.BlueprintEvent@6cb910c6, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_one_4.2.0 [76], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_one, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
+<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_one with properties: [bundle.id=76, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: two, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setTwo(interface org.osgi.test.cases.blueprint.services.TestServiceTwo], event=org.osgi.service.blueprint.container.BlueprintEvent@71292d12, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_one_4.2.0 [76], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_one, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
 </ul>
 <pre id="testExtenderStop" style="display:none">
 <div class="code">
 
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_one with properties: [bundle.id=76, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: two, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setTwo(interface org.osgi.test.cases.blueprint.services.TestServiceTwo], event=org.osgi.service.blueprint.container.BlueprintEvent@6cb910c6, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_one_4.2.0 [76], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_one, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
+junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_one with properties: [bundle.id=76, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: two, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setTwo(interface org.osgi.test.cases.blueprint.services.TestServiceTwo], event=org.osgi.service.blueprint.container.BlueprintEvent@71292d12, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_one_4.2.0 [76], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_one, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
 	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
@@ -453,8 +453,8 @@ Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: Er
 	at java.lang.Thread.run(Thread.java:680)
 Caused by: org.osgi.service.blueprint.container.ServiceUnavailableException: No matching service for optional OSGi service reference: (&amp;(objectClass=org.osgi.test.cases.blueprint.services.TestServiceTwo)(osgi.service.blueprint.compname=ServiceTwoCircular))
 	at org.apache.aries.blueprint.container.ReferenceRecipe.getService(ReferenceRecipe.java:228)
-	at org.apache.aries.blueprint.container.ReferenceRecipe.access$100(ReferenceRecipe.java:56)
-	at org.apache.aries.blueprint.container.ReferenceRecipe$ServiceDispatcher.call(ReferenceRecipe.java:294)
+	at org.apache.aries.blueprint.container.ReferenceRecipe.access$000(ReferenceRecipe.java:56)
+	at org.apache.aries.blueprint.container.ReferenceRecipe$ServiceDispatcher.call(ReferenceRecipe.java:290)
 	at org.apache.aries.proxy.impl.ProxyHandler$1.invoke(ProxyHandler.java:54)
 	at org.apache.aries.proxy.impl.ProxyHandler.invoke(ProxyHandler.java:119)
 	at $Proxy3.testTwo(Unknown Source)
@@ -476,12 +476,12 @@ Caused by: org.osgi.service.blueprint.container.ServiceUnavailableException: No 
 <td width="15px" class="
                                         warning
                                     "></td><td class="code">testExtenderRankedStop<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_two with properties: [bundle.id=82, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@63ae2c6f, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_two_4.2.0 [82], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_two, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
+<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_two with properties: [bundle.id=82, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@864dfeb, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_two_4.2.0 [82], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_two, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
 </ul>
 <pre id="testExtenderRankedStop" style="display:none">
 <div class="code">
 
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_two with properties: [bundle.id=82, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@63ae2c6f, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_two_4.2.0 [82], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_two, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
+junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.circular_ref_two with properties: [bundle.id=82, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceProxyChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@864dfeb, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.circular_ref_two_4.2.0 [82], bundle.symbolicName=org.osgi.test.cases.blueprint.circular_ref_two, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
 	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
@@ -531,8 +531,8 @@ Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: Er
 	at java.lang.Thread.run(Thread.java:680)
 Caused by: org.osgi.service.blueprint.container.ServiceUnavailableException: No matching service for optional OSGi service reference: (&amp;(objectClass=org.osgi.test.cases.blueprint.services.TestServiceOne)(osgi.service.blueprint.compname=ServiceOneCircular))
 	at org.apache.aries.blueprint.container.ReferenceRecipe.getService(ReferenceRecipe.java:228)
-	at org.apache.aries.blueprint.container.ReferenceRecipe.access$100(ReferenceRecipe.java:56)
-	at org.apache.aries.blueprint.container.ReferenceRecipe$ServiceDispatcher.call(ReferenceRecipe.java:294)
+	at org.apache.aries.blueprint.container.ReferenceRecipe.access$000(ReferenceRecipe.java:56)
+	at org.apache.aries.blueprint.container.ReferenceRecipe$ServiceDispatcher.call(ReferenceRecipe.java:290)
 	at org.apache.aries.proxy.impl.ProxyHandler$1.invoke(ProxyHandler.java:54)
 	at org.apache.aries.proxy.impl.ProxyHandler.invoke(ProxyHandler.java:119)
 	at $Proxy0.testOne(Unknown Source)
@@ -644,12 +644,12 @@ Caused by: org.osgi.service.blueprint.container.ServiceUnavailableException: No 
 <td width="15px" class="
                                         warning
                                     "></td><td class="code">testFactoryExport<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_property_import with properties: [bundle.id=118, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceReferenceChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@7519ca2c, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_property_import_4.2.0 [118], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_property_import, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
+<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_property_import with properties: [bundle.id=118, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceReferenceChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@324a4e31, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_property_import_4.2.0 [118], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_property_import, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
 </ul>
 <pre id="testFactoryExport" style="display:none">
 <div class="code">
 
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_property_import with properties: [bundle.id=118, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceReferenceChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@7519ca2c, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_property_import_4.2.0 [118], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_property_import, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
+junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_property_import with properties: [bundle.id=118, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: Error setting property: PropertyDescriptor &lt;name: one, getter: null, setter: [class org.osgi.test.cases.blueprint.components.serviceimport.ServiceReferenceChecker.setOne(interface org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@324a4e31, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_property_import_4.2.0 [118], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_property_import, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
 	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
@@ -698,9 +698,9 @@ Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: Er
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
 	at java.lang.Thread.run(Thread.java:680)
 Caused by: java.lang.IllegalStateException: getService() returned null for {org.osgi.test.cases.blueprint.services.TestServiceOne}={osgi.service.blueprint.compname=ServiceOneFactory, service.id=347}
-	at org.apache.aries.blueprint.container.ReferenceRecipe.getService(ReferenceRecipe.java:245)
-	at org.apache.aries.blueprint.container.ReferenceRecipe.access$100(ReferenceRecipe.java:56)
-	at org.apache.aries.blueprint.container.ReferenceRecipe$ServiceDispatcher.call(ReferenceRecipe.java:294)
+	at org.apache.aries.blueprint.container.ReferenceRecipe.getService(ReferenceRecipe.java:241)
+	at org.apache.aries.blueprint.container.ReferenceRecipe.access$000(ReferenceRecipe.java:56)
+	at org.apache.aries.blueprint.container.ReferenceRecipe$ServiceDispatcher.call(ReferenceRecipe.java:290)
 	at org.apache.aries.proxy.impl.ProxyHandler$1.invoke(ProxyHandler.java:54)
 	at org.apache.aries.proxy.impl.ProxyHandler.invoke(ProxyHandler.java:119)
 	at $Proxy0.testOne(Unknown Source)
@@ -915,12 +915,12 @@ junit.framework.AssertionFailedError: Unexpected event org/osgi/test/cases/bluep
 <td width="15px" class="
                                         warning
                                     "></td><td class="code">testLazyServiceGet<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=173, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@1c90a278, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [173], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
+<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=173, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@74d4db38, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [173], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
 </ul>
 <pre id="testLazyServiceGet" style="display:none">
 <div class="code">
 
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=173, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@1c90a278, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [173], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
+junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=173, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@74d4db38, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [173], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
 	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
@@ -990,12 +990,12 @@ Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: Th
 <td width="15px" class="
                                         warning
                                     "></td><td class="code">testInterfacelessReference<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=175, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@6ff4ff23, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [175], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
+<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=175, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@3cec7c94, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [175], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
 </ul>
 <pre id="testInterfacelessReference" style="display:none">
 <div class="code">
 
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=175, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@6ff4ff23, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [175], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
+junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.ServiceOne_factory_export with properties: [bundle.id=175, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: org.osgi.service.blueprint.container.ComponentDefinitionException: The service implementation does not implement the required interfaces: [org.osgi.test.cases.blueprint.services.TestServiceOne], event=org.osgi.service.blueprint.container.BlueprintEvent@3cec7c94, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.ServiceOne_factory_export_4.2.0 [175], bundle.symbolicName=org.osgi.test.cases.blueprint.ServiceOne_factory_export, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
 	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
 	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
@@ -2222,417 +2222,33 @@ junit.framework.AssertionFailedError: Expected event BlueprintContainerEvent org
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testMapConstructor<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_constructor_injection with properties: [bundle.id=432, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@645d9aa2, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_constructor_injection_4.2.0 [432], bundle.symbolicName=org.osgi.test.cases.blueprint.map_constructor_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
-</ul>
-<pre id="testMapConstructor" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_constructor_injection with properties: [bundle.id=432, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@645d9aa2, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_constructor_injection_4.2.0 [432], bundle.symbolicName=org.osgi.test.cases.blueprint.map_constructor_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.tests.TestCollectionInjection.testMapConstructor(TestCollectionInjection.java:1992)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:111)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:106)
-	at org.apache.aries.blueprint.container.BeanRecipe.getInstance(BeanRecipe.java:264)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:802)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:783)
-	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:648)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:340)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:242)
-	at org.apache.aries.blueprint.utils.threading.impl.DiscardableRunnable.run(DiscardableRunnable.java:48)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-Caused by: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.container.AggregateConverter.convert(AggregateConverter.java:188)
-	at org.apache.aries.blueprint.container.BlueprintRepository.convert(BlueprintRepository.java:402)
-	at org.apache.aries.blueprint.di.AbstractRecipe.convert(AbstractRecipe.java:140)
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:107)
-	... 22 more
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testMapConstructor')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testMapConstructor</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testFactoryMapConstructor<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_factory_constructor_injection with properties: [bundle.id=433, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@3ec76887, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_factory_constructor_injection_4.2.0 [433], bundle.symbolicName=org.osgi.test.cases.blueprint.map_factory_constructor_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
-</ul>
-<pre id="testFactoryMapConstructor" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_factory_constructor_injection with properties: [bundle.id=433, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@3ec76887, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_factory_constructor_injection_4.2.0 [433], bundle.symbolicName=org.osgi.test.cases.blueprint.map_factory_constructor_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.tests.TestCollectionInjection.testFactoryMapConstructor(TestCollectionInjection.java:2155)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:111)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:106)
-	at org.apache.aries.blueprint.container.BeanRecipe.getInstance(BeanRecipe.java:264)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:802)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:783)
-	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:648)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:340)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:242)
-	at org.apache.aries.blueprint.utils.threading.impl.DiscardableRunnable.run(DiscardableRunnable.java:48)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-Caused by: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.container.AggregateConverter.convert(AggregateConverter.java:188)
-	at org.apache.aries.blueprint.container.BlueprintRepository.convert(BlueprintRepository.java:402)
-	at org.apache.aries.blueprint.di.AbstractRecipe.convert(AbstractRecipe.java:140)
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:107)
-	... 22 more
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testFactoryMapConstructor')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testFactoryMapConstructor</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testStaticFactoryMapConstructor<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_static_factory_constructor_injection with properties: [bundle.id=434, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@967e8c, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_static_factory_constructor_injection_4.2.0 [434], bundle.symbolicName=org.osgi.test.cases.blueprint.map_static_factory_constructor_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
-</ul>
-<pre id="testStaticFactoryMapConstructor" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_static_factory_constructor_injection with properties: [bundle.id=434, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@967e8c, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_static_factory_constructor_injection_4.2.0 [434], bundle.symbolicName=org.osgi.test.cases.blueprint.map_static_factory_constructor_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.tests.TestCollectionInjection.testStaticFactoryMapConstructor(TestCollectionInjection.java:2319)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:111)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:106)
-	at org.apache.aries.blueprint.container.BeanRecipe.getInstance(BeanRecipe.java:264)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:802)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:783)
-	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:648)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:340)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:242)
-	at org.apache.aries.blueprint.utils.threading.impl.DiscardableRunnable.run(DiscardableRunnable.java:48)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-Caused by: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.container.AggregateConverter.convert(AggregateConverter.java:188)
-	at org.apache.aries.blueprint.container.BlueprintRepository.convert(BlueprintRepository.java:402)
-	at org.apache.aries.blueprint.di.AbstractRecipe.convert(AbstractRecipe.java:140)
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:107)
-	... 22 more
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testStaticFactoryMapConstructor')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testStaticFactoryMapConstructor</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testMapProperty<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_property_injection with properties: [bundle.id=435, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@3d04f4f9, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_property_injection_4.2.0 [435], bundle.symbolicName=org.osgi.test.cases.blueprint.map_property_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
-</ul>
-<pre id="testMapProperty" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_property_injection with properties: [bundle.id=435, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@3d04f4f9, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_property_injection_4.2.0 [435], bundle.symbolicName=org.osgi.test.cases.blueprint.map_property_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.tests.TestCollectionInjection.testMapProperty(TestCollectionInjection.java:2485)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:111)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:106)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperty(BeanRecipe.java:929)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperties(BeanRecipe.java:903)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperties(BeanRecipe.java:884)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:816)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:783)
-	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:648)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:340)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:242)
-	at org.apache.aries.blueprint.utils.threading.impl.DiscardableRunnable.run(DiscardableRunnable.java:48)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-Caused by: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.container.AggregateConverter.convert(AggregateConverter.java:188)
-	at org.apache.aries.blueprint.container.BlueprintRepository.convert(BlueprintRepository.java:402)
-	at org.apache.aries.blueprint.di.AbstractRecipe.convert(AbstractRecipe.java:140)
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:107)
-	... 24 more
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testMapProperty')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testMapProperty</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testStaticFactoryMapProperty<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_factory_property_injection with properties: [bundle.id=436, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@49cd21c7, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_factory_property_injection_4.2.0 [436], bundle.symbolicName=org.osgi.test.cases.blueprint.map_factory_property_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
-</ul>
-<pre id="testStaticFactoryMapProperty" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_factory_property_injection with properties: [bundle.id=436, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@49cd21c7, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_factory_property_injection_4.2.0 [436], bundle.symbolicName=org.osgi.test.cases.blueprint.map_factory_property_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.tests.TestCollectionInjection.testStaticFactoryMapProperty(TestCollectionInjection.java:2650)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:111)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:106)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperty(BeanRecipe.java:929)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperties(BeanRecipe.java:903)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperties(BeanRecipe.java:884)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:816)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:783)
-	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:648)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:340)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:242)
-	at org.apache.aries.blueprint.utils.threading.impl.DiscardableRunnable.run(DiscardableRunnable.java:48)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-Caused by: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.container.AggregateConverter.convert(AggregateConverter.java:188)
-	at org.apache.aries.blueprint.container.BlueprintRepository.convert(BlueprintRepository.java:402)
-	at org.apache.aries.blueprint.di.AbstractRecipe.convert(AbstractRecipe.java:140)
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:107)
-	... 24 more
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testStaticFactoryMapProperty')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testStaticFactoryMapProperty</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
-                                        warning
-                                    "></td><td class="code">testFactoryMapProperty<ul>
-<li>Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_static_factory_property_injection with properties: [bundle.id=437, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@67e2f794, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_static_factory_property_injection_4.2.0 [437], bundle.symbolicName=org.osgi.test.cases.blueprint.map_static_factory_property_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:</li>
-</ul>
-<pre id="testFactoryMapProperty" style="display:none">
-<div class="code">
-
-junit.framework.AssertionFailedError: Unexpected event BlueprintContainerEvent org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE for bundle org.osgi.test.cases.blueprint.map_static_factory_property_injection with properties: [bundle.id=437, bundle.version=4.2.0, cause=org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean, event=org.osgi.service.blueprint.container.BlueprintEvent@67e2f794, event.topics=org/osgi/test/cases/blueprint/BlueprintContainer/FAILURE, bundle=org.osgi.test.cases.blueprint.map_static_factory_property_injection_4.2.0 [437], bundle.symbolicName=org.osgi.test.cases.blueprint.map_static_factory_property_injection, extender.bundle=org.apache.aries.blueprint_1.0.0.SNAPSHOT [7] ] was received:
-	at org.osgi.test.cases.blueprint.framework.AdminTestEvent.failUnexpected(AdminTestEvent.java:99)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.checkEventResults(TestPhase.java:184)
-	at org.osgi.test.cases.blueprint.framework.TestPhase.runTest(TestPhase.java:245)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.runTest(BaseTestController.java:294)
-	at org.osgi.test.cases.blueprint.framework.BaseTestController.run(BaseTestController.java:407)
-	at org.osgi.test.cases.blueprint.tests.TestCollectionInjection.testFactoryMapProperty(TestCollectionInjection.java:2805)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at junit.framework.TestCase.runTest(TestCase.java:164)
-	at junit.framework.TestCase.runBare(TestCase.java:130)
-	at junit.framework.TestResult$1.protect(TestResult.java:106)
-	at junit.framework.TestResult.runProtected(TestResult.java:124)
-	at junit.framework.TestResult.run(TestResult.java:109)
-	at junit.framework.TestCase.run(TestCase.java:120)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at junit.framework.TestSuite.runTest(TestSuite.java:230)
-	at junit.framework.TestSuite.run(TestSuite.java:225)
-	at aQute.junit.runtime.Target.doTesting(Target.java:234)
-	at aQute.junit.runtime.Target.run(Target.java:57)
-	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: org.osgi.service.blueprint.container.ComponentDefinitionException: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:111)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:106)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperty(BeanRecipe.java:929)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperties(BeanRecipe.java:903)
-	at org.apache.aries.blueprint.container.BeanRecipe.setProperties(BeanRecipe.java:884)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:816)
-	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:783)
-	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)
-	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:648)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:340)
-	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:242)
-	at org.apache.aries.blueprint.utils.threading.impl.DiscardableRunnable.run(DiscardableRunnable.java:48)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
-	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at java.lang.Thread.run(Thread.java:680)
-Caused by: java.lang.Exception: HOLLY Unable to convert value 1.0 to type java.lang.Boolean
-	at org.apache.aries.blueprint.container.AggregateConverter.convert(AggregateConverter.java:188)
-	at org.apache.aries.blueprint.container.BlueprintRepository.convert(BlueprintRepository.java:402)
-	at org.apache.aries.blueprint.di.AbstractRecipe.convert(AbstractRecipe.java:140)
-	at org.apache.aries.blueprint.di.MapRecipe.internalCreate(MapRecipe.java:107)
-	... 24 more
-
- </div>
-</pre>
-</td><td>1</td><td>0</td><td><img src="http://www.osgi.org/www/info.png" onclick="toggle('testFactoryMapProperty')" title="Show Exceptions"></td>
+                                        ok
+                                    "></td><td class="code">testFactoryMapProperty</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
