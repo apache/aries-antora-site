@@ -55,7 +55,7 @@ source.
 
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> Sub project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Binary </th><th class="confluenceTh"> Source </th><th class="confluenceTh"> Comments </th></tr>
-<tr><td class="confluenceTd"> eba-maven-plugin </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
+<tr><td class="confluenceTd"> eba-maven-plugin </td><td class="confluenceTd"> </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"> </td></tr>
 <tr><td class="confluenceTd"> </td><td class="confluenceTd"> - </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
