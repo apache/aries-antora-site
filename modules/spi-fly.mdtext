@@ -7,6 +7,8 @@ The SPI Fly component is aimed at providing general support for the JRE SPI
 mechanism, including the usage of <tt>java.util.ServiceLoader</tt>, 
 <tt>META-INF/services</tt> and similar methods in OSGi.
 
+SPI Fly is the Reference Implementation of the OSGi ServiceLoader Mediator specification, chapter 133 in the [OSGi 
+Enterprise Specification][1], available from version 5.
 
 ##The Problem##
 <tt>java.util.ServiceLoader.load()</tt> and other similar methods such as 
@@ -31,7 +33,75 @@ In order to make the ServiceLoader approach work under OSGi, calling code can be
 to set the TCCL to the appropriate providers very briefly, only for the duration of the
 call. The SPI Fly component does precisely this.
 
-###Providers###
+SPI Fly supports two modes of operation:
+
+  - OSGi Specification compliant configuration. This is based on OSGi generic requirements and capabilities and 
+provides portability across implementations of this specification, but only covers <tt>java.util.ServiceLoader</tt>. [Find it here](#specconf).
+  - If you need to handle cases other than <tt>java.util.ServiceLoader</tt>, such as the various FactoryFinders, 
+<tt>javax.imageio.spi.ServiceRegistry</tt>, <tt>javax.sound.sampled.AudioSystem</tt> or others that use the TCCL
+to find an implementation, you can use the [SPI Fly-specific configuration](#specificconf).
+
+Additionally, services found in the META-INF/services location in opted-in bundles will be registered in the OSGi Service 
+Registry so that OSGi-aware consumers can simply find them there.
+
+##Getting SPI Fly##
+
+###Releases###
+There are no releases of SPI-Fly at this point in time, but when 
+once released releases will be available from Maven Central.
+
+###Building the code###
+The code can be found in
+[http://svn.apache.org/repos/asf/aries/trunk/spi-fly][2].
+
+To build, use Maven 3.x and run 'mvn install'
+#<a id="specconf"/>Configuration: OSGi Spec-compliant#
+All the details surrounding this type of configuration are covered in the 
+[OSGi Enterprise Specification][1] (from version 5) chapter 133. This section provides a short overview.
+
+##Providers##
+SPI provider bundles opt in to being processed by specifying a requirement on the 
+<tt>osgi.serviceloader.registrar</tt> extender. This is done by adding the following Bundle Manifest header. Without this they will not be considered by SPI Fly:
+
+<tt>&nbsp;&nbsp;Require-Capability: osgi.extender; filter:="(osgi.extender=osgi.serviceloader.registrar)"</tt>
+
+Additionally, they need to provide capabilities for all the APIs that are exposed through this mechanism, for example:
+
+<tt>&nbsp;&nbsp;Provide-Capability: osgi.serviceloader; osgi.serviceloader=org.apache.aries.spifly.mysvc.MySPIProvider</tt>
+
+While this example omits it, it is advisable to use <tt>uses</tt> constraints on the Provide-Capability header, to 
+ensure consistent class spaces.
+
+See the <tt>spi-fly-example-provider2-bundle</tt> for an example of a spec-compliant provider.
+
+##Consumers##
+
+A SPI consumer (i.e. a bundle using the <tt>java.util.ServiceLoader.load()</tt> API) needs to specify required capabilities
+in the Required-Capability Manifest header. Two different types of requirements must be specified:
+
+  - A requirement on the SPI Fly mechanism. This is stated as follows<br/>
+<tt>&nbsp;&nbsp;osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"</tt><br/>
+without this requirement the bundle will not be considered for processing.
+  - A requirement on the SPI that needs to be provided through this mechanism, for example<br/>
+<tt>&nbsp;&nbsp;osgi.serviceloader; filter:="(osgi.serviceloader=org.apache.aries.spifly.mysvc.MySPIProvider)";cardinality:=multiple</tt><br/>
+Note that the <tt>cardinality</tt> directive is specified to allow multiple bundles to provide the requested capability, allowing
+provided services to come from more than one provider bundle. However at this time of writing some OSGi frameworks ignore
+the cardinality directive.
+
+All requirements are combined into a single Require-Capability header:
+
+<tt>&nbsp;&nbsp;Require-Capability: osgi.serviceloader; filter:="(osgi.serviceloader=org.apache.aries.spifly.mysvc.MySPIProvider)";cardinality:=multiple,osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"</tt>
+
+See the <tt>spi-fly-example-client2-bundle</tt> for an example of a spec-compliant consumer.
+
+#<a id="specificconf"/>Configuration: SPI Fly-specific#
+This section describes how to use SPI Fly's proprietary configuration
+mechanism. It provides more features, but doesn't provide the 
+portability that spec-compliance configuration gives. If you 
+are only using SPI Fly with java.util.ServiceLoader then consider
+using the [spec-compliant](#specconf) configuration for portability.
+
+##Providers##
 First for all, SPI Fly needs to be made aware of any bundles that provide the services.
 These bundles are made visible through the TCCL for the duration of the <tt>ServiceLoader.load()</tt>
 (or similar) call.
@@ -51,7 +121,7 @@ The <tt>SPI-Provider</tt> header can either be set in the providing bundle itsel
 that holds the original unmodified jar containing the provider internally as a 
 on the <tt>Bundle-ClassPath</tt>.
 
-###Consumers###
+##Consumers##
 Service consumers also need to opt-in to the process. 
 
 To specify a consumer, add the <tt>SPI-Consumer</tt> manifest header to the client bundle. This header 
@@ -69,15 +139,29 @@ call <tt>DocumentBuilderFactory.newInstance()</tt>.
 * **org.foo.Foo#someMthd(),org.bar.Bar#myMethod()** weave calls to <tt>Foo.someMthd()</tt> and 
 <tt>Bar.myMethod()</tt>. 
 
+###Special Cases###
+SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain
+implementations. However, some cases some *special treatment* is needed. This special treatment is often needed when the API itself does not 
+match the name of the resources in META-INF/services, java.util.ServiceLoader is such a case, however SPI-Fly has built-in knowledge of ServiceLoader.
+Other APIs that require special treatment are listed below:
 
-There are currently standardization efforts ongoing in the OSGi Alliance for which the SPI Fly project is the Reference Implementation. 
-For more information, see RFC 167 in the OSGi Enterprise 5 EA draft: 
-[http://www.osgi.org/download/osgi-early-draft-2011-09.pdf][1]
+  - **javax.imageio.spi.ServiceRegistry**: This class is very much like
+java.util.ServiceLoader in that it can load any kind of API implementation.
+While SPI Fly knows about ServiceLoader and treats it specially, the ServiceRegistry
+class currently does not have special treatment. It can still be made to work
+but this requires the following header in the provider bundle:
+<tt>SPI-Provider:&nbsp;javax.imageio.spi.ServiceRegistry</tt> on the client
+side you can use <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders(java.lang.Class)</tt>
+ or <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders</tt>
+  - **javax.sound.sampled.AudioSystem**: This class uses sun.misc.Service under the covers (via com.sun.media.sound.JDK13Services) 
+which is a predecessor to java.util.ServiceLoader. There is no special treatment for sun.misc.Service
+in SPI Fly (yet), but the AudioSystem.getAudioInputStream() API can be made to work by explicitly listing it in the provider bundle 
+(the one that contains the relevant META-INF/services resources):
+<tt>SPI-Provider:&nbsp;javax.sound.sampled.AudioSystem</tt> on the consumer side you can use
+<tt>SPI-Consumer:&nbsp;javax.sound.sampled.AudioSystem#getAudioInputStream
+</tt>
 
-The code can be found in
-[http://svn.apache.org/repos/asf/aries/trunk/spi-fly][2].
-
-##How to use##
+#Usage#
 There are currently two ways to use the SPI Fly component. If you have an OSGi 
 4.3 compliant framework that supports WeavingHooks you can use the dynamic weaving approach. 
 
@@ -133,28 +217,6 @@ id	State       Bundle
 
 Then install and start the statically woven bundle into the system.
 
-##Special Cases##
-SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain
-implementations. However, some cases some *special treatment* is needed. This special treatment is often needed when the API itself does not 
-match the name of the resources in META-INF/services, java.util.ServiceLoader is such a case, however SPI-Fly has built-in knowledge of ServiceLoader.
-Other APIs that require special treatment are listed below:
-
-  - **javax.imageio.spi.ServiceRegistry**: This class is very much like
-java.util.ServiceLoader in that it can load any kind of API implementation.
-While SPI Fly knows about ServiceLoader and treats it specially, the ServiceRegistry
-class currently does not have special treatment. It can still be made to work
-but this requires the following header in the provider bundle:
-<tt>SPI-Provider:&nbsp;javax.imageio.spi.ServiceRegistry</tt> on the client
-side you can use <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders(java.lang.Class)</tt>
- or <tt>SPI-Consumer:&nbsp;javax.imageio.spi.ServiceRegistry#lookupProviders</tt>
-  - **javax.sound.sampled.AudioSystem**: This class uses sun.misc.Service under the covers (via com.sun.media.sound.JDK13Services) 
-which is a predecessor to java.util.ServiceLoader. There is no special treatment for sun.misc.Service
-in SPI Fly (yet), but the AudioSystem.getAudioInputStream() API can be made to work by explicitly listing it in the provider bundle 
-(the one that contains the relevant META-INF/services resources):
-<tt>SPI-Provider:&nbsp;javax.sound.sampled.AudioSystem</tt> on the consumer side you can use
-<tt>SPI-Consumer:&nbsp;javax.sound.sampled.AudioSystem#getAudioInputStream
-</tt>
-
 ##Examples##
 The <tt>spi-fly-examples</tt> directory contains a number of example bundles that can be 
 used for testing or experimenting.
@@ -170,6 +232,6 @@ The following modules can be found in this directory:
 * **spi-fly-example-client2-bundle** - a bundle that has code that invokes <tt>java.util.ServiceLoader.load()</tt> directly.
 
 
-  [1]: http://www.osgi.org/download/osgi-early-draft-2011-09.pdf
+  [1]: http://www.osgi.org/Download/Release5 "OSGi Enterprise Specification"
   [2]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly
   [3]: http://search.maven.org/#artifactdetails|asm|asm-all|3.2|jar
