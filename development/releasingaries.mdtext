@@ -23,14 +23,7 @@ a release of the blueprint API bundle is required the first step is to find and 
 its -SNAPSHOT dependencies. Because Aries bundles are quite interdependent (see [here](moduledependencies) 
 for an idea
 of how the modules relate to each other, it may be necessary to release quite a large number of bundles. So,
-step one is to make a list. 
-<p>To help with this, there is a file called aries_release_versions.txt in the top level
-aries directory - this contains a list of all the Aries modules and their current release versions. The file
-can be recreated (if necessary)
-using the perl script list_bundles_in_aries.pl, checked into SVN under the scripts directory. The text file
-is used for later steps in the release process, so by the end of the process it will have been updated to have
-a complete list
-of all Aries modules and their most recent version numbers after the release.</p>
+step one is to make a list.  
 
 
 ### Choosing a strategy for the release
@@ -106,15 +99,12 @@ work together.
 ## Releasing the samples
 
 The Aries samples are designed to work across all the Aries modules. Samples are released as a single
-module. All of the Aries dependencies are listed in the top level samples pom. In 
-trunk, the version of all the dependencies should always point the SNAPSHOT versions 
-in trunk. At release time these must all be modified to the latest released version of 
-each bundle. *It is very important the versions are set **only** in the top level 
+module. All of the Aries dependencies are listed in the top level samples pom. 
+*It is very important the versions are set **only** in the top level 
 sample pom*. Both sub-modules and filtered resources need the version information, setting it in
 one place is the only way to avoid a mess.
 
-<p>The best time to do a samples release is usually at the end of a bundle release when 
-all of the bundle version information is up to date in aries_release_versions.txt. </p>
+<p>The best time to do a samples release is usually at the end of a bundle release. </p>
 
 <p>It is critically important that the samples are all tested before making release. Some have itests
 but others (blueprint) are only tested manually. In fact it's wise to run through
@@ -375,9 +365,6 @@ After 72 hours, if no problems have been found in the release artifacts,
 the dev@aries vote can be summarised and closed. Note that at least three
 +1 votes from Aries PMC members are required. 
 
-Finally - ensure that the file aries_release_version.txt is completely up to date and accurate. 
-You will use this file in the following steps to help build the release web pages.
-
 
 <a name="ReleasingAries-Promotingthereleaseartifacts"></a>
 ### Promoting the release artifacts
@@ -395,10 +382,10 @@ archived here /www/archive.apache.org/dist/aries.
 
 First, delete the artifacts of the previous release from the distribution directory. You don't need to worry about putting the previous release artifacts in the archive as they will already have been rsync'd from the distribution directory.
 
-Then, put new release artifacts in the distribution directory. This is best done using a script, the script can be generated uing
+Then, put new release artifacts in the distribution directory. This is best done using a script, the script can be generated using
 the perl script [download_release_artifacts.pl](http://svn.apache.org/repos/asf/aries/scripts/download_release_artifacts.pl). 
 
-Next, update the Aries Downloads pages to refer to the new artifacts.
+Next, update the Aries Downloads pages to refer to the new artifacts. The the perl script [create_modules_table.pl](http://svn.apache.org/repos/asf/aries/scripts/create_modules_table.pl) can do this automatically.
 
 ### Updating dependencies
 

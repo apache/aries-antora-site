@@ -9,7 +9,7 @@ Steps to generate:
 
 1. Edit the file aries-release-versions.txt to get the right release versions.
 2. Run 'perl create_modules_table.pl > modules_table.txt'
-3. Edit current_release.mdtext_body to insert modules_table.txt just before teh final </table>
-4  Copy current_release.mdtext_body to current_release.mdtext and checkin
+3. Run 'cat currentrelease.mdtext_body modules_table.txt > currentrelease.mdtext'
+4. Commit and publish 
 
 
