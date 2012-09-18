@@ -8,9 +8,9 @@ Title: ReleaseNotes
 
 Welcome to the 1.0.0 release. 
 
- * [Compliance tests](ct/1.0.0/testresults.html)
-[
- * [JIRA Release Notes ](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310981&version=12315310)
+ * [Compliance tests](testresults.html)
+
+ * JIRA Release Notes (TBD)
 
 The main change in this version is the move to proper semantic versions for all packages and bundle versions. 
 
