@@ -26,27 +26,27 @@ the released  binary artifacts. Alternatively you can build the entire
 source.
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> Sub project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Download </th><th class="confluenceTh"> Comments </th></tr>
-<tr><td class="confluenceTd"> Aries Samples </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/samples-0.3-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/samples-0.3-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/samples-0.3-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/samples-0.3-source-release.zip.sha1">sha1</A>) 
+<tr><td class="confluenceTd"> Aries Samples </td><td class="confluenceTd"> </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/samples-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/samples-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/samples-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/samples-1.0.0-source-release.zip.sha1">sha1</A>) 
 </td><td class="confluenceTd">Source, ready to build </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> <A href="ariestrader-0.3.html">AriesTrader sample instructions</A>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> <A href="ariestrader-1.0.0.html">AriesTrader sample instructions</A>
 </tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader JDBC app </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.ariestrader.jdbc-0.3.eba">eba</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-0.3.eba.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-0.3.eba.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-0.3.eba.sha1">sha1</A>) 
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader JDBC app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> AriesTrader app with JDBC persistence only </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader JPA & JDBC app </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.ariestrader.all-0.3.eba">eba</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-0.3.eba.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-0.3.eba.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-0.3.eba.sha1">sha1</A>) 
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader JPA & JDBC app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> AriesTrader app with all available persistence methods </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> <A href="blogsample-0.3.html">Blog Sample instructions</A>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> <A href="blogsample-1.0.0.html">Blog Sample instructions</A>
  </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog JDBC app </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.blog.jdbc.eba-0.3.eba">eba</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc.eba-0.3.eba.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc.eba-0.3.eba.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc.eba-0.3.eba.sha1">sha1</A>) 
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog JDBC app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> Blog app based on JDBC </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog JPA app </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.blog.jpa.eba-0.3.eba">eba</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa.eba-0.3.eba.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa.eba-0.3.eba.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa.eba-0.3.eba.sha1">sha1</A>) 
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog JPA app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar.sha1">sha1</A>) 
 </td><td class="confluenceTd"> Blog app based on JPA </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blueprint HelloWorld </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blueprint ID Verifier</td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blueprint HelloWorld </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blueprint ID Verifier</td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> </td></tr>
 </table>
 
 <a name="Downloads-EbaMavenPlugin"></a>
@@ -55,13 +55,13 @@ source.
 
 <table class="confluenceTable">
 <tr><th class="confluenceTh"> Sub project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Binary </th><th class="confluenceTh"> Source </th><th class="confluenceTh"> Comments </th></tr>
-<tr><td class="confluenceTd"> eba-maven-plugin </td><td class="confluenceTd"> </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-0.3-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-source-release.zip.sha1">sha1</A>)
+<tr><td class="confluenceTd"> eba-maven-plugin </td><td class="confluenceTd"> </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"> </td></tr>
-<tr><td class="confluenceTd"> </td><td class="confluenceTd"> - </td><td class="confluenceTd"> 0.3 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-0.3.jar">jar</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3.jar.sha1">sha1</A>)
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> - </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-0.3-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-0.3-sources.jar.sha1">sha1</A>)
+<A href="http://www.apache.org/dyn/closer.cgi/aries/eba-maven-plugin-1.0.0-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/eba-maven-plugin-1.0.0-sources.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
 </td></tr>
 </table>
