@@ -6,28 +6,18 @@ Title: ReleaseNotes
 <a name="ReleaseNotes-NewandNoteworthy"></a>
 ### New and Noteworthy
 
-Welcome to the 0.3 release. 
+Welcome to the 1.0.0 release. 
 
- * Compliance tests (TBD)
+ * [Compliance tests](ct/1.0.0/testresults.html)
+[
  * [JIRA Release Notes ](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310981&version=12315310)
+
+The main change in this version is the move to proper semantic versions for all packages and bundle versions. 
 
 <a name="ReleaseNotes-NewComponents"></a>
 ### New Components
-#### Proxy
-The proxy component was added in 0.3. Proxy allows you to generate proxyies based on interfaces or classes, eg object damping. Proxy
-provides a service to both blueprint and JNDI.
 
 ### Major updates
-#### Application.
-The application component in 0.3 provides a runtime in which OSGi applications are isolated from
-each other, and the provisioning support that it requires. These changes mean that the 0.3 release of aplication is significantly different 
-from the 0.2 release.
-<p>The resolver also supports external bundle repositories in 0.3.</p>
-
-#### Blueprint
-Blueprint namespace support has been added. This makes it possible to look up Blueprint components from Web or 
-Persistence bundles.
-
 
 <a name="ReleaseNotes-Modulesinthisrelease"></a>
 ### Modules in this release
@@ -48,8 +38,7 @@ Persistence bundles.
 
 <a name="ReleaseNotes-Newsamples"></a>
 ### New samples
-No new samples but we changed the Blog Sample and Aries Trader samples so
-that no database initialisation is required prior to running the sample.
+None
 
 <a name="ReleaseNotes-NewTutorials"></a>
 ### New Tutorials
@@ -65,3 +54,6 @@ None.
 
 <a name="ReleaseNotes-Importantchangestoconsiderwhenupgrading"></a>
 ### Important changes to consider when upgrading
+
+Aries bundles with version 1.0.0 and higher will not in general be compatible with 0.4.x and 0.3.x bundles, so all
+Aries bundles in a system should be upgraded at the same time to avoid the need to include multiple versions of the same bundle in a system. However, inter-release compatibility should be significantly improved from this release on.
