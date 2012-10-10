@@ -1,0 +1,53 @@
+Title:
+Notice:    Licensed to the Apache Software Foundation (ASF) under one
+           or more contributor license agreements.  See the NOTICE file
+           distributed with this work for additional information
+           regarding copyright ownership.  The ASF licenses this file
+           to you under the Apache License, Version 2.0 (the
+           "License"); you may not use this file except in compliance
+           with the License.  You may obtain a copy of the License at
+           .
+             http://www.apache.org/licenses/LICENSE-2.0
+           .
+           Unless required by applicable law or agreed to in writing,
+           software distributed under the License is distributed on an
+           "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+           KIND, either express or implied.  See the License for the
+           specific language governing permissions and limitations
+           under the License.
+
+# October 2012 Board report
+Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
+
+##Releases
+
+Several release vote threads during the last three months saw the release of 88 bundles at version 1.0. These can be found from the [downloads link on the Aries home page](http://aries.apache.org/downloads/currentrelease.html). Subsequently, the following micro version update bundles have been released:
+
+* Apache Aries Blueprint Core 1.0.1
+* Apache Aries JMX Core 1.0.1
+* Apache Aries Transaction Manager 1.0.1
+* Apache Aries JPA Container Managed Contexts 1.0.1
+
+In addition, these new bundles were released.
+
+* Apache Aries JMS Pool 1.0.0
+* Apache Aries Transaction Enlisting JDBC Datasource 1.0.0
+
+Many thanks to the release managers for their persistence in getting these important releases out.
+
+##Project Branding Board Report Checklist 
+
+* Project Website Basics : homepage is aries.apache.org (done)
+* Project Naming And Descriptions : use proper Apache forms, describe product, etc. (pending)
+* Website Navigation Links : navbar links included, link to www.apache.org included (pending - feather link done)
+* Trademark Attributions : attribution for all ASF marks included in footers, etc. (pending)
+* Logos and Graphics : include TM, use consistent product logo on your site (pending)
+* Project Metadata : DOAP file checkedin and up to date (done)
+
+##Community update
+
+Jeremias Maerki has proposed, and posted a patch for, an addition to the spi-fly module called SPI Catcher. Its objective is along the lines of the OSGi Connect work in the OSGi Alliance to make it easier to get started with OSGi dynamic services technology. The SPI Catch approach is complementary by introducing OSGi APIs much later, if at all, ensuring "runnability totally outside of OSGi" is preserved.
+
+No new committers since the last report. The user/dev lists and JIRAs have had some varied discussions across the Aries modules.
+
+There are no board level issues.
