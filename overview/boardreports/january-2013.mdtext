@@ -19,6 +19,8 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 # January 2013 Board report
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
+##Project update
+
 * The SPI Fly component now fully implements the ServiceLoader Mediator
 Specification 1.0 from the OSGi Enterprise R5 spec (chapter 133). It is the
 Reference Implementation of this spec and passes all the OSGi TCK tests for
@@ -37,9 +39,6 @@ since the last release. If the semantic version is incorrect, the build
 will fail.
 
 * Apache Karaf 2.3.0 - one of our significant consumers - has moved up to include Apache Aries 1.0.0 releases.
-
-
-##Releases
 
 No releases this quarter.
 
