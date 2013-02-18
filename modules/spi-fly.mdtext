@@ -180,13 +180,14 @@ Install and start the <tt>org.apache.aries.spifly.dynamic.bundle</tt> into the s
 has a dependency on <tt>[org.objectweb.asm][3]</tt> version 4.0 or newer and on the Aries 
 Util bundle.
 
-<pre>osgi> ss    
-Framework is launched.    
-id	State       Bundle
-0	ACTIVE      org.eclipse.osgi_3.7.1.R37x_v20110808-1106
-1	ACTIVE      org.objectweb.asm.all_3.2.0
-2	ACTIVE      org.apache.aries.util_1.0.0
-3	ACTIVE      org.apache.aries.spifly.dynamic.bundle_1.0.0
+<pre>g! lb
+START LEVEL 1
+   ID|State      |Level|Name
+    0|Active     |    0|System Bundle (4.0.3)
+... bundles 1-4 are Felix internal ones ...
+    5|Active     |    1|ASM all classes (4.0.0)
+    6|Active     |    1|Apache Aries Util (1.1.0)
+    7|Active     |    1|Apache Aries SPI Fly Dynamic Weaving Bundle (1.0.0)
 </pre>
 
 Note that, as with any OSGi Bundle that uses the OSGi 4.3 WeavingHooks, the weaver
