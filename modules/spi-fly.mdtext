@@ -11,8 +11,8 @@ SPI Fly is the Reference Implementation of the OSGi ServiceLoader Mediator speci
 Enterprise Specification][1], available from version 5.
 
 ##The Problem##
-Java's <tt>java.util.ServiceLoader.load()</tt> and other similar methods such as 
-<tt>sun.misc.Service.providers()</tt>, but also other static finder methods such as the 
+Java's <tt>java.util.ServiceLoader.load()</tt>, other similar methods such as 
+<tt>sun.misc.Service.providers()</tt> and also other static finder methods such as the 
 <tt>FactoryFinder.find()</tt> methods try to locate 'service' implementations by looking for 
 resources in the META-INF/services directory of all the jars visible to the 
 ***Thread Context ClassLoader*** (TCCL).
@@ -33,7 +33,7 @@ In order to make ServiceLoader (and other similar SPI or plugin mechanisms) work
 to set the TCCL to the appropriate providers very briefly, only for the duration of the
 call. The SPI Fly component does precisely this.
 
-SPI Fly supports two modes of configuration:
+SPI Fly supports two modes of operation:
 
   - OSGi Specification compliant configuration. This is based on OSGi generic requirements and capabilities and 
 provides portability across implementations of this specification. However, it only covers <tt>java.util.ServiceLoader</tt>. [Find it here](#specconf).
@@ -43,7 +43,8 @@ to find an implementation, you can use the [SPI Fly-specific configuration](#spe
 
 Additionally, services found in the META-INF/services location in opted-in bundles will be registered in the OSGi Service 
 Registry so that OSGi-aware consumers can simply find them there. This is supported in both the spec-compliant as 
-well as the proprietary configuration modes.
+well as the proprietary configuration modes. Each such service is registered in the OSGi Service Registry with 
+the *serviceloader.mediator* service registration property set.
 
 ##Getting SPI Fly##
 
@@ -81,10 +82,10 @@ Additionally, they need to provide capabilities for all the APIs that are expose
 
 <tt>&nbsp;&nbsp;Provide-Capability: osgi.serviceloader; osgi.serviceloader=org.apache.aries.spifly.mysvc.MySPIProvider</tt>
 
-While this example omits it, it is advisable to use <tt>uses</tt> constraints on the Provide-Capability header, to 
+While this example omits it, it is advisable to specify <tt>uses</tt> constraints on the Provide-Capability header, to 
 ensure consistent class spaces.
 
-See the <tt>spi-fly-example-provider2-bundle</tt> for an example of a spec-compliant provider.
+See the [<tt>spi-fly-example-provider2-bundle</tt>][7] for an example of a spec-compliant provider.
 
 ##Consumers##
 
@@ -104,7 +105,7 @@ All requirements are combined into a single Require-Capability header:
 
 <tt>&nbsp;&nbsp;Require-Capability: osgi.serviceloader; filter:="(osgi.serviceloader=org.apache.aries.spifly.mysvc.MySPIProvider)";cardinality:=multiple,osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"</tt>
 
-See the <tt>spi-fly-example-client2-bundle</tt> for an example of a spec-compliant consumer.
+See the [<tt>spi-fly-example-client2-bundle</tt>][8] for an example of a spec-compliant consumer.
 
 #<a id="specificconf"/>Configuration: SPI Fly-specific#
 This section describes how to use SPI Fly's proprietary configuration
@@ -127,14 +128,13 @@ directory and register them.
 MySvc2.
 
 Additionally services found in META-INF/services are registered in the OSGi Service 
-Registry. Each service is registered with the *serviceloader.mediator* service registration
-property set.
+Registry.
 
 The <tt>SPI-Provider</tt> header can either be set in the providing bundle itself or in a wrapper bundle
 that holds the original unmodified jar containing the provider internally as a 
 on the <tt>Bundle-ClassPath</tt>.
 
-See the <tt>spi-fly-example-provider1-bundle</tt> for an example of a provider using this type of configuration.
+See the [<tt>spi-fly-example-provider1-bundle</tt>][9] for an example of a provider using this type of configuration.
 
 ##Consumers##
 Service consumers also need to opt in to the process. 
@@ -154,7 +154,7 @@ call <tt>DocumentBuilderFactory.newInstance()</tt>.
 * **SPI-Consumer: org.foo.Foo#someMthd(),org.bar.Bar#myMethod()** weave calls to <tt>Foo.someMthd()</tt> and 
 <tt>Bar.myMethod()</tt>.
 
-See the <tt>spi-fly-example-client1-bundle/target</tt> for an example of a consumer using this type of configuration. 
+See the [<tt>spi-fly-example-client1-bundle</tt>][10] for an example of a consumer using this type of configuration. 
 
 ###Special Cases###
 SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain
@@ -187,7 +187,7 @@ can use the static weaving approach.
 
 ##Use with Dynamic Weaving##
 Install and start the <tt>org.apache.aries.spifly.dynamic.bundle</tt> into the system. This bundle 
-has a dependency on <tt>[org.objectweb.asm][7]</tt> version 4.0 or newer and on the Aries 
+has a dependency on <tt>[org.objectweb.asm][11]</tt> version 4.0 or newer and on the Aries 
 Util bundle.
 
 <pre>g! lb
@@ -235,19 +235,19 @@ id	State       Bundle
 
 Then install and start the statically woven bundle into the system.
 
-##Examples##
+##<a id="examples"/>Examples##
 The <tt>spi-fly-examples</tt> directory contains a number of example bundles that can be 
 used for testing or experimenting.
 
 The following modules can be found in this directory:
 
-* **spi-fly-example-spi-bundle** - a bundle providing an SPI interface used by the other example bundles. [osgi-bundle][8] [source][9]
-* **spi-fly-example-provider1-jar** - a plain jar file providing an implementation of the SPI (via <tt>META-INF/services</tt>). [source][10]
-* **spi-fly-example-provider1-bundle** - a bundle that wraps the jar file from the previous bullet and specifies it in its Bundle-ClassPath. This example represents the common case where an existing SPI provider is wrapped as-is in an OSGi bundle. This example uses the SPI Fly proprietary configuration. [osgi-bundle][11] [source][12]
-* **spi-fly-example-provider2-bundle** - a bundle that directly provides an SPI service (via <tt>META-INF/services</tt>). This example uses OSGi  specification compliant configuration. [osgi-bundle][13] [source][14] 
-* **spi-fly-example-client1-jar** - a plain jar using java.util.ServiceLoader.load() to obtain and invoke all services provided of a certain SPI. [source][15]
-* **spi-fly-example-client1-bundle** - a bundle that wraps the jar file from the previous bullet and lists it in its Bundle-ClassPath. This example represents the common case where an existing SPI consumer is wrapped as-is in an OSGi bundle. This example uses SPI Fly proprietary configuration. [osgi-bundle][16] [source][17]
-* **spi-fly-example-client2-bundle** - a bundle that has code that invokes <tt>java.util.ServiceLoader.load()</tt> directly. This example uses OSGi specification compliant configuration. [osgi-bundle][18] [source][19]
+* **spi-fly-example-spi-bundle** - a bundle providing an SPI interface used by the other example bundles. [osgi-bundle][12] [source][13]
+* **spi-fly-example-provider1-jar** - a plain jar file providing an implementation of the SPI (via <tt>META-INF/services</tt>). [source][14]
+* **spi-fly-example-provider1-bundle** - a bundle that wraps the jar file from the previous bullet and specifies it in its Bundle-ClassPath. This example represents the common case where an existing SPI provider is wrapped as-is in an OSGi bundle. This example uses the SPI Fly proprietary configuration. [osgi-bundle][15] [source][16]
+* **spi-fly-example-provider2-bundle** - a bundle that directly provides an SPI service (via <tt>META-INF/services</tt>). This example uses OSGi  specification compliant configuration. [osgi-bundle][17] [source][18] 
+* **spi-fly-example-client1-jar** - a plain jar using java.util.ServiceLoader.load() to obtain and invoke all services provided of a certain SPI. [source][19]
+* **spi-fly-example-client1-bundle** - a bundle that wraps the jar file from the previous bullet and lists it in its Bundle-ClassPath. This example represents the common case where an existing SPI consumer is wrapped as-is in an OSGi bundle. This example uses SPI Fly proprietary configuration. [osgi-bundle][20] [source][21]
+* **spi-fly-example-client2-bundle** - a bundle that has code that invokes <tt>java.util.ServiceLoader.load()</tt> directly. This example uses OSGi specification compliant configuration. [osgi-bundle][22] [source][23]
 
 
   [1]: http://www.osgi.org/Download/Release5 "OSGi Enterprise Specification"
@@ -256,16 +256,20 @@ The following modules can be found in this directory:
   [4]: http://search.maven.org/remotecontent?filepath=org/ow2/asm/asm-all/4.0/asm-all-4.0.jar
   [5]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly
   [6]: http://www.osgi.org/Download/Release5 "OSGi Enterprise Specification"
-  [7]: http://search.maven.org/#artifactdetails|org.ow2.asm|asm-all|4.0|jar
-  [8]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.spi.bundle/1.0.0/org.apache.aries.spifly.examples.spi.bundle-1.0.0.jar
-  [9]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-spi-bundle/
-  [10]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-provider1-jar/
-  [11]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.provider1.bundle/1.0.0/org.apache.aries.spifly.examples.provider1.bundle-1.0.0.jar
-  [12]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-provider1-bundle/
-  [13]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.provider2.bundle/1.0.0/org.apache.aries.spifly.examples.provider2.bundle-1.0.0.jar
-  [14]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-provider2-bundle/
-  [15]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client1-jar/
-  [16]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.client1.bundle/1.0.0/org.apache.aries.spifly.examples.client1.bundle-1.0.0.jar
-  [17]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client1-bundle/
-  [18]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.client2.bundle/1.0.0/org.apache.aries.spifly.examples.client2.bundle-1.0.0.jar
-  [19]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client2-bundle/
+  [7]: #examples
+  [8]: #examples
+  [9]: #examples
+  [10]: #examples
+  [11]: http://search.maven.org/#artifactdetails|org.ow2.asm|asm-all|4.0|jar
+  [12]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.spi.bundle/1.0.0/org.apache.aries.spifly.examples.spi.bundle-1.0.0.jar
+  [13]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-spi-bundle/
+  [14]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-provider1-jar/
+  [15]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.provider1.bundle/1.0.0/org.apache.aries.spifly.examples.provider1.bundle-1.0.0.jar
+  [16]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-provider1-bundle/
+  [17]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.provider2.bundle/1.0.0/org.apache.aries.spifly.examples.provider2.bundle-1.0.0.jar
+  [18]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-provider2-bundle/
+  [19]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client1-jar/
+  [20]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.client1.bundle/1.0.0/org.apache.aries.spifly.examples.client1.bundle-1.0.0.jar
+  [21]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client1-bundle/
+  [22]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.client2.bundle/1.0.0/org.apache.aries.spifly.examples.client2.bundle-1.0.0.jar
+  [23]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client2-bundle/
