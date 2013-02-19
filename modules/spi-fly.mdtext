@@ -259,6 +259,12 @@ The following modules can be found in this directory:
 * **spi-fly-example-client1-bundle** - a bundle that wraps the jar file from the previous bullet and lists it in its Bundle-ClassPath. This example represents the common case where an existing SPI consumer is wrapped as-is in an OSGi bundle. This example uses SPI Fly proprietary configuration. [osgi-bundle][27] [source][28]
 * **spi-fly-example-client2-bundle** - a bundle that has code that invokes <tt>java.util.ServiceLoader.load()</tt> directly. This example uses OSGi specification compliant configuration. [osgi-bundle][29] [source][30]
 
+##More Information##
+More information can be found at the following resources:
+
+  - OSGi Service Loader Mediator specification. [OSGi Enterprise specification][31], Chapter 133.
+  - OSGi Blog article: [http://blog.osgi.org/2013/02/javautilserviceloader-in-osgi.html][32]
+
 
   [1]: http://www.osgi.org/Download/Release5 "OSGi Enterprise Specification"
   [2]: #usage
@@ -290,3 +296,5 @@ The following modules can be found in this directory:
   [28]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client1-bundle/
   [29]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.client2.bundle/1.0.0/org.apache.aries.spifly.examples.client2.bundle-1.0.0.jar
   [30]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-client2-bundle/
+  [31]: http://www.osgi.org/Download/Release5
+  [32]: http://blog.osgi.org/2013/02/javautilserviceloader-in-osgi.html
