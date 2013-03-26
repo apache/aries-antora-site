@@ -1,0 +1,56 @@
+Title: BlueprintWeb
+<a name="BlueprintWeb"></a>
+# BlueprintWeb
+
+The Blueprint Web module makes it easy to use OSGi Blueprint as a dependency injection framework outside of OSGi containers such as inside any Servlet Engine. 
+
+You can then use Blueprint as a small standards base alternative to the Spring Framework's XML dependency injection files.
+
+<a name="BlueprintWeb-HowToUse"></a>
+## How to use Blueprint Web
+
+Just add the following to your web.xml
+
+	  <listener>
+	      <listener-class>org.apache.aries.blueprint.web.BlueprintContextListener</listener-class>
+	  </listener>
+
+This will then make your web application look in the classpath for all files called **META-INF/blueprint.xml**. Each one will then be loaded and created in a single BlueprintContainer for your web application.
+
+Then in each jar or in the web application itself, just create a file called **src/main/resources/META-INF/blueprint.xml** which will then get included into jars or into your WAR.
+
+If you wish to use a different name for the location of the blueprint files you can specify the **blueprintLocation** property as a context parameter as follows:
+
+	  <context-param>
+	      <param-name>blueprintLocation</param-name>
+	      <param-value>META-INF/myName.xml</param-value>
+	  </context-param>
+
+<a name="BlueprintWeb-Configuraiton"></a>	
+## Configuring blueprint through properties
+
+Blueprint beans can be configured using the variable substitutions.
+You need to declare the ext namespace and add the property placeholder bean in your blueprint xml
+
+	<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	           xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.2.0">
+		<ext:property-placeholder>
+	    	<ext:default-properties>
+	        	<ext:property name="myProperty" value="defaultValue" />
+	    	</ext:default-properties>
+		</ext:property-placeholder>
+		...
+		<bean ...>
+			<property name="myProperty" value="${myProperty}" />
+		</bean>
+	</blueprint>
+
+The default value can be overriden by specifying an the blueprintProperties property as a context parameter in the web.xml:
+
+	<context-param>
+    	<param-name>blueprintProperties</param-name>
+    	<param-value>myConfigFile.properties</param-value>
+	</context-param>
+
+The value of this parameter is a comma separated list of properties file loaded from the class loader.
+In this case, adding a file called **src/main/resources/myConfigFile.properties** will do the trick.
