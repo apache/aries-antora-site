@@ -5,14 +5,22 @@ Title: Index
 
 The Aries project consists of a set of pluggable Java components enabling
 an enterprise OSGi application programming model. This includes
-implementations and extensions of application-focused specifications
-defined by the OSGi Alliance Enterprise Expert Group (EEG) and an assembly
-format for multi-bundle applications, for deployment to a variety of OSGi
+implementations (and extensions) of the following Enterprise OSGi specifications:
+
+  - Blueprint Specification
+  - JTA Transaction Services Specification
+  - JMX Management Model Specification
+  - JNDI Services Specification
+  - JPA Service Specification
+  - Service Loader Mediator Specification
+  - Subsystem Service Specification
+
+The specifications are defined in the OSGi Alliance Enterprise Expert Group (EEG) for deployment to a variety of OSGi
 based runtimes.
 
-The OSGi R4 V4.2 Enterprise Specification can be found here:
+The OSGi R5 Enterprise Specification can be found here:
 
-[http://www.osgi.org/Download/Release4V42](http://www.osgi.org/Download/Release4V42)
+[http://www.osgi.org/Download/Release5](http://www.osgi.org/Download/Release5)
 
 
 To understand the complete scope of the Aries project, see the Aries
@@ -34,4 +42,3 @@ are intended to be integrated into application server or integration
 runtimes such as Apache ServiceMix or Apache Geronimo.
 
 Continuous builds of the Aries project are available for download from [http://builds.apache.org/hudson/job/Aries/](http://builds.apache.org/hudson/job/Aries/)
-
