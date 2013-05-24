@@ -62,7 +62,13 @@ START LEVEL 1
     7|Active     |    1|Apache Aries Util (1.1.0)
 </pre>
 
-Now you can access the OSGi functionality through MBeans, for example via jconsole:
+Now you can access the OSGi functionality through MBeans, for example via jconsole...
+
+##Blueprint Integration##
+TODO
+
+##Whiteboard support##
+TODO
 
 
 
