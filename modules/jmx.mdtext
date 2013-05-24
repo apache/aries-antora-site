@@ -16,6 +16,56 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-JMX
+#JMX#
 
 This page describes the Aries JMX component. 
+
+The Aries JMX component is the Reference Implementation of the 
+OSGi JMX Management Model Specification, chapter 124 in the 
+[OSGi Enterprise Specification][1].
+
+##Getting Started##
+To use the Aries JMX component, obtain the following:
+
+  * The Aries JMX bundle, e.g. from Maven Central: [org.apache.aries.jmx][2]
+  * The Aries Util bundle, e.g. from Maven Central: [org.apache.aries.util][3]
+
+As prescribed by the OSGi JMX specification, to hook it in with an MBean Server the relevant MBean Server needs to be registered in the OSGi Service Registry.
+
+The easiest way to get things to do this is to use the platform mbean server, and register that. For example create a simple bundle that contains the following Bundle Activator:
+
+<pre>import java.lang.management.ManagementFactory;
+import javax.management.MBeanServer;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator {
+  public void start(BundleContext context) throws Exception {
+    MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+    context.registerService(MBeanServer.class.getName(), mbs, null);
+  }
+
+  public void stop(BundleContext context) throws Exception {}
+}</pre>
+
+Then install the Aries JMX Bundle and the Aries Util Bundle and start everything:
+<pre>g! lb
+START LEVEL 1
+   ID|State      |Level|Name
+    0|Active     |    0|System Bundle (4.2.1)
+    1|Active     |    1|Apache Felix Bundle Repository (1.6.6)
+    2|Active     |    1|Apache Felix Gogo Command (0.12.0)
+    3|Active     |    1|Apache Felix Gogo Runtime (0.10.0)
+    4|Active     |    1|Apache Felix Gogo Shell (0.10.0)
+    5|Active     |    1|My Glue Activator (1.0.0)
+    6|Active     |    1|Apache Aries JMX Bundle (1.1.1)
+    7|Active     |    1|Apache Aries Util (1.1.0)
+</pre>
+
+Now you can access the OSGi functionality through MBeans, for example via jconsole:
+
+
+
+  [1]: http://www.osgi.org/Download/Release5
+  [2]: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache.aries.jmx%22
+  [3]: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache.aries.util%22
