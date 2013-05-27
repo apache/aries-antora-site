@@ -54,7 +54,20 @@ Now you can access the OSGi functionality through MBeans, for example via jconso
 TODO
 
 ##Whiteboard support##
-TODO
+The JMX Whiteboard support bundle allows registration of JMX MBeans through the OSGi service registry. As a prerequisite
+the Apache Aries JMX Whiteboard Bundle has to be installed.
+
+Once this is installed, register your services with
+the `jmx.objectname` service registration property. This is either a JMX `ObjectName` or a single String. The value is
+used as the JMX Object Name to register the MBean. If the property is of some other type a message is logged and the
+MBean is still registered if the service implements the `MBeanRegistration` interface and the implmentation provides the
+actual JMX Object Name to use for the registration.
+
+The name of the service as which the MBean service is registered is ignored by the Whiteboard.
+
+The service object, though, must be a valid JMX MBean: It has to either implement the `DynamicMBean` interface or implement
+an interface whose name is the object's (simple) class name with the `MBean` suffix.
+
 
 
   [1]: http://www.osgi.org/Download/Release5
