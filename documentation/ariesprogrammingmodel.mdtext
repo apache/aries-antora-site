@@ -9,7 +9,7 @@ as well as Apache Aries-specific technology.
 
 The following components can be found in Apache Aries:
 
- * [Blueprint](/modules/blueprint.html) (OSGi spec chapter 121x)
+ * [Blueprint](/modules/blueprint.html) (OSGi spec chapter 121)
   - [Blueprint annotations](/modules/blueprintannotation.html)
   - [Blueprint web](/modules/blueprintweb.html)
   - [Blueprint without osgi](/modules/blueprintnoosgi.html)
