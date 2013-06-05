@@ -9,19 +9,18 @@ as well as Apache Aries-specific technology.
 
 The following components can be found in Apache Aries:
 
-* [Blueprint](/modules/blueprint.html) (OSGi spec chapter 121)
+ * [Blueprint](/modules/blueprint.html) (OSGi spec chapter 121x)
   - [Blueprint annotations](/modules/blueprintannotation.html)
   - [Blueprint web](/modules/blueprintweb.html)
   - [Blueprint without osgi](/modules/blueprintnoosgi.html)
-
-* Subsystems (OSGi spec chapter 134)
-* [Transactions support](/modules/transactionsproject.html) (OSGi spec chapter 123)
-* [JPA support](/modules/jpaproject.html) (OSGi spec chapter 127)
-* [JMX support](/modules/jmx.html) (OSGi spec chapter 124)
-* [JNDI support](/modules/jndiproject.html) (OSGi spec chapter 126)
-* EJB support
-* [Service Loader Mediator](/modules/spi-fly.html) (OSGi spec chapter 133)
-* Web Application URL Handler (OSGi spec section 128.4)
+ * Subsystems (OSGi spec chapter 134)
+ * [Transactions support](/modules/transactionsproject.html) (OSGi spec chapter 123)
+ * [JPA support](/modules/jpaproject.html) (OSGi spec chapter 127)
+ * [JMX support](/modules/jmx.html) (OSGi spec chapter 124)
+ * [JNDI support](/modules/jndiproject.html) (OSGi spec chapter 126)
+ * EJB support
+ * [Service Loader Mediator](/modules/spi-fly.html) (OSGi spec chapter 133)
+ * Web Application URL Handler (OSGi spec section 128.4)
 
 Additional components:
 
