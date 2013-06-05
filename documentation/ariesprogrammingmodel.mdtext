@@ -3,16 +3,20 @@ Title: AriesProgrammingModel
 <a name="AriesProgrammingModel-AriesProgrammingModel"></a>
 # Aries Programming Model
 
-Aries facilitates OSGi and Enterprise OSGi development by proving a variety of tools and programming models that can be
+Aries facilitates OSGi and Enterprise OSGi development by providing a variety of tools and programming models that can be
 useful for OSGi bundles and applications. This includes technology that implements or extends Enterprise OSGi specifications
 as well as Apache Aries-specific technology.
 
 The following components can be found in Apache Aries:
 
 * [Blueprint](/modules/blueprint.html) (OSGi spec chapter 121)
+
  * [Blueprint annotations](/modules/blueprintannotation.html)
+
  * [Blueprint web](/modules/blueprintweb.html)
+
  * [Blueprint without osgi](/modules/blueprintnoosgi.html)
+
 * Subsystems (OSGi spec chapter 134)
 * [Transactions support](/modules/transactionsproject.html) (OSGi spec chapter 123)
 * [JPA support](/modules/jpaproject.html) (OSGi spec chapter 127)
