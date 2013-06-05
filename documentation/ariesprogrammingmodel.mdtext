@@ -11,11 +11,11 @@ The following components can be found in Apache Aries:
 
 * [Blueprint](/modules/blueprint.html) (OSGi spec chapter 121)
 
- * [Blueprint annotations](/modules/blueprintannotation.html)
+ - [Blueprint annotations](/modules/blueprintannotation.html)
 
- * [Blueprint web](/modules/blueprintweb.html)
+ - [Blueprint web](/modules/blueprintweb.html)
 
- * [Blueprint without osgi](/modules/blueprintnoosgi.html)
+ - [Blueprint without osgi](/modules/blueprintnoosgi.html)
 
 * Subsystems (OSGi spec chapter 134)
 * [Transactions support](/modules/transactionsproject.html) (OSGi spec chapter 123)
