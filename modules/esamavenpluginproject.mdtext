@@ -1,0 +1,140 @@
+Title:
+Notice:    Licensed to the Apache Software Foundation (ASF) under one
+           or more contributor license agreements.  See the NOTICE file
+           distributed with this work for additional information
+           regarding copyright ownership.  The ASF licenses this file
+           to you under the Apache License, Version 2.0 (the
+           "License"); you may not use this file except in compliance
+           with the License.  You may obtain a copy of the License at
+           .
+             http://www.apache.org/licenses/LICENSE-2.0
+           .
+           Unless required by applicable law or agreed to in writing,
+           software distributed under the License is distributed on an
+           "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+           KIND, either express or implied.  See the License for the
+           specific language governing permissions and limitations
+           under the License.
+
+<a name="ESAMavenPluginProject-ESAMavenPlugin"></a>
+# ESA Maven Plugin
+
+Note: the esa-maven-plugin has yet to be released and so to use it you must first extract and build it from the Aries svn.
+
+The ESA Maven Plugin provides the ability to generate ESA archives using
+Maven.	The ESA archive format is defined in the Subsystems Service Specification which was part of <a href="http://www.osgi.org/Specifications/HomePage">OSGi Enterprise R5</a>.  An ESA archive can optionally contain an Subsystem manifest
+(SUBSYSTEM.MF).  This can be added in one of two ways
+
+1. Hand written and added into the archive.
+1. Generated based on pom configuration.
+
+<a name="ESAMavenPluginProject-UsingthePlugin"></a>
+## Using the Plugin
+
+The plugin is included by as follows:
+
+
+        <build>
+    	<plugins>
+    	    <plugin>
+    		<groupId>org.apache.aries</groupId>
+    		<artifactId>esa-maven-plugin</artifactId>
+    	    </plugin>
+    	</plugins>
+        </build>
+
+
+By default it will not generate a manifest, so in the above example it will
+attempt to copy a pre-defined SUBSYSTEM.MF from
+src/main/resources/META-INF.  If that file does not exist, then no
+Subsystem manifest will be included.
+
+<a name="ESAMavenPluginProject-GeneratinganSUBSYSTEM.MF"></a>
+## Generating an SUBSYSTEM.MF
+
+The following example shows how to get the plugin to generate an
+SUBSYSTEM.MF based on the pom configuration:
+
+
+        <build>
+    	<plugins>
+    	    <plugin>
+    		<groupId>org.apache.aries</groupId>
+    		<artifactId>esa-maven-plugin</artifactId>
+    		<configuration>
+    		    <generateManifest>true</generateManifest>
+    		</configuration>
+    	    </plugin>
+    	</plugins>
+        </build>
+
+
+The pom to subsystem manfiest header mapping is as follows:
+* Pom <groupId/>.<artifactId/> -> Subsystem-SymbolicName
+* Pom <name/> -> Subsystem-Name
+* Pom <version/> -> Subsystem-Version (cleaned up for OSGi)
+* Pom <description/> -> Subsystem-Description
+* Pom <dependencies/> -> Subsystem-Content
+
+<a name="ESAMavenPluginProject-OverridingSubsystem-SymbolicName"></a>
+## Overriding Subsystem-SymbolicName
+
+The subsystem symbolic name defaults to the
+$\{project.groupId\}.$\{project.artifaceId\}.  The following shows how to override
+this:
+
+
+    <configuration>
+      <instructions>
+        <Subsystem-SymbolicName>${project.artifaceId}</Subsystem-SymbolicName>
+      </instructions>
+    </configuration>
+
+<a name="ESAMavenPluginProject-Archivecontent"></a>
+## Including bundles in the archive
+
+By default, the archive will only include the direct dependencies of the project.  The `<archiveContent/>` element can be used to control the archive artifact contents.  The following shows how to include all direct and transitive dependencies.
+
+    <configuration>
+      <archiveContent>all</archiveContent>
+    </configuration>
+
+The following shows how to exclude all dependencies from the archive.  This is useful if you just want the subsystem definition and will use a bundle repository to provision the bundles during deployment.
+
+    <configuration>
+      <archiveContent>none</archiveContent>
+    </configuration>
+
+The following specifies the default of including only the direct dependencies (assumes the subsystem contents and direct dependencies are the same).
+
+    <configuration>
+      <archiveContent>subsystemContent</archiveContent>
+    </configuration>
+
+<a name="ESAMavenPluginProject-StartOrder"></a>
+## Content Bundle Start Ordering
+
+By default, the Subsystem runtime can start content bundles in any order.  The OSGi start level service is not applicable to subsystems.  You can therefore specify the start order of the bundles based on the order in which they're expressed as dependencies in the maven pom using the following:
+
+    <configuration>
+      <startOrder>dependencies</startOrder>
+    </configuration>
+
+<a name="ESAMavenPluginProject-ExistingSUBSYSTEM.MF"></a>
+## Including an Existing Subsystem manifest
+
+If you don't wish to generate the Subsystem manifest based on the pom configuration, you can add an existing one as follows:
+
+    <configuration>
+      <subsystemManifestFile>${basedir}/src/main/resources/OSGI-INF/SUBSYSTEM.MF</subsystemManifestFile>
+    </configuration>
+
+<a name="ESAMavenPluginProject-OtherHeaders"></a>
+## Including Other Headers
+
+You can add any other headers in addition to those calculated from the pom configuration.  For example, the following specifies the Subsystem Use-Bundle header and sets the Subsystem-Type to be a feature:
+
+    <instructions>
+        <Use-Bundle>org.apache.aries.test.Bundle;version=1.0.0-SNAPSHOT</Use-Bundle>
+        <Subsystem-Type>feature</Subsystem-Type>
+    </instructions>
