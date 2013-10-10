@@ -16,18 +16,23 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# July 2013 Board report
+# October 2013 Board report
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
 ## Releases
 
-* Apache Aries Subsystems Bundle 1.0.0
+* Apache Aries Blueprint Parser 1.1.0
 
-> This is an 'uber' bundle form of the API and implementation (core) bundles of Aries Subsystems. Together these are the reference implementation of the OSGi Subsystem Service Specification which "provides a declarative model for defining resource collections, including bundles, and
-an API for installing and managing those collections of resources." See OSGi Enterprise Release 5 specification chapter 134. The 'uber' bundle is released for a convenience for people starting out with Subsystems.
+ Reusable component for parsing Blueprint xmls.
+* Apache Aries Blueprint Core 1.2.0
+ Core of the implementation of the OSGi Blueprint Container Specification
+
+Currently being voted on:
+
+* Apache Aries Blueprint CM 1.0.2
+
+ Integration of OSGi Blueprint with the OSGi Configuration Admin Service.
 
 ##Project update
-
-We have voted in John Ross as a member of the PMC. No new committers since the last report. Usage questions and interactions with other non-ASF projects continue to be asked on the user list, showing users are putting Aries to use in real world scenarios.
 
 There are no board level issues.
