@@ -24,6 +24,7 @@ Apache Aries delivers a set of pluggable Java components enabling an enterprise 
 * Apache Aries Blueprint Parser 1.1.0
 
  Reusable component for parsing Blueprint xmls.
+
 * Apache Aries Blueprint Core 1.2.0
  Core of the implementation of the OSGi Blueprint Container Specification
 
