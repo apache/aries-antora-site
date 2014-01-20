@@ -188,7 +188,7 @@ in SPI Fly (yet), but the AudioSystem.getAudioInputStream() API can be made to w
 <tt>SPI-Consumer:&nbsp;javax.sound.sampled.AudioSystem#getAudioInputStream
 </tt>
 
-#<a id="examples"/>Usage#
+#<a id="usage"/>Usage#
 There are currently two ways to use the SPI Fly component. If you have an OSGi 
 4.3 (or higher) compliant framework that supports WeavingHooks you can use the dynamic weaving approach. 
 
