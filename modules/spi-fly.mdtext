@@ -48,7 +48,7 @@ the *serviceloader.mediator* service registration property set.
 
 ##Getting SPI Fly##
 
-###<a id="releases"/>Releases###
+###<a id="releases"></a>Releases###
 The latest release of the SPI-Fly components is 1.0.0. It can be obtained from Maven 
 Central using the links below.
 
@@ -79,7 +79,7 @@ The code can be found in
 
 To build, use Maven 3.x and run <tt>mvn install</tt>
 
-#<a id="specconf"/>Configuration: OSGi Spec-compliant#
+#<a id="specconf"></a>Configuration: OSGi Spec-compliant#
 All the details surrounding this type of configuration are covered in the 
 [OSGi Enterprise Specification][10] (from version 5) chapter 133. This section provides a short overview.
 
@@ -117,7 +117,7 @@ All requirements are combined into a single Require-Capability header:
 
 See the [<tt>spi-fly-example-client2-bundle</tt>][12] for an example of a spec-compliant consumer.
 
-#<a id="specificconf"/>Configuration: SPI Fly-specific#
+#<a id="specificconf"></a>Configuration: SPI Fly-specific#
 This section describes how to use SPI Fly's proprietary configuration
 mechanism. It provides more features, but doesn't provide the 
 portability that spec-compliance configuration gives. If you 
@@ -245,7 +245,7 @@ START LEVEL 1
 
 Then install and start the statically woven bundle into the system.
 
-##<a id="examples"/>Examples##
+##<a id="examples"></a>Examples##
 The <tt>spi-fly-examples</tt> directory contains a number of example bundles that can be 
 used for testing or experimenting.
 
