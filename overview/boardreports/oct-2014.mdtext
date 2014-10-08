@@ -1,0 +1,53 @@
+Title:
+Notice:    Licensed to the Apache Software Foundation (ASF) under one
+           or more contributor license agreements.  See the NOTICE file
+           distributed with this work for additional information
+           regarding copyright ownership.  The ASF licenses this file
+           to you under the Apache License, Version 2.0 (the
+           "License"); you may not use this file except in compliance
+           with the License.  You may obtain a copy of the License at
+           .
+             http://www.apache.org/licenses/LICENSE-2.0
+           .
+           Unless required by applicable law or agreed to in writing,
+           software distributed under the License is distributed on an
+           "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+           KIND, either express or implied.  See the License for the
+           specific language governing permissions and limitations
+           under the License.
+
+# July 2014 Board report
+
+Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
+
+## Releases
+There was a significant amount of release activity this quarter. In particular, contributions for Java 7 enablement and Pax Exam 3.x usage - modernizing testing. 
+
+* Apache Aries Semantic Versioning Checker 0.2.0 and 0.3.0
+* Apache Aries Parent Pom release (simplification)
+* Apache Aries Proxy API 1.0.1
+* Apache Aries Proxy Service 1.0.3
+* Apache Aries JMX API 1.1.1
+* Apache Aries JMX Core 1.1.2
+
+#### Apache Aries Blueprint releases:
+* Blueprint API 1.0.1
+* Blueprint Parser 1.2.1
+* Blueprint Annotation API 1.0.1
+* Blueprint Annotation Impl 1.0.1
+* Blueprint CM 1.0.4
+* Blueprint Core 1.4.1
+
+A new release of the Aries SPI fly bundles is currently being voted on.
+
+## Project update
+We're see almost all of our contributions from non-committers coming as pull requests from GitHub.
+The last PMC member was added 28th July 2013.
+
+##Community
+  * We voted in the following new committers:
+   * Jean-Baptiste Onofré
+   * Christian Schneider
+   * Tom Watson
+
+There are no issues requiring board attention at this time.
