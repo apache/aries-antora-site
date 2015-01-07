@@ -159,5 +159,5 @@ You can add any other headers in addition to those calculated from the pom confi
 
     <instructions>
         <Use-Bundle>org.apache.aries.test.Bundle;version=1.0.0-SNAPSHOT</Use-Bundle>
-        <Subsystem-Type>org.osgi.subsystem.feature</Subsystem-Type>
+        <Subsystem-Type>osgi.subsystem.feature</Subsystem-Type>
     </instructions>
