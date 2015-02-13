@@ -22,22 +22,33 @@ Apache Aries delivers a set of pluggable Java components enabling an enterprise 
 
 ## Releases
 
-Apache Aries Maven ESA Plugin (esa-maven-plugin) 1.0.0 (2014/10/21)
-Apache Aries JNDI Core (jndi-core) 1.0.2 (2014/10/21)
-Apache Aries JNDI URL Handler (jndi-url) 1.1.0 (2014/10/21)
-Apache Aries Transaction Manager (transaction-manager) 1.0.2 (2014/10/21)
-Apache Aries Transaction Blueprint (transaction-blueprint) 1.0.2 (2014/10/21)
-Apache Aries Transaction Enlisting JDBC Datasource (transaction-jdbc) 2.1.0 (2014/10/21)
-Apache Aries JMS Pool (transaction-jms) 2.0.0 (2014/10/21)
-Apache Aries JPA Container (jpa-container) 1.0.2 (2014/11/04)
-Apache Aries JPA Container Managed Contexts (jpa-container-context) 1.0.4 (2014/11/04)
-**New** Apache Aries Blueprint Maven Plugin (blueprint-maven-plugin) 1.0.0 (2014/12/05)
-Apache Aries Blueprint Annotation based authorization (blueprint-authz) 1.0.0 (2014/12/05)
+The votes for these releases closed on 2014/10/21
 
+* Apache Aries Maven ESA Plugin (esa-maven-plugin) 1.0.0
+* Apache Aries JNDI Core (jndi-core) 1.0.2
+* Apache Aries JNDI URL Handler (jndi-url) 1.1.0
+* Apache Aries Transaction Manager (transaction-manager) 1.0.2
+* Apache Aries Transaction Blueprint (transaction-blueprint) 1.0.2
+* Apache Aries Transaction Enlisting JDBC Datasource (transaction-jdbc) 2.1.0
+* Apache Aries JMS Pool (transaction-jms) 2.0.0
 
+The votes for these releases closed on 2014/11/04
+
+* Apache Aries JPA Container (jpa-container) 1.0.2
+* Apache Aries JPA Container Managed Contexts (jpa-container-context) 1.0.4
+
+The votes for these releases closed on 2014/12/05
+
+* **New** Apache Aries Blueprint Maven Plugin (blueprint-maven-plugin) 1.0.0 (2014/12/05)
+* Apache Aries Blueprint Annotation based authorization (blueprint-authz) 1.0.0 (2014/12/05)
 
 ## Project update
 
-Creation of a new project: blueprint-maven-plugin
+Creation of a new project: blueprint-maven-plugin: for generating OSGi an blueprint.xml from CDI, JEE and Spring annotations.
+
+Contributions continue to come in from non-committers via GitHub.
+
+Newest PMC member voted in on 28th July 2013.
+
 
 There are no issues requiring board attention at this time.
