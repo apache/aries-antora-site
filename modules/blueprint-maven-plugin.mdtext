@@ -19,9 +19,9 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 Writing blueprint xml is quite verbose and large blueprint xmls are difficult to keep in sync with code changes and especially refactorings.
 So you would like to do most declarations using annoations and ideally these annotations should be standardized.
 
-## Maven-blueprint-plugin ##
+## blueprint-maven-plugin ##
 
-The maven-blueprint-plugin allows to configure blueprint using annotations. It scans one or more paths for annotated classes and creates a blueprint.xml in target/generated-resources. So at runtime the bundle behaves like a normal blueprint bundle.
+The blueprint-maven-plugin allows to configure blueprint using annotations. It scans one or more paths for annotated classes and creates a blueprint.xml in target/generated-resources. So at runtime the bundle behaves like a normal blueprint bundle.
 The generated blueprint can also be used together with a manually created blueprint file. So for example property placeholder configurations
 or cxf services can be created in xml while most of the beans are automatically generated.
 
