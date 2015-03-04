@@ -95,7 +95,7 @@ Usage:
         <version>1.2</version>
     </dependency>
 
-Example
+## Example ##
 
 For a complete example see [tasklist-blueprint-cdi][1] on github.
 
