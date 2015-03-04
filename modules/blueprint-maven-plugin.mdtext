@@ -1,0 +1,103 @@
+Title: blueprint-maven-plugin
+Notice:    Licensed to the Apache Software Foundation (ASF) under one
+           or more contributor license agreements.  See the NOTICE file
+           distributed with this work for additional information
+           regarding copyright ownership.  The ASF licenses this file
+           to you under the Apache License, Version 2.0 (the
+           "License"); you may not use this file except in compliance
+           with the License.  You may obtain a copy of the License at
+           .
+             http://www.apache.org/licenses/LICENSE-2.0
+           .
+           Unless required by applicable law or agreed to in writing,
+           software distributed under the License is distributed on an
+           "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+           KIND, either express or implied.  See the License for the
+           specific language governing permissions and limitations
+           under the License.
+
+Writing blueprint xml is quite verbose and large blueprint xmls are difficult to keep in sync with code changes and especially refactorings.
+So you would like to do most declarations using annoations and ideally these annotations should be standardized.
+
+## Maven-blueprint-plugin ##
+
+The maven-blueprint-plugin allows to configure blueprint using annotations. It scans one or more paths for annotated classes and creates a blueprint.xml in target/generated-resources. So at runtime the bundle behaves like a normal blueprint bundle.
+The generated blueprint can also be used together with a manually created blueprint file. So for example property placeholder configurations
+or cxf services can be created in xml while most of the beans are automatically generated.
+
+Usage:
+
+    <plugin>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>blueprint-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+            <scanPaths>
+                <scanPath>org.my.package</scanPath>
+            </scanPaths>
+        </configuration>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>blueprint-generate</goal>
+                </goals>
+                <phase>process-classes</phase>
+            </execution>
+        </executions>
+    </plugin>
+
+## Annotations ##
+
+### javax.inject (JSR 330) ###
+  - @Inject Inject a bean by type and optionally further qualifiers
+  - @Singleton Mark a class as being a bean
+  - @Named("Myname") Names a @Singleton and qualifies an @Inject to limit it to matches with the same bean id
+
+### javax.annotation (JSR 250) ###
+  - @PostConstruct Marks a method to be called after DI is finished (init-method)
+  - @PreDestroy Marks a method to be called before the bean is destroyed (destroy-method)
+
+### pax-cdi ###
+  - @OsgiServiceProvider(classes={TaskService.class}) Publishes a bean as an OSGi service with the given interfaces
+  - @OsgiService creates a reference to an OSGi service. On optional filter is also possible
+  - @Properties Defines service properties for OSGiServiceProvider
+  - @Property Defines a service property
+
+### javax.persistence ###
+  - @PersistenceContext(unitName="tasklist") inject a managed EntityManager for the given persistence unit into a field
+  - @PersistenceUnit(unitName="tasklist") inject an unmanaged EntityManagerFactory for the given persistence unit into a field
+
+### javax.transaction ###
+  - @Transactional mark the class as transactional. Individual methods are not yet supported
+
+## Dependencies for annotations ##
+
+    <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.ops4j.pax.cdi</groupId>
+        <artifactId>pax-cdi-api</artifactId>
+        <version>0.5.0</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate.javax.persistence</groupId>
+        <artifactId>hibernate-jpa-2.1-api</artifactId>
+        <version>1.0.0.Final</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.transaction</groupId>
+        <artifactId>javax.transaction-api</artifactId>
+        <version>1.2</version>
+    </dependency>
+
+Example
+
+For a complete example see [tasklist-blueprint-cdi][1] on github.
+
+
+  [1]: https://github.com/cschneider/Karaf-Tutorial/tree/master/tasklist-blueprint-cdi
