@@ -1,5 +1,98 @@
 Title: Subsystems
 
 #OSGi Subsystems
-TODO add text.
 
+##Introduction
+
+Apache Aries Subsystems is the Reference Implementation of the OSGi Subsystems Specification, chapter 134 of the 
+[OSGi Enterprise specifications][1]. 
+
+##Getting started
+
+This section shows the bundles to install to get the Subsystems implementation running in your favourite OSGi Framework.
+
+The Aries Subsystem implementation uses the OSGi Coordination service, the OSGi
+Resolver service, the OSGi Repository service and integrates with the OSGi Configuration Admin service. Additional 
+dependencies are the Aries Util bundle, the Equinox Region bundle and SLF4J for logging.
+
+The following are downloadable links (from Maven central) that 
+provide all the required components to get subsystems up and running with Apache
+Felix. Note that the Felix distribution comes with and OSGi Repository implementation
+so this does not need to be added.
+
+* [org.apache.aries.subsystem.api][2]
+* [org.apache.aries.subsystem.core][3]
+* [org.apache.aries.util][4]
+* [org.apache.felix.configadmin][5]
+* [org.apache.felix.coordinator][6]
+* [org.apache.felix.resolver][7]
+* [org.eclipse.equinox.region][8]
+* [slf4j-api][9]
+* [slf4j-simple][10] (or another slf4j binding)
+
+After installing and starting all these components the Felix runtime looks like this:
+
+    g! lb
+    START LEVEL 1
+       ID|State      |Level|Name
+        0|Active     |    0|System Bundle (4.6.1)
+        1|Active     |    1|Apache Felix Bundle Repository (2.0.2)
+        2|Active     |    1|Apache Felix Gogo Command (0.14.0)
+        3|Active     |    1|Apache Felix Gogo Runtime (0.12.1)
+        4|Active     |    1|Apache Felix Gogo Shell (0.10.0)
+        5|Active     |    1|Apache Aries Subsystem API (1.1.0)
+        6|Active     |    1|Apache Aries Subsystem Core (1.2.0)
+        7|Active     |    1|Apache Aries Util (1.1.0)
+        8|Active     |    1|Apache Felix Configuration Admin Service (1.8.2)
+        9|Active     |    1|Apache Felix Coordinator Service (1.0.0)
+       10|Active     |    1|Apache Felix Resolver (1.0.0)
+       11|Active     |    1|Region Digraph (1.1.0.v20120522-1841)
+       12|Active     |    1|slf4j-api (1.7.12)
+       13|Resolved   |    1|slf4j-simple (1.7.12)
+       14|Active     |    1|org.osgi.service.subsystem.region.context.0 (1.0.0)
+
+The slf4j-simple bundle is a fragment, so it can not be started.
+You can see that the Subsystems implementation operational as it created a synthesized
+bundle (14) to represent the root context. The subsystems implementation sometimes
+synthesizes a bundle to represent a subsystem. Whether or not this happens depends on 
+the isolation model of a subsystem.
+
+You can also see that the Subsystem service for the root subsystem has been registered
+by looking at the services registered by the Subsystem Core bundle (6):
+
+    g! inspect cap service 6
+    org.apache.aries.subsystem.core [6] provides:
+    ---------------------------------------------
+    service; org.osgi.service.subsystem.Subsystem, org.apache.aries.subsystem.AriesSubsystem with properties:
+       org.apache.aries.subsystem.service.regions = [org.eclipse.equinox.region.kernel]
+       subsystem.id = 0
+       subsystem.state = ACTIVE
+       subsystem.symbolicName = org.osgi.service.subsystem.root
+       subsystem.type = osgi.subsystem.application
+       subsystem.version = 1.0.0
+       ... other properties and services
+
+Each installed subsystem is represented by a serparate service.
+
+##Tools
+
+* Aries Gogo Command
+* esa-ant-task
+* eas-maven-plugin
+TODO elaborate
+
+##Development
+The Aries Subsystems code base can be found at the following location: [https://svn.apache.org/repos/asf/aries/trunk/subsystem][11]
+
+
+  [1]: http://www.osgi.org/Specifications/HomePage "OSGi Enterprise specifications"
+  [2]: http://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.api/1.1.0/org.apache.aries.subsystem.api-1.1.0.jar
+  [3]: http://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.core/1.2.0/org.apache.aries.subsystem.core-1.2.0.jar
+  [4]: http://repo1.maven.org/maven2/org/apache/aries/org.apache.aries.util/1.1.0/org.apache.aries.util-1.1.0.jar
+  [5]: http://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.configadmin/1.8.2/org.apache.felix.configadmin-1.8.2.jar
+  [6]: http://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.coordinator/1.0.0/org.apache.felix.coordinator-1.0.0.jar
+  [7]: http://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.resolver/1.0.0/org.apache.felix.resolver-1.0.0.jar
+  [8]: http://repo1.maven.org/maven2/org/eclipse/equinox/org.eclipse.equinox.region/1.1.0.v20120522-1841/org.eclipse.equinox.region-1.1.0.v20120522-1841.jar
+  [9]: http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar
+  [10]: http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.12/slf4j-simple-1.7.12.jar
+  [11]: https://svn.apache.org/repos/asf/aries/trunk/subsystem
