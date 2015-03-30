@@ -18,7 +18,8 @@ dependencies are the Aries Util bundle, the Equinox Region bundle and SLF4J for 
 The following are downloadable links (from Maven central) that 
 provide all the required components to get subsystems up and running with Apache
 Felix. Note that the Felix distribution comes with and OSGi Repository implementation
-so this does not need to be added.
+so this does not need to be added. (When running Aries Subsystems with another OSGi Framework an OSGi Repository
+may need to be added.)
 
 * [org.apache.aries.subsystem.api][2]
 * [org.apache.aries.subsystem.core][3]
@@ -52,7 +53,7 @@ After installing and starting all these components the Felix runtime looks like 
        14|Active     |    1|org.osgi.service.subsystem.region.context.0 (1.0.0)
 
 The slf4j-simple bundle is a fragment, so it can not be started.
-You can see that the Subsystems implementation operational as it created a synthesized
+You can see that the Subsystems implementation is operational as it created a synthesized
 bundle (14) to represent the root context. The subsystems implementation sometimes
 synthesizes a bundle to represent a subsystem. Whether or not this happens depends on 
 the isolation model of a subsystem.
@@ -76,13 +77,73 @@ Each installed subsystem is represented by a serparate service.
 
 ##Tools
 
-* Aries Gogo Command
-* esa-ant-task
-* eas-maven-plugin
-TODO elaborate
+The Apache Aries community provides a number of tools that facilitate working with OSGi Subsystems:
+
+* Subsystem Gogo Command - a Gogo command to work with subsystems, for more info see below.
+* [esa-ant-task][11] - an Ant task to create .esa archives.
+* [eas-maven-plugin][12] - a Maven plugin to create .esa archives.
+
+### Subsystem Gogo Command
+
+[https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command][13] contains a simple bundle with a Gogo command
+to control subsystems.
+
+After installing the gogo command bundle you can execute subsystem commands, for example:
+
+    g! subsystem:list
+    0	ACTIVE	org.osgi.service.subsystem.root 1.0.0
+
+Use `subsystem:install` to install additional subsystems, for example one that is part of the `subsystem-itests` module:
+
+    g! subsystem:install file:/checkouts/aries/subsystem/subsystem-itests/target/feature1.esa
+    ...
+    Subsystem successfully installed: org.apache.aries.subsystem.feature1; id: 1
+
+This subsystem embeds another subsystem which automatically gets installed too. When you list all subsystems you can see both:
+
+    g! subsystem:list
+    0	ACTIVE	org.osgi.service.subsystem.root 1.0.0
+    1	INSTALLED	org.apache.aries.subsystem.feature1 1.0.0
+    2	INSTALLED	org.apache.aries.subsystem.feature2 1.0.0
+
+Together, these subsystems contain 3 bundles:
+
+    g! lb
+    START LEVEL 1
+       ID|State      |Level|Name
+        0|Active     |    0|System Bundle (4.6.1)
+       ...
+       16|Installed  |    1|TB3 (1.0.0)
+       17|Installed  |    1|TB1 (1.0.0)
+       18|Installed  |    1|TB2 (2.0.0)
+
+Use `subsystem:start` to start a subsystem. This will start all its bundles and all the bundles of dependent subsystems. So the 
+following single command, starts 3 bundles:
+
+    g! subsystem:start 1
+    g! lb
+    START LEVEL 1
+       ID|State      |Level|Name
+        0|Active     |    0|System Bundle (4.6.1)
+        ...
+       16|Active     |    1|TB3 (1.0.0)
+       17|Active     |    1|TB1 (1.0.0)
+       18|Active     |    1|TB2 (2.0.0)
+
+### Subsystem gogo commands
+The following commands are available from the subsystem-gogo-command bundle:
+
+* `subsystem:install <url>` - Install and resolve a subsystem.
+* `subsystem:list <subsystemId>` - List installed subsystems.
+* `subsystem:start <subsystemId>` - Start a subsystem and its dependencies.
+* `subsystem:stop <subsystemId>` - Stop a subsystem and its dependencies.
+* `subsystem:uninstall <subsystemId>` - Uninstall a subsystem and its dependencies. 
+
+Note that, following the OSGi Subsystem specification, dependent subsystems are only stopped and uninstalled when the last using subsystem
+is stopped/uninstalled.
 
 ##Development
-The Aries Subsystems code base can be found at the following location: [https://svn.apache.org/repos/asf/aries/trunk/subsystem][11]
+The Aries Subsystems code base can be found at the following location: [https://svn.apache.org/repos/asf/aries/trunk/subsystem][14]
 
 
   [1]: http://www.osgi.org/Specifications/HomePage "OSGi Enterprise specifications"
@@ -95,4 +156,9 @@ The Aries Subsystems code base can be found at the following location: [https://
   [8]: http://repo1.maven.org/maven2/org/eclipse/equinox/org.eclipse.equinox.region/1.1.0.v20120522-1841/org.eclipse.equinox.region-1.1.0.v20120522-1841.jar
   [9]: http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar
   [10]: http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.12/slf4j-simple-1.7.12.jar
-  [11]: https://svn.apache.org/repos/asf/aries/trunk/subsystem
+  [11]: http://aries.apache.org/modules/esaanttask.html
+  [12]: http://aries.apache.org/modules/esamavenpluginproject.html
+  [13]: https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command
+  [14]: https://svn.apache.org/repos/asf/aries/trunk/subsystem
+
+
