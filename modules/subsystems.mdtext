@@ -85,7 +85,7 @@ The Apache Aries community provides a number of tools that facilitate working wi
 
 ### Subsystem Gogo Command
 
-[https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command][13] contains a simple bundle with a Gogo command
+[https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command][13] contains a simple bundle with Gogo commands
 to control subsystems.
 
 After installing the gogo command bundle you can execute subsystem commands, for example:
