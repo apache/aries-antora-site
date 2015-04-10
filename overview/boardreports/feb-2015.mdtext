@@ -16,41 +16,39 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# April 2015 Board report
+# February 2015 Board report
 
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
 ## Releases
 
-Last report was February. The following releases have been created with promotion to maven central dates:
+The votes for these releases closed on 2014/10/21
 
-* Apache Aries Blueprint Core (blueprint-core) 1.4.3 2015/02/23
-* Apache Aries Blueprint CM (blueprint-cm) 1.0.6 2015/02/23
-* Apache Aries Blueprint Maven Plugin (blueprint-maven-plugin) 1.1.0 2015/03/03
-* Apache Aries Blueprint no-OSGI (blueprint-noosgi) 1.1.0 2015/03/03
-* Apache Aries Blueprint Web (blueprint-web) 1.1.0 2015/03/03
-* Apache Aries JMX Core (jmx-core) 1.1.3 2015/03/09
-* Apache Aries Transaction Enlisting JDBC Datasource (transaction-jdbc) 2.1.1 2015/03/09
+* Apache Aries Maven ESA Plugin (esa-maven-plugin) 1.0.0
+* Apache Aries JNDI Core (jndi-core) 1.0.2
+* Apache Aries JNDI URL Handler (jndi-url) 1.1.0
+* Apache Aries Transaction Manager (transaction-manager) 1.0.2
+* Apache Aries Transaction Blueprint (transaction-blueprint) 1.0.2
+* Apache Aries Transaction Enlisting JDBC Datasource (transaction-jdbc) 2.1.0
+* Apache Aries JMS Pool (transaction-jms) 2.0.0
 
-* Apache Aries SPI Fly Core (internal module) (spi-fly-core) 1.0.2 2015/03/24?
-* Apache Aries SPI Fly Dynamic Weaving Bundle (spi-fly-dynamic-bundle) 1.0.2 2015/03/24?
-* Apache Aries SPI Fly Static Weaving Bundle (spi-fly-static-bundle) 1.0.2 2015/03/24?
-* Apache Aries SPI Fly Static Weaving Tool (spi-fly-static-tool) 1.0.2 2015/03/24?
+The votes for these releases closed on 2014/11/04
 
-  Together the new SPI Fly releases pass the OSGi Enterprise R5 Service Loader Mediator 1.0 CT tests
+* Apache Aries JPA Container (jpa-container) 1.0.2
+* Apache Aries JPA Container Managed Contexts (jpa-container-context) 1.0.4
 
-* Apache Aries Subsystem API (subsystem-api) 1.1.0 2015/03/24
-* Apache Aries Subsystem Core (subsystem-core) 1.2.0 2015/03/24
-* Apache Aries Subsystem OBR (subsystem-obr) 1.0.1 2015/03/24
-* Apache Aries Subsystems Bundle (subsystem-bundle) 1.2.0 2015/03/24
+The votes for these releases closed on 2014/12/05
 
-  Along with enhanced documentation.
+* **New** Apache Aries Blueprint Maven Plugin (blueprint-maven-plugin) 1.0.0 (2014/12/05)
+* Apache Aries Blueprint Annotation based authorization (blueprint-authz) 1.0.0 (2014/12/05)
 
 ## Project update
 
-User questions across many of the Aries modules continue on the users@ list. Discussions about the refactoring of JPA and Quiesce modules on the dev@ list.
-A new contribution from a non-committer: esa-ant-plugin for building Enterprise Subsystem Archives (ESAs), made it into trunk.
+Creation of a new project: blueprint-maven-plugin: for generating OSGi an blueprint.xml from CDI, JEE and Spring annotations.
 
-The SPI Fly releases were successfully voted, but the voting thread wasn't closed off in the usual way with a results tally. It looks like it was closed on 2015/03/24 as stated above.
+Contributions continue to come in from non-committers via GitHub.
+
+Newest PMC member voted in on 28th July 2013.
+
 
 There are no issues requiring board attention at this time.
