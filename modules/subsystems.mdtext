@@ -5,7 +5,7 @@ Title: Subsystems
 ##Introduction
 
 Apache Aries Subsystems is the Reference Implementation of the OSGi Subsystems Specification, chapter 134 of the 
-[OSGi Enterprise specifications][1]. 
+[OSGi Enterprise specifications][1]. The Aries 1.x components implement the 1.0 version of the Subsystem spec. Aries 2.x and newer implement the 1.1 version of the OSGi Subsystems.
 
 ##Getting started
 
@@ -17,9 +17,9 @@ dependencies are the Aries Util bundle, the Equinox Region bundle and SLF4J for 
 
 The following are downloadable links (from Maven central) that 
 provide all the required components to get subsystems up and running with Apache
-Felix. Note that the Felix distribution comes with and OSGi Repository implementation
-so this does not need to be added. (When running Aries Subsystems with another OSGi Framework an OSGi Repository
-may need to be added.)
+Felix. Note that the Felix distribution comes with OSGi Repository and Resolver implementations so these 
+do not need to be added. (When running Aries Subsystems with another OSGi Framework these
+must be provided.)
 
 * [org.apache.aries.subsystem.api][2]
 * [org.apache.aries.subsystem.core][3]
