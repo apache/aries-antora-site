@@ -26,7 +26,7 @@ programming in enterprise applications. The two key specifications are OSGi Prom
 #OSGi Promises
 
 One of the fundamental pieces of an asynchronous programming system is the *Promise*. A Promise is a holder type that 
-represents an asynchronous calcluation. Since Java 5 the JDK has contained *java.util.concurrent.Future* to perform this 
+represents an asynchronous calculation or computation. Since Java 5 the JDK has contained *java.util.concurrent.Future* to perform this 
 function. Java's Future type is, however, fatally flawed as it has no callback to notify the user when it resolves. Instead the
 user must make a blocking call to *get()*.
 
@@ -158,3 +158,10 @@ These sorts of calls are called "fire and forget" calls, and are also supported 
 
 The execute method still returns a promise, however this promise represents whether the fire and forget call successfully started
 or not, not whether it has completed.
+
+# Getting Started
+The Asynchronous Services implementation can be found in the Apache Aries codebase in the `async` directory: [https://svn.apache.org/repos/asf/aries/trunk/async][1]
+
+In this location a convenient all-in-one bundle can also be found with no dependencies: the `async-all` module.
+
+  [1]: https://svn.apache.org/repos/asf/aries/trunk/async
