@@ -5,7 +5,7 @@ Title: Subsystems
 ##Introduction
 
 Apache Aries Subsystems is the Reference Implementation of the OSGi Subsystems Specification, chapter 134 of the 
-[OSGi Enterprise specifications][1]. The Aries 1.x components implement the 1.0 version of the Subsystem spec. Aries 2.x and newer implement the 1.1 version of the OSGi Subsystems.
+[OSGi Enterprise specifications][1]. The Aries 1.x components implement the 1.0 version of the Subsystem spec. Aries 2.x and newer implement the 1.1 version of OSGi Subsystems.
 
 ##Getting started
 
@@ -17,7 +17,7 @@ dependencies are the Aries Util bundle, the Equinox Region bundle and SLF4J for 
 
 The following are downloadable links (from Maven central) that 
 provide all the required components to get subsystems up and running with Apache
-Felix. Note that the Felix distribution comes with OSGi Repository and Resolver implementations so these 
+Felix. Note that the Felix Framework distribution comes with OSGi Repository and Resolver implementations so these 
 do not need to be added. (When running Aries Subsystems with another OSGi Framework these
 must be provided.)
 
@@ -145,8 +145,8 @@ The Aries Subsystems code base can be found at the following location: [https://
 
 
   [1]: http://www.osgi.org/Specifications/HomePage "OSGi Enterprise specifications"
-  [2]: https://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.api/2.0.1/org.apache.aries.subsystem.api-2.0.1.jar
-  [3]: https://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.core/2.0.1/org.apache.aries.subsystem.core-2.0.1.jar
+  [2]: https://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.api/2.0.2/org.apache.aries.subsystem.api-2.0.2.jar
+  [3]: https://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.core/2.0.2/org.apache.aries.subsystem.core-2.0.2.jar
   [4]: http://repo1.maven.org/maven2/org/apache/aries/org.apache.aries.util/1.1.0/org.apache.aries.util-1.1.0.jar
   [5]: https://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.configadmin/1.8.6/org.apache.felix.configadmin-1.8.6.jar
   [6]: http://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.coordinator/1.0.0/org.apache.felix.coordinator-1.0.0.jar
