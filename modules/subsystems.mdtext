@@ -109,7 +109,7 @@ Together, these subsystems contain 3 bundles:
     g! lb
     START LEVEL 1
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (4.6.1)
+        0|Active     |    0|System Bundle (5.0.1)
        ...
        16|Installed  |    1|TB3 (1.0.0)
        17|Installed  |    1|TB1 (1.0.0)
@@ -122,7 +122,7 @@ following single command, starts 3 bundles:
     g! lb
     START LEVEL 1
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (4.6.1)
+        0|Active     |    0|System Bundle (5.0.1)
         ...
        16|Active     |    1|TB3 (1.0.0)
        17|Active     |    1|TB1 (1.0.0)
