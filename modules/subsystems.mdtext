@@ -40,8 +40,8 @@ After installing and starting all these components the Felix runtime looks like 
         2|Active     |    1|Apache Felix Gogo Command (0.14.0)
         3|Active     |    1|Apache Felix Gogo Runtime (0.16.2)
         4|Active     |    1|Apache Felix Gogo Shell (0.10.0)
-        5|Active     |    1|Apache Aries Subsystem API (2.0.1)
-        6|Active     |    1|Apache Aries Subsystem Core (2.0.1)
+        5|Active     |    1|Apache Aries Subsystem API (2.0.2)
+        6|Active     |    1|Apache Aries Subsystem Core (2.0.2)
         7|Active     |    1|Apache Aries Util (1.1.0)
         8|Active     |    1|Apache Felix Configuration Admin Service (1.8.6)
         9|Active     |    1|Apache Felix Coordinator Service (1.0.0)
@@ -157,6 +157,7 @@ The Aries Subsystems code base can be found at the following location: [https://
   [12]: http://aries.apache.org/modules/esamavenpluginproject.html
   [13]: https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command
   [14]: https://svn.apache.org/repos/asf/aries/trunk/subsystem
+
 
 
 
