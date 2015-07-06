@@ -3,6 +3,7 @@ Title: JPAProject
 Title: JPAProject
 
 # JPA 
+
 The Aries JPA project will make it easy for JPA persistence providers such
 as [Apache OpenJPA](http://openjpa.apache.org/)
  to be used in an OSGi environment and will provide container managed
@@ -17,17 +18,13 @@ Developing an Aries JPA project is very easy and can be achieved with simple ste
 "Creation of a JPA project using Maven" section. First, however it is useful to understand some of
 the basic concepts.
 
+Aries JPA provides container managed JPA support in an OSGi framework.
+
 ## Persistence bundles
-The Aries JPA container provides managed JPA support in an OSGi framework for OSGi persistence bundles.
-A persistence bundle is an OSGi bundle with three special characteristics:
 
-* It contains one or more JPA mapped classes (Entity classes, Mapped superclasses and Embeddables)
-* It contains a JPA persistence descriptor describing one or more persistence units
-* The bundle manifest contains the header **Meta-Persistence:** 
-
+A bundle is regarded as a persistence bundle if it contains the header **Meta-Persistence:**  in it's Manifest.
 The value of the Meta-Persistence: header is a comma separated list of locations where JPA persistence 
 descriptors can be found. If the header value is empty then a default of META-INF/persistence.xml is used.
-(This behaviour is taken from the JPA service specification).
 
 For example:
 
@@ -41,24 +38,17 @@ means that the locations "persistence/myPu.xml" (relative to the root of the bun
 "someFolder/anotherPu.xml" (relative to the root of pUnit.jar, which is in the root of
 the bundle) will be searched.
 
-## The Aries JPA container 
+The persistence bundle typically also contains the JPA entities.
 
-The Aries JPA container consists of four main pieces, the two most important of which are the API bundle
-and the container bundle.
+## The Aries JPA 2 modules
 
-### The Aries JPA API bundle
-
-The Aries JPA container API bundle is **not** the JPA API, it is a set of interfaces for interacting with
-the Aries JPA container. Clients are unlikely to use this API, but you may need it if you are building
-your own runtime. This bundle also defines the interfaces that the Aries JPA container bundles use to
-talk to each other, as a result it is a mandatory dependency of all of the other Aries JPA container bundles.
+Aries JPA consists of four bundles.
 
 ### The Aries JPA container bundle
 
-The Aries JPA container bundle provides basic support for application managed JPA. It is responsible for
-locating and parsing persistence descriptors. Any persistence units found will be processed and used to
-create EntityManagerFactory services, which will be registered on behalf of the persistence bundle when
-it starts.
+The Aries JPA container bundle implements the OSGi JPA service specification. 
+
+It tracks persistence unit bundles and creates an EntityManagerFactory service as soon as all dependencies are met.
 
 The EntityManagerFactory services will be registered with the following properties: 
 
@@ -66,231 +56,129 @@ The EntityManagerFactory services will be registered with the following properti
 	osgi.unit.provider - this is the class name of the JPA PersistenceProvider that was used to create the EntityManagerFactory
 	org.apache.aries.jpa.container.managed - this property will be set to true, indicating this is a managed EntityManagerFactory.
 
-Useful notes: 
+For each persistence unit jpa container first determines which persistence provider to use by analyzing the "provider" property of persistence.xml.
+It will track a PersistenceProvider service that matches this name.
 
-* Older versions of the Aries JPA container (below 0.4) do not support classpath scanning or load-time weaving, 
-this means that you must list all of your entity classes in your persistence descriptor, and that you must 
-pre-enhance your entities. This restriction does not apply to versions newer than 0.4 when running on OSGi
-frameworks implementing version 4.3 of the OSGi specification.
+The next step is to configure a DataSource. The spec defines that the database properties are used to determine which DataSourceFactory service to use and
+create a DataSource from it.
+
+Additionally aries jpa supports refering to a DataSource service using the jta-datasource or non-jta-datasource properties. The syntax is the aries jndi syntax to search for services.
+
+If using a JTA persistence unit keep in mind that you still have to supply a javax.sql.DataSource not an XADataSource. This DataSource must wrap an XADataSource and provide XA resource enlistment. The simplest way to achieve this is to use pax-jdbc.
+
+As soon as PersistenceProvider and DataSource are available the EntityManagerFactory service is created.
+Aries JPA container also supports classpath scanning and load time weaving of JPA entities.
+
+Useful notes: 
 
 * You should never call close on the EntityManagerFactory service. This call will be made by the container when
 the persistence bundle is removed or refreshed. If you do close the EntityManagerFactory service then it will be 
 closed for **all** users of the service.
 
+Aries JPA container is a standalone bundle with no other dependencies.
 
-### The Aries JPA container context bundle
+### The Aries JPA API
 
-This bundle provides managed persistence context support. In order to function it requires the Aries JPA container
-bundle to be running as it makes use of the managed EntityManagerFactory services.
+A set of interfaces to make it easier to use JPA in OSGi. It contains two main interfaces:
 
-This bundle also depends on the presence of a JTA service specification implementation, as it makes use of the
-TransactionSynchronizationRegistry service.
+* EmSupplier: Allows to get a thread safe EntityManager and mark entry and exit of blocks that access the EntityManager. This
+is rather low level and meant to be used mainly by frameworks.
+* JpaTemplate: Allows to write closures that can safely access an EntityManager and are executed inside a transaction.
 
-It is unlikely that clients will use this bundle directly. To actually use managed persistence contexts a client
-should use blueprint to inject one.
+### The Aries JPA support
 
-## The Aries JPA container blueprint integration bundle
+For each EntityManagerFactory service this bundle provides additional EmSuppler and JpaTemplate services.
 
-This bundle provides a blueprint custom namespace for persistence unit and persistence context injection. To
-inject persistence units the Aries JPA container bundle is required. To inject persistence contexts the Aries
-JPA container context bundle is also required.
+## The Aries JPA blueprint extension
 
-Example blueprint follows showing the full breadth of allowable injection syntax:
-
-	<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" 
-	  xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0">
-	
-	  <!-- Inject a persistence unit called "myUnit" using the bean property "setEmf" -->
-	  <bean id="unit">
-	    <jpa:unit property="emf" unitname="myUnit" />
-	  </bean>
-	  
-	  <!-- Inject an unnamed persistence unit using the bean property "setEmf2" -->
-	  <bean id="unitNoName">
-	    <jpa:unit property="emf2" />
-	  </bean>
-	  
-	  <!-- Inject a persistence unit with name "" using the bean property "setEmf3" -->
-	  <bean id="emptyUnitName">
-	    <jpa:unit property="emf3" unitname="" />
-	  </bean>
-	  
-	  <!-- Inject a persistence context for the unit called "myUnit" using the bean property "setEm" -->
-	  <bean id="context">
-	    <jpa:context property="em" unitname="myUnit"/>
-	  </bean>
-	  
-	  <!-- 
-	      Inject an Extended persistence context for an unnamed persistence unit that is constructed
-	      passing in the supplied properties and injected using the bean property "setEm" 
-	  -->
-	  <bean id="contextWithProps">
-	    <jpa:context property="em" type="EXTENDED">
-	      <map>
-	        <entry key="one" value="eins" />
-	        <entry key="two" value="zwo" />
-	      </map>
-	    </jpa:context>
-	  </bean>
-	
-	  <!-- Inject a persistence unit called "myUnit" using constructor injection -->
-	  <bean id="withUnitArg">
-	    <jpa:unit unitname="myUnit"/>
-	  </bean>
-	  
-	  <!-- Inject a persistence context using the unit called "myUnit" using constructor injection -->
-	  <bean id="withContextArg">
-	    <jpa:context unitname="myUnit"/>
-	  </bean>
-	
-	  <!-- Inject a persistence unit called "myUnit" using constructor injection and argument index 0 -->
-	  <bean id="withIndexedUnitArg">
-	    <jpa:unit index="0" unitname="myUnit"/>
-	  </bean>
-	  
-	  <!-- Inject a persistence context using the unit called "myUnit" using constructor injection and argument index 1 -->
-	  <bean id="withIndexedContextArg">
-	    <jpa:context index="1" unitname="myUnit"/>
-	  </bean>
-	</blueprint>
+Provides a blueprint extension for @PersistenceUnit and @PersistenceContext injection.
 
 
-This blueprint namespace can be used by any blueprint bundle (not just the persistence bundle), and as the injection
-occurs via the service registry your blueprint will not start until the relevant JPA resources are available there.
 
-
+For more details see the aries jpa blueprint example: https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/
 
 # Creation of a JPA project using Maven
+
 The first step consist in to create a maven module and make the following modifications to allow to deploy
  it as OSGI bundle on the platform and reference where the persistence XML file must loaded by the classpath to
  allow to the JPA container to configure the project accordingly.
 
-**Step 1 : Module**
+**Step 1 : Create a bundle **
 
-Every jar deployed on an OSGI platform must be adapted to be conform to OSGI standard. That means that the maven
-packaging which is defined as the default value must be defined to bundle
+OSGi bundles are mostly regular jars but they need to contain some special OSGi headers in the Manifest. The two changes make sure your maven project creates 
+a valid OSGi bundle.
 
-
-	<groupId>org.apache.aries.samples.blog</groupId>
-	<artifactId>org.apache.aries.samples.blog.persistence.jpa</artifactId>
-	<name>Apache Aries blog sample persistence</name>
 	<packaging>bundle</packaging>
 
 and that you must configure the maven-bundle-plugin (http://felix.apache.org/site/apache-felix-maven-bundle-plugin-bnd.html)
 to generate the MANIFEST.MF file required by OSGI platform.
 
-Remark : the modification to be made (packages to be imported or exported depends on your project setting)
+	<plugin>
+	  <groupId>org.apache.felix</groupId>
+	  <artifactId>maven-bundle-plugin</artifactId>
+	  <version>2.5.4</version>
+	  <extensions>true</extensions>
+	  <inherited>true</inherited>
+	  <configuration>
+	    <instructions>
+              <!-- Only needed for the persistence bundle containing the jpa Entities -->
+	      <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+	      <!-- Needed for runtime enhancement when using hibernate -->
+              <Dynamic-Import-Package>*, org.hibernate.proxy, javassist.util.proxy</Dynamic-Import-Package>
+	    </instructions>
+	  </configuration>
+	</plugin>
 
-    <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <configuration>
-            <instructions>
-                <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                <Private-Package>org.apache.aries.samples.blog.persistence.jpa.*</Private-Package>
-                <Export-Package>!org.apache.aries.samples.blog.persistence.jpa.*</Export-Package>
-            </instructions>
-        </configuration>
-    </plugin>
-
-To allow the Aries JPA Container to setup your persistence layer (akka : instantiate the entityFactory with the information
-provided into the persistence.xml file), an additional modification must be made in your pom.xml file to package this file
-into the META-INF directory
-
-    <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <configuration>
-            <instructions>
-                <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-                ...
-            </instructions>
-        </configuration>
-    </plugin>
-
-When this step is done, your pom.xml file is ready to be used to package and install your bundle into the maven repository
-and next into a OSGI container (Apache Felix, Apache Karaf, Eclipse Equinox)
 
 **Step 2 : Adapt the persistence file**
 
-We will not cover how to define the different parameters of the persistence file but present you what you should modify to
-deploy it on non J2EE platform, which is the case by definition for OSGI kernel. Curiously, there is only one think
-to modify and it concerns the access to the datasource. In J2EE world, we use JNDI as registry mecahnism to registry
-the datasource with a key used to find it from applications. JNDI is not supported like that in OSGI world but OSGI EE
-specification has made a proposition to provide a similar mechanism that Aries JNDI project covers (http://aries.apache.org/modules/jndiproject.html).
+We will cover here how to modify a persistence.xml for OSGi usage. For the most part only the access to the DataSource has to be adapted for OSGi.
+With J2EE applications, you simply use the jdbc key with the name of the datasource associated (jdbc/reportincidentdb). In OSGi jndi support is provided by aries jndi 
+(http://aries.apache.org/modules/jndiproject.html). It bridges jndi names to OSGi services.
+We must define two parameters, the "osgi:service" wich will allow to lookup OSGI services, the interface "javax.sql.DataSource" and the name of the service "osgi.jndi.service.name", which is a filter property,  with its jndi name associated.
 
-To access to the datasource, you must provide within the <jta-data-source> or <non-jta-data-source> depending if you use a JTA
-transaction manager or not.
+To access to the datasource, you must provide within the <jta-data-source> or <non-jta-data-source> depending if you use transaction type JTA or RESOURCE_LOCAL.
 
-    <persistence-unit name="ReportIncident" transaction-type="JTA">
-    <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+    <persistence-unit name="tasklist" transaction-type="JTA">
+    <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/tasklist)</jta-data-source>
 
-    <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/reportincidentdb)</jta-data-source>
+The other elements of the xml file are defined according to JPA specification. 
 
-With J2EE applications, you simply use the jdbc key with the name of the datasource associated (jdbc/reportincidentdb). As OSGI uses a
- different mechanism, we must define two parameters, the "osgi:service" wich will allow to find from the OSGI Service registry (aka proxy)
- the interface "javax.sql.DataSource" and the name of the service "osgi.jndi.service.name", which is a filter property,  with its jndi name associated.
+**Step 3 : Inject EntityManager into a bean and make it transactional **
 
-The other tags of the xml file are defined according to JPA specification
+The goal of this step is to provide a DAO layer that looks like JEE code on the java level. For this we need to inject
+a thread safe EntityManager and ensure the DAO code is run inside a transational context.
 
-**Step 3 : Define the services and expose them**
+Aries JPA 1.x used a xml element inside each DAO bean to inject the EntityManager. This syntax is not suppoerted for Aries JPA 2.x anymore.
+Instead simply enable standard @PesistenceContext and @PersistenceUnit annotation support with the xml element <jpa:enable/> on top level.
 
-The last step consist in to use Annotations and Injection mechanism to let the Aries JPA container to create the entity Manager
-with the classes of your DAO layer and add Transactional aspect into the methods. This way of work allows to complety
-embed existing projects into ARIES sphere without modifications
+The transactional context is established using the xml element <tx:transaction> on the bean level. In the example below we enable transactions for 
+all DAO methods. The scope of the transaction can be defined using the attribute value.
 
-Here are the modifications to do in the blueprint xml file located under OSGI-INF/blueprint
+Example blueprint follows showing the full breadth of allowable injection syntax:
 
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
-	xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.0.0"
-	default-activation="lazy">
+	<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" 
+	  xmlns:jpa="http://aries.apache.org/xmlns/jpan/v1.0.0"
+	  xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.2.0"
+	  xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0">
+	  <jpa:enable />
+	  <service ref="taskService" interface="org.apache.aries.jpa.example.tasklist.model.TaskService"/>
+	  <bean class="org.apache.aries.jpa.example.tasklist.blueprint.impl.TaskServiceImpl"/>
+	    <tx:transaction method="*"/>
+	  </bean>
+	</blueprint>
 
+Make sure you inject the EntityManager in your DAO class like this:
 
-	<bean id="incidentDAO"
-		class="org.apache.camel.example.reportincident.dao.impl.IncidentDAOImpl">
-		<tx:transaction method="*" value="Required" /> (1)
-		<jpa:context property="entityManager" unitname="ReportIncident" /> (2)
-	</bean>
-
-	<service ref="incidentDAO"
-		interface="org.apache.camel.example.reportincident.dao.IncidentDAO">
-	</service>
-
-    <!-- DataSource Derby -->
-	<bean id="dataSourceDerby" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver" />
-		<property name="url" value="jdbc:derby:/temp/reportincident;create=true" />
-		<property name="username" value="" />
-		<property name="password" value="" />
-	</bean>
-
-    <!-- Expose DataSource as JNDI reference -->
-    <service ref="dataSourceDerby" interface="javax.sql.DataSource">
-       <service-properties>
-         <entry key="osgi.jndi.service.name" value="jdbc/reportincidentdb"/> (3)
-       </service-properties>
-    </service>
-
-</blueprint>
-
-(1) The &lt;tx:transaction&gt; tag allows to inject in your DAO layer the transactional aspect and using the following symbol
-"*", Aries Transaction manager will create for each method a session to begin / commit or rollback a transaction in your class
-The scope of the transaction can be defined using the attribute value.<br />
-(2) The JPA context is created using &lt;jpa:context&gt;. The entityManager (which corresponds to the property of your DAO class) will be
-injected using the property="entityManager". The reference to your unit name (defined in the persistence.xml file) is passed with the
- attribute unitname.
-file.<br />
-(3) The &lt;service&gt; allows to expose an interface on the OSGI Registry Service using as key the name of the interface ("javax,sql.Datasource").
-The &lt;service-properties&gt; will let to define a property that we will use to retrieve the datasource from the registry
+	@PersistenceContext(unitName="tasklist")
+	EntityManager em;
 
 
 **Step 4 : Package the solution**
 
-To package and deploy the solution, execute a "maven clean install" instruction and deploy your project into your favorite OSGI platform. Depending in which OSGI container
-you plan to deploy your projects, the bundles (Aries JPA, OpenJPA, Aries Transaction, ....) to be used will be
-different and you will have to identify them. The Aries samples project provides you a list of [bundles][1] and you 
-can use them as a starting point to create your first project.
+To package the solution, execute a "maven clean install" instruction. Installing Aries JPA and Aries Transaction into arbitrary containers is beyond the scope of this document. 
 
-[1]: https://svn.apache.org/repos/asf/aries/trunk/samples/blog/blog-itests/src/test/java/org/apache/aries/samples/blog/itests/JpaBlogSampleWithEbaTest.java
+To keep the installation instructions small we only cover installation into Apache Karaf 4.x. Karaf provides features for Aries JPA, Aries Transaction, Hibernate and Pax-jdbc so installation is very easy.
+See the README at https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint
+
+
