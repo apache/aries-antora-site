@@ -1,7 +1,5 @@
 Title: JPAProject
 
-Title: JPAProject
-
 # JPA 
 
 The Aries JPA project will make it easy for JPA persistence providers such
@@ -44,7 +42,7 @@ The persistence bundle typically also contains the JPA entities.
 
 Aries JPA consists of four bundles.
 
-### The Aries JPA container bundle
+### Aries JPA container (org.apache.aries.jpa.container)
 
 The Aries JPA container bundle implements the OSGi JPA service specification. 
 
@@ -77,7 +75,7 @@ closed for **all** users of the service.
 
 Aries JPA container is a standalone bundle with no other dependencies.
 
-### The Aries JPA API
+### Aries JPA API (org.apache.aries.jpa.api)
 
 A set of interfaces to make it easier to use JPA in OSGi. It contains two main interfaces:
 
@@ -85,16 +83,15 @@ A set of interfaces to make it easier to use JPA in OSGi. It contains two main i
 is rather low level and meant to be used mainly by frameworks.
 * JpaTemplate: Allows to write closures that can safely access an EntityManager and are executed inside a transaction.
 
-### The Aries JPA support
+### Aries JPA support(org.apache.aries.jpa.support)
 
 For each EntityManagerFactory service this bundle provides additional EmSuppler and JpaTemplate services.
 
-## The Aries JPA blueprint extension
+## Aries JPA blueprint extension (org.apache.aries.jpa.blueprint)
 
 Provides a blueprint extension for @PersistenceUnit and @PersistenceContext injection.
-
-
-
+To use the extension add this namespace to your blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpan/v1.0.0" and enable
+annotation support using the element <jpa:enable /> on top level.
 For more details see the aries jpa blueprint example: https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/
 
 # Creation of a JPA project using Maven
@@ -144,7 +141,7 @@ To access to the datasource, you must provide within the <jta-data-source> or <n
 
 The other elements of the xml file are defined according to JPA specification. 
 
-**Step 3 : Inject EntityManager into a bean and make it transactional **
+**Step 3.1 : Inject EntityManager into a bean and make it transactional **
 
 The goal of this step is to provide a DAO layer that looks like JEE code on the java level. For this we need to inject
 a thread safe EntityManager and ensure the DAO code is run inside a transational context.
@@ -173,12 +170,30 @@ Make sure you inject the EntityManager in your DAO class like this:
 	@PersistenceContext(unitName="tasklist")
 	EntityManager em;
 
+See tasklist-blueprint example for details.
+
+**Step 3.2 : Use JPATemplate to work with JPA in declarative services **
+
+Inject the JPATemplate using a service reference:
+
+	@Reference(target = "(osgi.unit.name=tasklist)")
+	public void setJpaTemplate(JpaTemplate jpa) { ... }
+
+Use the JPATemplate to work with JPA Entities inside closures.
+
+	// txExpr if you need to return an object
+	return jpa.txExpr(TransactionType.Required, em -> em.find(Task.class, id));
+	
+	// tx if you just execute code
+	jpa.tx(em -> em.persist(task));
+
+See the tasklist-ds example for details.
 
 **Step 4 : Package the solution**
 
 To package the solution, execute a "maven clean install" instruction. Installing Aries JPA and Aries Transaction into arbitrary containers is beyond the scope of this document. 
 
 To keep the installation instructions small we only cover installation into Apache Karaf 4.x. Karaf provides features for Aries JPA, Aries Transaction, Hibernate and Pax-jdbc so installation is very easy.
-See the README at https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint
+See the README at https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/
 
 
