@@ -1,0 +1,26 @@
+Title: Community Resources
+
+# Source
+
+https://svn.apache.org/repos/asf/aries/
+
+# Issue Tracker
+
+https://issues.apache.org/jira/browse/ARIES
+
+# Automated Builds
+
+https://builds.apache.org/view/A-D/view/Aries2/
+
+# Mailing lists
+
+List | Subscribe | Unsubscribe | Scope
+|---|---|---|
+|  [user@aries.apache.org](http://mail-archives.apache.org/mod_mbox/aries-user/) | [Subscribe](mailto:user-subscribe@aries.apache.org) | [Unsubscribe](mailto:user-unsubscribe@aries.apache.org) | For all users of Aries. General discussion and questions
+|  [dev@aries.apache.org](http://mail-archives.apache.org/mod_mbox/aries-dev/) | [Post](mailto:dev@aries.apache.org) | [Subscribe](mailto:dev-subscribe@aries.apache.org) | [Unsubscribe](mailto:dev-unsubscribe@aries.apache.org) | [Post](mailto:dev@aries.apache.org) | ) | For developers working on Aries code base. Discuss ongoing work, make
+decisions and vote on technical issues
+| [commits@aries.apache.org](http://mail-archives.apache.org/mod_mbox/aries-commits/) | [Subscribe](mailto:commits-subscribe@aries.apache.org) | [Unsubscribe](mailto:commits-unsubscribe@aries.apache.org) | Receives notifications for all commits
+
+You need to subscribe to a list before you can post.
+
+
