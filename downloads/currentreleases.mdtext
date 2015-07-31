@@ -1,0 +1,74 @@
+Title: Downloads
+
+<a name="Downloads-ApacheAriesDownloads"></a>
+# General information
+
+Apache Aries modules are distributed in source and binary form.
+These [KEYS](http://www.apache.org/dist/aries/KEYS) can be used to verify the releases.
+
+All Apache Aries products are distributed under the terms of The Apache
+Software License (version 2.0). See the LICENSE file included in each
+distribution for additional license information.
+
+# Official downloads
+
+The official download for Apache projects is hosted at Apache. For maven users we recommend to simply refer to the 
+individual maven artifacts instead of downloading by hand.
+
+[Aries Downloads](http://www.apache.org/dist/aries/)
+
+# Maven central
+
+All Aries modules are released to [maven central](http://search.maven.org).
+
+* [blueprint] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.blueprint)
+* [eba-maven-plugin] (http://search.maven.org/#artifactdetails|org.apache.aries|eba-maven-plugin|1.0.0|maven-plugin)
+* [ejb] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.ejb)
+* [jmx] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.jmx)
+* [jndi] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.jndi)
+* [jpa] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.jpa)
+* [proxy] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.proxy)
+* [quiesce] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.quiesce)
+* [subsystem] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.subsystem)
+* [testsupport] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.testsupport)
+* [transaction] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.transaction)
+* [util] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.util)
+* [web] (http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.web)
+
+# Apache Karaf
+
+Apache Karaf is a modular OSGi server that integrates very well with Aries. Most aries subprojects can be installed into Apache Karaf using features.
+For example feature:install jndi installs the Aries jndi modules.
+
+<a name="Samples"></a>
+### Samples
+The easiest way to use the samples is to download the source zip, navigate
+to the appropriate 'assembly' module and run mvn install to download all
+the released  binary artifacts. Alternatively you can build the entire
+source.
+<table class="confluenceTable">
+<tr><th class="confluenceTh"> Sub project </th><th class="confluenceTh"> Module </th><th class="confluenceTh"> Version </th><th class="confluenceTh"> Download </th><th class="confluenceTh"> Comments </th></tr>
+<tr><td class="confluenceTd"> Aries Samples </td><td class="confluenceTd"> </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/samples-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/samples-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/samples-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/samples-1.0.0-source-release.zip.sha1">sha1</A>) 
+</td><td class="confluenceTd">Source, ready to build </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> <A href="ariestrader-1.0.0.html">AriesTrader sample instructions</A>
+</tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader JDBC app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.jdbc-1.0.0-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> AriesTrader app with JDBC persistence only </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> AriesTrader JPA & JDBC app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.ariestrader.all-1.0.0-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> AriesTrader app with all available persistence methods </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> <A href="blogsample-1.0.0.html">Blog Sample instructions</A>
+ </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog JDBC app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jdbc-sources.jar-1.0.0-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> Blog app based on JDBC </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blog JPA app </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar">sources</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.samples.blog.jpa-sources.jar-1.0.0-sources.jar.sha1">sha1</A>) 
+</td><td class="confluenceTd"> Blog app based on JPA </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blueprint HelloWorld </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> </td></tr>
+<tr><td class="confluenceTd"> </td><td class="confluenceTd"> Blueprint ID Verifier</td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd"> - </td><td class="confluenceTd"> </td></tr>
+</table>
+
+
