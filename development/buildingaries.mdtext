@@ -30,16 +30,8 @@ As a next step you can run the tests too.
 
 After these steps you should have imported your selected aries projects into eclipse. 
 
-<a name="BuildingAries-CodeStyle"></a>
-# Code Styles
-
-There are not yet complete code formatters and checkstyle rules for aries. In the mean time you can set these rules.
-
-* 4 spaces instead of tabs
-* Line width 130 characters
-
 <a name="BuildingAries-Outofmemoryerrors"></a>
-##### Out of memory errors
+# Out of memory errors
 You may find that building Aries fails with out of memory exceptions on
 some systems (eg Mac)  if you use the standard Java settings. Setting the
 two environment variables as shown below may help.

@@ -1,4 +1,12 @@
-Title: Maven best practice in Aries
+Title: Coding guidelines
+
+<a name="BuildingAries-CodeStyle"></a>
+# Code Style
+
+There are not yet complete code formatters and checkstyle rules for aries. In the mean time you can set these rules.
+
+* 4 spaces instead of tabs
+* Line width 130 characters
 
 <a name="MavenbestpracticeinAries-Assembledbestpracticenotes"></a>
 # Maven best practice in Aries development
