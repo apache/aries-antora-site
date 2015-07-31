@@ -1,124 +1,42 @@
 Title: BuildingAries
 
 <a name="BuildingAries-ExtractingandbuildingAries"></a>
-# Extracting and building Aries
-
-There are two ways to do this. The first avoids using the command line but
-can leave you with some fixing up to do on the projects.
 
 <a name="BuildingAries-Prereqs"></a>
 ## Prereqs
 
- * Check that Maven is 2.0.10 or higher (mvn --version)
- * Download and extract eclipse-jee-ganymede-SR2-linux-gtk.tar.gz (this is
-the 3.4 version)
- * Install Subversion client http://subclipse.tigris.org/update_1.6.x (Just
-the Subclipse and Core)
- * Install m2eclipse http://download.eclipse.org/technology/m2e/releases (Maven
-Integration and Maven optional components)
+ * Maven 3.2.5 (mvn --version). Current maven 3.3.x has an error with parent poms
+ * Subversion client >= 1.8.x
+ * Eclipse Luna http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2
 
+<a name="BuildingAries-CheckoutAndBuild"></a>
+## Checkout and build on the command line
 
-
-<a name="BuildingAries-BuildatthecommandlinethenimportintoEclipseifyouneedEclipse."></a>
-## Build at the command line then import into Eclipse if you need Eclipse.
-This is the easiest way to build Aries and then work on the modules using
-Eclipse. If you don't care about Eclipse go to the next section.
-
- * check out from the command line: svn co
-https://svn.apache.org/repos/asf/aries/trunk aries
+ * Check out sources: svn co https://svn.apache.org/repos/asf/aries/trunk aries
  * cd aries
- * cd parent
- * mvn clean install
- * cd ../eba-maven-plugin
- * mvn clean install (*See note below*)
- * cd ..
- * mvn clean install
- * mvn eclipse:eclipse (should see 'BUILD SUCCESSFUL' message)
- * fire up eclipse and switch to the Java perspective
- * import the projects. File->import->General->existing projects into
-workspace. Import 'blueprint, 'jndi', 'testsupport' and 'transaction'
+ * mvn clean install -DskipTests=true
 
-If everything looks good run a	maven build with the target 'install' (adds
-jars to your local repository) or 'package' (just creates jars in your
-workspace). Hit F5 in the package explorer view to refresh and you should
-see packaged jar files under the *target* directories in the projects.
+You should now have succesfully compiled aries trunk.
+As a next step you can run the tests too.
 
-<br>
+* mvn clean install -fae
 
-- - - 
-**Note:**
-Note: There is currently (September 2010) what appears to be a timing issue
-that is causing unpredictable test failures during a full build. If you see
-test failures, try 'mvn install -fae'
+<a name="BuildingAries-ImportIntoEclipse"></a>
+# Import into eclipse using m2e
 
-- - - 
-<a name="BuildingAries-Justbuildit-noEclipse"></a>
-## Just build it - no Eclipse
- * check out from the command line: svn co
-https://svn.apache.org/repos/asf/aries/trunk aries
- * cd aries
- * cd parent
- * mvn clean install
- * cd ../eba-maven-plugin
- * mvn clean install
- * cd ..
- * mvn clean
- * *mvn -fn install* (-fn continues after failures), or {{mvn -fn
-package}} (alternatively, you can disable the tests with {{mvn
--Dmaven.test.skip=true install}} with the side-effect of making the build
-process much faster)
+* Start eclipse. Use a workspace directory separate from your source checkout of aries
+* File -> Import -> Maven -> Existing maven projects -> Browse to aries directory -> Select the projects to import -> Finish
+* At some projects you might see some markers that m2e does not know how to work with certain maven plugins. Use the Ctrl-1 shortcut on these markers and set them to be ignored and let eclipse store this in the eclipse preferences. Do not select to add the ignore to the maven poms.
 
-<a name="BuildingAries-Eclipseonly"></a>
-## Eclipse only
-This should work if you are command-line averse. On the other hand it seems
-to be the best way to get into a mess with the M2Eclipse plugin.
+After these steps you should have imported your selected aries projects into eclipse. 
 
- * In the SVN view, add the aries repository
-https://svn.apache.org/repos/asf/aries
- * Expand the repository, right click on trunk and take 'check out as Maven
-project'
-There will be errors in the projects. To fix these:
- * Right click on pom/xml in the aries project, select 'run as Maven
-build....'
- * Type 'clean' in as the build goal
- * Repeat the process using 'eclipse:eclipse' as the build goals'
- * Close and re-open all the projects
+<a name="BuildingAries-CodeStyle"></a>
+# Code Styles
 
-If there are still failures see the "Fixing failures" step below. If
-everything looks good run a final maven build with the target 'install'
-(adds jars to your local repository) or 'package' (just creates jars in
-your workspace). Hit F5 in the package explorer view to refresh and you
-should see packaged jar files under the *target* directories in the
-projects.
+There are not yet complete code formatters and checkstyle rules for aries. In the mean time you can set these rules.
 
-
-<a name="BuildingAries-Fixingfailures"></a>
-## Fixing failures
-
-<a name="BuildingAries-InEclipse"></a>
-##### In Eclipse
-
-You will see some of the blueprint projects don't build. To fix this you
-need to comment out the following line:
-
-    <!-- <classpathentry kind="src"
-    path="/Users/linsun/aries/blueprint/blueprint-api/src/main/resources/org/osgi/service/blueprint"
-    including="blueprint.xsd" excluding="**/*.java"/> -->
-
-
-in the .classpath file in the aries-blueprint-core project.
-
-If there is a build error in the org.apache.aries.blueprint.itests project
-then remove this jar:
-
-    org/apache/felix/org.osgi.foundation/1.2.0.jar
-
-from the project's classpath.
-
-If there is a build error in the aries-jmx-core project then configure this
-project's build path to add the JRE System Library to Java Build Path.
-
-There should be no outstanding errors.
+* 4 spaces instead of tabs
+* Line width 130 characters
 
 <a name="BuildingAries-Outofmemoryerrors"></a>
 ##### Out of memory errors
@@ -126,8 +44,5 @@ You may find that building Aries fails with out of memory exceptions on
 some systems (eg Mac)  if you use the standard Java settings. Setting the
 two environment variables as shown below may help.
 
-    export MAVEN_OPTS="-XX:MaxPermSize=128m -Xms512m -Xmx512m
-    -XX:+HeapDumpOnOutOfMemoryError"
-    export JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=128m
-    -XX:+HeapDumpOnOutOfMemoryError"
+export MAVEN_OPTS="-XX:MaxPermSize=128m -Xms512m -Xmx512m"
 
