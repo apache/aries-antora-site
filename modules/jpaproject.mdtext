@@ -50,9 +50,9 @@ It tracks persistence unit bundles and creates an EntityManagerFactory service a
 
 The EntityManagerFactory services will be registered with the following properties: 
 
-	osgi.unit.name - this is the name of the persistence unit
-	osgi.unit.provider - this is the class name of the JPA PersistenceProvider that was used to create the EntityManagerFactory
-	org.apache.aries.jpa.container.managed - this property will be set to true, indicating this is a managed EntityManagerFactory.
+|osgi.unit.name | this is the name of the persistence unit|
+|osgi.unit.provider | this is the class name of the JPA PersistenceProvider that was used to create the EntityManagerFactory|
+|org.apache.aries.jpa.container.managed | this property will be set to true, indicating this is a managed EntityManagerFactory.|
 
 For each persistence unit jpa container first determines which persistence provider to use by analyzing the "provider" property of persistence.xml.
 It will track a PersistenceProvider service that matches this name.
