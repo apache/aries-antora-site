@@ -23,6 +23,7 @@ All Aries modules are released to [maven central](http://search.maven.org).
 
 The Aries subprojects can be found at these locations
 
+* [async](http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.async)
 * [blueprint](http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.blueprint)
 * [eba-maven-plugin](http://search.maven.org/#artifactdetails|org.apache.aries|eba-maven-plugin|1.0.0|maven-plugin)
 * [ejb](http://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.ejb)
