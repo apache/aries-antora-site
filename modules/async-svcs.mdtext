@@ -160,8 +160,11 @@ The execute method still returns a promise, however this promise represents whet
 or not, not whether it has completed.
 
 # Getting Started
-The Asynchronous Services implementation can be found in the Apache Aries codebase in the `async` directory: [https://svn.apache.org/repos/asf/aries/trunk/async][1]
+Releases of the Async implementation can be found in Maven Central [in the org.apache.aries.async group][1]. [This bundle][2] provides a convenient all-in-one download.
 
-In this location a convenient all-in-one bundle can also be found with no dependencies: the `async-all` module.
+The Asynchronous Services source code can be found in the Apache Aries codebase in the `async` directory: [https://svn.apache.org/repos/asf/aries/trunk/async][3]
 
-  [1]: https://svn.apache.org/repos/asf/aries/trunk/async
+
+  [1]: http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.aries.async%22 "org.apache.aries.async"
+  [2]: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache.aries.async%22
+  [3]: https://svn.apache.org/repos/asf/aries/trunk/async
