@@ -227,7 +227,7 @@ jar with dependencies.
 
 Then run the static tool on any bundle that needs processing:
 <pre>
-java -jar org.apache.aries.spifly.static.tool-1.0.0-jar-with-dependencies.jar mybundle.jar
+java -jar org.apache.aries.spifly.static.tool-1.0.2-jar-with-dependencies.jar mybundle.jar
 </pre>
 
 This will produce a second bundle with the same name with the _spifly suffix appended, so 
