@@ -49,7 +49,7 @@ the *serviceloader.mediator* service registration property set.
 ##Getting SPI Fly##
 
 ###<a id="releases"></a>Releases###
-The latest release of the SPI-Fly components is 1.0.0. It can be obtained from Maven 
+The latest release of the SPI-Fly components is 1.0.2. It can be obtained from Maven 
 Central using the links below.
 
 To use SPI Fly you need to decide whether to use the dynamic or static weaving version. 
@@ -57,21 +57,21 @@ More information about this can be found in the [usage section][2].
 
 **For use with dynamic weaving:**
 
-  - [SPI Fly Dynamic Weaving Bundle 1.0.0][3]
+  - [SPI Fly Dynamic Weaving Bundle 1.0.2][3]
 
 Dependencies:
 
-  - [Aries Util 1.1.0][4]
+  - [Aries Util 1.1.1][4]
   - [ASM 5.0.4][5]
 
 **For use with static weaving:**
 
-  - [SPI Fly Static Weaving command-line tool 1.0.0][6]
-  - [SPI Fly Static Weaving Bundle 1.0.0][7]
+  - [SPI Fly Static Weaving command-line tool 1.0.2][6]
+  - [SPI Fly Static Weaving Bundle 1.0.2][7]
 
 Dependencies:
 
-  - [Aries Util 1.1.0][8]
+  - [Aries Util 1.1.1][8]
 
 ###Building the code###
 The code can be found in
