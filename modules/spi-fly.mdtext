@@ -62,7 +62,7 @@ More information about this can be found in the [usage section][2].
 Dependencies:
 
   - [Aries Util 1.1.0][4]
-  - [ASM 4.0.0][5]
+  - [ASM 5.0.4][5]
 
 **For use with static weaving:**
 
@@ -203,11 +203,11 @@ Util bundle.
 <pre>g! lb
 START LEVEL 1
    ID|State      |Level|Name
-    0|Active     |    0|System Bundle (4.0.3)
+    0|Active     |    0|System Bundle (5.0.1)
 ... bundles 1-4 are framework/console internal ones ...
-    5|Active     |    1|ASM all classes (4.0.0)
-    6|Active     |    1|Apache Aries Util (1.1.0)
-    7|Active     |    1|Apache Aries SPI Fly Dynamic Weaving Bundle (1.0.0)
+    5|Active     |    1|ASM all classes (5.0.4)
+    6|Active     |    1|Apache Aries Util (1.1.1)
+    7|Active     |    1|Apache Aries SPI Fly Dynamic Weaving Bundle (1.0.2)
 </pre>
 
 Note that, as with any OSGi Bundle that uses the OSGi 4.3 WeavingHooks, the weaver
@@ -238,10 +238,10 @@ the dynamic weaving bundle it has a dependency on the Aries Util bundle:
 <pre>g! lb
 START LEVEL 1
    ID|State      |Level|Name
-    0|Active     |    0|System Bundle (4.0.3)
+    0|Active     |    0|System Bundle (5.0.1)
 ... bundles 1-4 are framework/console internal ones ...
-    5|Active     |    1|Apache Aries Util (1.1.0)
-    6|Active     |    1|Apache Aries SPI Fly Static Weaving Bundle (1.0.0)</pre>
+    5|Active     |    1|Apache Aries Util (1.1.1)
+    6|Active     |    1|Apache Aries SPI Fly Static Weaving Bundle (1.0.2)</pre>
 
 Then install and start the statically woven bundle into the system.
 
@@ -270,12 +270,12 @@ More information can be found at the following resources:
 
   [1]: http://www.osgi.org/Download/Release5 "OSGi Enterprise Specification"
   [2]: #usage
-  [3]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/org.apache.aries.spifly.dynamic.bundle/1.0.0/org.apache.aries.spifly.dynamic.bundle-1.0.0.jar
-  [4]: http://search.maven.org/remotecontent?filepath=org/apache/aries/org.apache.aries.util/1.1.0/org.apache.aries.util-1.1.0.jar
-  [5]: http://search.maven.org/remotecontent?filepath=org/ow2/asm/asm-all/4.0/asm-all-4.0.jar
-  [6]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/org.apache.aries.spifly.static.tool/1.0.0/org.apache.aries.spifly.static.tool-1.0.0-jar-with-dependencies.jar
-  [7]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/org.apache.aries.spifly.static.bundle/1.0.0/org.apache.aries.spifly.static.bundle-1.0.0.jar
-  [8]: http://search.maven.org/remotecontent?filepath=org/apache/aries/org.apache.aries.util/1.1.0/org.apache.aries.util-1.1.0.jar
+  [3]: http://repo1.maven.org/maven2/org/apache/aries/spifly/org.apache.aries.spifly.dynamic.bundle/1.0.2/org.apache.aries.spifly.dynamic.bundle-1.0.2.jar
+  [4]: http://repo1.maven.org/maven2/org/apache/aries/org.apache.aries.util/1.1.1/org.apache.aries.util-1.1.1.jar
+  [5]: http://repo1.maven.org/maven2/org/ow2/asm/asm-all/5.0.4/asm-all-5.0.4.jar
+  [6]: http://repo1.maven.org/maven2/org/apache/aries/spifly/org.apache.aries.spifly.static.tool/1.0.2/org.apache.aries.spifly.static.tool-1.0.2-jar-with-dependencies.jar
+  [7]: http://repo1.maven.org/maven2/org/apache/aries/spifly/org.apache.aries.spifly.static.bundle/1.0.2/org.apache.aries.spifly.static.bundle-1.0.2.jar
+  [8]: http://repo1.maven.org/maven2/org/apache/aries/org.apache.aries.util/1.1.1/org.apache.aries.util-1.1.1.jar
   [9]: http://svn.apache.org/repos/asf/aries/trunk/spi-fly
   [10]: http://www.osgi.org/Download/Release5 "OSGi Enterprise Specification"
   [11]: #examples
@@ -283,7 +283,7 @@ More information can be found at the following resources:
   [13]: #examples
   [14]: #examples
   [15]: #releases
-  [16]: http://search.maven.org/#artifactdetails|org.ow2.asm|asm-all|4.0|jar
+  [16]: http://search.maven.org/#artifactdetails%7Corg.ow2.asm%7Casm-all%7C5.0.4%7Cjar
   [17]: #releases
   [18]: #releases
   [19]: http://search.maven.org/remotecontent?filepath=org/apache/aries/spifly/examples/org.apache.aries.spifly.examples.spi.bundle/1.0.0/org.apache.aries.spifly.examples.spi.bundle-1.0.0.jar
