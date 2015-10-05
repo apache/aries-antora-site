@@ -26,9 +26,9 @@ must be provided.)
 * [org.apache.aries.util][4]
 * [org.apache.felix.configadmin][5]
 * [org.apache.felix.coordinator][6]
-* [org.eclipse.equinox.region][8]
-* [slf4j-api][9]
-* [slf4j-simple][10] (or another slf4j binding)
+* [org.eclipse.equinox.region][7]
+* [slf4j-api][8]
+* [slf4j-simple][9] (or another slf4j binding)
 
 After installing and starting all these components the Felix runtime looks like this:
 
@@ -78,13 +78,13 @@ Each installed subsystem is represented by a serparate service.
 The Apache Aries community provides a number of tools that facilitate working with OSGi Subsystems:
 
 * Subsystem Gogo Command - a Gogo command to work with subsystems, for more info see below.
-* [esa-ant-task][11] - an Ant task to create .esa archives.
-* [eas-maven-plugin][12] - a Maven plugin to create .esa archives.
+* [esa-ant-task][10] - an Ant task to create .esa archives.
+* [eas-maven-plugin][11] - a Maven plugin to create .esa archives.
 
 ### Subsystem Gogo Command
 
-[https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command][13] contains a simple bundle with Gogo commands
-to control subsystems.
+[https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command][12] contains a simple bundle with Gogo commands
+to control subsystems. This bundle can also be downloaded from [Maven Central here][13].
 
 After installing the gogo command bundle you can execute subsystem commands, for example:
 
@@ -150,14 +150,11 @@ The Aries Subsystems code base can be found at the following location: [https://
   [4]: http://repo1.maven.org/maven2/org/apache/aries/org.apache.aries.util/1.1.0/org.apache.aries.util-1.1.0.jar
   [5]: https://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.configadmin/1.8.6/org.apache.felix.configadmin-1.8.6.jar
   [6]: http://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.coordinator/1.0.0/org.apache.felix.coordinator-1.0.0.jar
-  [8]: http://repo1.maven.org/maven2/org/eclipse/equinox/org.eclipse.equinox.region/1.1.0.v20120522-1841/org.eclipse.equinox.region-1.1.0.v20120522-1841.jar
-  [9]: http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar
-  [10]: http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.12/slf4j-simple-1.7.12.jar
-  [11]: http://aries.apache.org/modules/esaanttask.html
-  [12]: http://aries.apache.org/modules/esamavenpluginproject.html
-  [13]: https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command
+  [7]: http://repo1.maven.org/maven2/org/eclipse/equinox/org.eclipse.equinox.region/1.1.0.v20120522-1841/org.eclipse.equinox.region-1.1.0.v20120522-1841.jar
+  [8]: http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar
+  [9]: http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.12/slf4j-simple-1.7.12.jar
+  [10]: http://aries.apache.org/modules/esaanttask.html
+  [11]: http://aries.apache.org/modules/esamavenpluginproject.html
+  [12]: https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command
+  [13]: http://search.maven.org/remotecontent?filepath=org/apache/aries/subsystem/org.apache.aries.subsystem.gogo-command/1.0.0/org.apache.aries.subsystem.gogo-command-1.0.0.jar
   [14]: https://svn.apache.org/repos/asf/aries/trunk/subsystem
-
-
-
-
