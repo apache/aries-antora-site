@@ -7,6 +7,7 @@ The Aries project consists of a set of pluggable Java components enabling
 an enterprise OSGi application programming model. This includes
 implementations (and extensions) of the following Enterprise OSGi specifications:
 
+  - Asynchronous Services and Promises Specification
   - Blueprint Specification
   - JTA Transaction Services Specification
   - JMX Management Model Specification
@@ -16,16 +17,16 @@ implementations (and extensions) of the following Enterprise OSGi specifications
   - Subsystem Service Specification
 
 The specifications are defined in the OSGi Alliance Enterprise Expert Group (EEG) for deployment to a variety of OSGi
-based runtimes. The OSGi R5 Enterprise Specification can be found here:
+based runtimes. The OSGi R6 Enterprise Specification can be found here:
 
-[http://www.osgi.org/Download/Release5](http://www.osgi.org/Download/Release5)
+[http://www.osgi.org/Download/Release6](http://www.osgi.org/Download/Release6)
 
 To understand the complete scope of the Aries project, see the Aries
 proposal document on the [incubator wiki](http://wiki.apache.org/incubator/AriesProposal).
 
 <a name="Index-BuildingandUsingAriesComponents"></a>
 
-To understand how to _use_ Aries components, take a look at the [BlueprintHelloWorldTutorial](documentation/tutorials/blueprinthelloworldtutorial.html)
+To understand how to _use_ Aries Blueprint components, take a look at the [BlueprintHelloWorldTutorial](documentation/tutorials/blueprinthelloworldtutorial.html)
  pages which guides you through how to build the Aries code, provides
 sample applications and describes how to set up an environment in which to
 run the consuming application.
