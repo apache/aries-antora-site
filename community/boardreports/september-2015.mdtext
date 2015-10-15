@@ -50,18 +50,23 @@ Main development areas are subsystems, transaction and jpa.
    
 ## Releases: 
    
- - Versioning 0.3.1
- - Blueprint Core 1.4.4
- - Blueprint CM 1.0.7
- - subsystem-bundle:2.0.4
- - subsystem-api:2.0.4
- - subsystem-core:2.0.4
- - subsystem-obr:1.0.4
- - transaction blueprint 1.1.1
- - JPA 2.2.0
- - transaction blueprint 2.0.0
- - blueprint-maven-plugin 1.2.0 
- - Subsystem Gogo Command 1.0
+ - Versioning 0.3.1 2015-07-16
+ - Blueprint Core 1.4.4 2015-07-16
+ - Blueprint CM 1.0.7 2015-07-16
+ - subsystem-bundle:2.0.4 2015-10-07
+ - subsystem-api:2.0.4 2015-10-07
+ - subsystem-core:2.0.4 2015-10-07
+ - subsystem-obr:1.0.4 2015-10-07
+ - transaction blueprint 1.1.1 2015-08-11
+ - JPA 2.2.0 2015-09-26
+ - transaction blueprint 2.0.0 2015-09-25
+ - blueprint-maven-plugin 1.2.0 2015-09-25
+ - Subsystem Gogo Command 1.0.0 2015-10-05
+ - transaction manager 1.3.0 2015-08-10
+ - JPA 2.1.0 2015-08-10
+ - Aries Asynchronous OSGi Services 1.0.1 2015-08-10
+ - Aries Util 1.1.1 2015-08-10
+ - JMX 1.1.5 2015-08-30
    
 ## Mailing list activity: 
    
