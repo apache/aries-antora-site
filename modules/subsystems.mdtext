@@ -35,22 +35,22 @@ After installing and starting all these components the Felix runtime looks like 
     g! lb
     START LEVEL 1
        ID|State      |Level|Name
-        0|Active     |    0|System Bundle (5.0.1)
-        1|Active     |    1|Apache Felix Bundle Repository (2.0.4)
-        2|Active     |    1|Apache Felix Gogo Command (0.14.0)
-        3|Active     |    1|Apache Felix Gogo Runtime (0.16.2)
-        4|Active     |    1|Apache Felix Gogo Shell (0.10.0)
-        5|Active     |    1|Apache Aries Subsystem API (2.0.2)
-        6|Active     |    1|Apache Aries Subsystem Core (2.0.2)
-        7|Active     |    1|Apache Aries Util (1.1.0)
-        8|Active     |    1|Apache Felix Configuration Admin Service (1.8.6)
-        9|Active     |    1|Apache Felix Coordinator Service (1.0.0)
-       10|Active     |    1|Region Digraph (1.1.0.v20120522-1841)
-       11|Active     |    1|slf4j-api (1.7.12)
-       12|Resolved   |    1|slf4j-simple (1.7.12)
-       13|Active     |    1|org.osgi.service.subsystem.region.context.0 (1.0.0)
+        0|Active     |    0|System Bundle (5.4.0)|5.4.0
+        1|Active     |    1|Apache Felix Bundle Repository (2.0.6)|2.0.6
+        2|Active     |    1|Apache Felix Gogo Command (0.16.0)|0.16.0
+        3|Active     |    1|Apache Felix Gogo Runtime (0.16.2)|0.16.2
+        4|Active     |    1|Apache Felix Gogo Shell (0.10.0)|0.10.0
+        5|Active     |    1|Apache Aries Subsystem API (2.0.6)|2.0.6
+        6|Active     |    1|Apache Aries Subsystem Core (2.0.6)|2.0.6
+        7|Active     |    1|Apache Aries Util (1.1.1)|1.1.1
+        8|Active     |    1|Apache Felix Configuration Admin Service (1.8.8)|1.8.8
+        9|Active     |    1|Apache Felix Coordinator Service (1.0.0)|1.0.0
+       10|Resolved   |    1|Region Digraph (1.2.101.v20150831-1342)|1.2.101.v20150831-1342
+       11|Active     |    1|slf4j-api (1.7.12)|1.7.12
+       12|Resolved   |    1|slf4j-simple (1.7.12)|1.7.12
+       13|Active     |    1|org.osgi.service.subsystem.region.context.0 (1.0.0)|1.0.0
 
-The slf4j-simple bundle is a fragment, so it can not be started.
+The Region Digraph and slf4j-simple bundles are fragments, so they can not be started.
 You can see that the Subsystems implementation is operational as it created a synthesized
 bundle (13) to represent the root context. The subsystems implementation sometimes
 synthesizes a bundle to represent a subsystem. Whether or not this happens depends on 
@@ -156,5 +156,5 @@ The Aries Subsystems code base can be found at the following location: [https://
   [10]: http://aries.apache.org/modules/esaanttask.html
   [11]: http://aries.apache.org/modules/esamavenpluginproject.html
   [12]: https://svn.apache.org/repos/asf/aries/trunk/subsystem/subsystem-gogo-command
-  [13]: http://search.maven.org/remotecontent?filepath=org/apache/aries/subsystem/org.apache.aries.subsystem.gogo-command/1.0.0/org.apache.aries.subsystem.gogo-command-1.0.0.jar
+  [13]: https://repo1.maven.org/maven2/org/apache/aries/subsystem/org.apache.aries.subsystem.gogo-command/1.0.0/org.apache.aries.subsystem.gogo-command-1.0.0.jar
   [14]: https://svn.apache.org/repos/asf/aries/trunk/subsystem
