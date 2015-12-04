@@ -4,7 +4,9 @@ Redirect Permanent /blueprint/xmlns/blueprint-ext/v1.1.0 /schemas/blueprint-ext/
 Redirect Permanent /blueprint/xmlns/blueprint-ext/v1.0.0 /schemas/blueprint-ext/blueprint-ext.xsd
 Redirect Permanent /xmlns/transactions/v1.0.0 /schemas/transaction/transactionv10.xsd
 Redirect Permanent /xmlns/transactions/v1.1.0 /schemas/transaction/transactionv11.xsd
+Redirect Permanent /xmlns/transactions/v2.0.0 /schemas/transaction/transactionv20.xsd
 Redirect Permanent /xmlns/jpa/v1.0.0 /schemas/jpa/jpa.xsd
 Redirect Permanent /xmlns/jpa/v1.1.0 /schemas/jpa/jpa_110.xsd
+Redirect Permanent /xmlns/jpa/v2.0.0 /schemas/jpa/jpa_20.xsd
 
 
