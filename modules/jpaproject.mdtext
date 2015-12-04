@@ -90,9 +90,12 @@ For each EntityManagerFactory service this bundle provides additional EmSuppler 
 ### Aries JPA blueprint extension (org.apache.aries.jpa.blueprint)
 
 Provides a blueprint extension for @PersistenceUnit and @PersistenceContext injection.
-To use the extension add this namespace to your blueprint xmlns:jpa="http://aries.apache.org/xmlns/jpan/v1.0.0" and enable
-annotation support using the element <jpa:enable /> on top level.
-For more details see the aries jpa blueprint example: https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/
+To use the extension add this namespace to your blueprint 
+
+> xmlns:jpa="http://aries.apache.org/xmlns/jpan/v1.0.0"
+
+ and enable annotation support using the element <jpa:enable /> on top level.
+For more details see the [Aries JPA blueprint example](https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/).
 
 # Creation of a JPA project using Maven
 
