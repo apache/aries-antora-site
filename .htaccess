@@ -16,5 +16,3 @@ Redirect Permanent /xmlns/jpa/v1.0.0 /schemas/jpa/jpa.xsd
 Redirect Permanent /xmlns/jpa/v1.1.0 /schemas/jpa/jpa_110.xsd
 Redirect Permanent /xmlns/jpa/v2.0.0 /schemas/jpa/jpa_20.xsd
 Redirect Permanent /xmlns/authorization/v1.0.0 /schemas/blueprint-authz/authz10.xsd
-
-
