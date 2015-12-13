@@ -1,42 +1,33 @@
 Title: JPAProject
 
-# JPA 
+# Aries JPA 
 
-The Aries JPA project will make it easy for JPA persistence providers such
-as [Apache OpenJPA](http://openjpa.apache.org/)
- to be used in an OSGi environment and will provide container managed
-persistence for the Blueprint container.
+The Aries JPA project allows allows to use container managed persistence in OSGi in a modular and clean way.
 
-For more information, check out section "127 JPA Service Specification
-Version 1.0" in the "OSGi Service Platform Enterprise Specification,
-Release 4, Version 4.2" available for public download from the [OSGi Alliance](http://www.osgi.org/Download/Release4V42)
-.
-
-Developing an Aries JPA project is very easy and can be achieved with simple steps described in the 
-"Creation of a JPA project using Maven" section. First, however it is useful to understand some of
-the basic concepts.
-
-Aries JPA provides container managed JPA support in an OSGi framework.
+The core is the jpa.container module. It implements the "JPA Service Specification Version 1.0" from the OSGi 
+Enterprise Specification available for public download from the [OSGi Alliance](http://www.osgi.org/Download/Release4V42). 
+The jpa.blueprint module implements container managed persistence for Aries Blueprint using a programming model like in JEE.
+The jpa.support module provides support for container managed persistence for DS and other injection frameworks using the
+JPATemplate interface.
 
 ## Persistence bundles
 
 A bundle is regarded as a persistence bundle if it contains the header **Meta-Persistence:**  in it's Manifest.
 The value of the Meta-Persistence: header is a comma separated list of locations where JPA persistence 
 descriptors can be found. If the header value is empty then a default of META-INF/persistence.xml is used.
+The persistence bundle typically also contains the JPA entities.
 
 For example:
 
-	Meta-Persistence: 
+        Meta-Persistence:
 
-means that META-INF/persistence.xml will be searched for. For non standard locations:
+ means that META-INF/persistence.xml will be searched for. For non standard locations:
 
-	Meta-Persistence: persistence/myPu.xml, pUnit.jar!/someFolder/anotherPu.xml
+        Meta-Persistence: persistence/myPu.xml, pUnit.jar!/someFolder/anotherPu.xml
 
 means that the locations "persistence/myPu.xml" (relative to the root of the bundle), and 
 "someFolder/anotherPu.xml" (relative to the root of pUnit.jar, which is in the root of
 the bundle) will be searched.
-
-The persistence bundle typically also contains the JPA entities.
 
 ## The Aries JPA 2 modules
 
@@ -44,9 +35,23 @@ Aries JPA consists of four bundles.
 
 ### Aries JPA container (org.apache.aries.jpa.container)
 
-The Aries JPA container bundle implements the OSGi JPA service specification. 
+The Aries JPA container bundle implements the OSGi JPA service specification. It tracks persistence unit bundles and
+creates an EntityManagerFactory service as soon as all dependencies are met.
 
-It tracks persistence unit bundles and creates an EntityManagerFactory service as soon as all dependencies are met.
+#### Specifying the PersistenceProvider
+
+For each persistence unit jpa container first determines which persistence provider to use by analyzing the "provider" property of persistence.xml.
+It will track a PersistenceProvider service that matches this name. If no such property is defined then the first 
+PersistenceProvider service found will be used.
+
+#### Specifying a DataSource
+
+The next step is to configure a DataSource. There are two ways to do this. The spec conform way is to use the database properties to determine which
+DataSourceFactory service to use and to configure it.
+
+Additionally aries jpa supports refering to a DataSource service using the jta-datasource or non-jta-datasource properties. The syntax is the aries jndi syntax to search for services.
+
+#### Properties of the published EntityManagerFactory service
 
 The EntityManagerFactory services will be registered with the following properties: 
 
@@ -54,47 +59,57 @@ The EntityManagerFactory services will be registered with the following properti
 * osgi.unit.provider: this is the class name of the JPA PersistenceProvider that was used to create the EntityManagerFactory
 * org.apache.aries.jpa.container.managed: this property will be set to true, indicating this is a managed EntityManagerFactory.
 
-For each persistence unit jpa container first determines which persistence provider to use by analyzing the "provider" property of persistence.xml.
-It will track a PersistenceProvider service that matches this name.
+#### Useful notes
 
-The next step is to configure a DataSource. The spec defines that the database properties are used to determine which DataSourceFactory service to use and
-create a DataSource from it.
-
-Additionally aries jpa supports refering to a DataSource service using the jta-datasource or non-jta-datasource properties. The syntax is the aries jndi syntax to search for services.
-
-If using a JTA persistence unit keep in mind that you still have to supply a javax.sql.DataSource not an XADataSource. This DataSource must wrap an XADataSource and provide XA resource enlistment. The simplest way to achieve this is to use pax-jdbc.
-
-As soon as PersistenceProvider and DataSource are available the EntityManagerFactory service is created.
+* If using a JTA persistence unit keep in mind that you still have to supply a javax.sql.DataSource not an XADataSource. This DataSource must wrap an XADataSource and provide XA resource enlistment. The simplest way to achieve this is to use pax-jdbc.
+* As soon as PersistenceProvider and DataSource are available the EntityManagerFactory service is created.
 Aries JPA container also supports classpath scanning and load time weaving of JPA entities.
-
-Useful notes: 
-
 * You should never call close on the EntityManagerFactory service. This call will be made by the container when
 the persistence bundle is removed or refreshed. If you do close the EntityManagerFactory service then it will be 
 closed for **all** users of the service.
-
-Aries JPA container is a standalone bundle with no other dependencies.
 
 ### Aries JPA API (org.apache.aries.jpa.api)
 
 A set of interfaces to make it easier to use JPA in OSGi. It contains two main interfaces:
 
-* EmSupplier: Allows to get a thread safe EntityManager and mark entry and exit of blocks that access the EntityManager. This
-is rather low level and meant to be used mainly by frameworks.
+* EmSupplier (**deprecated**): Allows to get a thread safe EntityManager and mark entry and exit of blocks that access the EntityManager. This
+is rather low level and meant to be used mainly by frameworks. 
 * JpaTemplate: Allows to write closures that can safely access an EntityManager and are executed inside a transaction.
 
 ### Aries JPA support(org.apache.aries.jpa.support)
 
-For each EntityManagerFactory service this bundle provides additional EmSuppler and JpaTemplate services.
+For each EntityManagerFactory service this bundle provides additional services not defined in the OSGi spec that make it
+easier to use JPA without blueprint.
+
+* EmSuppler (**deprectaed**): Use the new thread safe EntityManager instead.
+* EntityManager: Thread safe EntityManager. Requires to be run inside a Coordination
+* JPATemplate: Is used similar to the spring JPATemplate. it takes care of the EntityManager lifecycle and transaction handling
+
+#### Thread safe EntityManager
+
+The plain EntityManager provided by the PersistenceProvider may only be used by one thread at a time. This is ok for EJB
+where there is a thread pool but not for OSGi where tpyically each class is just instantiated once and meant to be used
+multi threaded.
+
+So Aries JPA provides a thread safe EntityManager that can be safely used. An OSGi Coordinator service is used to bind the
+EntityManager to a thread and to manage its lifecycle. So to use the EntityManager service you need to make sure you only
+call it inside a Coordination. The EntityManager will be created on first access and bound to the Coordination. When the 
+outermost Coordination of the current thread exits the EntityManager will be closed. So typically the EntityManager is
+created per Request.
+
+Most users will not use the EntityManager service directly and instead either use the blueprint based Annotations or the JPATemplate.
+Both of these approaches take care of the transaction and Coordination handling transparently.
 
 ### Aries JPA blueprint extension (org.apache.aries.jpa.blueprint)
 
 Provides a blueprint extension for @PersistenceUnit and @PersistenceContext injection.
 To use the extension add this namespace to your blueprint 
 
-> xmlns:jpa="http://aries.apache.org/xmlns/jpan/v1.0.0"
+        xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
 
- and enable annotation support using the element <jpa:enable /> on top level.
+and enable annotation support using the element <jpa:enable /> on top level.
+Typically this namespace is used together with the transaction namespace to also provide annoation based transactions.
+
 For more details see the [Aries JPA blueprint example](https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/).
 
 # Creation of a JPA project using Maven
