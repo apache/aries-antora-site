@@ -82,7 +82,7 @@ The example uses declarative services to publish and bind services.
 The example installation uses the tcp transport to do the remoting but the example code is not tied to any transport.
 
 
-  [1]: http://aries.apache.org/modules/rsa.html
+  [1]: https://git-wip-us.apache.org/repos/asf/aries-rsa.git
   [2]: https://github.com/apache/aries-rsa
   [3]: https://cwiki.apache.org/confluence/download/attachments/30739778/remote-service-admin-spec.png?version=2&modificationDate=1362365400000&api=v2
   [4]: https://github.com/apache/aries-rsa/tree/master/topology-manager
