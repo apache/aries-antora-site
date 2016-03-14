@@ -10,16 +10,24 @@ For more information, check out section "122 JPA Service Specification
 Version 1.0" in the "OSGi Service Platform Enterprise Specification,
 Release 4, Version 4.2" available for public download from the [OSGi Alliance](http://www.osgi.org/Download/Release4V43).
 
+## Source
+
+The Aries RSA source is in a separate [git repository aries-rsa][1] there is also a [mirror on github][2].
+
+## Build
+
+    mvn clean install
+
 ## Architecture
 
-![Remote Service Admin Architecture overview][1]
+![Remote Service Admin Architecture overview][3]
 
 ### Some definitions
 
 * EndpointDescription Describes a remote service using service interfaces, remote url and all other properties to import the remote service.
 * EndpointListener a service that is to be notified when remote Endpoints described by OSGi filters appear or disappear.
 
-### [Topology Manager][2]
+### [Topology Manager][4]
 
 * Listens to local services and decides which to expose. It can also add properties to change the way services are exposed. 
   For the services to be exported it calls RemoteServiceAdmin.exportService to do the actual export. Then notifies EndpointListeners
@@ -37,16 +45,16 @@ It is the best place to implement system wide governance rules. Some examples wh
 According to its role the TopologyManager of course does not directly implement the enhancements above. It simply creates the necessary
 calls to a suitable RemoteServiceAdmin.
 
-### [Remote Service Admin][3]
+### [Remote Service Admin][5]
 
 Is called by the Topology Manager to expose local services as remote endpoints and create local proxy services as clients for 
 remote endpoints.
 
-Aries RSA has a custom SPI [DistributionProvider][4] that allows to easily create new transports and serializations.
+Aries RSA has a custom SPI [DistributionProvider][6] that allows to easily create new transports and serializations.
 Existing providers are:
 
-  - [CXF][5] (JAXRS, JAXWS)
-  - [TCP][6] (Light weight Java Serialization over TCP)
+  - [CXF][7] (JAXRS, JAXWS)
+  - [TCP][8] (Light weight Java Serialization over TCP)
 
 ### Discovery
 
@@ -55,12 +63,12 @@ It also listens to remote Endpoints and notifies EndpointListeners about their p
 
 Existing implementations:
 
-  - [Local discovery][7] using xml descriptors
-  - [Zookeeper based discovery][8]
+  - [Local discovery][9] using xml descriptors
+  - [Zookeeper based discovery][10]
 
 ## A simple example using Apache Karaf
 
-See [EchoTCP example][9]. Follow the Readme to install the example in Apache Karaf.
+See [EchoTCP example][11]. Follow the Readme to install the example in Apache Karaf.
 
 The EchoTCP example implements a simple echo service that can be called remotely. 
 The example uses declarative services to publish and bind services.
@@ -74,12 +82,14 @@ The example uses declarative services to publish and bind services.
 The example installation uses the tcp transport to do the remoting but the example code is not tied to any transport.
 
 
-  [1]: https://cwiki.apache.org/confluence/download/attachments/30739778/remote-service-admin-spec.png?version=2&modificationDate=1362365400000&api=v2
-  [2]: https://github.com/apache/aries-rsa/tree/master/topology-manager
-  [3]: https://github.com/apache/aries-rsa/tree/master/rsa
-  [4]: https://github.com/apache/aries-rsa/blob/master/spi/src/main/java/org/apache/aries/rsa/spi/DistributionProvider.java
-  [5]: http://cxf.apache.org/distributed-osgi.html
-  [6]: https://github.com/apache/aries-rsa/tree/master/provider/tcp
-  [7]: https://github.com/apache/aries-rsa/tree/master/discovery/local
-  [8]: https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper-server
-  [9]: https://github.com/apache/aries-rsa/tree/master/examples/echotcp
+  [1]: http://aries.apache.org/modules/rsa.html
+  [2]: https://github.com/apache/aries-rsa
+  [3]: https://cwiki.apache.org/confluence/download/attachments/30739778/remote-service-admin-spec.png?version=2&modificationDate=1362365400000&api=v2
+  [4]: https://github.com/apache/aries-rsa/tree/master/topology-manager
+  [5]: https://github.com/apache/aries-rsa/tree/master/rsa
+  [6]: https://github.com/apache/aries-rsa/blob/master/spi/src/main/java/org/apache/aries/rsa/spi/DistributionProvider.java
+  [7]: http://cxf.apache.org/distributed-osgi.html
+  [8]: https://github.com/apache/aries-rsa/tree/master/provider/tcp
+  [9]: https://github.com/apache/aries-rsa/tree/master/discovery/local
+  [10]: https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper-server
+  [11]: https://github.com/apache/aries-rsa/tree/master/examples/echotcp
