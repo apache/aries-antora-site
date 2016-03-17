@@ -91,5 +91,5 @@ The example installation uses the tcp transport to do the remoting but the examp
   [7]: http://cxf.apache.org/distributed-osgi.html
   [8]: https://github.com/apache/aries-rsa/tree/master/provider/tcp
   [9]: https://github.com/apache/aries-rsa/tree/master/discovery/local
-  [10]: https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper-server
+  [10]: https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper
   [11]: https://github.com/apache/aries-rsa/tree/master/examples/echotcp
