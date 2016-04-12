@@ -49,10 +49,10 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
  - Aries JPA container (jpa-container) 1.0.4 2016-03-08
  - Apache Aries Proxy Service (proxy-impl) 1.0.5 2016-03-25
  - Apache Aries JMX Core (jmx-core) 1.1.6 2016-03-25
- - Aries Blueprint Core (blueprint-core) 1.6.0 2016-03-25
- - Aries Blueprint Spring Support (blueprint-spring) 0.2.0 2016-03-25
+ - Aries Blueprint Core (blueprint-core) 1.6.0 2016-03-25
+ - Aries Blueprint Spring Support (blueprint-spring) 0.2.0 2016-03-25
  - Aries Blueprint Spring Extender Support (blueprint-spring-extender) 0.2.0 2016-03-25
- - Aries Blueprint no-OSGI (blueprint-noosgi) 1.1.2 2016-03-25
+ - Aries Blueprint no-OSGI (blueprint-noosgi) 1.1.2 2016-03-25
  - Aries Blueprint CM (blueprint-cm) 1.0.8 2016-03-25
   
 ## Mailing list activity: 
