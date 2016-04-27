@@ -16,32 +16,4 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-#The Transaction Control service
-
-If you're new to the Transaction Control service then we suggest that you read the [Quick Start Page][1]
-first.
-
-###The Aries Transaction Control implementations
-
-* TODO Local Transactions
-* TODO XA Transactions and Last Participant support
-
-###Configuring JDBC access
-
-* TODO With Local Transactions
-* TODO With XA Transactions
-
-###Configuring JPA access
-
-* TODO With Local Transactions
-* TODO With XA Transactions
-
-###Advanced topics
-
-* [Custom Resource Providers][2]
-* [Advanced Scope control][3]
-
-
-  [1]: quickstart.html
-  [2]: advancedResourceProviders.html
-  [3]: advancedScopes.html
+#TODO
