@@ -1,4 +1,4 @@
-Title:
+Title: The Aries Transaction Control Service
 Notice:    Licensed to the Apache Software Foundation (ASF) under one
            or more contributor license agreements.  See the NOTICE file
            distributed with this work for additional information
@@ -23,8 +23,8 @@ first.
 
 ###The Aries Transaction Control implementations
 
-* TODO Local Transactions
-* TODO XA Transactions and Last Participant support
+* [The Local Transaction Control Service][2]
+* [The XA Transaction Control Service and Last Participant support][3]
 
 ###Configuring JDBC access
 
@@ -38,10 +38,12 @@ first.
 
 ###Advanced topics
 
-* [Custom Resource Providers][2]
-* [Advanced Scope control][3]
+* [Custom Resource Providers][4]
+* [Advanced Scope control][5]
 
 
   [1]: quickstart.html
-  [2]: advancedResourceProviders.html
-  [3]: advancedScopes.html
+  [2]: localTransactions.html
+  [3]: xaTransactions
+  [4]: advancedResourceProviders.html
+  [5]: advancedScopes.html
