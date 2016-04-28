@@ -20,6 +20,12 @@ If you're new to the Transaction Control service then we recommend that you read
 
 More detailed documentation is available in the [Aries Transaction Control Project][3]
 
+## Why use the Transaction Control service?
+
+Simply put the Transaction Control service makes resource access easy! There's no need to worry about
+transaction lifecycle or closing connections, and there's built in support for useful features like 
+connection pooling.
+
 ## Modules
 
 The following modules are available for use in OSGi
@@ -31,13 +37,23 @@ used with any resource-local capable ResourceProvider
 Geronimo Transaction Manager. This can be used with XA capable resources, or with local resources. 
 Local resources will make use of the last-participant gambit.
 
-3. [tx-control-provider-jdbc-local][6] :- A JDBC resource provider that can integrate with local transactions. 
-The JDBCConnectionProviderFactory service may be used directly, or a service may be configured using 
-the _org.apache.aries.tx.control.jdbc.local_ pid
+3. [tx-control-provider-jdbc-local][6] :- A JDBC resource provider that provides connection pooling and
+that can integrate with local transactions. The JDBCConnectionProviderFactory service may be used 
+directly, or a service may be configured using the _org.apache.aries.tx.control.jdbc.local_ pid
 
-4. [tx-control-provider-jdbc-xa][7] :- A JDBC resource provider that can integrate with local or XA transactions. 
-The JDBCConnectionProviderFactory service may be used directly, or a service may be configured using 
-the _org.apache.aries.tx.control.jdbc.xa_ pid
+4. [tx-control-provider-jdbc-xa][7] :- A JDBC resource provider that provides connection pooling and 
+that can integrate with local or XA transactions. The JDBCConnectionProviderFactory service may be 
+used directly, or a service may be configured using the _org.apache.aries.tx.control.jdbc.xa_ pid
+
+5. [tx-control-provider-jpa-local][8] :- A JPA resource provider that can integrate with local transactions. 
+The JPAEntityManagerProviderFactory service may be used directly, or a service may be configured using 
+the _org.apache.aries.tx.control.jpa.local_ pid. The implementation can also provide connection pooling 
+if required
+
+6. [tx-control-provider-jpa-xa][9] :- A JDBC resource provider that integrates with XA transactions. 
+The JPAEntityManagerProviderFactory service may be used directly, or a service may be configured using 
+the _org.apache.aries.tx.control.jpa.xa_ pid. The implementation can also provide connection pooling 
+if required
 
 
 ### Which modules should I use?
@@ -58,10 +74,10 @@ tx-control-provider-jpa-xa resource provider bundles should be used.
 the same time. This will be confusing, and may lead to problems if different parts of the application 
 bind to different service implementations.
 
-There is also no reason to use the tx-control-provider-jdbc-local in addition to the 
+**NOTE:** There is also no reason to use the tx-control-provider-jdbc-local in addition to the 
 tx-control-provider-jdbc-xa service. Using both together is not typically harmful, however the 
 tx-control-provider-jdbc-xa bundle supports all of the same features as the 
-tx-control-provider-jdbc-local bundle.
+tx-control-provider-jdbc-local bundle. The same is **not** true of the JPA provider implementations.
 
 ##Pre-release APIs
 
@@ -81,3 +97,5 @@ attribute will be removed from the export.
   [5]: tx-control/xaTransactions.html
   [6]: tx-control/localJDBC.html
   [7]: tx-control/xaJDBC.html
+  [8]: tx-control/localJPA.html
+  [9]: tx-control/xaJPA.html
