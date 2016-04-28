@@ -28,8 +28,8 @@ first.
 
 ###Configuring JDBC access
 
-* TODO With Local Transactions
-* TODO With XA Transactions
+* [JDBC with Local Transactions][4]
+* [JDBC with XA Transactions][5]
 
 ###Configuring JPA access
 
@@ -38,12 +38,14 @@ first.
 
 ###Advanced topics
 
-* [Custom Resource Providers][4]
-* [Advanced Scope control][5]
+* [Custom Resource Providers][6]
+* [Advanced Scope control][7]
 
 
   [1]: quickstart.html
   [2]: localTransactions.html
   [3]: xaTransactions
-  [4]: advancedResourceProviders.html
-  [5]: advancedScopes.html
+  [4]: localJDBC.html
+  [5]: xaJDBC.html
+  [6]: advancedResourceProviders.html
+  [7]: advancedScopes.html
