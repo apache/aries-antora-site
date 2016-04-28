@@ -24,18 +24,18 @@ More detailed documentation is available in the [Aries Transaction Control Proje
 
 The following modules are available for use in OSGi
 
-1. tx-control-service-local :- A purely local transaction control service implementation. This can be 
+1. [tx-control-service-local][4] :- A purely local transaction control service implementation. This can be 
 used with any resource-local capable ResourceProvider
 
-2. tx-control-service-xa :- An XA-capable transaction control service implementation based on the 
+2. [tx-control-service-xa][5] :- An XA-capable transaction control service implementation based on the 
 Geronimo Transaction Manager. This can be used with XA capable resources, or with local resources. 
 Local resources will make use of the last-participant gambit.
 
-3. tx-control-provider-jdbc-local :- A JDBC resource provider that can integrate with local transactions. 
+3. [tx-control-provider-jdbc-local][6] :- A JDBC resource provider that can integrate with local transactions. 
 The JDBCConnectionProviderFactory service may be used directly, or a service may be configured using 
 the _org.apache.aries.tx.control.jdbc.local_ pid
 
-4. tx-control-provider-jdbc-xa :- A JDBC resource provider that can integrate with local or XA transactions. 
+4. [tx-control-provider-jdbc-xa][7] :- A JDBC resource provider that can integrate with local or XA transactions. 
 The JDBCConnectionProviderFactory service may be used directly, or a service may be configured using 
 the _org.apache.aries.tx.control.jdbc.xa_ pid
 
@@ -73,6 +73,11 @@ By setting this attribute on their API imports users accept that the API may cha
 package version(s). These changes may, or may not, be binary compatible. Once the specification is final the
 attribute will be removed from the export.
 
+
   [1]: https://github.com/osgi/design/blob/master/rfcs/rfc0221/rfc-0221-TransactionControl.pdf
   [2]: tx-control/quickstart.html
   [3]: tx-control/index.html
+  [4]: tx-control/localTransactions.html
+  [5]: tx-control/xaTransactions.html
+  [6]: tx-control/localJDBC.html
+  [7]: tx-control/xaJDBC.html
