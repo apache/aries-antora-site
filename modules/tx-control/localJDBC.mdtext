@@ -27,7 +27,8 @@ The Aries Local JDBC provider implementation is available at the following maven
         </dependency>
 
 This module is a prototype implementation of the OSGi Transaction Control JDBC resource provider. 
-It supports Local transactions only.
+It supports Local transactions only. The provider also has built-in support for Database connection
+pooling using Hikari CP.
 
 ## When should I use this module?
 
@@ -59,6 +60,9 @@ ResourceProvider if more than one is present in the Service Registry.
 
 This Resource Provider is used in conjunction with a TransactionControl service to provide scoped 
 access to a JDBC connection with support for Local Transactions.
+
+When using local transactions the JDBC API is used to commit or rollback the Database connection.
+There is no need for client code to call commit, rollback, or close on the connection.
 
 ## Creating a resource programmatically
 

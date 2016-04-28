@@ -51,8 +51,10 @@ These modules provide portable JPA resource providers for transactional resource
 
 ###Advanced topics
 
-* [Custom Resource Providers][8]
-* [Advanced Scope control][9]
+* [Using the Coordinator to optimise Transactions][8]
+* [Making use of the Last Resource Gambit][9]
+* [Custom Resource Providers][10]
+* [Advanced Scope control][11]
 
 
   [1]: quickstart.html
@@ -62,5 +64,7 @@ These modules provide portable JPA resource providers for transactional resource
   [5]: xaJDBC.html
   [6]: localJPA.html
   [7]: xaJPA.html
-  [8]: advancedResourceProviders.html
-  [9]: advancedScopes.html
+  [8]: coordinator.html
+  [9]: lastResourceGambit.html
+  [10]: advancedResourceProviders.html
+  [11]: advancedScopes.html
