@@ -220,4 +220,4 @@ Aries Transaction, Hibernate and Pax-jdbc so installation is very easy.
 See the [README of the Aries JPA examples][1].
 
 
-  [1]: https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/
+  [1]: https://github.com/apache/aries/tree/trunk/jpa/examples
