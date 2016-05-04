@@ -10,6 +10,8 @@ The jpa.blueprint module implements container managed persistence for Aries Blue
 The jpa.support module provides support for container managed persistence for DS and other injection frameworks using the
 JPATemplate interface.
 
+See how it looks like in the See the [Aries JPA examples][1].
+
 ## Persistence bundles
 
 A bundle is regarded as a persistence bundle if it contains the header **Meta-Persistence:**  in it's Manifest.
