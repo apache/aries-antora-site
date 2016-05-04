@@ -210,7 +210,12 @@ See the tasklist-ds example for details.
 
 To package the solution, execute a "maven clean install" instruction. Installing Aries JPA and Aries Transaction into arbitrary containers is beyond the scope of this document. 
 
-To keep the installation instructions small we only cover installation into Apache Karaf 4.x. Karaf provides features for Aries JPA, Aries Transaction, Hibernate and Pax-jdbc so installation is very easy.
-See the README at https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/
+## Example ##
+
+To keep the installation instructions small we only cover installation into Apache Karaf 4.x. Karaf provides features for Aries JPA,
+Aries Transaction, Hibernate and Pax-jdbc so installation is very easy.
+
+See the [README of the Aries JPA examples][1].
 
 
+  [1]: https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/
