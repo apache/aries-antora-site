@@ -16,4 +16,57 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-#TODO
+#Advanced Scope control
+
+There are a number of useful ways to interact with the scopes created by the Transaction Control Service
+
+## Determining the current scope
+
+The Transaction Control Service has methods which can be used to work out whether a scope is in effect:
+
+* <code>txControl.activeScope();</code> - When <code>true</code> there is a scope in effect and resources can be 
+accessed. The scope may, or may not, be transactional. When false there is no current scope and
+<code>txControl.getCurrentContext();</code> will return <code>null</code>.
+
+* <code>txControl.activeTransaction()</code> - When <code>true</code> there is a transactional scope in 
+effect and resources can be accessed transactionally. When false there may, or may not, be a "No Transaction"
+scope in effect.
+
+Note that <code>assert txControl.activeTransaction();</code> can be used to enforce the presence of a
+transaction. This is equivalent to a "Mandatory" transaction in Spring or Java EE.
+
+## Avoiding rollback
+
+When setting up a transaction certain exception types can be marked as not triggering rollback:
+
+    txControl.build()
+        .noRollbackFor(MyCustomException.class)
+        .required(() -> {
+                // A MyCustomException thrown here will not trigger rollback
+            });
+
+
+## Nesting a transaction
+
+Nesting a Transaction can easily be managed using <code>requiresNew()</code>
+
+
+    txControl.required(() -> {
+            // Do some work...
+            
+            return txControl.requiresNew(() -> {
+                    // Do some more work
+                });
+        });
+
+## Suspending a transaction
+
+Suspending a Transaction can easily be managed using <code>notSupported()</code>
+
+    txControl.required(() -> {
+            // Do some work...
+            
+            return txControl.notSupported(() -> {
+                    // Do some more work
+                });
+        });
