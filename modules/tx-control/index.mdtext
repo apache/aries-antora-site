@@ -55,6 +55,7 @@ These modules provide portable JPA resource providers for transactional resource
 * [Making use of the Last Resource Gambit][9]
 * [Custom Resource Providers][10]
 * [Advanced Scope control][11]
+* [Exception Management][12]
 
 
   [1]: quickstart.html
@@ -68,3 +69,4 @@ These modules provide portable JPA resource providers for transactional resource
   [9]: lastResourceGambit.html
   [10]: advancedResourceProviders.html
   [11]: advancedScopes.html
+  [12]: exceptionManagement.html
