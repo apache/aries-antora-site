@@ -61,14 +61,15 @@ The scope starts immediately before the work is executed, and finishes immediate
 _Transactional_ scope has been started. The <code>supports</code> and <code>notSupported</code>
 methods can be used to ensure that a _No Transaction_ scope has been started.
 
-For more advanced scope control techniques look [here][1]
+Simple scope management is perfect in most situations, but you may also wish to read about
+[more advanced scope control techniques][1] or [exception management][2] once you've mastered the basics.
 
 ##Accessing Resources
 
 A <code>ResourceProvider</code> is a generic factory for scoped resources. Typically you will use a more 
 specific interface for type safety. For example the Transaction Control specification defines 
 <code>JDBCConnectionProvider</code> and <code>JPAEntityManagerProvider</code> interfaces. If
-needed you can [make your own ResourceProvider][2].
+needed you can [make your own ResourceProvider][3].
 
 To create your scoped resource you make one call to <code>getResource</code> passing in the 
 <code>TransactionControl</code> service that the resource should integrate with. The returned object
@@ -123,5 +124,7 @@ The transactionality and lifecycle of the database resources is automatically ma
         }
     }
 
+
   [1]: advancedScopes.html
-  [2]: advancedResourceProviders.html
+  [2]: exceptionManagement.html
+  [3]: advancedResourceProviders.html
