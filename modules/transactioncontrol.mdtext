@@ -16,7 +16,8 @@ ensure that the implementations are compliant with any OSGi specifications that 
 
 #Getting started
 
-If you're new to the Transaction Control service then we recommend that you read the [quickstart documentation first][2].
+If you're new to the Transaction Control service then we recommend that you read the 
+[quickstart documentation first][2].
 
 More detailed documentation is available in the [Aries Transaction Control Project][3]
 
@@ -26,31 +27,35 @@ Simply put the Transaction Control service makes resource access easy! There's n
 transaction lifecycle or closing connections, and there's built in support for useful features like 
 connection pooling.
 
+In addition to being simple the Transaction Control service also makes transaction management explicit. As a
+result it is easier to follow the transactions flowing throughout your code, and it protects you from the 
+[proxy problem][4] that declarative transaction strategies often suffer from.
+
 ## Modules
 
 The following modules are available for use in OSGi
 
-1. [tx-control-service-local][4] :- A purely local transaction control service implementation. This can be 
+1. [tx-control-service-local][5] :- A purely local transaction control service implementation. This can be 
 used with any resource-local capable ResourceProvider
 
-2. [tx-control-service-xa][5] :- An XA-capable transaction control service implementation based on the 
+2. [tx-control-service-xa][6] :- An XA-capable transaction control service implementation based on the 
 Geronimo Transaction Manager. This can be used with XA capable resources, or with local resources. 
 Local resources will make use of the last-participant gambit.
 
-3. [tx-control-provider-jdbc-local][6] :- A JDBC resource provider that provides connection pooling and
+3. [tx-control-provider-jdbc-local][7] :- A JDBC resource provider that provides connection pooling and
 that can integrate with local transactions. The JDBCConnectionProviderFactory service may be used 
 directly, or a service may be configured using the _org.apache.aries.tx.control.jdbc.local_ pid
 
-4. [tx-control-provider-jdbc-xa][7] :- A JDBC resource provider that provides connection pooling and 
+4. [tx-control-provider-jdbc-xa][8] :- A JDBC resource provider that provides connection pooling and 
 that can integrate with local or XA transactions. The JDBCConnectionProviderFactory service may be 
 used directly, or a service may be configured using the _org.apache.aries.tx.control.jdbc.xa_ pid
 
-5. [tx-control-provider-jpa-local][8] :- A JPA resource provider that can integrate with local transactions. 
+5. [tx-control-provider-jpa-local][9] :- A JPA resource provider that can integrate with local transactions. 
 The JPAEntityManagerProviderFactory service may be used directly, or a service may be configured using 
 the _org.apache.aries.tx.control.jpa.local_ pid. The implementation can also provide connection pooling 
 if required
 
-6. [tx-control-provider-jpa-xa][9] :- A JDBC resource provider that integrates with XA transactions. 
+6. [tx-control-provider-jpa-xa][10] :- A JDBC resource provider that integrates with XA transactions. 
 The JPAEntityManagerProviderFactory service may be used directly, or a service may be configured using 
 the _org.apache.aries.tx.control.jpa.xa_ pid. The implementation can also provide connection pooling 
 if required
@@ -93,9 +98,10 @@ attribute will be removed from the export.
   [1]: https://github.com/osgi/design/blob/master/rfcs/rfc0221/rfc-0221-TransactionControl.pdf
   [2]: tx-control/quickstart.html
   [3]: tx-control/index.html
-  [4]: tx-control/localTransactions.html
-  [5]: tx-control/xaTransactions.html
-  [6]: tx-control/localJDBC.html
-  [7]: tx-control/xaJDBC.html
-  [8]: tx-control/localJPA.html
-  [9]: tx-control/xaJPA.html
+  [4]: tx-control/spring-tx.html
+  [5]: tx-control/localTransactions.html
+  [6]: tx-control/xaTransactions.html
+  [7]: tx-control/localJDBC.html
+  [8]: tx-control/xaJDBC.html
+  [9]: tx-control/localJPA.html
+  [10]: tx-control/xaJPA.html
