@@ -56,6 +56,7 @@ These modules provide portable JPA resource providers for transactional resource
 * [Custom Resource Providers][10]
 * [Advanced Scope control][11]
 * [Exception Management][12]
+* [Migrating from Spring and Java EE Declarative Transactions][13]
 
 
   [1]: quickstart.html
@@ -70,3 +71,4 @@ These modules provide portable JPA resource providers for transactional resource
   [10]: advancedResourceProviders.html
   [11]: advancedScopes.html
   [12]: exceptionManagement.html
+  [13]: spring-tx.html
