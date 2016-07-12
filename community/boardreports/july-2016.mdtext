@@ -16,21 +16,21 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# April 2016 Board report
+# July 2016 Board report
 
    Apache Aries delivers a set of pluggable Java components enabling an
    enterprise OSGi application programming model.
    
-## Issues: 
- - There are no issues requiring board attention at this time
-   
 ## Activity: 
- - New module: Aries Remote Service Admin seeded from Apache CXF DOSGi for providing an implementation of the OSGi Remote Service Admin specification with pluggable transports. http://aries.apache.org/modules/rsa.html
- - New module: Aries Transaction Control Service. An implementation of the in development RFC221 at the OSGi Alliance.
- - 8 releases since the last report in January
-    
+ - TODO - the PMC MUST provide this information. new modules & # releases goes here
+   
 ## Health report: 
+ - TODO - Please use this paragraph to elaborate on why 
+   the current project activity (mails, commits, bugs etc) is at its current 
+   level - Maybe geese took over and are now controlling the project? 
+was:
  - Mailing list discussion and project contributions continue to be healthy.
+
    
 ## PMC changes: 
    
@@ -40,11 +40,14 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
    
 ## Committer base changes: 
    
- - Currently 49 committers. 
- - No new committers added in the last 3 months 
- - Last committer addition was Sam Bratton at Mon Dec 21 2015 
+ - Currently 51 committers. 
+ - New commmitters: 
+    - Dominik Przybysz was added as a committer on Mon May 30 2016 
+    - Carlos Sierra Andrés was added as a committer on Fri Jun 17 2016 
    
 ## Releases: 
+   
+ - TODO. was:
    
  - Aries JPA container (jpa-container) 1.0.4 2016-03-08
  - Apache Aries Proxy Service (proxy-impl) 1.0.5 2016-03-25
@@ -54,19 +57,25 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
  - Aries Blueprint Spring Extender Support (blueprint-spring-extender) 0.2.0 2016-03-25
  - Aries Blueprint no-OSGI (blueprint-noosgi) 1.1.2 2016-03-25
  - Aries Blueprint CM (blueprint-cm) 1.0.8 2016-03-25
-  
+   
 ## Mailing list activity: 
    
+ - TODO Please explain what the following statistics mean 
+   for the project. If there is nothing significant in the figures, omit this 
+   section. 
+   
  - dev@aries.apache.org:  
-    - 131 subscribers (down -4 in the last 3 months): 
-    - 488 emails sent to list (527 in previous quarter) 
+    - 134 subscribers (up 4 in the last 3 months): 
+    - 552 emails sent to list (399 in previous quarter) 
    
  - user@aries.apache.org:  
-    - 236 subscribers (up 0 in the last 3 months): 
-    - 37 emails sent to list (37 in previous quarter) 
+    - 241 subscribers (up 4 in the last 3 months): 
+    - 193 emails sent to list (36 in previous quarter) 
    
    
 ## JIRA activity: 
    
- - 44 JIRA tickets created in the last 3 months 
- - 50 JIRA tickets closed/resolved in the last 3 months 
+ - 56 JIRA tickets created in the last 3 months 
+ - 46 JIRA tickets closed/resolved in the last 3 months 
+   
+   
