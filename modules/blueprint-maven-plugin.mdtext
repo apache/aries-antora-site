@@ -30,19 +30,20 @@ Usage:
     <plugin>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>blueprint-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <version>1.4.0</version>
         <configuration>
             <scanPaths>
                 <scanPath>org.my.package</scanPath>
             </scanPaths>
         </configuration>
         <executions>
-            <execution>
-                <goals>
-                    <goal>blueprint-generate</goal>
-                </goals>
-                <phase>process-classes</phase>
-            </execution>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>blueprint-generate</goal>
+                    </goals>
+                </execution>
+            </executions>
         </executions>
     </plugin>
 
