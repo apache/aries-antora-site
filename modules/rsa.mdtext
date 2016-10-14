@@ -53,7 +53,7 @@ remote endpoints.
 Aries RSA has a custom SPI [DistributionProvider][6] that allows to easily create new transports and serializations.
 Existing providers are:
 
-  - [CXF][7] (JAXRS, JAXWS)
+  - [CXF-DOSGi][7] (JAXRS, JAXWS)
   - [TCP][8] (Light weight Java Serialization over TCP)
 
 ### Discovery
