@@ -21,16 +21,15 @@ So you would like to do most declarations using annoations and ideally these ann
 
 ## blueprint-maven-plugin ##
 
-The blueprint-maven-plugin allows to configure blueprint using annotations. It scans one or more paths for annotated classes and creates a blueprint.xml in target/generated-resources. So at runtime the bundle behaves like a normal blueprint bundle.
-The generated blueprint can also be used together with a manually created blueprint file. So for example property placeholder configurations
-or cxf services can be created in xml while most of the beans are automatically generated.
+The blueprint-maven-plugin allows to configure blueprint using annotations. It scans one or more paths for annotated classes and creates a blueprint.xml in target/generated-sources/blueprint/OSGI-INF/blueprint. So at runtime the bundle behaves like a normal blueprint bundle.
+The generated blueprint can also be used together with a manually created blueprint file. So for example cxf services can be created in xml while most of the beans are automatically generated.
 
 Usage:
 
     <plugin>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>blueprint-maven-plugin</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
         <configuration>
             <scanPaths>
                 <scanPath>org.my.package</scanPath>
@@ -40,6 +39,7 @@ Usage:
             <executions>
                 <execution>
                     <goals>
+                        <goal>add-resource-dir</goal>
                         <goal>blueprint-generate</goal>
                     </goals>
                 </execution>
@@ -47,12 +47,32 @@ Usage:
         </executions>
     </plugin>
 
+## Goals ##
+
+### add-resource-dir ###
+
+Creates target/generated-sources/blueprint folder and register it as a maven resource directory in generate-resources phase, so IDEs like IntelliJ IDEA could find it automatically.
+
+### blueprint-generate ###
+
+Creates blueprint xml from annotations in process-classes phase and put file in target/generated-sources/blueprint/OSGI-INF/blueprint/autowire.xml. Destination directory (OSGI-INF/blueprint) and file name (autowire.xml) could be change via configuration properties: generatedDir and generatedFileName.
+
 ## Annotations ##
 
 ### javax.inject (JSR 330) ###
   - @Inject Inject a bean by type and optionally further qualifiers
   - @Singleton Mark a class as being a bean
   - @Named("Myname") Names a @Singleton and qualifies an @Inject to limit it to matches with the same bean id
+  - @Qualifier Annotation on your own annotation
+
+### javax.enterprise ###
+  - @Produces Create bean using factory method
+
+### javax.transaction ###
+  - @Transactional mark the class as transactional.
+
+### javax.transaction.cdi ###
+  - @Transactional mark the class as transactional.
 
 ### javax.annotation (JSR 250) ###
   - @PostConstruct Marks a method to be called after DI is finished (init-method)
@@ -68,8 +88,19 @@ Usage:
   - @PersistenceContext(unitName="tasklist") inject a managed EntityManager for the given persistence unit into a field
   - @PersistenceUnit(unitName="tasklist") inject an unmanaged EntityManagerFactory for the given persistence unit into a field
 
-### javax.transaction ###
-  - @Transactional mark the class as transactional. Individual methods are not yet supported
+### Configuration annotations (org.apache.aries.blueprint.annotation.config)
+  - @ConfigProperty Inject value as property from property-placeholder or constant
+  - @Config Creates cm:property-placehoder
+  - @DefaultProperty Configure default values for properties in property-placeholder
+
+### Spring (supported in version 1.x, probably dropped in next major versions) ###
+  - @Autowired Inject a bean by type and optionally further qualifiers
+  - @Component Creates bean witd default or given name
+  - @DependsOn Make bean depending on another bean
+  - @Lazy Make bean lazy
+  - @Qualifier Name injected bean
+  - @Transactional mark the class as transactional
+  - @Value Inject value or constant
 
 ## Dependencies for annotations ##
 
@@ -82,23 +113,63 @@ Usage:
     <dependency>
         <groupId>org.ops4j.pax.cdi</groupId>
         <artifactId>pax-cdi-api</artifactId>
-        <version>0.5.0</version>
+        <version>0.8.0</version>
         <optional>true</optional>
     </dependency>
     <dependency>
-        <groupId>org.hibernate.javax.persistence</groupId>
-        <artifactId>hibernate-jpa-2.1-api</artifactId>
-        <version>1.0.0.Final</version>
+        <groupId>javax.enterprise</groupId>
+        <artifactId>cdi-api</artifactId>
+        <version>1.2</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>persistence-api</artifactId>
+        <version>1.0.2</version>
+        <optional>true</optional>
     </dependency>
     <dependency>
         <groupId>javax.transaction</groupId>
         <artifactId>javax.transaction-api</artifactId>
         <version>1.2</version>
+        <optional>true</optional>
     </dependency>
+    <dependency>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>blueprint-maven-plugin-annotation</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+## SPI ##
+Whole plugin is written using 'plugin architecture', so your own annotations could be configured for bleuprint generation. All you need to do, is to implement one of interfaces from blueprint-maven-plugin-spi:
+
+    <dependency>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>blueprint-maven-plugin-spi</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+Next add file (or files) to META-INF/services directory describing which interface implementation your artifact provides and add such artifact as plugin dependency
+
+    <plugin>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>blueprint-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        ...
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.aries.blueprint.example</groupId>
+                <artifactId>blueprint-maven-plugin-my-extension</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+        ...
+    </plugin>
 
 ## Example ##
 
-For a complete example see [tasklist-blueprint-cdi][1] on github.
+For a complete example see [tasklist-blueprint-cdi][1] on github or [tests of blueprint-maven-plugin][2].
 
 
   [1]: https://github.com/cschneider/Karaf-Tutorial/tree/master/tasklist-blueprint-cdi
+  [2]: http://svn.apache.org/repos/asf/aries/trunk/blueprint/plugin/blueprint-maven-plugin/src/test/
