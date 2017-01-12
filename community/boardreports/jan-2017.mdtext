@@ -16,7 +16,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# DRAFT January 2017 Board report
+# January 2017 Board report
 
    Apache Aries delivers a set of pluggable Java components enabling an
    enterprise OSGi application programming model.
@@ -28,8 +28,10 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
  - As a community we made 3 releases this quarter and 3 further releases currently under vote, and added Johannes Utzig as a new committer.
    
 ## Health report: 
- - The number of subscribes has remained consistent over the last three months.
-The user@ traffic has been significantly greater than the previous three months with a wide range of discussion across the Aries sub-modules.
+ - The PMC were requested by the board to consider if there are any potential PMC candidates among the current committers. There was some discussion, but no people were decided upon. This will be discussed again in the coming days.
+ - A new contribution of the JAX-RS Services OSGi specification Reference Implementation has been contributed from Carlos Sierra Andrés. This specification is currently in draft.
+ - The number of subscribers to the dev@ user@ private@ and commits@ lists are roughly consistent (down by 0-3 in the last 3 months).
+ - The dev@ list traffic is consistent, while the user@ traffic has been down over last three months. However, there has been a wide variety of discussion across the different modules within Aries.
  - Despite 32 issues being closed off, the number opened was slightly higher in the past 3 months.
    
 ## PMC changes: 
@@ -41,12 +43,22 @@ The user@ traffic has been significantly greater than the previous three months 
 ## Committer base changes: 
    
  - Currently 52 committers. 
- - Johannes Utzig was added as a committer on Wed Sep 14 2016 
+ - No new committers added in the last 3 months 
+ - Last committer addition was Johannes Utzig at Wed Sep 14 2016 
    
 ## Releases: 
    
+ - Aries Blueprint Core 1.7.1 (blueprint-core) 2016-10-19
+ - Aries JMX Core 1.1.7 (jmx-core) 2016-10-19
+ - Aries Util 1.1.3 (util) 2016-10-20
+ - Aries Transaction Control service (tx-control) 2016-10-21
+ - Aries JPA 2.5.0 (jpa) 2016-10-31
+ - Aries Apache Aries Blueprint Plugin SPI 1.0.0 (blueprint-maven-plugin-spi) 2016-12-05
+ - Aries Blueprint Plugin Annotations 1.0.0 (blueprint-maven-plugin-annotation) 2016-12-05
+ - Aries Blueprint Maven Plugin 1.5.0 (blueprint-maven-plugin) 2016-12-05
+ - Aries Transaction Manager 1.3.2 (transaction-manager) 2017-01-03
+ - Aries Proxy Service 1.0.6 (proxy-impl) 2017-01-03
 
-   
 ## Mailing list activity: 
    
  - dev@aries.apache.org:  
@@ -56,10 +68,4 @@ The user@ traffic has been significantly greater than the previous three months 
  - user@aries.apache.org:  
     - 239 subscribers (up 0 in the last 3 months): 
     - 269 emails sent to list (91 in previous quarter) 
-   
-   
-## JIRA activity: 
-   
- - 42 JIRA tickets created in the last 3 months 
- - 32 JIRA tickets closed/resolved in the last 3 months 
-   
+
