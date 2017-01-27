@@ -1499,8 +1499,8 @@ ul.square {list-style-type: square}
 }
 
 div.promotion {
-	align: center;
-	margin-top: 10px;
+    margin-left: 24px;
+    margin-top: 24px;
 }
 
 div.auto_complete {
