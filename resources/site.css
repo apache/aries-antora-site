@@ -1498,6 +1498,11 @@ ul.square {list-style-type: square}
     cursor: pointer;
 }
 
+div.promotion {
+	align: center;
+	margin-top: 10px;
+}
+
 div.auto_complete {
     width: 350px;
     background: #fff;
