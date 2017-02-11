@@ -138,7 +138,16 @@ Creates blueprint xml from annotations in process-classes phase and put file in 
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>blueprint-maven-plugin-annotation</artifactId>
         <version>1.0.0</version>
+        <optional>true</optional>
     </dependency>
+    <dependency>
+        <groupId>org.apache.servicemix.bundles</groupId>
+        <artifactId>org.apache.servicemix.bundles.spring-beans</artifactId>
+        <version>3.2.11.RELEASE_1</version>
+        <optional>true</optional>
+    </dependency>
+
+Note that the annotations are needed only during build run, so you can exclude them or mark optional in Import-Package header of your bundle.
 
 ## SPI ##
 Whole plugin is written using 'plugin architecture', so your own annotations could be configured for bleuprint generation. All you need to do, is to implement one of interfaces from blueprint-maven-plugin-spi:
