@@ -12,6 +12,10 @@ JPATemplate interface.
 
 See how it looks like in the See the [Aries JPA examples][1].
 
+## Source repository
+
+[Git repository aries-jpa][2] at apache. [Mirror of aries-jpa at github][3].
+
 ## Persistence bundles
 
 A bundle is regarded as a persistence bundle if it contains the header **Meta-Persistence:**  in it's Manifest.
@@ -217,7 +221,10 @@ To package the solution, execute a "maven clean install" instruction. Installing
 To keep the installation instructions small we only cover installation into Apache Karaf 4.x. Karaf provides features for Aries JPA,
 Aries Transaction, Hibernate and Pax-jdbc so installation is very easy.
 
-See the [README of the Aries JPA examples][1].
+See the [README of the Aries JPA examples][4].
 
 
-  [1]: https://github.com/apache/aries/tree/trunk/jpa/examples
+  [1]: https://github.com/apache/aries-jpa/tree/master/examples
+  [2]: https://git-wip-us.apache.org/repos/asf/aries-jpa.git
+  [3]: https://github.com/apache/aries-jpa
+  [4]: https://github.com/apache/aries-jpa/tree/master/examples
