@@ -1,14 +1,40 @@
 Title: Aries Containers
 
 # Aries Containers
-TODO introduction.
+Aries Containers is a project to manage container deployment, such as docker containers, from a Java API.
+
+Many technologies exist to manage container deployments. Examples include Kubernetes, Marathon/Mesos, Docker Swarm, Amazon ECS 
+and others. While each technology provides specific features, many of these management technologies share common behaviour.
+Aries Containers provides an abstraction that allows users to easily switch between these technologies. 
+
+Benefits:
+
+  - Requirements change - container users may find that they need to change target platforms at short notice. Using an abstraction API 
+helps making such changes without too much additional work.
+  - Testing - many container management systems require cluster of machines or otherwise large setup which may make testing during
+development difficult. Aries Containers also contains a `docker.local` binding which makes it possible to run the same code with a different 
+binding on a local developer machine, as long as docker is installed there.
+
+Current implementations:
+
+  - `docker.local` - manage services my issuing docker commands on the local machine. Ideal for testing.
+  - `marathon` - manage service via marathon.
+  - ...
+
+This project may be used as input to the design process of the [OSGi RFP 179][1].
 
 # Source
-The Aries RSA source is in a separate [git repository aries-containers][1] there is also a [mirror on github][2].
+The Aries RSA source is in a separate [git repository aries-containers][2] there is also a [mirror on github][3].
 
+To build the source, just run:
+
+`mvn install`
+
+Java 1.8 or higher is required. Maven 3.3.9+ is recommended.
 # Quick Start
 TODO
 
 
-  [1]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
-  [2]: https://github.com/apache/aries-containers
+  [1]: https://github.com/osgi/design/blob/master/rfps/rfp-0179-ComputeManagementService.pdf
+  [2]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
+  [3]: https://github.com/apache/aries-containers
