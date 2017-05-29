@@ -34,8 +34,45 @@ To build the source, just run:
 `mvn install`
 
 Java 1.8 or higher is required. Maven 3.3.9+ is recommended.
+
 # Quick Start
-TODO
+The easiest way to get started is with the examples and the local docker binding. Aries Containers work well in an OSGi 
+environment where bindings are provided as OSGi services.
+
+As an alternative, Aries Containers can also be used in a plain Java environment. Instead of obtaining the bindings
+from the service registry, they need to be instantiated directly in this case.
+
+This quick start focuses on a number of examples to suit your environment.
+
+## OSGi example
+
+## Plain Java example
+
+This example launches a small Java Application to create a service deployment. Initially a single container is deployed. The user can 
+modify the number of replicas using the application.
+
+The code can be found here: [Main.java][4]
+
+The main functionality is:
+
+
+            ServiceManager sm = new LocalDockerServiceManager();
+
+            // If you want to run with Marathon, use the following line
+            // ServiceManager sm = new MarathonServiceManager("http://192.168.99.100:8080/");
+
+            ServiceConfig sc = ServiceConfig.builder("mytesthttpd", "httpd").
+                cpu(0.2).memory(32).port(80).build();
+            Service svc = sm.getService(sc);
+            // The service is now created
+
+If you are running this the Docker local binding, you can see the docker container created:
+
+    $ docker ps
+    CONTAINER ID        IMAGE               COMMAND              STATUS              PORTS                   NAMES
+    7cc5c753777e        httpd               "httpd-foreground"   Up 4 seconds        0.0.0.0:51467->80/tcp   mytesthttpd
+
+The example also allows scaling up and down of replica containers for this service.
 
 #Bindings
 
@@ -81,3 +118,4 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [1]: https://github.com/osgi/design/blob/master/rfps/rfp-0179-ComputeManagementService.pdf
   [2]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
   [3]: https://github.com/apache/aries-containers
+  [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
