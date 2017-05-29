@@ -46,12 +46,20 @@ This quick start focuses on a number of examples to suit your environment.
 
 ## OSGi example
 
+The OSGi example uses the Felix SCR implementation to get the currently active ServiceManager injected into a simple servlet. 
+The servlet provides a simple UI to perform some of the management operations.
+
+The servlet is written using OSGi Declarative Service annotations and OSGi Http Whiteboard annotations and can be found here: 
+[ServiceManagerServlet.java][4]
+
+TODO: Describe how to run the servlet using a small Felix setup.
+
 ## Plain Java example
 
 This example launches a small Java Application to create a service deployment. Initially a single container is deployed. The user can 
 modify the number of replicas using the application.
 
-The code can be found here: [Main.java][4]
+The code can be found here: [Main.java][5]
 
 The main functionality is:
 
@@ -118,4 +126,5 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [1]: https://github.com/osgi/design/blob/master/rfps/rfp-0179-ComputeManagementService.pdf
   [2]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
   [3]: https://github.com/apache/aries-containers
-  [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
+  [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-osgiservlet/src/main/java/org/apache/aries/containers/examples/osgiservlet/ServiceManagerServlet.java;h=5783718d0ba80a612cf44a331a45aefeb6e71ebf;hb=HEAD
+  [5]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
