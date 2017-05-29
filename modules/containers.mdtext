@@ -15,10 +15,13 @@ helps making such changes without too much additional work.
 development difficult. Aries Containers also contains a `docker.local` binding which makes it possible to run the same code with a different 
 binding on a local developer machine, as long as docker is installed there.
 
-Current implementations:
+Current modules:
 
-  - `docker.local` - manage services my issuing docker commands on the local machine. Ideal for testing.
-  - `marathon` - manage service via marathon.
+  - `containers-api` - the API implemented by the various bindings.
+  - `containers-docker-local` - Binding that uses the local docker installation.
+  - `containers-marathon` - Marathon binding.
+  - `containers-parent` - Parent pom.
+  - `containers-examples` - Examples.
   - ...
 
 This project may be used as input to the design process of the [OSGi RFP 179][1].
@@ -33,6 +36,46 @@ To build the source, just run:
 Java 1.8 or higher is required. Maven 3.3.9+ is recommended.
 # Quick Start
 TODO
+
+#Bindings
+
+##Docker Local
+
+This binding works by issuing `docker` commands on the local machine and is very useful for testing. Make sure the environment 
+variables normally provided via `docker-machine env <myenv>` are set.
+
+OSGi ServiceManager identifier: `container.factory.binding = docker.local`
+
+Constructor, for use outside of OSGi: `org.apache.aries.containers.docker.local.impl.LocalDockerServiceManager`
+
+##Marathon
+
+This binding uses Marathon as the underlying container manager. It requires the following configuration to be set:
+
+    service.pid: org.apache.aries.containers.marathon
+      marathon.url=<the URL where marathon can be contacted>
+
+Once configured, the Marathon binding will register its OSGi service. 
+OSGi ServiceManager identifier: `container.factory.binding = marathon`
+
+Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.impl.MarathonServiceManager`
+
+    /**
+     * Create the Marathon Service Manager.
+     *
+     * @param marathonURL The Marathon URL
+     */
+    public MarathonServiceManager(String marathonURL);
+
+    /**
+     * Create the Marathon Service Manager for use with DC/OS.
+     *
+     * @param marathonURL The Marathon URL.
+     * @param dcosUser The DCOS user or service-user.
+     * @param passToken The password or token to use.
+     * @param serviceAcct `true` if this is a service account `false` if this is a plain user.
+     */
+    public MarathonServiceManager(String marathonURL, String dcosUser, String passToken, boolean serviceAcct);
 
 
   [1]: https://github.com/osgi/design/blob/master/rfps/rfp-0179-ComputeManagementService.pdf
