@@ -1,7 +1,7 @@
 Title: Aries Containers
 
 # Aries Containers
-Aries Containers is a project to manage container deployment, such as docker containers, from a Java API.
+Aries Containers is an Apache Aries subproject to manage container deployments, such as docker-based microservices, from a Java API.
 
 Many technologies exist to manage container deployments. Examples include Kubernetes, Marathon/Mesos, Docker Swarm, Amazon ECS 
 and others. While each technology provides specific features, many of these management technologies share common behaviour.
@@ -9,13 +9,13 @@ Aries Containers provides an abstraction that allows users to easily switch betw
 
 Benefits:
 
-  - Requirements change - container users may find that they need to change target platforms at short notice. Using an abstraction API 
+  - Requirements change - container deployers may find that they need to change target platforms at short notice. Using an abstraction API 
 helps making such changes without too much additional work.
   - Testing - many container management systems require cluster of machines or otherwise large setup which may make testing during
-development difficult. Aries Containers also contains a `docker.local` binding which makes it possible to run the same code with a different 
-binding on a local developer machine, as long as docker is installed there.
+development difficult. Aries Containers also contains a `docker.local` binding which makes it possible to run the same code with using
+a local docker installation on the developer's machine.
 
-Current modules:
+Current Aries Containers modules:
 
   - `containers-api` - the API implemented by the various bindings.
   - `containers-docker-local` - Binding that uses the local docker installation.
@@ -24,7 +24,7 @@ Current modules:
   - `containers-examples` - Examples.
   - ...
 
-This project may be used as input to the design process of the [OSGi RFP 179][1].
+This project could influence the design process of the [OSGi RFP 179][1].
 
 # Source
 The Aries RSA source is in a separate [git repository aries-containers][2] there is also a [mirror on github][3].
@@ -42,8 +42,6 @@ environment where bindings are provided as OSGi services.
 As an alternative, Aries Containers can also be used in a plain Java environment. Instead of obtaining the bindings
 from the service registry, they need to be instantiated directly in this case.
 
-This quick start focuses on a number of examples to suit your environment.
-
 ## OSGi example
 
 The OSGi example uses the Felix SCR implementation to get the currently active ServiceManager injected into a simple servlet. 
@@ -52,7 +50,7 @@ The servlet provides a simple UI to perform some of the management operations.
 The servlet is written using OSGi Declarative Service annotations and OSGi Http Whiteboard annotations and can be found here: 
 [ServiceManagerServlet.java][4]
 
-Main part of the functionality of the servlet can be summarized as follows:
+Main functionality of the servlet can be summarized as follows:
 
     @Component(service = Servlet.class,
         property = {HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN + "=/manager"})
@@ -75,7 +73,7 @@ In short - an OSGi Declarative Service Component is registered as a HTTP Whitebo
 injected into the `serviceManager` field and then used in the servlet to manage services.
 
 This demo can be launched in any OSGi framework that supports Declarative Services and the HTTP Whiteboard. For example, to run this demo 
-Apache Felix, add:
+with the Apache Felix OSGi framework, add:
 
   - [The Felix SCR Declarative Services Implementation][5]
   - [Felix Configuration Admin Service Implementation][6]
@@ -88,7 +86,7 @@ Then add the Aries Containers implementation with the appropriate binding and th
   - Aries Containers Docker Local
   - [SLF4J API][11] and [implementation][12].
 
-Finally add the OSGI demo bundle itself. The resulting bundle list will look like this:
+Finally add the OSGi demo bundle itself. The resulting bundle list will look like this:
 
     lb
     START LEVEL 1
@@ -114,18 +112,23 @@ Finally add the OSGI demo bundle itself. The resulting bundle list will look lik
 
 
 
-Now you can access the servlet at http://localhost:8080/containers/manager
+Now you can access the servlet at [http://localhost:8080/containers/manager][13]
 
-![screenshot][13]
+![screenshot][14]
 
+After adding a container you can inspect its result by querying `docker` for its running containers:
+
+    $ docker ps
+    CONTAINER ID        IMAGE               COMMAND              STATUS              PORTS                   NAMES
+    7cc5c753777e        httpd               "httpd-foreground"   Up 4 seconds        0.0.0.0:51467->80/tcp   myapache
 
 
 ## Plain Java example
 
 This example launches a small Java Application to create a service deployment. Initially a single container is deployed. The user can 
-modify the number of replicas using the application.
+modify the number of replicas from within the application.
 
-The code can be found here: [Main.java][14]
+The code can be found here: [Main.java][15]
 
 The main functionality is:
 
@@ -155,7 +158,7 @@ The example also allows scaling up and down of replica containers for this servi
 This binding works by issuing `docker` commands on the local machine and is very useful for testing. Make sure the environment 
 variables normally provided via `docker-machine env <myenv>` are set.
 
-OSGi ServiceManager identifier: `container.factory.binding = docker.local`
+OSGi ServiceManager identifier property: `container.factory.binding = docker.local`
 
 Constructor, for use outside of OSGi: `org.apache.aries.containers.docker.local.impl.LocalDockerServiceManager`
 
@@ -167,7 +170,8 @@ This binding uses Marathon as the underlying container manager. It requires the 
       marathon.url=<the URL where marathon can be contacted>
 
 Once configured, the Marathon binding will register its OSGi service. 
-OSGi ServiceManager identifier: `container.factory.binding = marathon`
+
+OSGi ServiceManager identifier property: `container.factory.binding = marathon`
 
 Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.impl.MarathonServiceManager`
 
@@ -201,5 +205,6 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [10]: http://www-us.apache.org/dist//felix/org.apache.felix.http.servlet-api-1.1.2.jar
   [11]: http://repo2.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
   [12]: http://repo2.maven.org/maven2/org/slf4j/slf4j-simple/1.7.25/slf4j-simple-1.7.25.jar
-  [13]: containers/osgidemo.png
-  [14]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
+  [13]: http://localhost:8080/containers/manager
+  [14]: containers/osgidemo.png
+  [15]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
