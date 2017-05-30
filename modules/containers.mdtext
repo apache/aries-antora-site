@@ -79,12 +79,16 @@ injected into the `serviceManager` field and then used in the servlet to manage 
 
 TODO: Describe how to run the servlet using a small Felix setup.
 
+![screenshot][5]
+
+
+
 ## Plain Java example
 
 This example launches a small Java Application to create a service deployment. Initially a single container is deployed. The user can 
 modify the number of replicas using the application.
 
-The code can be found here: [Main.java][5]
+The code can be found here: [Main.java][6]
 
 The main functionality is:
 
@@ -152,4 +156,5 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [2]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
   [3]: https://github.com/apache/aries-containers
   [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-osgiservlet/src/main/java/org/apache/aries/containers/examples/osgiservlet/ServiceManagerServlet.java;h=5783718d0ba80a612cf44a331a45aefeb6e71ebf;hb=HEAD
-  [5]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
+  [5]: osgidemo.png
+  [6]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
