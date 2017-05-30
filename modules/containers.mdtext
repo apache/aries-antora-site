@@ -52,6 +52,31 @@ The servlet provides a simple UI to perform some of the management operations.
 The servlet is written using OSGi Declarative Service annotations and OSGi Http Whiteboard annotations and can be found here: 
 [ServiceManagerServlet.java][4]
 
+Main part of the functionality of the servlet can be summarized as follows:
+
+    @Component(service = Servlet.class,
+        property = {HttpWhiteboardConstants.HTTP_WHITEBOARD_SERVLET_PATTERN + "=/manager"})
+    public class ServiceManagerServlet extends HttpServlet {
+    
+    @Reference
+    ServiceManager serviceManager;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter pw = resp.getWriter();
+        pw.println("<BODY><H1>Service Deployments</H1>");
+
+        pw.println("<UL>");
+        for (String dep : serviceManager.listServices()) {
+            pw.println("<LI>" + dep);
+        }
+
+In short - an OSGi Declarative Service Component is registered as a HTTP Whiteboard Servet. The Aries Containers Service Manager is
+injected into the `serviceManager` field and then used in the servlet to manage the deployment.
+
+
+
+
 TODO: Describe how to run the servlet using a small Felix setup.
 
 ## Plain Java example
