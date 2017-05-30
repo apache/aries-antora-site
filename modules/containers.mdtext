@@ -72,14 +72,51 @@ Main part of the functionality of the servlet can be summarized as follows:
         }
 
 In short - an OSGi Declarative Service Component is registered as a HTTP Whiteboard Servet. The Aries Containers Service Manager is
-injected into the `serviceManager` field and then used in the servlet to manage the deployment.
+injected into the `serviceManager` field and then used in the servlet to manage services.
+
+This demo can be launched in any OSGi framework that supports Declarative Services and the HTTP Whiteboard. For example, to run this demo 
+Apache Felix, add:
+
+  - [The Felix SCR Declarative Services Implementation][5]
+  - [Felix Configuration Admin Service Implementation][6]
+  - [Felix Event Admin Service Implementation][7]
+  - [Felix Http Whiteboard bundle][8] with [Felix Jetty][9] and the [Servlet API][10].
+
+Then add the Aries Containers implementation with the appropriate binding and their dependencies. To run with the Docker Local binding, add
+
+  - Aries Containers API
+  - Aries Containers Docker Local
+  - [SLF4J API][11] and [implementation][12].
+
+Finally add the OSGI demo bundle itself. The resulting bundle list will look like this:
+
+    lb
+    START LEVEL 1
+       ID|State      |Level|Name
+        0|Active     |    0|System Bundle (5.6.4)|5.6.4
+        1|Active     |    1|jansi (1.16.0)|1.16.0
+        2|Active     |    1|JLine Bundle (3.3.0)|3.3.0
+        3|Active     |    1|Apache Felix Bundle Repository (2.0.10)|2.0.10
+        4|Active     |    1|Apache Felix Gogo Command (1.0.2)|1.0.2
+        5|Active     |    1|Apache Felix Gogo JLine Shell (1.0.6)|1.0.6
+        6|Active     |    1|Apache Felix Gogo Runtime (1.0.6)|1.0.6
+        7|Active     |    1|Apache Felix Declarative Services (2.0.10)|2.0.10
+        8|Active     |    1|Apache Felix Http Jetty (3.4.2)|3.4.2
+        9|Active     |    1|Apache Felix Servlet API (1.1.2)|1.1.2
+       10|Active     |    1|Apache Felix Http Whiteboard (3.0.0)|3.0.0
+       11|Active     |    1|Apache Felix Configuration Admin Service (1.8.14)|1.8.14
+       12|Active     |    1|Apache Felix EventAdmin (1.4.8)|1.4.8
+       13|Active     |    1|Apache Aries Containers API (0.0.1.201705261547)|0.0.1.201705261547
+       14|Active     |    1|Apache Aries Containers impl for local Docker use (0.0.1.201705291452)|0.0.1.201705291452
+       15|Active     |    1|slf4j-api (1.7.25)|1.7.25
+       16|Resolved   |    1|slf4j-simple (1.7.25)|1.7.25
+       17|Active     |    1|Container Example OSGi Servlet (0.0.1.201705291444)|0.0.1.201705291444
 
 
 
+Now you can access the servlet at http://localhost:8080/containers/manager
 
-TODO: Describe how to run the servlet using a small Felix setup.
-
-![screenshot][5]
+![screenshot][13]
 
 
 
@@ -88,7 +125,7 @@ TODO: Describe how to run the servlet using a small Felix setup.
 This example launches a small Java Application to create a service deployment. Initially a single container is deployed. The user can 
 modify the number of replicas using the application.
 
-The code can be found here: [Main.java][6]
+The code can be found here: [Main.java][14]
 
 The main functionality is:
 
@@ -156,5 +193,13 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [2]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
   [3]: https://github.com/apache/aries-containers
   [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-osgiservlet/src/main/java/org/apache/aries/containers/examples/osgiservlet/ServiceManagerServlet.java;h=5783718d0ba80a612cf44a331a45aefeb6e71ebf;hb=HEAD
-  [5]: containers/osgidemo.png
-  [6]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
+  [5]: http://www-us.apache.org/dist//felix/org.apache.felix.scr-2.0.10.jar
+  [6]: http://www-us.apache.org/dist//felix/org.apache.felix.configadmin-1.8.14.jar
+  [7]: http://www-us.apache.org/dist//felix/org.apache.felix.eventadmin-1.4.8.jar
+  [8]: http://www-us.apache.org/dist//felix/org.apache.felix.http.whiteboard-3.0.0.jar
+  [9]: http://www-us.apache.org/dist//felix/org.apache.felix.http.jetty-3.4.2.jar
+  [10]: http://www-us.apache.org/dist//felix/org.apache.felix.http.servlet-api-1.1.2.jar
+  [11]: http://repo2.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+  [12]: http://repo2.maven.org/maven2/org/slf4j/slf4j-simple/1.7.25/slf4j-simple-1.7.25.jar
+  [13]: containers/osgidemo.png
+  [14]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
