@@ -196,7 +196,7 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [1]: https://github.com/osgi/design/blob/master/rfps/rfp-0179-ComputeManagementService.pdf
   [2]: https://git-wip-us.apache.org/repos/asf/aries-containers.git
   [3]: https://github.com/apache/aries-containers
-  [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-osgiservlet/src/main/java/org/apache/aries/containers/examples/osgiservlet/ServiceManagerServlet.java;h=5783718d0ba80a612cf44a331a45aefeb6e71ebf;hb=HEAD
+  [4]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-osgiservlet/src/main/java/org/apache/aries/containers/examples/osgiservlet/ServiceManagerServlet.java;hb=HEAD
   [5]: http://www-us.apache.org/dist//felix/org.apache.felix.scr-2.0.10.jar
   [6]: http://www-us.apache.org/dist//felix/org.apache.felix.configadmin-1.8.14.jar
   [7]: http://www-us.apache.org/dist//felix/org.apache.felix.eventadmin-1.4.8.jar
@@ -207,4 +207,4 @@ Constructors, for use outside of OSGi: `org.apache.aries.containers.marathon.imp
   [12]: http://repo2.maven.org/maven2/org/slf4j/slf4j-simple/1.7.25/slf4j-simple-1.7.25.jar
   [13]: http://localhost:8080/containers/manager
   [14]: containers/osgidemo.png
-  [15]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;h=0f06a304fc5ec96ce3f50e6af338b5b320d901d1;hb=HEAD
+  [15]: https://git-wip-us.apache.org/repos/asf?p=aries-containers.git;a=blob;f=containers-examples/containers-example-javaapp/src/main/java/org/apache/aries/containers/examples/javaapp/Main.java;hb=HEAD
