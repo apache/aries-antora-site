@@ -53,8 +53,18 @@ remote endpoints.
 Aries RSA has a custom SPI [DistributionProvider][6] that allows to easily create new transports and serializations.
 Existing providers are:
 
-  - [CXF-DOSGi][7] (JAXRS, JAXWS)
-  - [TCP][8] (Light weight Java Serialization over TCP)
+  - [CXF-DOSGi][7]
+    - uses Apache CXF for transport
+    - service endpoints consumable with non-java software (XML/JSON)   
+  - [TCP][8]
+    - Java serialization over TCP (one port per service)
+    - very few dependencies
+    - easy to comprehend blueprint for own transport implementations
+  - [Fastbin][9] 
+    - tuned Java serialization (or Protobuf) over TCP using NIO
+    - multiplexing over a single port
+    - transparently handles InputSteams and OutputStreams in remote services
+    - synchronous and asnychronous calls supported
 
 ### Discovery
 
@@ -63,15 +73,16 @@ It also listens to remote Endpoints and notifies EndpointListeners about their p
 
 Existing implementations:
 
-  - [Local discovery][9] using xml descriptors
-  - [Zookeeper based discovery][10]
+  - [Local discovery][10] using xml descriptors
+  - [Zookeeper based discovery][11]
 
 ## A simple example using Apache Karaf
 
-See [EchoTCP example][11]. Follow the Readme to install the example in Apache Karaf.
+See [EchoTCP example][12]. Follow the Readme to install the example in Apache Karaf.
 
 The EchoTCP example implements a simple echo service that can be called remotely. 
 The example uses declarative services to publish and bind services.
+
 
 ### Modules
 
@@ -80,6 +91,13 @@ The example uses declarative services to publish and bind services.
   - consumer : Small consumer that uses the EchoService
 
 The example installation uses the tcp transport to do the remoting but the example code is not tied to any transport.
+
+## Example using fastbin transport
+
+A similar [example][13] exists for the fastbin transport . Follow the Readme to install the example in Apache Karaf.
+
+The example implements an echo service that showcases synchronous calls, asnychronous calls and InputStream as parameter and return value.
+
 
 
   [1]: https://git-wip-us.apache.org/repos/asf/aries-rsa.git
@@ -90,6 +108,8 @@ The example installation uses the tcp transport to do the remoting but the examp
   [6]: https://github.com/apache/aries-rsa/blob/master/spi/src/main/java/org/apache/aries/rsa/spi/DistributionProvider.java
   [7]: http://cxf.apache.org/distributed-osgi.html
   [8]: https://github.com/apache/aries-rsa/tree/master/provider/tcp
-  [9]: https://github.com/apache/aries-rsa/tree/master/discovery/local
-  [10]: https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper
-  [11]: https://github.com/apache/aries-rsa/tree/master/examples/echotcp
+  [9]: https://github.com/apache/aries-rsa/tree/master/provider/fastbin
+  [10]: https://github.com/apache/aries-rsa/tree/master/discovery/local
+  [11]: https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper
+  [12]: https://github.com/apache/aries-rsa/tree/master/examples/echotcp
+  [13]: https://github.com/apache/aries-rsa/tree/master/examples/echofastbin
