@@ -68,6 +68,11 @@ The name of the service as which the MBean service is registered is ignored by t
 The service object, though, must be a valid JMX MBean: It has to either implement the `DynamicMBean` interface or implement
 an interface whose name is the object's (simple) class name with the `MBean` suffix.
 
+Additional Service Properties supported:
+
+  - `warning.exceptions` (String+): One or more exception class names can be specified in this service property. If an exception occurs during the MBean registration and the exception
+is of one of these types mentioned, then this exception is logged as a warning. Otherwise the exception is logged as an error.
+
 
 
   [1]: http://www.osgi.org/Download/Release5
