@@ -16,19 +16,19 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# January 2018 Board report
+# April 2018 Board report
+
+## Description: 
 - Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
-
-## Issues:
-
-- None to report this quarter.
+   
+## Issues: 
+ - No issues to report.
    
 ## Activity: 
- - As a community we made 10 releases this quarter.
- - After some discussion, the tx-control module is being moved into gitbox.apache.org.
+ - As a community we made 5 releases in the last reporting period around updates to Aries Blueprint with a mix of bug fixes and functional enhancements.
    
 ## Health report: 
- - the net number of JIRA tickets has crept up slightly this month, but generally under control.
+ - Mailing list activity up slightly on the last reporting period. Stable.
    
 ## PMC changes: 
    
@@ -43,16 +43,17 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
  - Last committer addition was Tom De Wolf at Wed May 03 2017 
    
 ## Releases: 
-
-- Aries Blueprint Core (blueprint-core) 1.8.3 on 2017-10-19
-- Aries SPI Fly (spi-fly) 1.0.10 on 2017-11-28
-- Aries JMX Core (jmx-core) 1.1.8 on 2018-01-09
-- Aries JMX Core via Whiteboards (jmx-core-whiteboard) 1.1.6 on 2018-01-09
-- Aries JMX Blueprint API (jmx-blueprint-api) 1.2.0 on 2018-01-09
-- Aries JMX Blueprint Core (jmx-blueprint-core) 1.2.0 on 2018-01-09
-- Aries Whiteboard support for JMX DynamicMBean services (jmx-whiteboard) 1.2.0 on 2018-01-09
+   
+- Aries Blueprint Parser (blueprint-parser) 1.5.0 on 2018-02-14
+- Aries Blueprint Core (blueprint-core) 1.9.0 on 2018-02-14
+- Aries Blueprint CM (blueprint-cm) 1.2.0 on 2018-02-14
+- Aries Blueprint Spring (blueprint-spring) 0.6.0 on 2018-02-14
+- Aries Blueprint Spring Extender (blueprint-spring-extender) 0.4.0 on 2018-02-14
+   
+## /dist/ errors: 195 
+ - In progress - all are old releases but some are still the most recent. We've requested the signer to extend their key expiration and will review the list to see which can be archived.
 
 ## JIRA activity: 
    
- - 20 JIRA tickets created in the last 3 months 
- - 7 JIRA tickets closed/resolved in the last 3 months
+ - 24 JIRA tickets created in the last 3 months 
+ - 72 JIRA tickets closed/resolved in the last 3 months 
