@@ -29,7 +29,7 @@ Usage:
     <plugin>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>blueprint-maven-plugin</artifactId>
-        <version>1.9.0</version>
+        <version>1.10.0</version>
         <configuration>
             <scanPaths>
                 <scanPath>org.my.package</scanPath>
@@ -192,6 +192,18 @@ Next add file (or files) to META-INF/services directory describing which interfa
         </dependencies>
         ...
     </plugin>
+
+## Artifacts scanning configuration ##
+
+All artifacts are scaned for bean classes by default. It could be limited by includeArtifacts and excludeArtifacts parameters, e. g.
+
+    <includeArtifacts>
+        <includeArtifact>org.my.group.id:.*</includeArtifact>
+        <includeArtifact>org.another.group.id:another.artifact.id:.*</includeArtifact>
+    </includeArtifacts>
+    <excludeArtifacts>
+        <excludeArtifact>org.my.group.id:unwanted.artifact.id:.*</excludeArtifact>
+    </excludeArtifacts>
 
 ## Additional configuration ##
 
