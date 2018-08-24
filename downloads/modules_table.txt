@@ -185,12 +185,12 @@
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.api-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.api-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.api-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.api-1.0.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.cm </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.cm-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.0.jar.sha1">sha1</A>)
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.cm </td><td class="confluenceTd"> 1.0.7 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.cm-1.0.7.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
- - 
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.cm-1.0.7-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7-sources.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.cm-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.0-source-release.zip.sha1">sha1</A>)
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.cm-1.0.7-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.cm-1.0.7-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 <tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.compatibility </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.compatibility-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.compatibility-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.compatibility-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.compatibility-1.0.0.jar.sha1">sha1</A>)
@@ -199,12 +199,12 @@
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.compatibility-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.compatibility-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.compatibility-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.compatibility-1.0.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.core </td><td class="confluenceTd"> 1.1.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.core-1.1.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.1.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.1.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.1.0.jar.sha1">sha1</A>)
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.core </td><td class="confluenceTd"> 1.4.4 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.core-1.4.4.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
- - 
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.core-1.4.4-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4-sources.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.core-1.1.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.1.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.1.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.1.0-source-release.zip.sha1">sha1</A>)
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.core-1.4.4-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core-1.4.4-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 <tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.core.compatibility </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.core.compatibility-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core.compatibility-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core.compatibility-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.core.compatibility-1.0.0.jar.sha1">sha1</A>)
@@ -226,6 +226,13 @@
  - 
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.jexl.evaluator-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.jexl.evaluator-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.jexl.evaluator-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.jexl.evaluator-1.0.0-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.noosgi </td><td class="confluenceTd"> 1.1.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.noosgi-1.1.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.noosgi-1.1.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.noosgi-1.1.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.noosgi-1.1.0.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+ - 
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.noosgi-1.1.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.noosgi-1.1.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.noosgi-1.1.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.noosgi-1.1.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 <tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.sample </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.sample-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.sample-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.sample-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.sample-1.0.0.jar.sha1">sha1</A>)
@@ -268,6 +275,13 @@
  - 
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.testquiescebundle-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.testquiescebundle-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.testquiescebundle-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.testquiescebundle-1.0.0-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.blueprint.web </td><td class="confluenceTd"> 1.1.0 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.web-1.1.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.web-1.1.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.web-1.1.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.web-1.1.0.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+ - 
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.blueprint.web-1.1.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.web-1.1.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.web-1.1.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.blueprint.web-1.1.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 
 <tr><td class="confluenceTd"> ejb </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
@@ -417,61 +431,12 @@
 </td><td class="confluenceTd"></td></tr>
 
 <tr><td class="confluenceTd"> jpa </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.api </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.api-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.api-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.api-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.api-1.0.0.jar.sha1">sha1</A>)
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.main </td><td class="confluenceTd"> 2.7.0 </td><td class="confluenceTd">
+ - 
 </td><td class="confluenceTd">
  - 
 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.api-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.api-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.api-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.api-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.blueprint.aries </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.blueprint.aries-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.aries-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.aries-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.aries-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.blueprint.aries-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.aries-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.aries-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.aries-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.blueprint.itest.bundle </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.blueprint.itest.bundle-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.container </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.container.advanced.itest.bundle </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.advanced.itest.bundle-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.container.context </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.context-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.context-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.context-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.context-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.context-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.context-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.context-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.context-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.container.itest </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.itest-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.itest-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest-1.0.0-source-release.zip.sha1">sha1</A>)
-</td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.jpa.container.itest.bundle </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0.jar.sha1">sha1</A>)
-</td><td class="confluenceTd">
- - 
-</td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.container.itest.bundle-1.0.0-source-release.zip.sha1">sha1</A>)
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.jpa.main-2.7.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.main-2.7.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.main-2.7.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.jpa.main-2.7.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 
 <tr><td class="confluenceTd"> proxy </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
@@ -525,6 +490,50 @@
  - 
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.quiesce.manager.itest-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.quiesce.manager.itest-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.quiesce.manager.itest-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.quiesce.manager.itest-1.0.0-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+
+<tr><td class="confluenceTd"> spifly </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.spifly.core-internal </td><td class="confluenceTd"> 1.0.14 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.core-internal-1.0.14.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.core-internal-1.0.14-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.core-internal-1.0.14-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.core-internal-1.0.14-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.spifly.dynamic.bundle </td><td class="confluenceTd"> 1.0.14 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.bundle-1.0.14-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.spifly.dynamic.framework.extension </td><td class="confluenceTd"> 1.0.14 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.dynamic.framework.extension-1.0.14-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.spifly.static.bundle </td><td class="confluenceTd"> 1.0.14 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.static.bundle-1.0.14.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.static.bundle-1.0.14-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.static.bundle-1.0.14-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.bundle-1.0.14-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.spifly.static.tool </td><td class="confluenceTd"> 1.0.14 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.static.tool-1.0.14.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.static.tool-1.0.14-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.static.tool-1.0.14-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.static.tool-1.0.14-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.spifly.weaver-internal </td><td class="confluenceTd"> 1.0.14 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.weaver-internal-1.0.14.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.weaver-internal-1.0.14-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.spifly.weaver-internal-1.0.14-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.spifly.weaver-internal-1.0.14-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 
 <tr><td class="confluenceTd"> subsystem </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
@@ -581,12 +590,12 @@
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.itests-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.itests-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.itests-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.itests-1.0.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.transaction.jdbc </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.jdbc-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-1.0.0.jar.sha1">sha1</A>)
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.transaction.jdbc </td><td class="confluenceTd"> 2.1.1 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.jdbc-2.1.1.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-2.1.1.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-2.1.1.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-2.1.1.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
  - 
 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.jdbc-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-1.0.0-source-release.zip.sha1">sha1</A>)
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.jdbc-2.1.1-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-2.1.1-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-2.1.1-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jdbc-2.1.1-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 <tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.transaction.jms </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.jms-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jms-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jms-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jms-1.0.0.jar.sha1">sha1</A>)
@@ -595,12 +604,12 @@
 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.jms-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jms-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jms-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.jms-1.0.0-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
-<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.transaction.manager </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.manager-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.0.0.jar.sha1">sha1</A>)
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.transaction.manager </td><td class="confluenceTd"> 1.2.1 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.manager-1.2.1.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
- - 
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.manager-1.2.1-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1-sources.jar.sha1">sha1</A>)
 </td><td class="confluenceTd">
-<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.manager-1.0.0-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.0.0-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.0.0-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.0.0-source-release.zip.sha1">sha1</A>)
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.manager-1.2.1-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.manager-1.2.1-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 <tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.transaction.testbundle </td><td class="confluenceTd"> 1.0.0 </td><td class="confluenceTd">
 <A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.transaction.testbundle-1.0.0.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.testbundle-1.0.0.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.testbundle-1.0.0.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.transaction.testbundle-1.0.0.jar.sha1">sha1</A>)
@@ -631,6 +640,22 @@
  - 
 </td><td class="confluenceTd">
  - 
+</td><td class="confluenceTd"></td></tr>
+
+<tr><td class="confluenceTd"> versioning </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.versioning.checker </td><td class="confluenceTd"> 0.3.1 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.versioning.checker-0.3.1.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.versioning.checker-0.3.1-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.versioning.checker-0.3.1-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.checker-0.3.1-source-release.zip.sha1">sha1</A>)
+</td><td class="confluenceTd"></td></tr>
+<tr><td class="confluenceTd"></td><td class="confluenceTd"> org.apache.aries.versioning.plugin </td><td class="confluenceTd"> 0.3.1 </td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.versioning.plugin-0.3.1.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.versioning.plugin-0.3.1-sources.jar">jar</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1-sources.jar.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1-sources.jar.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1-sources.jar.sha1">sha1</A>)
+</td><td class="confluenceTd">
+<A href="http://www.apache.org/dyn/closer.cgi/aries/org.apache.aries.versioning.plugin-0.3.1-source-release.zip">zip</A> (<A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1-source-release.zip.asc">asc</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1-source-release.zip.md5">md5</A>, <A href="http://www.apache.org/dist/aries/org.apache.aries.versioning.plugin-0.3.1-source-release.zip.sha1">sha1</A>)
 </td><td class="confluenceTd"></td></tr>
 
 <tr><td class="confluenceTd"> web </td><td class="confluenceTd"></td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"> - </td><td class="confluenceTd"></td></tr>
