@@ -1,0 +1,4 @@
+= Temporary auto-index page
+//:antora-indexer-log-lists:
+
+indexList::[]
