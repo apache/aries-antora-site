@@ -1,0 +1,59 @@
+:doctype: book
+
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+= July 2016 Board report
+
+Apache Aries delivers a set of pluggable Java components enabling an    enterprise OSGi application programming model.
+
+== Activity:
+
+* As a community we made 8 releases this quarter: one was the initial release of Aries Transaction Control, the were 4 function releases and 3 fix releases.
+* We welcome two new committers: Dominik Przybysz and Carlos Sierra Andrés.
+
+== Health report:
+
+* Mailing list discussion and project contributions continue to be healthy.
+
+== PMC changes:
+
+* Currently 37 PMC members.
+* No new PMC members added in the last 3 months
+* Last PMC addition was Christian Schneider on Fri Apr 10 2015
+
+== Committer base changes:
+
+* Currently 51 committers.
+* New commmitters:
+ ** Dominik Przybysz was added as a committer on Mon May 30 2016
+ ** Carlos Sierra Andrés was added as a committer on Fri Jun 17 2016
+
+== Releases:
+
+* Aries Remote Service Admin (aries-rsa) 1.8.0 2016-04-04
+* Aries Blueprint Core (blueprint-core) 1.6.1 2016-04-17
+* Aries Blueprint Core (blueprint-core) 1.6.2 2016-05-03
+* Aries Blueprint Maven Plugin 1.4.0 2016-05-07
+* Aries Transaction Enlisting JDBC Datasource 2.1.2 2016-06-02
+* Aries JPA 2.4.0 2016-06-14
+* Aries Transaction Control Service 0.0.1 2016-06-21
+* Aries Remote Service Admin (aries-rsa) 1.9.0 2016-07-12
+
+== Mailing list activity:
+
+* dev@aries.apache.org:
+ ** 134 subscribers (up 4 in the last 3 months):
+ ** 552 emails sent to list (399 in previous quarter)
+* user@aries.apache.org:
+ ** 241 subscribers (up 4 in the last 3 months):
+ ** 193 emails sent to list (36 in previous quarter)
+
+== JIRA activity:
+
+* 56 JIRA tickets created in the last 3 months
+* 46 JIRA tickets closed/resolved in the last 3 months

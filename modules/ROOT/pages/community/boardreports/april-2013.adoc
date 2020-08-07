@@ -1,0 +1,59 @@
+:doctype: book
+
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+= April 2013 Board report
+
+Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
+
+== Releases
+
+* Apache Aries Subsystem 1.0.0
+
+____
+This is the reference implementation of the OSGi Subsystem Service Specification which "provides a declarative model for defining resource collections, including bundles, and an API for installing and managing those collections of resources." See OSGi Enterprise Release 5 specification chapter 134.
+subsystem-api, subsystem-core, and subsystem-obr 1.0.0 were released.
+____
+
+* Apache Aries SPI-Fly 1.0.0
+
+____
+This is the reference implementation of the OSGi Service Loader Mediator Specification which "defines a mediator that ensures that the Java SE 6 Service Loader is useful in an OSGi Framework, allowing programs that leverage the Service Loader to be used in OSGi frameworks almost as-is." See OSGi Enterprise Release 5 specification chapter 133.
+All the spi-fly bundles were released.
+____
+
+* Apache Aries Blueprint no-OSGi 1.0.0
+
+____
+Provides the ability to use Blueprint Schema, xml and injection outside of the OSGi environment.
+____
+
+* Apache Aries Blueprint Web 1.0.0
+
+____
+Provides a web context listener to bootstrap the no-OSGi Blueprint container inside a WAR.
+____
+
+* Apache Aries JMX 1.1.0 & 1.1.1
+
+____
+This implements the OSGi JMX Management Model Specification and has been updated to V1.1 of that spec (which requires V1.2 of JMX).
+____
+
+* Apache Aries Semantic Versioning Checker 0.1.0
+
+____
+This compares the bytecode of a module's previous release, with that being built to determine whether the package and bundle versions are semantically versioned correctly.
+____
+
+##Project update
+
+No new committers since the last report.
+Contributions are coming through on the dev list through git pull requests and patches to JIRAs and we continue to have varied discussions across the variety of our sub components.
+
+There are no board level issues.

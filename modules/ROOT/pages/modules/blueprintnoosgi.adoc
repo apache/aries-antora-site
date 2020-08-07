@@ -1,0 +1,55 @@
+:doctype: book
+
+Title: BlueprintNoOSGi +++<a name="BlueprintNoOSGi">++++++</a>+++
+
+= Blueprint No-OSGi
+
+The Blueprint No-OSGi module makes it easy to use OSGi Blueprint as a dependency injection framework outside of OSGi containers such as inside any Servlet Engine.
+
+You can then use Blueprint as a small standards base alternative to the Spring Framework's XML dependency injection files.
+
++++<a name="BlueprintNoOSGi-HowToUse">++++++</a>+++
+
+== How to use Blueprint No-OSGi
+
+Just create the blueprint container giving the urls of the xml descriptors
+
+ BlueprintContainerImpl container = new BlueprintContainerImpl(classLoader, resourcePaths);
+
+You can then access the instantiated beans using the blueprint api
+
+ Foo foo = (Foo) container.getComponentInstance("foo");
+
+When you're done with the container, you need to destroy it
+
+ container.destroy();
+
++++<a name="BlueprintNoOSGi-Limitations">++++++</a>+++
+
+== Limitations
+
+The Blueprint No-OSGi module has limitations due to the fact that OSGi is not available.
+The use of +++<reference>++++++</reference>+++ and +++<reference-list>++++++</reference-list>+++ and +++<service>++++++</service>+++ elements are not supported.
+
++++<a name="BlueprintNoOSGi-Configuraiton">++++++</a>+++
+
+== Configuring blueprint through properties
+
+Blueprint beans can be configured using the variable substitutions.
+You need to declare the ext namespace and add the property placeholder bean in your blueprint xml
+
+ <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+            xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.2.0">
+ 	<ext:property-placeholder>
+     	<ext:default-properties>
+         	<ext:property name="myProperty" value="defaultValue" />
+     	</ext:default-properties>
+ 	</ext:property-placeholder>
+ 	...
+ 	<bean ...>
+ 		<property name="myProperty" value="${myProperty}" />
+ 	</bean>
+ </blueprint>
+
+Default values can be specified by passing a *Map<String,String>* object at container creation time.
+Note that the default values for system override (compared to standard blueprint use in OSGi) has been changed so that the properties passed to the container and system properties will override default values.

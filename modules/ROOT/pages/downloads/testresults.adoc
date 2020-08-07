@@ -1,0 +1,19 @@
+Title: TestResults
+
+These are the test results for the current Aries release.
+
+link:ct/1.0.0/org.osgi.test.cases.blueprint.html[Blueprint] - 7 failures
+
+link:ct/1.0.0/org.osgi.test.cases.blueprint.secure.html[Blueprint Secure] - 0 failures
+
+link:ct/1.0.0/org.osgi.test.cases.blueprint.java5.html[Blueprint Java 5] - 0 failures
+
+link:ct/1.0.0/org.osgi.test.cases.jmx.html[JMX] - 18  failures
+
+JPA - Not run
+
+link:ct/1.0.0/org.osgi.test.cases.jndi.html[JNDI] - 7 failures
+
+link:ct/1.0.0/org.osgi.test.cases.jndi.secure.html[JNDI Secure] - 0 failures
+
+link:ct/1.0.0/org.osgi.test.cases.transaction.html[Transaction] - 0 failures

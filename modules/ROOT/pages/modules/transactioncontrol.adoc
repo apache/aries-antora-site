@@ -1,0 +1,73 @@
+Title: Aries Transaction Control Service
+
+== OSGi Transaction Control Service
+
+This set of modules is an implementation of the proposed OSGi Transaction Control Service and related  services, such as JDBC and JPA resource providers.
+
+The Transaction Control Service (RFC-221) is an in-progress RFC publicly available from the OSGi  Alliance: https://github.com/osgi/design/blob/master/rfcs/rfc0221/rfc-0221-TransactionControl.pdf
+
+Given that the RFC is non-final the OSGi API declared in this project is subject to change at any time up  to its official release.
+Also the behaviour of this implementation may not always be up-to-date with the  latest wording in the RFC.
+The project maintainers will, however try to keep pace with the RFC, and to  ensure that the implementations are compliant with any OSGi specifications that result from the RFC.
+
+#Getting started
+
+The current released version of Transaction Control is 0.0.1, and it is available in https://mvnrepository.com/artifact/org.apache.aries.tx-control[Maven Central]
+
+If you're new to the Transaction Control service then we recommend that you read the  link:tx-control/quickstart.html[quickstart documentation first].
+
+More detailed documentation is available in the link:tx-control/index.html[Aries Transaction Control Project]
+
+== Why use the Transaction Control service?
+
+Simply put the Transaction Control service makes resource access easy!
+There's no need to worry about transaction lifecycle or closing connections, and there's built in support for useful features like  connection pooling.
+
+In addition to being simple the Transaction Control service also makes transaction management explicit.
+As a result it is easier to follow the transactions flowing throughout your code, and it protects you from the  link:tx-control/spring-tx.html[proxy problem] that declarative transaction strategies often suffer from.
+
+== Modules
+
+The following modules are available for use in OSGi
+
+. link:tx-control/localTransactions.html[tx-control-service-local] :- A purely local transaction control service implementation.
+This can be  used with any resource-local capable ResourceProvider
+. link:tx-control/xaTransactions.html[tx-control-service-xa] :- An XA-capable transaction control service implementation based on the  Geronimo Transaction Manager.
+This can be used with XA capable resources, or with local resources.
+Local resources will make use of the last-participant gambit.
+. link:tx-control/localJDBC.html[tx-control-provider-jdbc-local] :- A JDBC resource provider that provides connection pooling and that can integrate with local transactions.
+The JDBCConnectionProviderFactory service may be used  directly, or a service may be configured using the _org.apache.aries.tx.control.jdbc.local_ pid
+. link:tx-control/xaJDBC.html[tx-control-provider-jdbc-xa] :- A JDBC resource provider that provides connection pooling and  that can integrate with local or XA transactions.
+The JDBCConnectionProviderFactory service may be  used directly, or a service may be configured using the _org.apache.aries.tx.control.jdbc.xa_ pid
+. link:tx-control/localJPA.html[tx-control-provider-jpa-local] :- A JPA resource provider that can integrate with local transactions.
+The JPAEntityManagerProviderFactory service may be used directly, or a service may be configured using  the _org.apache.aries.tx.control.jpa.local_ pid.
+The implementation can also provide connection pooling  if required
+. link:tx-control/xaJPA.html[tx-control-provider-jpa-xa] :- A JDBC resource provider that integrates with XA transactions.
+The JPAEntityManagerProviderFactory service may be used directly, or a service may be configured using  the _org.apache.aries.tx.control.jpa.xa_ pid.
+The implementation can also provide connection pooling  if required
+
+=== Which modules should I use?
+
+If you wish to use entirely lightweight, resource-local transactions then it is best to pair the  tx-control-service-local and tx-control-provider-jdbc-local or tx-control-provider-jpa-local bundles.
+This will give transactional behaviour, but the result is _not guaranteed to be ACID if more than one  resource is used_.
+
+If ACID behaviour is needed across multiple resources then the tx-control-service-xa _must_ be used.
+This service also provides an XA enabled two-phase commit algorithm, and also allows for ACID  behaviour when _one_ of the resources only supports local transactions by using the last participant gambit.
+
+When using the XA Transaction control service then the tx-control-provider-jdbc-xa or  tx-control-provider-jpa-xa resource provider bundles should be used.
+
+*IT IS NOT RECOMMENDED* to use both tx-control-service-xa and tx-control-service-local at  the same time.
+This will be confusing, and may lead to problems if different parts of the application  bind to different service implementations.
+
+*NOTE:* There is also no reason to use the tx-control-provider-jdbc-local in addition to the  tx-control-provider-jdbc-xa service.
+Using both together is not typically harmful, however the  tx-control-provider-jdbc-xa bundle supports all of the same features as the  tx-control-provider-jdbc-local bundle.
+The same is *not* true of the JPA provider implementations.
+
+##Pre-release APIs
+
+As part of the Aries Transaction Control implementations pre-release versions of the OSGi Transaction Control API are provided.
+Rather than putting the API into the wrong package namespace, or outputting them at the wrong version, they will be exported with a mandatory attribute of `api.status=aries.prerelease`.
+
+By setting this attribute on their API imports users accept that the API may change without a change to the package version(s).
+These changes may, or may not, be binary compatible.
+Once the specification is final the attribute will be removed from the export.

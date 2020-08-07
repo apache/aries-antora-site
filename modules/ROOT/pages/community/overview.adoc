@@ -1,0 +1,20 @@
+:doctype: book
+
+Title: Community
+
++++<a name="Community-Community">++++++</a>+++
+
+= Community
+
+There are many ways to be part of the Apache Aries community.
+You will find suggestions under link:gettinginvolved.html[getting involved] .
+
+* link:gettinginvolved.html[Getting Involved]
+* link:people.html[Who we are]
+* link:mailinglists.html[Mailing lists]
+* http://blogs.apache.org/aries/[Aries Group Blog]
+
+You can also find us on IRC, attach freenode and join #apache-aries.
+Our channel is http://irclogs.dankulp.com/logs/irclogger_logs/apache-aries[being logged here].
+
+Our twitter tag is #apache-aries.

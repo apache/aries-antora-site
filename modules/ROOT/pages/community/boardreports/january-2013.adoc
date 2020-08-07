@@ -1,0 +1,47 @@
+:doctype: book
+
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+= January 2013 Board report
+
+Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
+
+##Project update
+
+* The SPI Fly component now fully implements the ServiceLoader Mediator Specification 1.0 from the OSGi Enterprise R5 spec (chapter 133).
+It is the Reference Implementation of this spec and passes all the OSGi TCK tests for it.
+* The JMX component in Aries now fully implements OSGi/JMX 1.1 from the OSGi Enterprise R5 spec (chapter 124).
+As of this version it is the Reference Implementation of this spec and passes all the OSGi TCK tests for JMX.
++
+Both components are available in SNAPSHOT versions in the Aries code base.
+They are waiting to be released.
+
+* The Semantic Versioning maven plugin component is now being used in our own builds - for modules that have 1.0 or above releases.
+For those modules, the bytecode output to the target directory will be checked for semantic changes since the last release.
+If the semantic version is incorrect, the build  will fail.
+* Apache Karaf 2.3.0 - one of our significant consumers - has moved up to include Apache Aries 1.0.0 releases.
+
+No releases this quarter.
+
+##Project Branding Board Report Checklist
+
+* Project Website Basics : homepage is aries.apache.org (done)
+* Project Naming And Descriptions : use proper Apache forms, describe product, etc.
+(pending)
+* Website Navigation Links : navbar links included, link to www.apache.org included (pending - feather link done)
+* Trademark Attributions : attribution for all ASF marks included in footers, etc.
+(pending)
+* Logos and Graphics : include TM, use consistent product logo on your site (pending)
+* Project Metadata : DOAP file checkedin and up to date (done)
+
+##Community update
+
+No new committers since the last report.
+The user/dev lists and JIRAs have had some varied discussions across the Aries modules.
+
+There are no board level issues.

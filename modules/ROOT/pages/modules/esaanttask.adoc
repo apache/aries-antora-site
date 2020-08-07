@@ -1,0 +1,45 @@
+:doctype: book
+
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+= ESA Ant Task
+
+This ant taskdef will help you to generate the Enterprise Subsystem Archive (*.esa) bundles, this could be used in traditional ant `taskdef` way in to the existing ant build scripts.
+
+= Getting Started
+
+Check out *Aries* project and from _esa-ant-task_ project run `mvn clean install`, add the generated jar from the `target` directory to your ant classpath  e.g.
+~/.ant/lib , or $ANT_HOME/lib etc.,
+
+The following example shows how this task could be integrated into an existing ant build script,
+
+  <project name="An ant example for esa-ant" default="default">
+
+            <description>
+                         A simple build file to demonstrate the use of esa-ant task
+              </description>
+
+             <taskdef name="esa" classname="org.apache.aries.ant.taskdefs.EsaTask" />
+
+                	<target name="default" description="builds esa with supplied SUBSYSTEM.MF">
+             		<esa destfile="demo.esa" symbolicname="test-esa" manifest="${basedir}/SUBSYSTEM.MF">
+             			<fileset dir="/tmp/esa-ant-demo">
+             				<include name="*.jar" />
+             			</fileset>
+             		</esa>
+             </target>
+
+             <target name="default2" description="generates the SUSBYSTEM.MF based on esa contents">
+             		<esa destfile="demo2.esa" symbolicname="test-esa" generatemanifest="true">
+             			<fileset dir="/tmp/esa-ant-demo">
+             				<include name="*.jar" />
+             			</fileset>
+             		</esa>
+             </target>
+
+  </project>

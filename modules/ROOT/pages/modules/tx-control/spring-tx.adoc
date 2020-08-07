@@ -1,0 +1,212 @@
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+#Migrating from declarative transactions
+
+Many popular application containers, such as Spring or Java EE, offer declarative transaction management.
+Specifically, the container offers a model where transaction boundaries are defined using metadata, usually as annotations on public methods.
+
+== The Basics
+
+A typical transactional method in a declarative model might look like this:
+
+ @Transactional
+ public Long getCustomerId(String email) {
+     // Some business logic in here...
+ }
+
+Using Transaction control the same thing would look like:
+
+ public Long getCustomerId(String email) {
+     txControl.required(() -> {
+             // Some business logic in here...
+         });
+ }
+
+The main change is that the transactions have moved from being metadata defined, and started by the container, to being code defined and started by the Transaction Control service.
+This gives several significant advantages.
+
+== The Scoping Problem
+
+When using method-level metadata to define transaction boundaries it is not possible to manage transactions on a finer level.
+This makes it difficult to suspend or nest transactions unless you create a new method to hold the extra logic.
+
+=== A Simple Example
+
+If we want to write an audit message it usually needs to occur in a new transaction, as typically it should persist even if the overall action fails.
+In a declarative model this requires a separate method with a new boundary, even if the audit function is a private implementation detail of the Object.
+
+....
+@Transactional
+public void changePassword(String email, String password) {
+
+    auditPasswordChangeAttempt(email);
+
+    // Some business logic in here...
+}
+
+@Transactional(REQUIRES_NEW)
+public void auditPasswordChangeAttempt(String email) {
+    // One line to write the audit message
+}
+....
+
+With transaction control there is no need to create a method just for the internal audit function.
+
+@Transactional     public void changePassword(String email, String password) {
+
+....
+    txControl.required(() -> {
+
+            txControl.requiresNew(() -> {
+                    // One line to write the audit message
+                });
+
+            // Some business logic in here...
+        });
+}
+....
+
+== The Proxy Problem
+
+The Proxy problem is a rather insidious issue that affects declarative transactions, and it is a result of how they are implemented.
+If bytecode weaving is used to directly add transactional behaviour to an object then it will always work the same way.
+Most solutions, however, do not use bytecode weaving, but instead use a proxy pattern.
+When a call is made on the proxy the proxy will perform any necessary transaction management before and after delegating the call to the real object.
+This works well, except if the object makes any internal method calls.
+
+In the general case proxying is unsafe because you cannot rely on a method's metadata to decide what  transaction state will exist when it is called!
+
+=== Examples of the Proxy Problem
+
+The following examples are all based on real code migrated from Spring to Transaction Control.
+
+==== A Simple Example
+
+....
+AbstractPersistenceDataManagerImpl {
+
+    @Transactional(propagation = SUPPORTS, readOnly = true)
+    public <T> T search(Class<T> entityClass, Object pk, Object params) {
+        return (T) find(entityClass, pk, params);
+    }
+
+    @Transactional(readOnly = true)
+    public UniWorksSuperDBEntity find(Class entityClass, Object pk, Object params) {
+        return (UniWorksSuperDBEntity) em.find(entityClass, pk);
+    }
+}
+....
+
+In this case the `search` method does not require a transaction, but delegates to the  `find` method which does.
+If proxying is used then the `find` method will sometimes run in a transaction and sometimes not.
+On the other hand, if weaving is used then the `find` method will _always_ run under a transaction This may seem innocuous, but it  can cause big problems.
+We always want to be certain about where a transaction will start and stop!
+
+==== Extending the Simple Example
+
+The following type is part of the same project as the previous example, and interacts with it.
+
+....
+AbstractDataManager {
+
+    @Transactional(propagation = NOT_SUPPORTED, readOnly = true)
+    public UniWorksSuperDTO search(Object pk, Object params) {
+
+        UniWorksSuperDBEntity entity = persistenceDataManager
+                .search(getEntityClass(), createNewPKFromDTOPK(pk), null);
+
+        loadLinkedTablesTop(entity, params);
+    }
+
+    protected final void loadLinkedTablesTop(UniWorksSuperDBEntity entity, Object params) {
+        loadLinkedTables(entity, params);
+    }
+
+    @Transactional(readOnly = true)
+    public void loadLinkedTables(UniWorksSuperDBEntity entity, Object params) {
+        loadLinkedTablesGenerated(entity, params);
+        loadLinkedTransients(entity, params);
+    }
+}
+....
+
+Now lets imagine that a call comes in to the `search` method of this class from some client.
+
+===== Proxied
+
+. The container proxy for the data manager halts any ongoing transaction due to the  `NOT_SUPPORTED` metadata, entering an undefined scope.
+. The code calls search on the persistenceDataManager
+. The container proxy for the persistence data manager does not start or stop a transaction due to the `SUPPORTS` scope.
+. The code calls `find` on the persistenceDataManager, but without touching the proxy.
+. The code accesses the entity outside a transaction
+. The code returns the entity, and no transaction change is necessary
+. The code calls loadLinkedTablesTop, which calls loadLinkedTables.
+No proxy is touched therefore no  transaction is started.
+. The Tables are populated with data from the entity.
+Lazy loading is possible as the entity is still attached.
+
+===== Woven
+
+. The weaving code for the data manager halts any ongoing transaction due to the  `NOT_SUPPORTED` metadata, entering an undefined scope.
+. The code calls search on the persistenceDataManager
+. The weaving code for the persistence data manager does not start or stop a transaction due to the `SUPPORTS` scope.
+. The code calls `find` on the persistenceDataManager, at this point the weaving code starts a transaction.
+. The code accesses the entity inside the transaction
+. The code returns the entity, and the transaction completes.
+This detaches the entity and prevents lazy loading.
+. The code calls loadLinkedTablesTop, which calls loadLinkedTables.
+The weaving code starts a new  transaction.
+. The Code fails as the entity is not able to access its lazily loaded data.
+
+=== Strategies for Managing Transaction States
+
+Ensuring consistency is vital when writing code that uses transactions.
+It is therefore usually a good idea to  ensure that any reused code is captured in a private method, and that it asserts the correct transaction state before it begins.
+
+....
+AbstractDataManager {
+
+    public UniWorksSuperDTO search(Object pk, Object params) {
+
+        txControl.build().readOnly().notSupported(() -> {
+                UniWorksSuperDBEntity entity = persistenceDataManager
+                        .search(getEntityClass(), createNewPKFromDTOPK(pk), null);
+
+                loadLinkedTablesTop(entity, params);
+                return entity;
+        }
+    }
+
+    protected final void loadLinkedTablesTop(UniWorksSuperDBEntity entity, Object params) {
+        loadLinkedTables(entity, params);
+    }
+
+    public void loadLinkedTables(UniWorksSuperDBEntity entity, Object params) {
+        txControl.build().readOnly().required(() -> {
+                loadLinkedTables(entity, params);
+            });
+    }
+
+    /**
+     * This method does not need a transaction, but does need a scope
+     */
+    private void loadLinkedTablesInternal(UniWorksSuperDBEntity entity, Object params) {
+        assert txControl.activeScope();
+
+        loadLinkedTablesGenerated(entity, params);
+        loadLinkedTransients(entity, params);
+    }
+}
+....
+
+Writing code in this way ensures that even when a mixture of transactional and non transactional actions are needed, there will always be a consistent expectation of the transaction scope in each method.
+
+== Exception management
+
+The final significant difference between declarative models and the Transaction Control Service is in how much work your application code needs to do when managing exceptions.
+More detail about managing exceptions link:exceptionManagement.html[is available here].

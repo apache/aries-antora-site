@@ -1,0 +1,7 @@
+:doctype: book
+
+Title: Articles +++<a name="Articles-Articles">++++++</a>+++
+
+= Articles
+
+* http://www.ibm.com/developerworks/opensource/library/os-osgiblueprint/index.html[Jarek Gawor's article on Blueprint]

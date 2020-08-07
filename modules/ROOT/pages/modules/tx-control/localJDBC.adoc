@@ -1,0 +1,176 @@
+:doctype: book
+
+Title: Local JDBC Configuration Provider Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+#Aries OSGi Transaction Control JDBC Provider (Local)
+
+The Aries Local JDBC provider implementation is available at the following maven coordinates:
+
+     <dependency>
+         <groupId>org.apache.aries.tx-control</groupId>
+         <artifactId>tx-control-provider-jdbc-local</artifactId>
+         <version>${aries.tx.control.version}</version>
+     </dependency>
+
+This module is a prototype implementation of the OSGi Transaction Control JDBC resource provider.
+It supports Local transactions only.
+The provider also has built-in support for Database connection pooling using Hikari CP.
+
+== When should I use this module?
+
+If you wish to use entirely lightweight, resource-local transactions then it is best to pair this module  with the Aries Local Transaction Control service bundle.
+
+If two-phase commit is needed across multiple resources then an XA capable Resource Provider should be  used instead if possible.
+
+##Quick Start
+
+A configured JDBCConnectionProvider can be created quickly using Configuration Admin and the OSGi JDBC Service.
+
+. Find and install a JDBC Service implementation for your chosen database (e.g.
+the org.h2 bundle for H2)
+. Create a factory configuration using the factory pid `org.apache.aries.tx.control.jdbc.local`  and add the following properties:
+ ** _osgi.jdbc.driver.class_ :- The driver class name (e.g.
+org.h2.Driver)
+ ** _url_ :- The JDBC URL to use to connect to the database
+
+When the DataSourceFactory for the named `osgi.jdbc.driver.class` becomes available the Local JDBC Resource Provider will create a JDBCConnectionProvider and register it in the OSGi service registry.
+All configuration properties (apart from the database password) will be registered as  properties of the JDBCConnectionProvider service.
+These properties can be used to select a ResourceProvider if more than one is present in the Service Registry.
+
+= Using the Local JDBC Provider bundle (details)
+
+This Resource Provider is used in conjunction with a TransactionControl service to provide scoped  access to a JDBC connection with support for Local Transactions.
+
+When using local transactions the JDBC API is used to commit or rollback the Database connection.
+There is no need for client code to call commit, rollback, or close on the connection.
+
+== Creating a resource programmatically
+
+Preparing a resource for use is very simple.
+Create a `JDBCConnectionProvider` using the  `JDBCConnectionProviderFactory` service from the service registry, then connect that  provider to a `TransactionControl` service.
+This will return a thread-safe JDBC connection  that can then be used in any ongoing scoped work.
+
+The normal inputs to a JDBCConnectionProviderFactory are a DataSourceFactory, some JDBC  properties to connect to the database with, and some properties to control the resource provider  (such as connection pooling).
+
+###Declarative Services Example
+
+....
+@Component
+public class TransactionalJDBCComponent {
+    @Reference
+    TransactionControl txControl;
+
+    @Reference
+    DataSourceFactory dsf;
+
+    @Reference
+    JDBCConnectionProviderFactory providerFactory;
+
+    Connection conn;
+
+    @Activate
+    void start(Config config) {
+
+        Properties jdbcProps = new Properties();
+        jdbcProps.put(JDBC_URL, config.url());
+        jdbcProps.put(JDBC_USER, config.user());
+        jdbcProps.put(JDBC_PASSWORD, config._password());
+
+        Map<String, Object> providerProps = new HashMap<>();
+        providerProps.put(MAX_POOL_SIZE, 8);
+
+        conn = providerFactory.getProviderFor(dsf,
+        jdbcProps, providerProps).getResource(txControl);
+    }
+
+    public void findUserName(String id) {
+        txControl.required(() -> {
+                // Use the connection in here
+            });
+    }
+}
+....
+
+If a JDBC DataSource/Driver is already configured then it can be passed in to the  JDBCConnectionProviderFactory instead of a DataSourceFactory and JDBC configuration.
+
+== Creating a resource using a factory configuration
+
+Whilst it is simple to use a `JDBCConnectionProviderFactory` it does require some  lifecycle code to be written.
+It is therefore possible to directly create JDBC resources using factory  configurations.
+When created, the factory service will listen for an applicable DataSourceFactory.
+Once a suitable DataSourceFactory is available then a JDBCConnectionProvider service will be published.
+
+Configuration properties (except the JDBC password) are set as service properties for the registered  `JDBCConnectionProvider`.
+These properties may therefore be used in filters to select  a particular provider.
+
+###Declarative Services Example
+
+....
+@Component
+public class TransactionalJDBCComponent {
+
+    @Reference
+    TransactionControl control;
+
+    Connection conn;
+
+    @Reference(target="(dataSourceName=myDataSource)")
+    void setProvider(JDBCConnectionProvider provider) {
+         conn = provider.getResource(control);
+    }
+
+    public void findUserName(String id) {
+        control.required(() -> {
+                // Use the connection in here
+            });
+    }
+}
+....
+
+The factory pid is _org.apache.aries.tx.control.jdbc.local_ and it may use the following properties (all optional):
+
+=== Resource Provider properties
+
+* _aries.dsf.target.filter_ : The target filter to use when searching for a DataSourceFactory.
+If not specified then _osgi.jdbc.driver.class_ must be specified.
+* _aries.jdbc.property.names_ : The names of the properties to pass to the DataSourceFactory when creating the JDBC resources
+* _osgi.jdbc.driver.class_ : Used to locate the DataSourceFactory service if the _aries.dsf.target.filter_ is not set.
+* _osgi.local.enabled_ : Defaults to true.
+If false then resource creation will fail
+* _osgi.xa.enabled_ : Defaults to false.
+If true then resource creation will fail
+* _osgi.connection.pooling.enabled_ : Defaults to true.
+If true then the Database connections will be pooled.
+* _osgi.connection.max_ : Defaults to 10.
+The maximum number of connections that should be kept in the pool
+* _osgi.connection.min_ : Defaults to 10.
+The minimum number of connections that should be kept in the pool
+* _osgi.connection.timeout_ : Defaults to 30,000 (30 seconds).
+The maximum time in milliseconds to block when waiting for a database connection
+* _osgi.idle.timeout_ : Defaults to 180,000 (3 minutes).
+The time in milliseconds before an idle connection is eligible to be closed.
+* _osgi.connection.timeout_ : Defaults to 10,800,000 (3 hours).
+The maximum time in milliseconds that a connection may remain open before being closed.
+* _osgi.use.driver_ : Defaults to false.
+If true then use the createDriver method to connect to the database.
+
+=== JDBC properties
+
+The following properties will automatically be passed to the DataSourceFactory if they are present.
+The list of properties may be overridden using the _aries.jdbc.property.names_ property if necessary.
+
+* _databaseName_ : The name of the database
+* _dataSourceName_ : The name of the dataSource that will be created
+* _description_ : A description of the dataSource being created
+* _networkProtocol_ : The network protocol to use.
+* _portNumber_ : The port number to use
+* _roleName_ : The name of the JDBC role
+* _serverName_ : The name of the database server
+* _url_ : The JDBC url to use (often used instead of other properties such as _serverName_, _portNumber_ and _databaseName_).
+* _user_ : The JDBC user
+* _password_ : The JDBC password

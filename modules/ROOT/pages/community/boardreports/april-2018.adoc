@@ -1,0 +1,57 @@
+:doctype: book
+
+Title: Apache Board report for Apache Aries, January 2018 Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+= April 2018 Board report
+
+== Description:
+
+* Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
+
+== Issues:
+
+* No issues to report.
+
+== Activity:
+
+* As a community we made 5 releases in the last reporting period around updates to Aries Blueprint with a mix of bug fixes and functional enhancements.
+
+== Health report:
+
+* Mailing list activity up slightly on the last reporting period.
+Stable.
+
+== PMC changes:
+
+* Currently 38 PMC members.
+* No new PMC members added in the last 3 months
+* Last PMC addition was Dominik Przybysz on Tue May 30 2017
+
+== Committer base changes:
+
+* Currently 55 committers.
+* No new committers added in the last 3 months
+* Last committer addition was Tom De Wolf at Wed May 03 2017
+
+== Releases:
+
+* Aries Blueprint Parser (blueprint-parser) 1.5.0 on 2018-02-14
+* Aries Blueprint Core (blueprint-core) 1.9.0 on 2018-02-14
+* Aries Blueprint CM (blueprint-cm) 1.2.0 on 2018-02-14
+* Aries Blueprint Spring (blueprint-spring) 0.6.0 on 2018-02-14
+* Aries Blueprint Spring Extender (blueprint-spring-extender) 0.4.0 on 2018-02-14
+
+== /dist/ errors: 195
+
+* In progress - all are old releases but some are still the most recent.
+We've requested the signer to extend their key expiration and will review the list to see which can be archived.
+
+== JIRA activity:
+
+* 24 JIRA tickets created in the last 3 months
+* 72 JIRA tickets closed/resolved in the last 3 months

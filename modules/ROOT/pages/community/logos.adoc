@@ -1,0 +1,15 @@
+:doctype: book
+
+Title: Apache Aries Logos
+
++++<a name="Community-Logos">++++++</a>+++
+
+= Logos
+
+There are a number of logos that you can use if you have embedded Apache Aries in your software.
+
+image::/images/logos/aries-inside-black.png[Apache Aries inside black square]
+
+image::/images/logos/aries-inside-blue.png[Apache Aries inside blue square]
+
+image::/images/logos/aries-inside-blue-oval.png[Apache Aries inside blue oval]

@@ -1,0 +1,118 @@
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+#Verifying Release Artifacts This page provides some help for anyone who wants to verify release candidate artifacts so they feel they can genuinely vote on the related vote thread on the dev list.
+It is not intended to be exhaustive instructions.
+It's a list of things people have generally found to be useful to do when checking the artifacts.
+
+It is essential that the signatures and hashsums are good.
+Please do read http://httpd.apache.org/dev/verification.html[Verifying Apache HTTP Server Releases] for information on why you should verify releases..
+
+These instructions have been rolled up into a script, which you can run instead.
+Cut and paste the following:
+
+ wget --no-check-certificate https://svn.apache.org/repos/asf/aries/scripts/verify_staged_release.sh
+ chmod a+x verify_staged_release.sh
+ ./verify_staged_release.sh [RELEASE-NUM] mytempdirectory 2>&1 | tee verifyresults.txt
+ grep FAIL verifyresults.txt
+ grep ERROR verifyresults.txt
+
+##Have I got the KEYS?
+
+To verify Aries release artifacts you need the public keys for the Aries committers.
+The master KEYS file is in Subversion.
+The easiest way of getting it from the command line is to non-recursively check-out the files in the top level of the Aries location using:
+
+ svn checkout -N https://svn.apache.org/repos/asf/aries
+
+You then need to import the keys into PGP:
+
+ gpg --import KEYS
+
+##Download artifacts
+
+For each 'useful' file there are several others created to help you determine whether it's genuine.
+The PGP signature .asc file shows who created the 'useful' file.
+Then there are checksum files (.md5 and .sha1) for both the 'useful' file and the .asc file.
+To download the content for the repository you're verifying try this:
+
+ wget -e robots=off --no-check-certificate -np -r -nH https://repository.apache.org/content/repositories/orgapachearies-xxx/org/apache/aries/
+
+where xxx is the number of the repository you're verifying.
+
+wget will download the files into a directory called content.
+The following use of the 'find' command assumes the downloads are in the 'content' directory.
+
+##Verify the artifacts
+
+Ensure the checksums are right for the released files.
+Copy/paste this into the command line:
+
+ for i in `find content -type f | egrep -v '.md5$|.sha1$|index.html|maven-metadata.xml'`
+ do
+     mymd5=`md5sum $i|cut -c1-32`
+     repomd5=`cat $i.md5`
+     if [ "$mymd5" == "$repomd5" ]
+     then
+         echo "GOOD MD5 for $i"
+     else
+         echo "*BAD MD5 for $i *****"
+     fi
+ done
+
+(On the Mac, use `md5 -q` instead of `md5sum` and the cut.)
+
+Do something similar for sha1:
+
+ for i in `find content -type f | egrep -v '.md5$|.sha1$|index.html|maven-metadata.xml'`
+ do
+     mysha1=`sha1sum $i|cut -c1-40`
+     reposha1=`cat $i.sha1`
+     if [ "$mysha1" == "$reposha1" ]
+     then
+         echo "GOOD SHA1 for $i"
+     else
+         echo "*BAD SHA1 for $i *****"
+     fi
+ done
+
+(On the Mac, use `openssl sha1` instead of `sha1sum`.)
+
+Ensure the PGP signature files are good.
+See the http://httpd.apache.org/dev/verification.html#Validating[Validating section of Verifying Apache HTTP Server Releases] for background on validating the authenticity of a key.
+
+ for i in `find content -type f | egrep '.asc$'`
+ do
+     gpg $i
+ done
+
+You shouldn't get any errors.
+
+##Build the code
+
+It's a good idea to check the source release zip builds.
+Unzip it first:
+
+ find . -name *-source-release.zip |xargs -n 1 unzip
+
+Go into each subdir created and run:
+
+ mvn clean install
+
+##RAT check
+
+It's also a good idea to run the http://incubator.apache.org/rat/[Apache RAT (Release Audit Tool)].
+The Aries POMs are set up so you can do:
+
+ mvn -fn -Prat
+
+NOTE: currently RAT fails due to the generated DEPENDENCIES file not containing a license.
+It's safe to ignore this as the file is generated.
+So in order to ensure RAT checks all subdirectories, use the -fn.
+Then check any failures with
+
+ find . -name \*.rat | xargs grep \!\?\?

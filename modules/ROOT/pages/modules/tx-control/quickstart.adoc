@@ -1,0 +1,108 @@
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+#Getting started with the Transaction Control Service
+
+To make use of scoped resources and transactions using the transaction control service you need two things:
+
+* A `org.osgi.service.transaction.control.TransactionControl` implementation  (found in the service registry).
+You may want to start with link:localTransactions.html[local transactions].
+* A `org.osgi.service.transaction.control.ResourceProvider` for each of the  resources that you want to use.
+You may want to start with link:localJDBC.html[local JDBC].
+
+##Scoping Work using TransactionControl
+
+The Transaction Control Service defines three different scopes:
+
+* Unscoped - There is no scope associated with the current thread
+* _No Transaction Scope_ - There is a scope associated with the current thread, but no ongoing transaction
+* _Transactional Scope_ - There is an ongoing transaction associated with the current thread
+
+Scoped resources have different behaviours in each of these three scopes:
+
+* Unscoped - The resource is generally not usable and will throw exceptions
+* _No Transaction_ Scope - The same physical resource will be used throughout the scope,  and will be automatically tidied up at the end of the scope (e.g.
+closed or returned to a pool)
+* _Transactional Scope_ - The same physical resource will be used throughout the scope, will be  automatically committed or rolled back up at the end of the transaction, and then tidied up afterwards
+
+###Starting and Finishing scopes
+
+A scope is defined using a piece of work wrapped in a `Callable`.
+This means that it is lambda-friendly.
+
+ Integer result = txControl.required(() -> {
+         //Work goes in here
+         return 42;
+     });
+
+The scope starts immediately before the work is executed, and finishes immediately afterwards.
+The  `required` and `requiresNew` methods can be used to ensure that a  _Transactional_ scope has been started.
+The `supports` and `notSupported` methods can be used to ensure that a _No Transaction_ scope has been started.
+
+Simple scope management is perfect in most situations, but you may also wish to read about link:advancedScopes.html[more advanced scope control techniques] or link:exceptionManagement.html[exception management] once you've mastered the basics.
+There are also some things to consider if you're link:spring-tx.html[migrating from Spring or Java EE].
+
+##Accessing Resources
+
+A `ResourceProvider` is a generic factory for scoped resources.
+Typically you will use a more  specific interface for type safety.
+For example the Transaction Control specification defines  `JDBCConnectionProvider` and `JPAEntityManagerProvider` interfaces.
+If needed you can link:advancedResourceProviders.html[make your own ResourceProvider].
+
+To create your scoped resource you make one call to `getResource` passing in the  `TransactionControl` service that the resource should integrate with.
+The returned object is thread-safe, and can be cached for use in any scope.
+
+###Declarative Services Example
+
+The following component provides read and write access using JDBC to a list of messages created by a user.
+The transactionality and lifecycle of the database resources is automatically managed.
+
+....
+@Component
+public class MyDaoImpl implements MyDao {
+
+    @Reference
+    TransactionControl control;
+
+    Connection dbConn;
+
+    @Reference
+    void setResource(JDBCConnectionProvder provider) {
+        dbConn = provider.getResource(control);
+    }
+
+    @Override
+    public void saveMessage(String user, String message) {
+        txControl.required(() -> {
+                PreparedStatement ps = connection.prepareStatement(
+                        "Insert into MESSAGES values ( ?, ? )");
+                ps.setString(1, user);
+                ps.setString(2, message);
+                return ps.executeUpdate();
+            });
+    }
+
+    @Override
+    public void getMessagesForUser(String user) {
+        return txControl.supports(() -> {
+                PreparedStatement ps = connection.prepareStatement(
+                        "Select MESSAGE FROM MESSAGES WHERE USER = ?");
+                ps.setString(1, user);
+
+                List<String> result = new ArrayList<>();
+
+                ResultSet rs = ps.executeQuery();
+
+                while(rs.next()) {
+                    result.add(rs.getString(1));
+                }
+
+                return result;
+            });
+    }
+}
+....

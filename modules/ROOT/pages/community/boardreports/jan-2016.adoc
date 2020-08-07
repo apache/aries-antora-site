@@ -1,0 +1,62 @@
+:doctype: book
+
+Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+= January 2016 Board report
+
+Apache Aries delivers a set of pluggable Java components enabling an    enterprise OSGi application programming model.
+
+== Issues:
+
+* There are no issues requiring board attention at this time
+
+== Activity:
+
+* 12 releases since the last report in November.
+* Aries added to the Sonar analysis on analysis.apache.org
+* A good flow of contributions via GitHub.
+
+== PMC changes:
+
+* Currently 38 PMC members.
+* No new PMC members added in the last 3 months
+* Last PMC addition was Jean-Baptiste Onofre on Fri Apr 10 2015
+
+== Committer base changes:
+
+* Currently 49 committers.
+* Sam Bratton was added as a committer on Mon Dec 21 2015
+
+== Releases:
+
+* Aries Subsystems Bundle (subsystem-bundle) 2.0.8 2015-11-30
+* Aries Subsystem API (subsystem-api) 2.0.8 2015-11-30
+* Aries Subsystem Core (subsystem-core) 2.0.8 2015-11-30
+* Aries SPI-Fly (spi-fly) 1.0.8 2015-12-12
+* Aries JPA (jpa) 2.3.0 2015-12-16
+* Aries Transaction Blueprint (transaction-blueprint) 2.1.0 2015-12-16
+* Aries Blueprint Maven Plugin (blueprint-maven-plugin) 1.2.0 2015-12-16
+* Aries Blueprint Parser (blueprint-parser) 1.4.0 2015-12-18
+* Aries Blueprint Core (blueprint-core) 1.5.0 2015-12-18
+* Aries Blueprint Spring Support (blueprint-spring) 0.1.0 2015-12-18
+* Aries Blueprint Spring  Extender Support (blueprint-spring-extender) 0.1.0 2015-12-18
+* Aries JPA Container 1.0.3 2015-12-21
+
+== Mailing list activity:
+
+* dev@aries.apache.org:
+ ** 136 subscribers (up 4 in the last 3 months):
+ ** 824 emails sent to list (533 in previous quarter)
+* user@aries.apache.org:
+ ** 233 subscribers (down -1 in the last 3 months):
+ ** 98 emails sent to list (29 in previous quarter)
+
+== JIRA activity:
+
+* 72 JIRA tickets created in the last 3 months
+* 74 JIRA tickets closed/resolved in the last 3 months

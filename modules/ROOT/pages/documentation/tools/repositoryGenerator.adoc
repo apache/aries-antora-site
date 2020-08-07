@@ -1,0 +1,33 @@
+Title: Repository Generator Tool Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
+See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
+The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
+you may not use this file except in compliance            with the License.
+You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
+See the License for the            specific language governing permissions and limitations            under the License.
+
+== Repository Generation Tool##
+
+It is a command line tool to generate a repository xml for a list of bundles.
+The instruction is as follows.
+
+. Obtain the tool + a) Build the tool from Aries trunk.
++  The easiest way to obtain the tool is to download the aries trunk, navigate to the  '_application\->application-tooling-repository-generator_', and then run _mvn install_, copy all jars from the the target directory.
++  +
+. Execute the command line tool +
++
+____
+_java -jar org.apache.aries.application.tooling.repository.generator-xxx.jar [repository xml location] url1 [url2...]_
+____
+
+NOTE: The text under the [] is optional.
+If [repository xml loaction] is absent, the repository.xml file will be generated under the current directory.
+
+The xxx is the maven version of bundle org.apache.aries.application.tooling.repository.generator, e.g.
+0.1.0-SNAPSHOT.
++ The file: protocol - url can be a file or a directory, all valid bundles under that directory or subdirectory will be included in the repository xml (no need to list every single jar).
++  + Following is an example of generating a repository xml for all the bundles under the directory of  c:\temp\test\jars recursively and a bundle located under http://aaa.com/public/Aries/obr/test.b1/test.b1_1.0.0.jar.
+The repository xml is saved under c:\temp\test with the file name of repo.xml.
+
+____
+_java -jar org.apache.aries.application.tooling.repository.generator-0.1.0-SNAPSHOT.jar c:\temp\test\repo.xml file:///C:/temp/test/jars http://aaa.com/public/Aries/obr/test.b1/test.b1_1.0.0.jar_
+____
