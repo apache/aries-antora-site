@@ -1,8 +1,4 @@
-:doctype: book
-
-Title: GreeterTutorial +++<a name="GreeterTutorial-TheGreeterTutorial">++++++</a>+++
-
-= The Greeter Tutorial
+= Greeter: Another Blueprint Tutorial
 
 This tutorial takes a slightly longer look at Blueprint and works through the process of converting an OSGi project to use use Blueprint.
 It is aimed at people who already have some familiarity with OSGi.

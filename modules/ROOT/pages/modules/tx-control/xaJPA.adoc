@@ -1,13 +1,4 @@
-:doctype: book
-
-Title: Aries Transaction Control JPA Provider (XA) Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
-
-#Aries Transaction Control JPA Provider (XA)
+= Aries Transaction Control JPA Provider (XA)
 
 The Aries XA JPA provider implementation is available at the following maven coordinates:
 
@@ -21,7 +12,7 @@ This module is a prototype implementation of the OSGi Transaction Control JPA re
 It supports JPA 2.1, and is tested against Hibernate 5.0.9 and EclipseLink 2.6.0.
 It also supports JPA 2.0, and is tested against OpenJPA 2.4.1.
 
-##Quick Start
+== Quick Start
 
 A configured `JPAEntityManagerProvider` can be created quickly using Configuration Admin, the OSGi JPA Service, and the OSGi JDBC Service.
 
@@ -48,11 +39,11 @@ If two-phase commit is needed across multiple resources then the `tx-control-ser
 
 Note that when using the JDBC Service to obtain a database connection this implementation must be able to create an XADataSource.
 
-= Using the JPA Provider bundle
+== Using the JPA Provider bundle
 
 This Resource Provider is used in conjunction with an XA TransactionControl service to provide scoped  access to a JPA EntityManager.
 
-== Prerequisites
+=== Prerequisites
 
 In order to use scoped JPA access the runtime must contain a JPA provider (for example Hibernate),  an implementation of the OSGi JPA service (e.g.
 Aries JPA), and a persistence bundle.

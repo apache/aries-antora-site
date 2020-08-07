@@ -1,10 +1,6 @@
-:doctype: book
+= Coding guidelines
 
-Title: Coding guidelines
-
-+++<a name="BuildingAries-CodeStyle">++++++</a>+++
-
-= Code Style
+== Code Style
 
 There are not yet complete code formatters and checkstyle rules for aries.
 In the mean time you can set these rules.
@@ -12,13 +8,8 @@ In the mean time you can set these rules.
 * 4 spaces instead of tabs
 * Line width 130 characters
 
-+++<a name="MavenbestpracticeinAries-Assembledbestpracticenotes">++++++</a>+++
+== Maven best practice in Aries development
 
-= Maven best practice in Aries development
-
-+++<a name="MavenbestpracticeinAries-Overallstructure">++++++</a>+++
-
-[discrete]
 === Overall structure
 
 The Aries project is a collection of loosely couple bundles, therefore it must be possible to build each bundle on its own.
@@ -31,9 +22,6 @@ This implies:
 . Each bundle has an SCM element in its top level pom.
 . Bundles do not (except samples) have sub-modules.
 
-+++<a name="MavenbestpracticeinAries-Goodpracticeinthepom">++++++</a>+++
-
-[discrete]
 === Good practice in the pom
 
 . Alphabetic ordering in dependency management is helpful
@@ -41,9 +29,6 @@ This implies:
 . Commenting in platform dependencies, see samples assembly projects.
 . Use ${project.version} _not_ $\{version} for Maven 3 compatibility.
 
-+++<a name="MavenbestpracticeinAries-GroupandArtifactnames">++++++</a>+++
-
-[discrete]
 === Group and Artifact names
 
 . The Bundle Symbolic Name is explicitly set to the Maven artifactId.

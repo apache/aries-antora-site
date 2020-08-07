@@ -1,7 +1,3 @@
-:doctype: book
-
-Title: Applications +++<a name="Applications-AriesApplications">++++++</a>+++
-
 = Aries Applications
 
 An Aries application is a collection of one or more OSGi modules that together provide a coherent business function.
@@ -15,8 +11,6 @@ it may export one or more of the services offered by its contained modules to ot
 With the isolation runtime, each Aries application runs in its own isolated OSGi framework instance with its own OSGi service registry.
 Bundles in one Aries application cannot see bundles, services, or packages that are defined in another OSGi application, unless the bundles, services, or packages are explicitly shared by both applications.
 An Aries application can also load packages and consume OSGi services from a shared bundle space, that is, the OSGi framework instance that is the parent of all the isolated framework instances of the OSGi applications.
-
-+++<a name="Applications-StructureofanAriesapplication">++++++</a>+++
 
 == Structure of an Aries application
 
@@ -32,8 +26,6 @@ Application metadata, APPLICATION.MF,  stored in the .eba file defines the isola
 An Aries applicaiton can also use metadata to permit some of its constituent bundles to be shared.
 Sharing in this way can reduce the memory and resource requirements of a system.
 Shared bundles must be provided by reference rather than contained directly in an application.
-
-+++<a name="Applications-AriesApplicationManifest">++++++</a>+++
 
 == Aries Application Manifest
 
@@ -72,8 +64,6 @@ You can use it to restrict the level at which sharing is possible.
 For example, you can ensure that an application uses the same bundle for package imports that it was tested with.
 Alternatively, you can ensure that two applications use the same bundle for package imports.
 By setting the restriction at application level, the bundle can remain flexible.
-
-+++<a name="Applications-AriesDeploymentManifest">++++++</a>+++
 
 == Aries Deployment Manifest
 

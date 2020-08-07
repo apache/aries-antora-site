@@ -1,52 +1,35 @@
-:doctype: book
-
-Title: ReleaseNotes
-
-+++<a name="ReleaseNotes-ReleaseNotes">++++++</a>+++
-
 = Release Notes
 
-+++<a name="ReleaseNotes-NewandNoteworthy">++++++</a>+++
-
-[discrete]
-=== New and Noteworthy
+== New and Noteworthy
 
 Welcome to the 0.3 release.
 
 * Compliance tests (TBD)
 * https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310981&version=12315310[JIRA Release Notes]
 
-+++<a name="ReleaseNotes-NewComponents">++++++</a>+++
+== New Components
 
-[discrete]
-=== New Components
-
-[discrete]
-==== Proxy
+=== Proxy
 
 The proxy component was added in 0.3.
 Proxy allows you to generate proxyies based on interfaces or classes, eg object damping.
 Proxy provides a service to both blueprint and JNDI.
 
-[discrete]
-=== Major updates
+== Major updates
 
-#### Application.
+=== Application
+
 The application component in 0.3 provides a runtime in which OSGi applications are isolated from each other, and the provisioning support that it requires.
 These changes mean that the 0.3 release of aplication is significantly different  from the 0.2 release.
 
 The resolver also supports external bundle repositories in 0.3.
 
-[discrete]
-==== Blueprint
+=== Blueprint
 
 Blueprint namespace support has been added.
 This makes it possible to look up Blueprint components from Web or  Persistence bundles.
 
-+++<a name="ReleaseNotes-Modulesinthisrelease">++++++</a>+++
-
-[discrete]
-=== Modules in this release
+== Modules in this release
 
 * testsupport
 * util
@@ -61,35 +44,20 @@ This makes it possible to look up Blueprint components from Web or  Persistence 
 * web
 * samples
 
-+++<a name="ReleaseNotes-Newsamples">++++++</a>+++
-
-[discrete]
 === New samples
 
 No new samples but we changed the Blog Sample and Aries Trader samples so that no database initialisation is required prior to running the sample.
 
-+++<a name="ReleaseNotes-NewTutorials">++++++</a>+++
-
-[discrete]
 === New Tutorials
 
 None
 
-+++<a name="ReleaseNotes-APIbreaking">++++++</a>+++
-
-[discrete]
 === API breaking
 
 None.
 
-+++<a name="ReleaseNotes-KnownIssues">++++++</a>+++
-
-[discrete]
 === Known Issues
 
 None.
 
-+++<a name="ReleaseNotes-Importantchangestoconsiderwhenupgrading">++++++</a>+++
-
-[discrete]
 === Important changes to consider when upgrading

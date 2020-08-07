@@ -1,7 +1,3 @@
-:doctype: book
-
-Title: Remote Service Admin
-
 = RSA (Remote Service Admin)
 
 The Aries Remote Service Admin (RSA) project allows to transparently use OSGi services for remote communication.

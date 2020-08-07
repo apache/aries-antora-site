@@ -1,14 +1,6 @@
-:doctype: book
-
-Title: BlogSample-0.1-incubating +++<a name="BlogSample-0.1-incubating-TheBlogSample-version0.1-incubating.">++++++</a>+++
-
 = The Blog Sample - version 0.1-incubating.
 
-+++<a name="BlogSample-0.1-incubating-RunningtheBlogSample">++++++</a>+++
-
 == Running the Blog Sample
-
-+++<a name="BlogSample-0.1-incubating-Prereqs">++++++</a>+++
 
 === Prereqs
 
@@ -24,8 +16,6 @@ See https://issues.apache.org/jira/browse/ARIES-317[ARIES-317] . For the present
 
 '''
 
-+++<a name="BlogSample-0.1-incubating-CreatetheOSGiplatformfortheBlogsample">++++++</a>+++
-
 === Create the OSGi platform for the Blog sample
 
 Download and unzip the source zip for the link:aries:downloads.html[latest release]  of Aries Samples and build the blog-assembly module:
@@ -34,8 +24,6 @@ Download and unzip the source zip for the link:aries:downloads.html[latest relea
  mvn install
 
 This procedure will pull in the binaries from the latest release and its dependencies.
-
-+++<a name="BlogSample-0.1-incubating-RunningtheBlogsample">++++++</a>+++
 
 === Running the Blog sample
 
@@ -60,8 +48,6 @@ Point your browser to http://localhost:8080/org.apache.aries.samples.blog.web/
 
 If you subsequently delete the .eba from the load directory the application will be uninstalled.
 
-+++<a name="BlogSample-0.1-incubating-RunningthesampleusingaJPApersistencelayer">++++++</a>+++
-
 === Running the sample using a JPA persistence layer
 
 The first blog sample application was written to use a JDBC persistence layer.
@@ -71,16 +57,12 @@ To run the blog sample which uses the JPA persistence layer, start the OSGi fram
 
 Finally, after typing 'refresh' at the OSGi console, point your browser at http://localhost:8080/org.apache.aries.samples.blog.web/ . You should see something that looks precisely the same as the blog sample running with the JDBC persistence layer, but this time running using the JPA persistence layer.
 
-+++<a name="BlogSample-0.1-incubating-Usingthelatest,unreleasedcode">++++++</a>+++
-
 == Using the latest, unreleased code
 
 If you prefer to use the very latest code from subversion, checkout and build the Aries trunk by following the link:aries:buildingaries.html[Building Aries instructions] .
-
-+++<a name="BlogSample-0.1-incubating-AbouttheBlogsample">++++++</a>+++
 
 == About the Blog sample
 
 The blog sample components can be visualised like this:
 
-image::BlogSample.png[bs]
+image::downloads/archived/0.1-incubating/BlogSample.png[bs]

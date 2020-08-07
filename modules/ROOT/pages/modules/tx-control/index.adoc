@@ -1,45 +1,38 @@
-Title: The Aries Transaction Control Service Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
+= The Transaction Control service
 
-#The Transaction Control service
-
-If you're new to the Transaction Control service then we suggest that you read the link:quickstart.html[Quick Start Page] first.
+If you're new to the Transaction Control service then we suggest that you read the xref:modules/tx-control/quickstart.adoc[Quick Start Page] first.
 
 == Why use the Transaction Control service?
 
 Simply put the Transaction Control service makes resource access easy!
 There's no need to worry about transaction lifecycle or closing connections, and there's built in support for useful features like  connection pooling.
 
-###The Aries Transaction Control implementations
+=== The Aries Transaction Control implementations
 
 These modules provide implementations of the TransactionControl service
 
-* link:localTransactions.html[The Local Transaction Control Service]
-* link:xaTransactions[The XA Transaction Control Service and Last Participant support]
+* xref:modules/tx-control/localTransactions.adoc[The Local Transaction Control Service]
+* xref:modules/tx-control/xaTransactions[The XA Transaction Control Service and Last Participant support]
 
-###Configuring JDBC access
+=== Configuring JDBC access
 
 These modules provide portable JDBC resource providers with built in connection pooling and  transactional resource access
 
-* link:localJDBC.html[JDBC with Local Transactions]
-* link:xaJDBC.html[JDBC with XA Transactions]
+* xref:modules/tx-control/localJDBC.adoc[JDBC with Local Transactions]
+* xref:modules/tx-control/xaJDBC.adoc[JDBC with XA Transactions]
 
-###Configuring JPA access
+=== Configuring JPA access
 
 These modules provide portable JPA resource providers for transactional resource access
 
-* link:localJPA.html[JPA with Local Transactions]
-* link:xaJPA.html[JPA with XA Transactions]
+* xref:modules/tx-control/localJPA.adoc[JPA with Local Transactions]
+* xref:modules/tx-control/xaJPA.adoc[JPA with XA Transactions]
 
-###Advanced topics
+=== Advanced topics
 
-* link:coordinator.html[Using the Coordinator to optimise Transactions]
-* link:lastResourceGambit.html[Making use of the Last Resource Gambit]
-* link:advancedResourceProviders.html[Custom Resource Providers]
-* link:advancedScopes.html[Advanced Scope control]
-* link:exceptionManagement.html[Exception Management]
-* link:spring-tx.html[Migrating from Spring and Java EE Declarative Transactions]
+* xref:modules/tx-control/coordinator.adoc[Using the Coordinator to optimise Transactions]
+* xref:modules/tx-control/lastResourceGambit.adoc[Making use of the Last Resource Gambit]
+* xref:modules/tx-control/advancedResourceProviders.adoc[Custom Resource Providers]
+* xref:modules/tx-control/advancedScopes.adoc[Advanced Scope control]
+* xref:modules/tx-control/exceptionManagement.adoc[Exception Management]
+* xref:modules/tx-control/spring-tx.adoc[Migrating from Spring and Java EE Declarative Transactions]

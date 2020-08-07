@@ -1,12 +1,4 @@
-:doctype: book
-
-Title: Blog Sample
-
-+++<a name="BlogSample-TheBlogSample">++++++</a>+++
-
 = The Blog Sample
-
-+++<a name="BlogSample-RunningtheBlogSample">++++++</a>+++
 
 == Running the Blog Sample
 
@@ -19,8 +11,6 @@ Instructions for older releases can be found link:/downloads/archived-releases.h
 
 '''
 
-+++<a name="BlogSample-CreatetheOSGiplatformfortheBlogsample">++++++</a>+++
-
 === Create the OSGi platform for the Blog sample
 
 Download and build the development stream of Aries, see link:/development/buildingaries.html[here]
@@ -31,7 +21,6 @@ Download and build the development stream of Aries, see link:/development/buildi
 The full Aries build builds the blog sample by default, all of the platform pre-reqs will be available in the target directory.
 Create the load directory.
 This used to be done automatically by Felix file install, but in more recent versions yo have to create your own.
-+++<a name="BlogSample-RunningtheBlogsample">++++++</a>+++
 
 === Running the Blog sample
 
@@ -51,8 +40,6 @@ Point your browser to http://localhost:8080/blog/
 
 If you subsequently delete the .eba from the load directory the application will be uninstalled.
 
-+++<a name="BlogSample-RunningthesampleusingaJPApersistencelayer">++++++</a>+++
-
 === Running the sample using a JPA persistence layer
 
 The first blog sample application was written to use a JDBC persistence layer.
@@ -66,10 +53,8 @@ into the load directory.
 
 Finally, after typing 'refresh' at the OSGi console, point your browser at http://localhost:8080/blog/ . You should see something that looks precisely the same as the blog sample running with the JDBC persistence layer, but this time running using the JPA persistence layer.
 
-+++<a name="BlogSample-AbouttheBlogsample">++++++</a>+++
-
 == About the Blog sample
 
 The blog sample components can be visualised like this:
 
-image::BlogSample.png[bs]
+image::modules/samples/BlogSample.png[bs]

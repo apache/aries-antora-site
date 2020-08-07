@@ -1,12 +1,6 @@
-:doctype: book
-
-Title: Integrators Guide
-
 = Integrators guide
 
 This page describes things that should be considered when integrating the Apache Aries project into a runtime.
-
-+++<a name="IntegratorsGuide-InstallingApplications">++++++</a>+++
 
 == Installing Applications
 
@@ -26,26 +20,18 @@ Storing the AriesApplication will store an application archive.
 Once the AriesApplication has been created it can be installed into a framework using the install method of the AriesApplicationManager.
 The install method returns an ApplicationContext which represents the runtime state of the application.
 
-+++<a name="IntegratorsGuide-StartingandStoppinganApplication">++++++</a>+++
-
 == Starting and Stopping an Application
 
 The application can be started and stopped by calling the start and stop methods on the ApplicationContext.
-
-+++<a name="IntegratorsGuide-UninstallinganApplication">++++++</a>+++
 
 == Uninstalling an Application
 
 The application can be uninstalled by passing the ApplicationContext to the uninstall method on the AriesApplicationManager.
 
-+++<a name="IntegratorsGuide-FelixFileInstall">++++++</a>+++
-
 == Felix FileInstall
 
 The aries application project contains an example application installer that hooks into the felix file install project.
 It automatically installs and uninstalls .eba archives found by FileInstall.
-
-+++<a name="IntegratorsGuide-BundleConverters">++++++</a>+++
 
 == BundleConverters
 
@@ -54,8 +40,6 @@ The interface is provided an IFile indicating the artefact in the application an
 If the artefact can be converted then an InputStream is returned that contains the bytes for the bundle.
 
 The Aries application project contains a converter for turning war files into web application bundles.
-
-+++<a name="IntegratorsGuide-AriesApplicationResolvers">++++++</a>+++
 
 == AriesApplicationResolvers
 
@@ -70,8 +54,6 @@ This resolver assumes that all the required bundles are contained by value in th
 This resolver makes use of OBR to resolve the applications
 
 The AriesApplicationManager service picks up any resolver in the service registry, so alternatives can be provided if the default resolvers do not provide the desired behaviour.
-
-+++<a name="IntegratorsGuide-ApplicationContextManagers">++++++</a>+++
 
 == ApplicationContextManagers
 

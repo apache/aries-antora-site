@@ -1,7 +1,3 @@
-:doctype: book
-
-Title: JPAProject
-
 = Aries JPA
 
 The Aries JPA project allows allows to use container managed persistence in OSGi in a modular and clean way.
@@ -125,7 +121,7 @@ Typically this namespace is used together with the transaction namespace to also
 
 For more details see the https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/[Aries JPA blueprint example].
 
-= Creation of a JPA project using Maven
+== Creation of a JPA project using Maven
 
 The first step consist in to create a maven module and make the following modifications to allow to deploy  it as OSGI bundle on the platform and reference where the persistence XML file must loaded by the classpath to  allow to the JPA container to configure the project accordingly.
 

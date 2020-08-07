@@ -1,19 +1,12 @@
-:doctype: book
+= Asynchronous Services
 
-Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
+== Introduction
 
-Title: Asynchronous Services
-
-#Introduction The R6 OSGi specifications include support for Asynchronous programming using OSGi services.
+The R6 OSGi specifications include support for Asynchronous programming using OSGi services.
 Apache Aries aims to provide small, compliant implementations of these specifications to enable asynchronous programming in enterprise applications.
 The two key specifications are OSGi Promises and the Async service.
 
-#OSGi Promises
+== OSGi Promises
 
 One of the fundamental pieces of an asynchronous programming system is the _Promise_.
 A Promise is a holder type that  represents an asynchronous calculation or computation.
@@ -25,7 +18,7 @@ OSGi promises fix this problem by defining a Promise interface which allows the 
 These callbacks are lambda friendly SAM types, but the Promise API itself has no dependencies on Java 8.
 The Aries version (org.apache.aries.async.promise.api) has a minimum requirement of JDK 6.
 
-##Creating OSGi Promises
+=== Creating OSGi Promises
 
 Creating a Promise is easy.
 The _org.osgi.util.promise.Deferred_ type is a factory for a single promise, and can also be used to resolve or fail the promise:
@@ -63,7 +56,7 @@ Promise<Integer> p = deferred.getPromise();
 ...
 ....
 
-##Using OSGi Promises
+=== Using OSGi Promises
 
 Once you have a promise, what do you do with it?
 It's easy to get the value from a promise using the _getValue()_ method, or you can use the _getFailure()_ method to get the failure cause.
@@ -100,7 +93,7 @@ The overall completion of this chain is represented by a third promise, returned
 . The promise returned by the success callback completes successfully
 . The "chained" promise completes with the same value as the promise from step 4.
 
-##Other Promise behaviours
+=== Other Promise behaviours
 
 As well as simple callbacks Promises also provide advanced mapping and recovery features.
 For example a promise can be wrapped so that if the original work fails then a new value can be supplied using a recovery function.
@@ -116,7 +109,7 @@ The main problem with this is that long running service calls can cause applicat
 
 The Async service is designed to take away the boilerplate code needed to invoke a service asynchronously, and to convert any synchronous API into an asynchronous API, returning promises instead of values.
 
-##Using the Async service
+== Using the Async service
 
 The Async service is available in the service registry and is very easy to use - first we need to mediate the service.
 Mediating is a bit like creating a mock object, the mediator records method calls made against it so that they can be  transformed into asynchronous calls.
@@ -152,7 +145,7 @@ These sorts of calls are called "fire and forget" calls, and are also supported 
 
 The execute method still returns a promise, however this promise represents whether the fire and forget call successfully started or not, not whether it has completed.
 
-= Getting Started
+== Getting Started
 
 Releases of the Async implementation can be found in Maven Central http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.aries.async%22[in the org.apache.aries.async group].
 http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache.aries.async%22[This bundle] provides a convenient all-in-one download.

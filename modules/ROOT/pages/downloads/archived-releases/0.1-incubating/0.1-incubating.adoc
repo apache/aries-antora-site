@@ -1,7 +1,3 @@
-:doctype: book
-
-Title: 0.1-incubating +++<a name="0.1-incubating-ApacheAries0.1-incubatingrelease">++++++</a>+++
-
 = Apache Aries 0.1-incubating release
 
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
@@ -11,10 +7,8 @@ Otherwise, the releases below are available for download.
 These http://www.apache.org/dist/incubator/aries/KEYS[KEYS]  can be used to verify the release archive.
 All Apache Aries products are distributed under the terms of The Apache Software License (version 2.0).
 See the LICENSE file included in each distribution for additional license information.
-+++<a name="0.1-incubating-Samples">++++++</a>+++
 
-[discrete]
-=== Samples
+== Samples
 
 The easiest way to use the samples is to download the source zip, navigate to the appropriate 'assembly' module and run mvn install to download all the released  binary artifacts.
 Alternatively you can build the entire source.+++<table class="confluenceTable">++++++<tr>++++++<th class="confluenceTh">+++Sub project+++</th>++++++<th class="confluenceTh">+++Module+++</th>++++++<th class="confluenceTh">+++Version+++</th>++++++<th class="confluenceTh">+++Download+++</th>++++++<th class="confluenceTh">+++Comments+++</th>++++++</tr>+++
@@ -30,8 +24,9 @@ Alternatively you can build the entire source.+++<table class="confluenceTable">
 +++<tr>++++++<td class="confluenceTd">++++++</td>++++++<td class="confluenceTd">+++Blueprint HelloWorld+++</td>++++++<td class="confluenceTd">+++0.1+++</td>++++++<td class="confluenceTd">+++\-+++</td>++++++<td class="confluenceTd">++++++</td>++++++</tr>+++
 +++<tr>++++++<td class="confluenceTd">++++++</td>++++++<td class="confluenceTd">+++Blueprint ID Verifier+++</td>++++++<td class="confluenceTd">+++0.1+++</td>++++++<td class="confluenceTd">+++\-+++</td>++++++<td class="confluenceTd">++++++</td>++++++</tr>+++
 </table>
-+++<a name="0.1-incubating-Projectcomponents">++++++</a>+++
-### Project components
+
+== Project components
+
 +++<table class="confluenceTable">++++++<tr>++++++<th class="confluenceTh">+++Sub project+++</th>++++++<th class="confluenceTh">+++Module+++</th>++++++<th class="confluenceTh">+++Version+++</th>++++++<th class="confluenceTh">+++Binary+++</th>++++++<th class="confluenceTh">+++Source+++</th>++++++</tr>+++
 +++<tr>++++++<td class="confluenceTd">+++Application+++</td>++++++<td class="confluenceTd">++++++</td>++++++<td class="confluenceTd">+++0.1+++</td>++++++<td class="confluenceTd">+++\-+++</td>++++++<td class="confluenceTd">++++++<a href="http://archive.apache.org/dist/incubator/aries/application-0.1-incubating-source-release.zip">+++zip+++</a>+++ (+++<a href="http://archive.apache.org/dist/incubator/aries/application-0.1-incubating-source-release.zip.asc">+++asc+++</a>+++, +++<a href="http://archive.apache.org/dist/incubator/aries/application-0.1-incubating-source-release.zip.md5">+++md5+++</a>+++, +++<a href="http://archive.apache.org/dist/incubator/aries/application-0.1-incubating-source-release.zip.sha1">+++sha1+++</a>+++)
 </th></tr>

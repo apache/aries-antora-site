@@ -1,9 +1,3 @@
-:doctype: book
-
-Title: Apache Aries Logos
-
-+++<a name="Community-Logos">++++++</a>+++
-
 = Logos
 
 There are a number of logos that you can use if you have embedded Apache Aries in your software.

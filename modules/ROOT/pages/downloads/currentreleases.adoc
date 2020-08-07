@@ -1,10 +1,6 @@
-:doctype: book
+= Downloads
 
-Title: Downloads
-
-+++<a name="Downloads-ApacheAriesDownloads">++++++</a>+++
-
-= General information
+== General information
 
 Apache Aries modules are distributed in source and binary form.
 These http://www.apache.org/dist/aries/KEYS[KEYS] can be used to verify the releases.
@@ -12,14 +8,14 @@ These http://www.apache.org/dist/aries/KEYS[KEYS] can be used to verify the rele
 All Apache Aries products are distributed under the terms of The Apache Software License (version 2.0).
 See the LICENSE file included in each distribution for additional license information.
 
-= Official downloads
+== Official downloads
 
 The official downloads for Apache projects are hosted at Apache.
 For maven users we recommend to simply refer to the  individual maven artifacts instead of downloading by hand.
 
 http://www.apache.org/dist/aries/[Official Aries Downloads]
 
-= Maven central
+== Maven central
 
 All Aries modules are released to http://search.maven.org[maven central].
 
@@ -166,16 +162,13 @@ The Aries subprojects can be found at these locations
 | g%3Aorg.apache.aries.web)
 |===
 
-= Apache Karaf
+== Apache Karaf
 
 http://karaf.apache.org[Apache Karaf] is a modular OSGi server that integrates very well with Aries.
 Most aries subprojects can be installed into Apache Karaf using features.
 For example *feature:install jndi* installs the Aries jndi modules.
 
-+++<a name="Samples">++++++</a>+++
-
-[discrete]
-=== Samples
+== Samples
 
 The easiest way to use the samples is to download the source zip, navigate to the appropriate 'assembly' module and run mvn install to download all the released  binary artifacts.
 Alternatively you can build the entire source.

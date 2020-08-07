@@ -1,4 +1,4 @@
-Title: People
+= People
 
 This is a list of the people involved in the Apache Aries Incubator and their roles.+++<table>++++++<tr>++++++<th>+++Name+++</th>++++++<th>+++Organization+++</th>++++++<th>+++PMC Member+++</th>++++++</tr>+++
 +++<tr>++++++<td>+++Adam Wojtuniak+++</td>++++++<td>+++Ericsson+++</td>++++++<td>++++++</td>++++++</tr>+++

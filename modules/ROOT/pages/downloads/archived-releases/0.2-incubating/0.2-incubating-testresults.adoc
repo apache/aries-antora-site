@@ -1,8 +1,8 @@
-Title: TestResults
+= TestResults
 
 These are the test results for the current Aries release.
 
-=== Blueprint
+== Blueprint
 
 * link:/downloads/ct/0.2-incubating/org.osgi.test.cases.blueprint.html[Blueprint]
 * link:/downloads/ct/0.2-incubating/org.osgi.test.cases.blueprint.java5.html[Blueprint-java5]

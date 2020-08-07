@@ -1,13 +1,13 @@
-Title: SPI Fly
-
-#SPI Fly#
+= SPI Fly
 
 This page describes the SPI Fly component.
 The SPI Fly component is aimed at providing OSGi support for JRE SPI mechanisms, including the usage of +++<tt>+++java.util.ServiceLoader+++</tt>+++,  +++<tt>+++META-INF/services+++</tt>+++ and similar methods.
 
 SPI Fly is the Reference Implementation of the OSGi ServiceLoader Mediator specification, chapter 133 in the http://www.osgi.org/Download/Release5[OSGi  Enterprise Specification], available from version 5.
 
-##The Problem## Java's +++<tt>+++java.util.ServiceLoader.load()+++</tt>+++, other similar methods such as  +++<tt>+++sun.misc.Service.providers()+++</tt>+++ and also other static finder methods such as the  +++<tt>+++FactoryFinder.find()+++</tt>+++ methods try to locate 'service' implementations by looking for  resources in the META-INF/services directory of all the jars visible to the  *_Thread Context ClassLoader_* (TCCL).
+== The Problem
+
+Java's +++<tt>+++java.util.ServiceLoader.load()+++</tt>+++, other similar methods such as  +++<tt>+++sun.misc.Service.providers()+++</tt>+++ and also other static finder methods such as the  +++<tt>+++FactoryFinder.find()+++</tt>+++ methods try to locate 'service' implementations by looking for  resources in the META-INF/services directory of all the jars visible to the  *_Thread Context ClassLoader_* (TCCL).
 
 There are a number of issues with the above mechanisms when used in OSGi:
 
@@ -21,7 +21,9 @@ The java.util.ServiceLoader API does not provide a mechanism to inform service c
 
 The SPI Fly project makes it possible to use existing code that uses  +++<tt>+++ServiceLoader.load()+++</tt>+++ and similar mechanisms under OSGi.
 
-##Making it Work## In order to make ServiceLoader (and other similar SPI or plugin mechanisms) work under OSGi, calling code can be woven to set the TCCL to the appropriate providers very briefly, only for the duration of the call.
+== Making it Work
+
+In order to make ServiceLoader (and other similar SPI or plugin mechanisms) work under OSGi, calling code can be woven to set the TCCL to the appropriate providers very briefly, only for the duration of the call.
 The SPI Fly component does precisely this.
 
 SPI Fly supports two modes of operation:
@@ -36,9 +38,9 @@ Additionally, services found in the META-INF/services location in opted-in bundl
 This is supported in both the spec-compliant as  well as the proprietary configuration modes.
 Each such service is registered in the OSGi Service Registry with  the _serviceloader.mediator_ service registration property set.
 
-##Getting SPI Fly##
+== Getting SPI Fly
 
-###+++<a id="releases">++++++</a>+++Releases### The latest release of the SPI-Fly components http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.aries.spifly%22[can be found on Maven Central].
+<<releases>> The latest release of the SPI-Fly components http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.aries.spifly%22[can be found on Maven Central].
 It can be obtained from Maven  Central using the links below.
 
 To use SPI Fly you need to decide whether to use the dynamic or static weaving version.
@@ -62,14 +64,21 @@ Dependencies:
 
 * http://repo1.maven.org/maven2/org/apache/aries/org.apache.aries.util/1.1.1/org.apache.aries.util-1.1.1.jar[Aries Util 1.1.1]
 
-###Building the code### The code can be found in http://svn.apache.org/repos/asf/aries/trunk/spi-fly.
+=== Building the code
+
+The code can be found in http://svn.apache.org/repos/asf/aries/trunk/spi-fly.
 
 To build, use Maven 3.x and run +++<tt>+++mvn install+++</tt>+++
 
-#+++<a id="specconf">++++++</a>+++Configuration: OSGi Spec-compliant# All the details surrounding this type of configuration are covered in the  http://www.osgi.org/Download/Release5[OSGi Enterprise Specification] (from version 5) chapter 133.
+[specconf]
+=== Configuration: OSGi Spec-compliant
+
+All the details surrounding this type of configuration are covered in the  http://www.osgi.org/Download/Release5[OSGi Enterprise Specification] (from version 5) chapter 133.
 This section provides a short overview.
 
-##Providers## SPI provider bundles opt in to being registered by specifying a requirement on the  +++<tt>+++osgi.serviceloader.registrar+++</tt>+++ extender.
+==== Providers
+
+SPI provider bundles opt in to being registered by specifying a requirement on the  +++<tt>+++osgi.serviceloader.registrar+++</tt>+++ extender.
 This is done by adding the following Bundle Manifest header.
 Without this they will not be considered by SPI Fly:
 
@@ -85,7 +94,7 @@ While this example omits it, it is advisable to specify +++<tt>+++uses+++</tt>++
 
 See the <<examples,+++<tt>+++spi-fly-example-provider2-bundle+++</tt>+++>> for an example of a spec-compliant provider.
 
-##Consumers##
+==== Consumers
 
 An SPI consumer (i.e.
 a bundle using the +++<tt>+++java.util.ServiceLoader.load()+++</tt>+++ API) needs to specify required capabilities in the Required-Capability Manifest header.
@@ -105,11 +114,16 @@ filter:="(osgi.extender=osgi.serviceloader.processor)"+++</tt>+++
 
 See the <<examples,+++<tt>+++spi-fly-example-client2-bundle+++</tt>+++>> for an example of a spec-compliant consumer.
 
-#+++<a id="specificconf">++++++</a>+++Configuration: SPI Fly-specific# This section describes how to use SPI Fly's proprietary configuration mechanism.
+[specificconf]
+=== Configuration: SPI Fly-specific
+
+This section describes how to use SPI Fly's proprietary configuration mechanism.
 It provides more features, but doesn't provide the  portability that spec-compliance configuration gives.
 If you  are only using SPI Fly with +++<tt>+++java.util.ServiceLoader+++</tt>+++ or you are only using the provided  services through the OSGi Service Registry, then consider using the <<specconf,spec-compliant>> configuration for portability.
 
-##Providers## First for all, SPI Fly needs to be made aware of any bundles that provide the services.
+==== Providers
+
+First for all, SPI Fly needs to be made aware of any bundles that provide the services.
 These bundles are made visible through the TCCL for the duration of the +++<tt>+++ServiceLoader.load()+++</tt>+++ (or similar) call.
 
 To mark a bundle as a Provider, set the *+++<tt>+++SPI-Provider+++</tt>+++* manifest header:
@@ -123,7 +137,9 @@ The +++<tt>+++SPI-Provider+++</tt>+++ header can either be set in the providing 
 
 See the <<examples,+++<tt>+++spi-fly-example-provider1-bundle+++</tt>+++>> for an example of a provider using this type of configuration.
 
-##Consumers## Service consumers also need to opt in to the process.
+==== Consumers
+
+Service consumers also need to opt in to the process.
 
 To specify a consumer, add the +++<tt>+++SPI-Consumer+++</tt>+++ manifest header to the client bundle.
 This header  will opt-in the bundle to the weaving process where for the duration of the specified call the TCCL will be set to the matching provider bundle(s).
@@ -136,7 +152,9 @@ Some example SPI-Consumer headers are:
 
 See the <<examples,+++<tt>+++spi-fly-example-client1-bundle+++</tt>+++>> for an example of a consumer using this type of configuration.
 
-###Special Cases### SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain implementations.
+=== Special Cases
+
+SPI Fly can be used for most SPI provider/lookup systems that use the TCCL pattern to obtain implementations.
 However, some cases some _special treatment_ is needed.
 This special treatment is often needed when the API itself does not  match the name of the resources in META-INF/services, java.util.ServiceLoader is such a case, however SPI-Fly has built-in knowledge of ServiceLoader.
 Known APIs that require special treatment are listed below:
@@ -152,7 +170,9 @@ If you have an OSGi  4.3 (or higher) compliant framework that supports WeavingHo
 
 If you have an pre-4.3 OSGi framework or don't want to use bytecode weaving at runtime you  can use the static weaving approach.
 
-##Use with Dynamic Weaving## Install and start the <<releases,+++<tt>+++org.apache.aries.spifly.dynamic.bundle+++</tt>+++>> into the system.
+=== Use with Dynamic Weaving
+
+Install and start the <<releases,+++<tt>+++org.apache.aries.spifly.dynamic.bundle+++</tt>+++>> into the system.
 This bundle  has a dependency on +++<tt>+++http://search.maven.org/#artifactdetails%7Corg.ow2.asm%7Casm-all%7C5.0.4%7Cjar[org.objectweb.asm]+++</tt>+++ version 4.0 or newer and on the Aries  Util bundle.
 
  g! lb
@@ -167,11 +187,15 @@ This bundle  has a dependency on +++<tt>+++http://search.maven.org/#artifactdeta
 Note that, as with any OSGi Bundle that uses the OSGi 4.3 WeavingHooks, the weaver bundle (+++<tt>+++org.apache.aries.spifly.dynamic.bundle+++</tt>+++ in the SPI Fly case) needs to  be active before any bundles that need to be dynamically woven.
 OSGi Start Levels can provide a mechanism to control this.
 
-##Use with Static Weaving## For static use, you need to weave the client bundle before installing it into the system.
+=== Use with Static Weaving
+
+For static use, you need to weave the client bundle before installing it into the system.
 The modification changes the byte code around +++<tt>+++java.util.ServiceLoader.load()+++</tt>+++ or other calls in the  bundle and inserts calls to set the correct ThreadContextClassLoader around it.
 Provider bundles are still handled dynamically.
 
-###To statically weave a bundle### The easiest way to invoke the static weaver is to take the <<releases,+++<tt>+++org.apache.aries.spifly.static.tool+++</tt>+++>> jar with dependencies.
+==== To statically weave a bundle
+
+The easiest way to invoke the static weaver is to take the <<releases,+++<tt>+++org.apache.aries.spifly.static.tool+++</tt>+++>> jar with dependencies.
 
 Then run the static tool on any bundle that needs processing:
 
@@ -194,7 +218,9 @@ At runtime, install the <<releases,+++<tt>+++org.apache.aries.spifly.static.bund
 
 Then install and start the statically woven bundle into the system.
 
-##+++<a id="examples">++++++</a>+++Examples## The +++<tt>+++spi-fly-examples+++</tt>+++ directory contains a number of example bundles that can be  used for testing or experimenting.
+== Examples
+
+The +++<tt>+++spi-fly-examples+++</tt>+++ directory contains a number of example bundles that can be  used for testing or experimenting.
 
 The following modules can be found in this directory:
 
@@ -226,7 +252,9 @@ The client bundle contains Foo.doit() and in there calls Thread.getContextClassL
 The TCCL has visibility of the provider bundle because both bundles have the appropriate values set in the SPI-Provider and SPI-Consumer headers.
 Source http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-resource-provider-bundle/[here] and http://svn.apache.org/repos/asf/aries/trunk/spi-fly/spi-fly-examples/spi-fly-example-resource-client-bundle/[here].
 
-##More Information## More information can be found at the following resources:
+== More Information
+
+More information can be found at the following resources:
 
 * OSGi Service Loader Mediator specification.
 http://www.osgi.org/Download/Release5[OSGi Enterprise specification], Chapter 133.

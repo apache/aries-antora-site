@@ -1,14 +1,12 @@
-Title: Subsystems
+= OSGi Subsystems
 
-#OSGi Subsystems
-
-##Introduction
+== Introduction
 
 Apache Aries Subsystems is the Reference Implementation of the OSGi Subsystems Specification, chapter 134 of the  http://www.osgi.org/Specifications/HomePage[OSGi Enterprise specifications].
 The Aries 1.x components implement the 1.0 version of the Subsystem spec.
 Aries 2.x and newer implement the 1.1 version of OSGi Subsystems.
 
-##Getting started
+== Getting started
 
 This section shows the bundles to install to get the Subsystems implementation running in your favourite OSGi Framework.
 
@@ -138,4 +136,6 @@ The following commands are available from the subsystem-gogo-command bundle:
 
 Note that, following the OSGi Subsystem specification, dependent subsystems are only stopped and uninstalled when the last using subsystem is stopped/uninstalled.
 
-##Development The Aries Subsystems code base can be found at the following location: https://svn.apache.org/repos/asf/aries/trunk/subsystem
+== Development
+
+The Aries Subsystems code base can be found at the following location: https://svn.apache.org/repos/asf/aries/trunk/subsystem

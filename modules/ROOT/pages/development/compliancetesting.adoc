@@ -1,6 +1,4 @@
-Title: ComplianceTesting
-
-+++<a name="ComplianceTesting-Runningthetests">++++++</a>+++
+= ComplianceTesting
 
 == Enterprise OSGi Compliance Tests
 
@@ -11,16 +9,12 @@ The configuration files require some modification to run the tests against Aries
 
 Instructions for obtaining and running the tests are given http://felix.apache.org/site/using-the-osgi-compliance-tests.html[here], or see below.
 
-+++<a name="ComplianceTesting-Testresults">++++++</a>+++
-
 == Test results
 
 At each Aries release the tests are run against Aries components.
 The results for the most recent release can be found link:/downloads/testresults.html[here] . +++<a name="ComplianceTesting-Runningthetests">++++++</a>+++
 
 == How to run the tests for Aries components
-
-+++<a name="HowtoruntheOSGiEnterpriseCT-Legalstuff">++++++</a>+++
 
 === Legal stuff
 
@@ -34,16 +28,12 @@ I've submitted an NDA."
 NOTE: You should subscribe to jcp-open@apache.org first.
 If you don't your note will languish in 'moderation' forever :-)
 
-+++<a name="HowtoruntheOSGiEnterpriseCT-Getthetests">++++++</a>+++
-
 === Get the tests
 
 Anyone with an NDA on file should be able to get access to the tests https://svn.apache.org/repos/tck/osgi-cts/[here] .
 
 The group of tests that are required for Aries is called osgi.enterprise.tests.
 Download the jar for the appropriate level - currently 4.2.0.
-
-+++<a name="HowtoruntheOSGiEnterpriseCT-Runningthetests">++++++</a>+++
 
 === Running the tests
 
@@ -63,8 +53,6 @@ The command above would, for example, run the blueprint tests.
 Before running the tests it will be necessary to make some changes to the bnd files, to download some additional pre-reqs and to assemble the aries components to be tested.
 The http://felix.apache.org/site/using-the-osgi-compliance-tests.html[Felix]  pages give a good indication of what is necessary.
 
-+++<a name="HowtoruntheOSGiEnterpriseCT-Debuggingthetests">++++++</a>+++
-
 === Debugging the tests
 
 If you want to debug the code then you need to add the following line to the .bnd file:
@@ -73,11 +61,7 @@ If you want to debug the code then you need to add the following line to the .bn
 
 You can change 7777 to any number you want.
 
-+++<a name="HowtoruntheOSGiEnterpriseCT-Modifyingthebndfiles">++++++</a>+++
-
 === Modifying the bnd files
-
-+++<a name="HowtoruntheOSGiEnterpriseCT-General">++++++</a>+++
 
 ==== General
 
@@ -105,8 +89,6 @@ The easiest way to find most of the aries jars and their dependencies is to copy
 The _.bnd files that are used to run the tests assume that the person running the tests has access to org.osgi.impl_ jars.
 In general this is not the case - so wherever an org.osgi.impl* jar has been used it must be replaced with an equivalent implementation.
 Such implementations can usually be found in either http://felix.apache.org/site/downloads.cgi[Felix], http://download.eclipse.org/equinox/[Equinox]  or http://www.knopflerfish.org/releases/3.0.0/osgi/jars/[Knopflerfish].
-
-+++<a name="HowtoruntheOSGiEnterpriseCT-Blueprint">++++++</a>+++
 
 ==== Blueprint
 
@@ -150,8 +132,6 @@ commonjars/com.springsource.junit-3.8.2.jar;version=file;export="junit.framework
     osgi.support.multipleHosts="true"
 ....
 
-+++<a name="HowtoruntheOSGiEnterpriseCT-JNDI">++++++</a>+++
-
 ==== JNDI
 
 The only additional bundle required for these tests is:
@@ -185,8 +165,6 @@ commonjars/com.springsource.junit-3.8.2.jar;version=file;export="junit.framework
     osgi.support.multipleHosts="true", \
     org.osgi.framework.bootdelegation="com.sun.*"
 ....
-
-+++<a name="HowtoruntheOSGiEnterpriseCT-JMX">++++++</a>+++
 
 ==== JMX
 
@@ -233,8 +211,6 @@ jar/com.springsource.junit-3.8.2.jar;version=file;export="junit.framework;versio
 
     org.osgi.test.cases.jmx.bundles="jar/osgi.enterprise-4.2.0.jar,jar/org.apache.aries.jmx-0.2-incubating.jar"
 ....
-
-+++<a name="HowtoruntheOSGiEnterpriseCT-Transaction">++++++</a>+++
 
 ==== Transaction
 

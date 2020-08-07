@@ -1,4 +1,4 @@
-Title: TransactionsProject
+= Transactions Project
 
 The Aries JTA project focuses on making container managed transactions available as OSGi services.
 

@@ -1,15 +1,6 @@
-:doctype: book
-
-Title: ReleaseNotes
-
-+++<a name="ReleaseNotes-ReleaseNotes">++++++</a>+++
-
 = Release Notes
 
-+++<a name="ReleaseNotes-NewandNoteworthy">++++++</a>+++
-
-[discrete]
-=== New and Noteworthy
+== New and Noteworthy
 
 Welcome to the 0.2-incubating release.
 For this release we started running the OSGi Enterprise Compliance tests for relevant components.
@@ -17,20 +8,16 @@ For this release we started running the OSGi Enterprise Compliance tests for rel
 * link:/downloads/archived-releases/0.2-incubating/0.2-incubating-testresults.html[Test Results]
 * https://issues.apache.org/jira/secure/releasenote.jspa?projectid=12310981&stylename=html&version=12314941.html[JIRA Release Notes]
 
-+++<a name="ReleaseNotes-NewComponents">++++++</a>+++
-
-[discrete]
-=== New Components
+== New Components
 
 Quiesce.
 The Quiesce component co-ordinates a graceful shutdown across a number of bundles.
 Quiesce participants respond to quiesce operations and clean up resources.
 In this release, only the JPA component implements a quiesce participant.
 
-+++<a name="ReleaseNotes-Modulesinthisrelease">++++++</a>+++
+== Modules in this release
 
-[discrete]
-=== Modules in this release+++<table>++++++<tr>++++++<th>+++Module+++</th>++++++<th>+++Version+++</th>++++++<th>+++Depends (build)  on Aries module+++</th>++++++<th>+++Version+++</th>++++++</tr>+++
++++<table>++++++<tr>++++++<th>+++Module+++</th>++++++<th>+++Version+++</th>++++++<th>+++Depends (build)  on Aries module+++</th>++++++<th>+++Version+++</th>++++++</tr>+++
 +++<tr>++++++<td>+++Application+++</td>++++++<td>+++0.2-incubating+++</td>++++++<td>+++Util+++</td>++++++<td>+++0.2-incubating+++</td>++++++</tr>+++
 +++<tr>++++++<td>+++-+++</td>++++++<td>+++-+++</td>++++++<td>+++Blueprint+++</td>++++++<td>+++0.2-incubating+++</td>++++++</tr>+++
 +++<tr>++++++<td>+++-+++</td>++++++<td>+++-+++</td>++++++<td>+++Testsupport+++</td>++++++<td>+++0.2-incubating+++</td>++++++</tr>+++
@@ -51,35 +38,20 @@ In this release, only the JPA component implements a quiesce participant.
 +++<tr>++++++<td>+++-+++</td>++++++<td>+++-+++</td>++++++<td>+++Testsupport+++</td>++++++<td>+++0.2-incubating+++</td>++++++</tr>+++
 +++<tr>++++++<td>+++Util+++</td>++++++<td>+++0.2-incubating+++</td>++++++<td>+++Testsupport+++</td>++++++<td>+++0.2-incubating+++</td>++++++</tr>++++++</table>+++
 
-+++<a name="ReleaseNotes-Newsamples">++++++</a>+++
-
-[discrete]
-=== New samples
+== New samples
 
 No new samples but we changed the Blog Sample and Aries Trader samples so that no database initialisation is required prior to running the sample.
 
-+++<a name="ReleaseNotes-NewTutorials">++++++</a>+++
-
-[discrete]
-=== New Tutorials
+== New Tutorials
 
 None
 
-+++<a name="ReleaseNotes-APIbreaking">++++++</a>+++
-
-[discrete]
-=== API breaking
+== API breaking
 
 None.
 
-+++<a name="ReleaseNotes-KnownIssues">++++++</a>+++
-
-[discrete]
-=== Known Issues
+== Known Issues
 
 link:-https://issues.apache.org/jira/secure/issuenavigator.jspa?mode=hide&requestid=12314569.html[JIRA query for known issues in the 0.2-incubating release]
 
-+++<a name="ReleaseNotes-Importantchangestoconsiderwhenupgrading">++++++</a>+++
-
-[discrete]
-=== Important changes to consider when upgrading
+== Important changes to consider when upgrading

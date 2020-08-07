@@ -1,14 +1,8 @@
-:doctype: book
-
-Title: BlueprintNoOSGi +++<a name="BlueprintNoOSGi">++++++</a>+++
-
 = Blueprint No-OSGi
 
 The Blueprint No-OSGi module makes it easy to use OSGi Blueprint as a dependency injection framework outside of OSGi containers such as inside any Servlet Engine.
 
 You can then use Blueprint as a small standards base alternative to the Spring Framework's XML dependency injection files.
-
-+++<a name="BlueprintNoOSGi-HowToUse">++++++</a>+++
 
 == How to use Blueprint No-OSGi
 
@@ -24,14 +18,10 @@ When you're done with the container, you need to destroy it
 
  container.destroy();
 
-+++<a name="BlueprintNoOSGi-Limitations">++++++</a>+++
-
 == Limitations
 
 The Blueprint No-OSGi module has limitations due to the fact that OSGi is not available.
-The use of +++<reference>++++++</reference>+++ and +++<reference-list>++++++</reference-list>+++ and +++<service>++++++</service>+++ elements are not supported.
-
-+++<a name="BlueprintNoOSGi-Configuraiton">++++++</a>+++
+The use of `<reference>` and `<reference-list>` and `<service>` elements are not supported.
 
 == Configuring blueprint through properties
 

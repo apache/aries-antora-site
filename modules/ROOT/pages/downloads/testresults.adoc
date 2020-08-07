@@ -1,4 +1,4 @@
-Title: TestResults
+= TestResults
 
 These are the test results for the current Aries release.
 

@@ -1,4 +1,6 @@
-Title: December 2009 Aries will deliver a set of pluggable Java components enabling an enterprise OSGi application programming model.
+= December 2009 Board Report
+
+Aries will deliver a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
 Aries entered incubation on September 22, 2009.
 

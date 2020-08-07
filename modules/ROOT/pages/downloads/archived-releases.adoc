@@ -1,26 +1,17 @@
-:doctype: book
-
-Title: Archived Releases
-
-+++<a name="ArchivedReleases-Archivedreleases">++++++</a>+++
-
 = Archived releases
 
-[discrete]
-=== 0.3
+== 0.3
 
 * link:archived-releases/0.3/0.3.html[Downloads]
 * link:archived-releases/0.3/0.3-releasenotes.html[Release Notes]
 * link:ct/0.3/testresults.html[Compliance Tests]
 
-[discrete]
-=== 0.2-incubating
+== 0.2-incubating
 
 * link:archived-releases/0.2-incubating/0.2-incubating.html[Downloads]
 * link:archived-releases/0.2-incubating/0.2-incubating-releasenotes.html[Release Notes]
 * link:ct/0.2-incubating/testresults.html[Compliance Tests]
 
-[discrete]
-=== 0.1-incubating
+== 0.1-incubating
 
 * link:archived-releases/0.1-incubating/0.1-incubating.html[Downloads]

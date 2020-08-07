@@ -1,10 +1,4 @@
-:doctype: book
-
-Title: BuildingAries
-
-+++<a name="BuildingAries-ExtractingandbuildingAries">++++++</a>+++
-
-+++<a name="BuildingAries-Prereqs">++++++</a>+++
+= BuildingAries
 
 == Prereqs
 
@@ -12,8 +6,6 @@ Title: BuildingAries
 Current maven 3.3.x has an error with parent poms
 * Subversion client >= 1.8.x
 * Eclipse Luna http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2
-
-+++<a name="BuildingAries-CheckoutAndBuild">++++++</a>+++
 
 == Checkout and build on the command line
 
@@ -26,9 +18,7 @@ As a next step you can run the tests too.
 
 * mvn clean install -fae
 
-+++<a name="BuildingAries-ImportIntoEclipse">++++++</a>+++
-
-= Import into eclipse using m2e
+== Import into eclipse using m2e
 
 * Start eclipse.
 Use a workspace directory separate from your source checkout of aries
@@ -39,9 +29,7 @@ Do not select to add the ignore to the maven poms.
 
 After these steps you should have imported your selected aries projects into eclipse.
 
-+++<a name="BuildingAries-Outofmemoryerrors">++++++</a>+++
-
-= Out of memory errors
+== Out of memory errors
 
 You may find that building Aries fails with out of memory exceptions on some systems (eg Mac)  if you use the standard Java settings.
 Setting the two environment variables as shown below may help.

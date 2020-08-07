@@ -1,11 +1,6 @@
-Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
+= Verifying Release Artifacts
 
-#Verifying Release Artifacts This page provides some help for anyone who wants to verify release candidate artifacts so they feel they can genuinely vote on the related vote thread on the dev list.
+This page provides some help for anyone who wants to verify release candidate artifacts so they feel they can genuinely vote on the related vote thread on the dev list.
 It is not intended to be exhaustive instructions.
 It's a list of things people have generally found to be useful to do when checking the artifacts.
 
@@ -21,7 +16,7 @@ Cut and paste the following:
  grep FAIL verifyresults.txt
  grep ERROR verifyresults.txt
 
-##Have I got the KEYS?
+== Have I got the KEYS?
 
 To verify Aries release artifacts you need the public keys for the Aries committers.
 The master KEYS file is in Subversion.
@@ -33,7 +28,7 @@ You then need to import the keys into PGP:
 
  gpg --import KEYS
 
-##Download artifacts
+== Download artifacts
 
 For each 'useful' file there are several others created to help you determine whether it's genuine.
 The PGP signature .asc file shows who created the 'useful' file.
@@ -47,7 +42,7 @@ where xxx is the number of the repository you're verifying.
 wget will download the files into a directory called content.
 The following use of the 'find' command assumes the downloads are in the 'content' directory.
 
-##Verify the artifacts
+== Verify the artifacts
 
 Ensure the checksums are right for the released files.
 Copy/paste this into the command line:
@@ -92,7 +87,7 @@ See the http://httpd.apache.org/dev/verification.html#Validating[Validating sect
 
 You shouldn't get any errors.
 
-##Build the code
+== Build the code
 
 It's a good idea to check the source release zip builds.
 Unzip it first:
@@ -103,7 +98,7 @@ Go into each subdir created and run:
 
  mvn clean install
 
-##RAT check
+== RAT check
 
 It's also a good idea to run the http://incubator.apache.org/rat/[Apache RAT (Release Audit Tool)].
 The Aries POMs are set up so you can do:

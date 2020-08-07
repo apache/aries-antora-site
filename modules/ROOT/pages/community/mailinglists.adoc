@@ -1,4 +1,6 @@
-Title: MailingLists The Aries User list is for general discussion or questions on using any of the Aries sub-projects.
+= MailingLists
+
+The Aries User list is for general discussion or questions on using any of the Aries sub-projects.
 Aries developers monitor this list and provide assistance when needed.
 
 * link:mailto:user-subscribe@aries.apache.org[Subscribe]  to the Aries User list

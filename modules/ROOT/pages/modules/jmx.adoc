@@ -1,12 +1,12 @@
-Title: JMX
-
-+++<a name="JMX">++++++</a>+++ #JMX#
+= JMX
 
 This page describes the Aries JMX component.
 
 The Aries JMX component is the Reference Implementation of the  OSGi JMX Management Model Specification, chapter 124 in the  http://www.osgi.org/Download/Release5[OSGi Enterprise Specification].
 
-##Getting Started## To use the Aries JMX component, obtain the following:
+== Getting Started
+
+To use the Aries JMX component, obtain the following:
 
 * The Aries JMX bundle, e.g.
 from Maven Central: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache.aries.jmx%22[org.apache.aries.jmx]
@@ -50,9 +50,13 @@ Then install the Aries JMX Bundle and the Aries Util Bundle and start everything
 
 Now you can access the OSGi functionality through MBeans, for example via jconsole: image:http://aries.apache.org/images/modules/jmx-screenshot.png[JMX Screenshot]
 
-##Blueprint Integration## TODO
+== Blueprint Integration
 
-##Whiteboard support## The JMX Whiteboard support bundle allows registration of JMX MBeans through the OSGi service registry.
+TODO
+
+== Whiteboard support
+
+The JMX Whiteboard support bundle allows registration of JMX MBeans through the OSGi service registry.
 As a prerequisite the Apache Aries JMX Whiteboard Bundle has to be installed.
 
 Once this is installed, register your services with the `jmx.objectname` service registration property.

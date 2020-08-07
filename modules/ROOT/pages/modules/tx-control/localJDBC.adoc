@@ -1,13 +1,4 @@
-:doctype: book
-
-Title: Local JDBC Configuration Provider Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
-
-#Aries OSGi Transaction Control JDBC Provider (Local)
+= Aries OSGi Transaction Control JDBC Provider (Local)
 
 The Aries Local JDBC provider implementation is available at the following maven coordinates:
 
@@ -27,7 +18,7 @@ If you wish to use entirely lightweight, resource-local transactions then it is 
 
 If two-phase commit is needed across multiple resources then an XA capable Resource Provider should be  used instead if possible.
 
-##Quick Start
+== Quick Start
 
 A configured JDBCConnectionProvider can be created quickly using Configuration Admin and the OSGi JDBC Service.
 
@@ -42,7 +33,7 @@ When the DataSourceFactory for the named `osgi.jdbc.driver.class` becomes availa
 All configuration properties (apart from the database password) will be registered as  properties of the JDBCConnectionProvider service.
 These properties can be used to select a ResourceProvider if more than one is present in the Service Registry.
 
-= Using the Local JDBC Provider bundle (details)
+== Using the Local JDBC Provider bundle (details)
 
 This Resource Provider is used in conjunction with a TransactionControl service to provide scoped  access to a JDBC connection with support for Local Transactions.
 
@@ -57,7 +48,7 @@ This will return a thread-safe JDBC connection  that can then be used in any ong
 
 The normal inputs to a JDBCConnectionProviderFactory are a DataSourceFactory, some JDBC  properties to connect to the database with, and some properties to control the resource provider  (such as connection pooling).
 
-###Declarative Services Example
+=== Declarative Services Example
 
 ....
 @Component
@@ -108,7 +99,7 @@ Once a suitable DataSourceFactory is available then a JDBCConnectionProvider ser
 Configuration properties (except the JDBC password) are set as service properties for the registered  `JDBCConnectionProvider`.
 These properties may therefore be used in filters to select  a particular provider.
 
-###Declarative Services Example
+=== Declarative Services Example
 
 ....
 @Component

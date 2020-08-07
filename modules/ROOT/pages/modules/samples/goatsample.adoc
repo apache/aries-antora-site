@@ -1,22 +1,12 @@
-:doctype: book
-
-Title: GOATSample +++<a name="GOATSample-GOATSample">++++++</a>+++
-
 = GOAT Sample
 
 The Graphical OSGi Analysis Tool gives a way of displaying the status of bundles running in an OSGi framework.
-
-+++<a name="GOATSample-GOATArchitecture">++++++</a>+++
 
 == GOAT Architecture
 
 See charts here: https://svn.apache.org/repos/asf/incubator/aries/documentation/samples/goat/
 
-+++<a name="GOATSample-Model-assumptionsandconstraints">++++++</a>+++
-
 == Model - assumptions and constraints
-
-+++<a name="GOATSample-Developmentto-dolist">++++++</a>+++
 
 == Development to-do list
 

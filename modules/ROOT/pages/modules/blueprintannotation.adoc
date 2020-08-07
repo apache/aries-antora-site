@@ -1,8 +1,6 @@
-:doctype: book
+= BlueprintAnnotation
 
-Title: BlueprintAnnotation +++<a name="BlueprintAnnotation-Introduction">++++++</a>+++
-
-= Introduction
+== Introduction
 
 Blueprint annotation is being prototyped in Apache Aries in trunk/blueprint.
 The blueprint annotation service is an optional service to the blueprint core and should not affect the blueprint core if annotation supported is not required.
@@ -10,11 +8,7 @@ If the blueprint annotation service is available, the bundle contains no bluepri
 The blueprint annotation api is available in trunk/blueprint/blueprint-annotation-api module, while the blueprint implementation is available in trunk/blueprint/blueprint-annotatiom-impl module.
 A blueprint annotated sample is also provided in trunk/blueprint/blueprint-sample-annotation.
 
-+++<a name="BlueprintAnnotation-OverviewofAvailableblueprintAnnotations">++++++</a>+++
-
 == Overview of Available blueprint Annotations
-
-+++<a name="BlueprintAnnotation-@InjectAnnotation">++++++</a>+++
 
 === @Inject Annotation
 
@@ -32,8 +26,6 @@ public class Bar {
     ...
 }
 ....
-
-+++<a name="BlueprintAnnotation-@BeanAnnotation">++++++</a>+++
 
 === @Bean Annotation
 
@@ -87,8 +79,6 @@ public class NewAccount {
 }
 ....
 
-+++<a name="BlueprintAnnotation-@Service,@RegistrationListener,@Register,@UnregisterAnnotations">++++++</a>+++
-
 === @Service, @RegistrationListener, @Register, @Unregister Annotations
 
 If you want to register a bean as a service, you can use @Service annotation to do so.
@@ -127,8 +117,6 @@ public class FooRegistrationListener {
 
 }
 ....
-
-+++<a name="BlueprintAnnotation-@Reference,@ReferenceList,@ReferenceListenerAnnotations">++++++</a>+++
 
 === @Reference, @ReferenceList, @ReferenceListener Annotations
 
@@ -183,8 +171,6 @@ referenceListeners=@ReferenceListener(ref="listBindingListener"))
 }
 ....
 
-+++<a name="BlueprintAnnotation-@Blueprintannotation">++++++</a>+++
-
 === @Blueprint annotation
 
 @Blueprint annotation can be used on any class to annotate the global property of the blueprint bundle, such as defaultActivation, defaultTimeout, defaultAvailability.
@@ -212,8 +198,6 @@ public class DateTypeConverter implements Converter {
     ...
 }
 ....
-
-+++<a name="BlueprintAnnotation-Limitation">++++++</a>+++
 
 === Limitation
 

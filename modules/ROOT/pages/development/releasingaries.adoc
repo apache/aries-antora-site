@@ -1,10 +1,6 @@
-:doctype: book
+= ReleasingAries
 
-Title: ReleasingAries
-
-+++<a name="ReleasingAries-HowtodoanAriesRelease">++++++</a>+++
-
-= How to do an Aries Release
+== How to do an Aries Release
 
 There are three types of Aries release:
 
@@ -21,7 +17,7 @@ If you are already familiar with the Apache process just use the high level desc
 
 The Apache release process will not release any bundle that has dependencies on -SNAPSHOTS.
 If, for example, a release of the blueprint API bundle is required the first step is to find and release any of its -SNAPSHOT dependencies.
-Because Aries bundles are quite interdependent (see link:moduledependencies[here]  for an idea of how the modules relate to each other, it may be necessary to release quite a large number of bundles.
+Because Aries bundles are quite interdependent (see broken link to 'moduledependencies' here)  for an idea of how the modules relate to each other, it may be necessary to release quite a large number of bundles.
 So, step one is to make a list.
 
 === Choosing a strategy for the release
@@ -104,12 +100,12 @@ It is critically important that the samples are all tested before making release
 Some have itests but others (blueprint) are only tested manually.
 In fact it's wise to run through a quick manual check for the blog and aries trader samples as the itests do not catch everything.
 
-= Background information on the Apache Release process
+== Background information on the Apache Release process
 
 To create a release you will need to create the release artifacts and move then to various places (ultimately the Maven central repository).
 The Maven commands and general outline of the process looks like this:
 
-image::AriesRelease.png[rel]
+image::development/AriesRelease.png[rel]
 
 The full maven commands are not shown - the intention is just to give an indication of which maven commands you will need to use to create release artifacts in different places.
 
@@ -133,32 +129,20 @@ There are a few steps to the process:
 The best current documentation for releases is http://apache.org/dev/publishing-maven-artifacts.html[here].
 It covers all the steps listed above so on these pages we will only add things which are specific to the Apache Aries release.
 
-+++<a name="ReleasingAries-Discussionofthereleaseandit'scontentontheAriesmailinglist">++++++</a>+++
-
-[discrete]
 === Discussion of the release and its content on the Aries mailing list
 
 Before starting off the release process it is essential to gain consensus on the dev@aries list that this is the right time for a release and to agree its content.
 Allow at least a week for this discussion.
 
-+++<a name="ReleasingAries-CreatingandstoringGPGkeys">++++++</a>+++
-
-[discrete]
 === Creating and storing GPG keys
 
 For Aries your GPG key will need to be in this file: https://svn.apache.org/repos/asf/aries/KEYS (follow the instructions in the file) and checkin.
 Then ensure the file is mirrored to http://www.apache.org/dist/aries/KEYS by following the instructions http://www.apache.org/dev/release.html#upload-scp[here].
 
-+++<a name="ReleasingAries-Settingupyourenvironment">++++++</a>+++
-
-[discrete]
 === Setting up your environment
 
 Follow the general instructions linked to above.
 
-+++<a name="ReleasingAries-Creatingabranchtoreleasefrom">++++++</a>+++
-
-[discrete]
 === Creating a branch to release from (if needed)
 
 It is strongly recomended that releases are made from trunk and NEVER from a branch.
@@ -191,9 +175,6 @@ The consequence of forgetting this is that the commands that create the release 
 
 After taking the branch, change the pom versions in trunk to, say, 0.3-incubating or whatever you want to call the next development version.
 
-+++<a name="ReleasingAries-Checkingbundleversion">++++++</a>+++
-
-[discrete]
 === Checking which version of the bundle to release
 
 If the Maven version of the bundle ends -SNAPSHOT then some change has been made which may require a release.
@@ -205,9 +186,6 @@ In general, if no Java files have changed only the micro version of the bundle w
 If Java  code has changed it is important to check the packageinfo files to see whether package versions have changed.
 If so these might lead to the requirement to increment the major or minor versions the bundle.
 
-+++<a name="ReleasingAries-Checkingreleaseartifacts">++++++</a>+++
-
-[discrete]
 === Checking release artifacts
 
 Delete everything under ...org/apache/aries in your local Maven repo.
@@ -235,16 +213,12 @@ This will pick out the failing file names.
 Some of the files that rat fails do not require an Apache license, eg MANIFEST.MF, but any *.java or *.js file does need one.
 As an alternative you can use 'mvn -Prat install'.
 
-+++<a name="ReleasingAries-Creatingasnapshotrelease">++++++</a>+++
-
-[discrete]
 === Creating a snapshot release
 
 This is important to do when releasing from trunk as other bundles may want to continue to depend on the -SNAPSHOT version while the release is voted through.
 
 mvn deploy (check exact format)
 
-[discrete]
 === JIRA preparation
 
 * After initial release discussion on the mailing list you should have a list of JIRA issues that are required in the release.
@@ -253,15 +227,9 @@ If not, the default assumption is 'everything that has been fixed since the last
 * Check through defects, make sure that anything that is included in the release has been closed.
 If there are open issues move them to the next release.
 
-+++<a name="ReleasingAries-Creatingtherelease">++++++</a>+++
-
-[discrete]
 === Creating the release
 
-+++<a name="ReleasingAries-Creatingthereleaseartifactsinastagingrepository">++++++</a>+++
-
-[discrete]
-===== Creating the release artifacts in a staging repository
+==== Creating the release artifacts in a staging repository
 
 The release is created by releasing each bundle separately and in a specific order.
 It is also desirable to maintain the same IP address for the entire process (the staging repository is associated with your IP address, changing it results in the creation of a second staging repository).
@@ -272,7 +240,7 @@ From the top level directory in your branch run:
 
  mvn clean
 
-_Note_ The prepare step will make some assumptions about the version of the development stream that is left after the release has been made.
+Note:: The prepare step will make some assumptions about the version of the development stream that is left after the release has been made.
 When releasing from a branch it may not be a good idea to accept the default for this, it will very likely conflict with the development version in use in trunk.
 
 For each bundle that needs to be release perform the following commands:
@@ -313,17 +281,11 @@ If you have made a mistake it's quite easy to revert.
 The release commands make and commit changes to the project's pom.xml files and they create a tag in SVN.
 To revert the changes you will need to revert the pom.xml files and delete the tag from svn.
 
-+++<a name="ReleasingAries-Closingthestagingrepository">++++++</a>+++
-
-[discrete]
-===== Closing the staging repository
+=== Closing the staging repository
 
 After checking that the staging repository contains the artifacts that you expect you should close the staging repository.
 This will make it available so that people can check the release.
 
-+++<a name="ReleasingAries-Runningthevote(s)">++++++</a>+++
-
-[discrete]
 === Running the vote.
 
 At this point you should write two notes to the dev@aries.apache.org mailing list.
@@ -342,17 +304,11 @@ The content should just indicate that the note starts a thread to discuss the Ar
 After 72 hours, if no problems have been found in the release artifacts, the dev@aries vote can be summarised and closed.
 Note that at least three +1 votes from Aries PMC members are required.
 
-+++<a name="ReleasingAries-Promotingthereleaseartifacts">++++++</a>+++
-
-[discrete]
 === Promoting the release artifacts
 
 From the https://repository.apache.org/index.html#stagingRepositories[Nexus pages] , select the staging repository and select 'release' from the top menu.
 This moves the release artifacts into an Apache releases repository, from there they will be automatically moved to the Maven repository.
 
-+++<a name="ReleasingAries-MakingthereleaseartifactsavailablefromtheArieswebpages.">++++++</a>+++
-
-[discrete]
 === Making the release artifacts available from the Aries web pages.
 
 Anything that is to be downloaded must be put in /www/www.apache.org/dist/aries on minotaur.
@@ -368,7 +324,6 @@ This is best done using a script, the script can be generated using the perl scr
 Next, update the Aries Downloads pages to refer to the new artifacts.
 The the perl script http://svn.apache.org/repos/asf/aries/scripts/create_modules_table.pl[create_modules_table.pl] can do this automatically.
 
-[discrete]
 === Updating dependencies
 
 Once the release is promoted, change all the bundles which depend on the SNAPSHOT to depend on the released version.
@@ -376,16 +331,12 @@ Deployed snapshots get regularly cleaned from the repositories if there's a rele
 
 Don't move bundles which depend on earlier releases to depend on the new release, or they won't be able to run in an environment with the older bundles.
 
-[discrete]
 === Tidying up tasks
 
 * Get the http://aries.apache.org/development/compliancetesting.html[compliance tests] run
 * Release notes
 * Release the component in JIRA (manage components), check the JIRA release notes.
 
-+++<a name="ReleasingAries-Whattodowhenpeoplefindproblemswiththerelease">++++++</a>+++
-
-[discrete]
 === What to do when people find problems with the release
 
 * Cancel the vote [CANCELLED] [VOTE]

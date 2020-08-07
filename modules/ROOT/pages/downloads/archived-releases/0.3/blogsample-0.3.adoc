@@ -1,27 +1,12 @@
-:doctype: book
-
-Title: Blog Sample
-
-+++<a name="BlogSample-TheBlogSample">++++++</a>+++
-
 = The Blog Sample
-
-+++<a name="BlogSample-RunningtheBlogSample">++++++</a>+++
 
 == Running the Blog Sample
 
-{blank} +
-
-'''
-
-NOTE: These instructions are for the 0.3 release of Aries.
+NOTE:: These instructions are for the 0.3 release of Aries.
 Instructions for older releases can be found link:/downloads/archivedrelease.html[here] . In the 0.2-incubating release the sample was changed to use an in-memory database to avoid dependency on an explicit version of Derby.
 If you would prefer to use a database on disk check the instructions for the 0.1-incubating release.
 You will also need to modify datasource.xml (under blog-datasource) as indicated in the comments and then rebuild the sample.
 
-'''
-
-+++<a name="BlogSample-CreatetheOSGiplatformfortheBlogsample">++++++</a>+++
 
 === Create the OSGi platform for the Blog sample
 
@@ -31,8 +16,6 @@ Download and unzip the source zip for the link:/downloads/currentrelease.html[la
  mvn install
 
 This procedure will pull in the binaries from the latest release and its dependencies.
-
-+++<a name="BlogSample-RunningtheBlogsample">++++++</a>+++
 
 === Running the Blog sample
 
@@ -52,8 +35,6 @@ Point your browser to http://localhost:8080/blog/
 
 If you subsequently delete the .eba from the load directory the application will be uninstalled.
 
-+++<a name="BlogSample-RunningthesampleusingaJPApersistencelayer">++++++</a>+++
-
 === Running the sample using a JPA persistence layer
 
 The first blog sample application was written to use a JDBC persistence layer.
@@ -63,16 +44,12 @@ To run the blog sample which uses the JPA persistence layer, start the OSGi fram
 
 Finally, after typing 'refresh' at the OSGi console, point your browser at http://localhost:8080/blog/ . You should see something that looks precisely the same as the blog sample running with the JDBC persistence layer, but this time running using the JPA persistence layer.
 
-+++<a name="BlogSample-Usingthelatest,unreleasedcode">++++++</a>+++
-
 == Using the latest, unreleased code
 
 If you prefer to use the very latest code from subversion, checkout and build the Aries trunk by following the link:aries:buildingaries.html[Building Aries instructions] .
-
-+++<a name="BlogSample-AbouttheBlogsample">++++++</a>+++
 
 == About the Blog sample
 
 The blog sample components can be visualised like this:
 
-image::BlogSample.png[bs]
+image::downloads/archived/0.1-incubating/BlogSample.png[bs]

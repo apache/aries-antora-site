@@ -1,17 +1,11 @@
-:doctype: book
-
-Title: Community
-
-+++<a name="Community-Community">++++++</a>+++
-
 = Community
 
 There are many ways to be part of the Apache Aries community.
-You will find suggestions under link:gettinginvolved.html[getting involved] .
+You will find suggestions under xref:community/gettinginvolved.adoc[getting involved] .
 
-* link:gettinginvolved.html[Getting Involved]
-* link:people.html[Who we are]
-* link:mailinglists.html[Mailing lists]
+* xref:community/gettinginvolved.adoc[Getting Involved]
+* xref:community/people.adoc[Who we are]
+* xref:community/mailinglists.adoc[Mailing lists]
 * http://blogs.apache.org/aries/[Aries Group Blog]
 
 You can also find us on IRC, attach freenode and join #apache-aries.

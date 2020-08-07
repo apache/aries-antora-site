@@ -1,12 +1,4 @@
-:doctype: book
-
-Title: Blueprint
-
-+++<a name="Blueprint-Blueprint">++++++</a>+++
-
 = Blueprint
-
-+++<a name="Blueprint-Introduction">++++++</a>+++
 
 == Introduction
 
@@ -18,8 +10,6 @@ The specification describes how the components get instantiated and wired togeth
 
 The following documentation covers the 80:20 usage of Blueprint.
 For further details, please refer to the OSGi Compendium R4.2 specification.
-
-+++<a name="Blueprint-BlueprintBundles">++++++</a>+++
 
 == Blueprint Bundles
 
@@ -40,8 +30,6 @@ The Blueprint Container is responsible for:
 During initialization, the Blueprint Container ensures that mandatory service references are satisfied, registers all the services into the service registry, and creates initial component instances.
 The Blueprint extender bundle also destroys the Blueprint Container for a bundle when the bundle is stopped.
 
-+++<a name="Blueprint-BlueprintXML">++++++</a>+++
-
 == Blueprint XML
 
 The Blueprint XML file is identified by a top-level blueprint element, as shown below:
@@ -56,8 +44,6 @@ The top-level blueprint element identifies the document as a blueprint module de
 
 _TODO:_ ensure id, activation and dependsOn get documented somewhere.
 
-+++<a name="Blueprint-Beans">++++++</a>+++
-
 == Beans
 
 Beans are declared using the bean element.
@@ -67,8 +53,6 @@ The following defines a single bean called _accountOne_ implemented by the POJO 
  <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
     <bean id="accountOne" class="org.apache.aries.simple.Account" />
  </blueprint>
-
-+++<a name="Blueprint-BeanConstruction">++++++</a>+++
 
 === Bean Construction
 
@@ -105,7 +89,7 @@ The name of the static factory method is specified by the _factory-method_  attr
 The Blueprint Container will call the _createAccount()_ static method on the _StaticAccountFactory_ class and pass 2 as the argument to create the Account object.
 
 ....
-   public class StaticAccountFactory {	
+   public class StaticAccountFactory {
        public static Account createAccount(long number) {
       return new Account(number);
        }
@@ -133,7 +117,7 @@ public class AccountFactory {    +        public AccountFactory(String factoryNa
 ....
    <bean id="accountFactory"
     class="org.apache.aries.simple.AccountFactory">
-       <argument value="account factory"/>	
+       <argument value="account factory"/>
    </bean>
 
    <bean id="accountThree"
@@ -142,8 +126,6 @@ public class AccountFactory {    +        public AccountFactory(String factoryNa
        <argument value="3"/>
    </bean>
 ....
-
-+++<a name="Blueprint-BeanProperties">++++++</a>+++
 
 === Bean Properties
 
@@ -159,8 +141,6 @@ public class Account {    +        public Account(long number) { 	  ...
         <argument value="1"/>
         <property name="description" value="#1 account"/>
     </bean>
-
-+++<a name="Blueprint-BeanWiring">++++++</a>+++
 
 ==== Bean Wiring
 
@@ -179,7 +159,7 @@ In the following example _accountOne_ is injected with a _Currency_ bean.
 
 
 
-   public class Currency {	
+   public class Currency {
        public Currency() {
       ...
        }
@@ -193,8 +173,6 @@ In the following example _accountOne_ is injected with a _Currency_ bean.
 
    <bean id="currency" class="org.apache.aries.simple.Currency" />
 ....
-
-+++<a name="Blueprint-Services">++++++</a>+++
 
 == Services
 
@@ -238,8 +216,6 @@ The following registers the service under all the bean's interfaces:
 
 Other values for _auto-export_ are _disabled_ (the default) _class-hierarchy_ and _all-classes_.
 
-+++<a name="Blueprint-ServiceProperties">++++++</a>+++
-
 === Service Properties
 
 A service can also be registered with a set of properties that can be specified using the _service-properties_  sub-element.
@@ -260,8 +236,6 @@ The _mode_ property is of the default type, _String_.
        </service-properties>
     </service>
 
-+++<a name="Blueprint-ServiceRanking">++++++</a>+++
-
 === Service Ranking
 
 Service ranking can be used to affect the choice of service when there are multiple matches.
@@ -272,8 +246,6 @@ The default ranking value is
 
  <service id="serviceFive" ref="account" auto-export="all-classes"
   ranking="3" />
-
-+++<a name="Blueprint-References">++++++</a>+++
 
 == References
 
@@ -289,8 +261,6 @@ If a service matching this reference is found in the service registry then it is
    <reference id="accountRef" interface="org.apache.aries.simple.Account"
 />
 ....
-
-+++<a name="Blueprint-ReferenceDynamism">++++++</a>+++
 
 === Reference Dynamism
 
@@ -324,8 +294,6 @@ The following sets the timeout for the account reference to 20000 milliseconds (
 
 In all cases, a value of 0 means wait indefinitely for the reference to become satisfied.
 
-+++<a name="Blueprint-ReferenceLists">++++++</a>+++
-
 === Reference Lists
 
 Multiple matching services can be found using the _reference-list_ element.
@@ -351,13 +319,9 @@ Example showing mandatory or optional references (availability)
 
 Example showing use of filter
 
-+++<a name="Blueprint-BeanProperties">++++++</a>+++
-
 == Bean Properties
 
 Example showing use of bean properties
-
-+++<a name="Blueprint-Scopes">++++++</a>+++
 
 == Scopes
 
@@ -367,21 +331,15 @@ Example showing prototype scope for beans
 
 Example showing prototype scope for services
 
-+++<a name="Blueprint-ObjectValues">++++++</a>+++
-
 == Object Values
 
 Intro to Object Values
 
 Examples showing the use of the various different object value types - ref, map, props collection (list, array, set).
 
-+++<a name="Blueprint-Lifecycle">++++++</a>+++
-
 == Lifecycle
 
 Example showing use of init/destroy-method
-
-+++<a name="Blueprint-LazyandEagerActiviation">++++++</a>+++
 
 == Lazy and Eager Activiation
 
@@ -389,14 +347,10 @@ Example showing lazy activiation.
 
 Example showing eager activation.
 
-+++<a name="Blueprint-Dynamism">++++++</a>+++
-
 == Dynamism
 
 Example showing service-listener
 
 Example showing reference-listener
-
-+++<a name="Blueprint-TypeConverters">++++++</a>+++
 
 == Type Converters

@@ -1,11 +1,4 @@
-Title: Using the Last Resource Gambit Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
-
-#Using the Last Resource Gambit
+= Using the Last Resource Gambit
 
 The Last Resource Gambit is a technique by which a non-XA capable resource may be (relatively) safely included in a two-phase commit transaction containing multiple resources.
 
@@ -15,7 +8,7 @@ Importantly:
 * All but one of the resources must be XA capable
 * The Transaction Manager must support the Last Resource Gambit
 
-##How does it work?
+== How does it work?
 
 In a two phase commit/rollback the Transaction Manager prepares all of the resources before calling commit.
 This means that the resources have the opportunity to do any constraint checking and buffer flushing before committing, so that they know that a commit will succeed.
@@ -30,7 +23,7 @@ Specifically all of the XA resources are prepared, and if the prepare succeeds t
 If the commit succeeds then all of the XA resources are committed, otherwise the XA resources are rolled back.
 This model means that the overall transaction is robust to  resource failures.
 
-##Taking advantage of the Last Resource Gambit
+== Taking advantage of the Last Resource Gambit
 
 The link:xaTransactions.html[Aries XA Transaction Control service] implements the last resource gambit automatically, so there is nothing that needs to be explicitly done by the client to enable the behaviour, other than to use a local resource alongside XA resources.
 

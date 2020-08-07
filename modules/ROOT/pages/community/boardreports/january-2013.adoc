@@ -1,17 +1,8 @@
-:doctype: book
-
-Title: Notice:    Licensed to the Apache Software Foundation (ASF) under one            or more contributor license agreements.
-See the NOTICE file            distributed with this work for additional information            regarding copyright ownership.
-The ASF licenses this file            to you under the Apache License, Version 2.0 (the            "License");
-you may not use this file except in compliance            with the License.
-You may obtain a copy of the License at            .              http://www.apache.org/licenses/LICENSE-2.0            .            Unless required by applicable law or agreed to in writing,            software distributed under the License is distributed on an            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY            KIND, either express or implied.
-See the License for the            specific language governing permissions and limitations            under the License.
-
 = January 2013 Board report
 
 Apache Aries delivers a set of pluggable Java components enabling an enterprise OSGi application programming model.
 
-##Project update
+== Project update
 
 * The SPI Fly component now fully implements the ServiceLoader Mediator Specification 1.0 from the OSGi Enterprise R5 spec (chapter 133).
 It is the Reference Implementation of this spec and passes all the OSGi TCK tests for it.
@@ -28,7 +19,7 @@ If the semantic version is incorrect, the build  will fail.
 
 No releases this quarter.
 
-##Project Branding Board Report Checklist
+== Project Branding Board Report Checklist
 
 * Project Website Basics : homepage is aries.apache.org (done)
 * Project Naming And Descriptions : use proper Apache forms, describe product, etc.
@@ -39,7 +30,7 @@ No releases this quarter.
 * Logos and Graphics : include TM, use consistent product logo on your site (pending)
 * Project Metadata : DOAP file checkedin and up to date (done)
 
-##Community update
+== Community update
 
 No new committers since the last report.
 The user/dev lists and JIRAs have had some varied discussions across the Aries modules.

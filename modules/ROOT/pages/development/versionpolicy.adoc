@@ -7,7 +7,7 @@ These are outlined in this section.
 
 == Package versions
 
-### Exported packages Versions are usually specified in packageinfo files with the source code.
+=== Exported packages Versions are usually specified in packageinfo files with the source code.
 The default-parent pom is  configures (in the build resources section) to expect packageinfo files.
 If your pom has a build resources section it replaces what is inherited from the default-parent, so you may need to reproduce  the section which specifies where packageinfo can be found.
 
@@ -15,19 +15,16 @@ Developers *must* increment the versions in packageinfo files in strict accordan
 The version should relate to the *most recent release of the package* and not to the version found in trunk.
 For example:
 
-[discrete]
 ==== Scenario 1, making changes to a package with released version a.b.c
 
 * Developer A fixes a bug in the package and increments it's version to a.b.c+1
 * Developer B fixes another bug in the package but leaves the version at a.b.c+1
 
-[discrete]
 ==== Scenario 2, making changes to a package with released version a.b.c
 
 * Developer A adds a method to an interface in the package and increments it's version to a.b+1.0
 * Developer B fixes a bug in the package, leaves its version at a.b+1.0
 
-[discrete]
 ==== Scenario 3, making changes to a package with released version a.b.c
 
 * Developer A fixes a bug in the package, and increments its version to a.b.c+1
@@ -68,7 +65,7 @@ For example, bundles which depend on proxy (e.g.
 blueprint) will be set to depend on the released version of proxy.
 Immediately after  a release of proxy at say 1.0.0 and a release of blueprint at 1.2.0, the development version of blueprint in trunk will be 1.2.1-SNAPSHOT but the version of proxy that it depends on will be 1.0.0.
 
-###Assigning a bundle version number at release time
+=== Assigning a bundle version number at release time
 
 At release time the release version of the bundle must be assigned by the release manager after reviewing the changes to the bundle's package versions since the last release.
 This is not a particularly time consuming task as long as  packageinfo files are used for versioning packages.

@@ -1,14 +1,8 @@
-:doctype: book
-
-Title: BlueprintWeb +++<a name="BlueprintWeb">++++++</a>+++
-
 = BlueprintWeb
 
 The Blueprint Web module makes it easy to use OSGi Blueprint as a dependency injection framework outside of OSGi containers such as inside any Servlet Engine.
 
 You can then use Blueprint as a small standards base alternative to the Spring Framework's XML dependency injection files.
-
-+++<a name="BlueprintWeb-HowToUse">++++++</a>+++
 
 == How to use Blueprint Web
 
@@ -29,8 +23,6 @@ If you wish to use a different name for the location of the blueprint files you 
        <param-name>blueprintLocation</param-name>
        <param-value>META-INF/myName.xml</param-value>
    </context-param>
-
-+++<a name="BlueprintWeb-Configuraiton">++++++</a>+++
 
 == Configuring blueprint through properties
 

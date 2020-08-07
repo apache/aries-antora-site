@@ -1,8 +1,4 @@
-Title: GettingInvolved
-
-+++<a name="GettingInvolved-GettingInvolved">++++++</a>+++
-
-== Getting Involved
+= Getting Involved
 
 Getting involved with Aries is easy.
 First, any help is welcome and we welcome you on board.
