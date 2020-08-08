@@ -2,4 +2,43 @@
 //uncomment to generate temporary nav file contents on console.
 //:antora-indexer-log-lists:
 
-indexList::[]
+* Community
+
+indexList::[level=2,relative=community/*.adoc]
+
+** Board Reports
+
+indexList::[level=3,relative=community/boardreports/*.adoc]
+
+* Development
+
+indexList::[level=2,relative=development/*.adoc]
+
+* Documentation
+
+indexList::[level=2,relative=documentation/*.adoc]
+
+** Tools
+
+indexList::[level=3,relative=documentation/tools/*.adoc]
+
+** Tutorials
+
+indexList::[level=3,relative=documentation/tutorials/*.adoc]
+
+* Downloads
+
+indexList::[level=2,relative=downloads/**/*.adoc]
+
+* Modules
+
+indexList::[level=2,relative=modules/*.adoc]
+
+** Samples
+
+indexList::[level=3,relative=modules/samples/*.adoc]
+
+** Transaction Control
+
+indexList::[level=3,relative=modules/tx-control/*.adoc]
+
