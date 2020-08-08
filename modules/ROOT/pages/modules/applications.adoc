@@ -15,9 +15,16 @@ An Aries application can also load packages and consume OSGi services from a sha
 == Structure of an Aries application
 
 An Aries application is packaged as a zip file with a '.eba' suffix.
-Its structure is as follows:+++<div class="code panel" style="border-style: solid;border-width: 1px;">+++*Sample Aries application structure*
+Its structure is as follows:
 
-META-INF/APPLICATION.MF + bundle1.jar + bundle2.jar + bundle3.jar ++++</div>+++
+.Sample Aries application structure
+[source]
+----
+META-INF/APPLICATION.MF
+bundle1.jar
+bundle2.jar
+bundle3.jar
+----
 
 The file must contain either an APPLICATION.MF with at least one bundle listed in its Application-Content header (see below), or at least one bundle 'by value' within the .eba.
 No 'by value' bundles are required if a valid APPLICATION.MF is present.
@@ -32,13 +39,25 @@ Shared bundles must be provided by reference rather than contained directly in a
 An Aries Application is defined using a Manifest.
 The Aries manifest is located at META-INF/APPLICATION.MF and describes modularity at the application level.
 The manifest enumerates the modules that comprise the Aries application along with any OSGi services exported from, or referenced by, those modules.
-The following is an example of an Aries manifest:+++<div class="code panel" style="border-style: solid;border-width: 1px;">+++*APPLICATION.MF*
+The following is an example of an Aries manifest:
 
-Manifest-Version: 1.0 + Application-ManifestVersion: 1.0 + Application-Name: Bank Account + Application-SymbolicName: com.mybank.account.app + Application-Version: 1.0 + Application-Content: + com.mybank.account.bankWeb;
-version=1.0.0, + com.mybank.account.bankAccount;
-version=1.0.0, + com.mybank.account.common;
-version=1.0.0, + com.mybank.account.utility;
-version=1.0.0 + Use-Bundle: com.mybank.account.admin;version="[1.0.0,2.0.0)" + Application-ExportService: com.mybank.account.service.AccountService + Application-ImportService: + com.mybank.security.UserAuthService;filter="(security=strong)" ++++</div>+++
+.APPLICATION.MF
+[source]
+----
+Manifest-Version: 1.0
+Application-ManifestVersion: 1.0
+Application-Name: Bank Account
+Application-SymbolicName: com.mybank.account.app
+Application-Version: 1.0
+Application-Content: com.mybank.account.bankWeb;version=1.0.0,
+com.mybank.account.bankAccount;version=1.0.0,
+com.mybank.account.common;version=1.0.0,
+com.mybank.account.utility;version=1.0.0
+Use-Bundle: com.mybank.account.admin;version="[1.0.0,2.0.0)"
+Application-ExportService: com.mybank.account.service.AccountService
+Application-ImportService:
+com.mybank.security.UserAuthService;filter="(security=strong)"
+----
 
 The manifest headers are as follows:
 
@@ -73,14 +92,23 @@ Aries will provide a generic 'Resolver' API which may be backed by technology su
 Aries uses a second file, META-INF/DEPLOYMENT.MF to record a single consistent set of bundles that fully satisfy an application's dependencies.
 The bundles recorded in DEPLOYMENT.MF will be loaded into the runtime each time the application is installed.
 A DEPLOYMENT.MF file will be generated if one does not exist, or honoured if provided.
-Here's an example:+++<div class="code panel" style="border-style: solid;border-width: 1px;">+++*DEPLOYMENT.MF*
+Here's an example:
 
-Manifest-Version: 1.0 + Application-Version: 1.0 + Application-SymbolicName: com.mybank.account.app + Deployed-Content: com.mybank.account.bankWeb;
-deployed-version=1.0.0, + com.mybank.account.bankAccount;
-deployed-version=1.0.0, + com.mybank.account.common;
-deployed-version=1.2.0, + com.mybank.account.utility;
-deployed-version=1.0.0, + com.mybank.utils.logging;
-deployed-version=1.3.1 + Provision-Bundle: com.mybank.account.delivery;deployed-version=1.0.1 + Import-Package: com.mybank.account.admin.login;version="1.0.1";bundle-symbolic-name="com.mybank.account.admin";bundle-version="[1.0.1,1.0.1]",com.mybank.account.delivery.bycar;version="[1.0.0,2.0.0)",javax.servlet;version="2.5.0" + Deployed-Use-Bundle: com.mybank.account.admin;deployed-version=1.0.1 ++++</div>+++
+.DEPLOYMENT.MF
+[source]
+----
+Manifest-Version: 1.0
+Application-Version: 1.0
+Application-SymbolicName: com.mybank.account.app
+Deployed-Content: com.mybank.account.bankWeb;deployed-version=1.0.0,
+com.mybank.account.bankAccount;deployed-version=1.0.0,
+com.mybank.account.common;deployed-version=1.2.0,
+com.mybank.account.utility;deployed-version=1.0.0,
+com.mybank.utils.logging;deployed-version=1.3.1
+Provision-Bundle: com.mybank.account.delivery;deployed-version=1.0.1
+Import-Package: com.mybank.account.admin.login;version="1.0.1";bundle-symbolic-name="com.mybank.account.admin";bundle-version="[1.0.1,1.0.1]",com.mybank.account.delivery.bycar;version="[1.0.0,2.0.0)",javax.servlet;version="2.5.0"
+Deployed-Use-Bundle: com.mybank.account.admin;deployed-version=1.0.1
+----
 
 The manifest headers are as follows:
 

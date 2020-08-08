@@ -182,7 +182,6 @@ referenceListeners=@ReferenceListener(ref="listBindingListener"))
      ...
  }
 
-+++<a name="BlueprintAnnotation-Typeconverters">++++++</a>+++
 
 === Type converters
 

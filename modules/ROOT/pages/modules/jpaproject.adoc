@@ -116,7 +116,7 @@ To use the extension add this namespace to your blueprint
 
      xmlns:jpa="http://aries.apache.org/xmlns/jpa/v2.0.0"
 
-and enable annotation support using the element +++<jpa:enable>++++++</jpa:enable>+++ on top level.
+and enable annotation support using the element <jpa:enable> on top level.
 Typically this namespace is used together with the transaction namespace to also provide annoation based transactions.
 
 For more details see the https://svn.apache.org/repos/asf/aries/trunk/jpa/examples/tasklist-blueprint/[Aries JPA blueprint example].
@@ -159,7 +159,7 @@ In OSGi jndi support is provided by aries jndi  (http://aries.apache.org/modules
 It bridges jndi names to OSGi services.
 We must define two parameters, the "osgi:service" wich will allow to lookup OSGI services, the interface "javax.sql.DataSource" and the name of the service "osgi.jndi.service.name", which is a filter property,  with its jndi name associated.
 
-To access to the datasource, you must provide within the +++<jta-data-source>+++or +++<non-jta-data-source>+++depending if you use transaction type JTA or RESOURCE_LOCAL.+++</non-jta-data-source>++++++</jta-data-source>+++
+To access to the datasource, you must provide within the <jta-data-source> or <non-jta-data-source> depending if you use transaction type JTA or RESOURCE_LOCAL.
 
  <persistence-unit name="tasklist" transaction-type="JTA">
  <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/tasklist)</jta-data-source>
@@ -173,11 +173,11 @@ For this we need to inject a thread safe EntityManager and ensure the DAO code i
 
 Aries JPA 1.x used a xml element inside each DAO bean to inject the EntityManager.
 This syntax is not suppoerted for Aries JPA 2.x anymore.
-Instead simply enable standard @PesistenceContext and @PersistenceUnit annotation support with the xml element +++<jpa:enable>++++++</jpa:enable>+++ on top level.
+Instead simply enable standard @PesistenceContext and @PersistenceUnit annotation support with the xml element <jpa:enable> on top level.
 
-The transactional context is established using the xml element +++<tx:transaction>+++on the bean level.
+The transactional context is established using the xml element <tx:transaction> on the bean level.
 In the example below we enable transactions for all DAO methods.
-The scope of the transaction can be defined using the attribute value.+++</tx:transaction>+++
+The scope of the transaction can be defined using the attribute value.
 
 Example blueprint follows showing the full breadth of allowable injection syntax:
 

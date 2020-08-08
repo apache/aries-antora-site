@@ -41,11 +41,11 @@ The following example shows how to get the plugin to generate an APPLICATION.MF 
 
 The pom to application manfiest header mapping is as follows:
 
-* Pom +++<groupId>++++++</groupId>+++.+++<artifactId>++++++</artifactId>+++ \-> Application-SymbolicName
-* Pom +++<name>++++++</name>+++ \-> Application-Name
-* Pom +++<version>++++++</version>+++ \-> Application-Version (cleaned up for OSGi)
-* Pom +++<description>++++++</description>+++ \-> Application-Description
-* Pom +++<dependencies>++++++</dependencies>+++ \-> Application-Content
+* Pom <groupId>.<artifactId> \-> Application-SymbolicName
+* Pom <name> \-> Application-Name
+* Pom <version> \-> Application-Version (cleaned up for OSGi)
+* Pom <description> \-> Application-Description
+* Pom <dependencies> \-> Application-Content
 
 == Overriding Application-SymbolicName
 
@@ -83,7 +83,7 @@ The text inside the elements is included as-is.
 
 == Including transitive dependencies (deprecated)
 
-This configuration option is deprecated in favor of +++<archiveContent>++++++</archiveContent>+++.
+This configuration option is deprecated in favor of <archiveContent>.
 
 By default, the archive will only include the direct dependencies of the project.
 Transitive dependencies can be includes as follows:

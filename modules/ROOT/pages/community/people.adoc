@@ -1,62 +1,248 @@
 = People
 
-This is a list of the people involved in the Apache Aries Incubator and their roles.+++<table>++++++<tr>++++++<th>+++Name+++</th>++++++<th>+++Organization+++</th>++++++<th>+++PMC Member+++</th>++++++</tr>+++
-+++<tr>++++++<td>+++Adam Wojtuniak+++</td>++++++<td>+++Ericsson+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Alan Cabrera+++</td>++++++<td>+++LinkedIn+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Alan Keane+++</td>++++++<td>+++Ericsson+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Alasdair Nottingham+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Andrew Osborne+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Bartosz Kowalewski+++</td>++++++<td>++++++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Bernd Kolb+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Bertrand Delacretaz+++</td>++++++<td>++++++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Carlos Sierra Andrés+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Carsten Ziegeler+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Chris Wilkinson+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Christian Schneider+++</td>++++++<td>+++Talend+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Dan Kulp+++</td>++++++<td>+++Talend+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++David Bosschaert+++</td>++++++<td>+++Adobe+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++David Jencks+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Davanum Srinivas (Dims)+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Dimo Stoilov+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Dominik Przybysz+++</td>++++++<td>+++TouK+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Emily Jiang+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Eoghan Glynn+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Felix Meschberger+++</td>++++++<td>+++Adobe+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Giuseppe Gerla+++</td>++++++<td>++++++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Graham Charters+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Grzegorz Grzybek+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Guillaume Nodet+++</td>++++++<td>+++Progress+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Hiram Chirino+++</td>++++++<td>+++Progress+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Holly Cummins+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Ian Robinson+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++James Strachan+++</td>++++++<td>+++Progress+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Jarek Gawor+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Jean-Baptiste Onofré+++</td>++++++<td>+++Talend+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Jean-Sebastien Delfino+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Jeremy Hughes+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Joe Bohn+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++John Ross+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Kevan Miller+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Lei "Rex" Wang+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Lin Sun+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Kiril Mitov+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Mark Nuttall+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Niclas Hedhman+++</td>++++++<td>++++++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Niklas Gustavsson+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Nikolai Tankov+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Oisin Hurley+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Peter Peshev+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Raymond Augé+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Raymond Feng+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Rick McGuire+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Roman Roelofsen+++</td>++++++<td>+++ProSyst+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Sabine Heider+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Sergey Beryozkin+++</td>++++++<td>+++Talend+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Stuart McCulloch+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Timothy Ward+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Todor Boev+++</td>++++++<td>+++ProSyst+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Tom De Wolf+++</td>++++++<td>++++++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Tom Watson+++</td>++++++<td>+++IBM+++</td>++++++<td>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Valentin Mahrwald+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Violeta Georgieva+++</td>++++++<td>+++SAP+++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Zoe Slattery+++</td>++++++<td>++++++</td>++++++<td>++++++<img alt="yes" src="/images/check.gif">++++++</img>++++++</td>++++++</tr>++++++</table>+++
+This is a list of the people involved in the Apache Aries Incubator and their roles.
+
+[cols="3*",opts="headers"]
+|===
+|Name
+|Organization
+|PMC Member
+
+
+|Adam Wojtuniak
+|Ericsson
+|
+
+|Alan Cabrera
+|LinkedIn
+|
+
+|Alan Keane
+|Ericsson
+|
+
+|Alasdair Nottingham
+|IBM
+|image:check.gif[]
+
+|Andrew Osborne
+|IBM
+|image:check.gif[]
+
+|Bartosz Kowalewski
+|
+|
+
+|Bernd Kolb
+|SAP
+|image:check.gif[]
+
+|Bertrand Delacretaz
+|
+|
+
+|Carlos Sierra Andrés
+|
+|image:check.gif[]
+
+|Carsten Ziegeler
+|
+|image:check.gif[]
+
+|Chris Wilkinson
+|IBM
+|
+
+|Christian Schneider
+|Talend
+|image:check.gif[]
+
+|Dan Kulp
+|Talend
+|image:check.gif[]
+
+|David Bosschaert
+|Adobe
+|image:check.gif[]
+
+|David Jencks
+|IBM
+|image:check.gif[]
+
+|Davanum Srinivas (Dims)
+|IBM
+|image:check.gif[]
+
+|Dimo Stoilov
+|SAP
+|image:check.gif[]
+
+|Dominik Przybysz
+|TouK
+|image:check.gif[]
+
+|Emily Jiang
+|IBM
+|image:check.gif[]
+
+|Eoghan Glynn
+|
+|image:check.gif[]
+
+|Felix Meschberger
+|Adobe
+|
+
+|Giuseppe Gerla
+|
+|
+
+|Graham Charters
+|IBM
+|image:check.gif[]
+
+|Grzegorz Grzybek
+|
+|image:check.gif[]
+
+|Guillaume Nodet
+|Progress
+|image:check.gif[]
+
+|Hiram Chirino
+|Progress
+|image:check.gif[]
+
+|Holly Cummins
+|IBM
+|image:check.gif[]
+
+|Ian Robinson
+|IBM
+|image:check.gif[]
+
+|James Strachan
+|Progress
+|image:check.gif[]
+
+|Jarek Gawor
+|IBM
+|image:check.gif[]
+
+|Jean-Baptiste Onofré
+|Talend
+|image:check.gif[]
+
+|Jean-Sebastien Delfino
+|IBM
+|image:check.gif[]
+
+|Jeremy Hughes
+|IBM
+|image:check.gif[]
+
+|Joe Bohn
+|IBM
+|image:check.gif[]
+
+|John Ross
+|IBM
+|image:check.gif[]
+
+|Kevan Miller
+|
+|image:check.gif[]
+
+|Lei "Rex" Wang
+|IBM
+|
+
+|Lin Sun
+|IBM
+|image:check.gif[]
+
+|Kiril Mitov
+|SAP
+|image:check.gif[]
+
+|Mark Nuttall
+|IBM
+|image:check.gif[]
+
+|Niclas Hedhman
+|
+|
+
+|Niklas Gustavsson
+|
+|image:check.gif[]
+
+|Nikolai Tankov
+|SAP
+|image:check.gif[]
+
+|Oisin Hurley
+|
+|image:check.gif[]
+
+|Peter Peshev
+|SAP
+|image:check.gif[]
+
+|Raymond Augé
+|
+|image:check.gif[]
+
+|Raymond Feng
+|IBM
+|image:check.gif[]
+
+|Rick McGuire
+|
+|image:check.gif[]
+
+|Roman Roelofsen
+|ProSyst
+|image:check.gif[]
+
+|Sabine Heider
+|SAP
+|image:check.gif[]
+
+|Sergey Beryozkin
+|Talend
+|image:check.gif[]
+
+|Stuart McCulloch
+|
+|image:check.gif[]
+
+|Timothy Ward
+|
+|image:check.gif[]
+
+|Todor Boev
+|ProSyst
+|image:check.gif[]
+
+|Tom De Wolf
+|
+|
+
+|Tom Watson
+|IBM
+|
+
+|Valentin Mahrwald
+|
+|image:check.gif[]
+
+|Violeta Georgieva
+|SAP
+|image:check.gif[]
+
+|Zoe Slattery
+|
+|image:check.gif[]
+
+|===
