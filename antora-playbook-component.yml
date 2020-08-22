@@ -1,0 +1,22 @@
+site:
+  title: Apache Aries
+  start_page: documentation::index.adoc
+content:
+  sources:
+#  This is a local "author mode" playbook for this component/version only
+  - url: ./
+    branches: HEAD
+
+asciidoc:
+  extensions:
+    - "@djencks/asciidoctor-antora-indexer"
+
+ui:
+  bundle:
+    url: "./node_modules/@apache-aries/aries-antora-ui/build/aries-antora-ui-bundle.zip"
+    snapshot: true
+  #currently .htaccess has to be copied by hand, see https://gitlab.com/antora/antora/-/issues/627 and package.json
+#  supplemental_files: ./supplemental-ui
+
+output:
+  clean: true

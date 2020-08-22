@@ -19,46 +19,53 @@
 * xref:community/boardreports/july-2016.adoc[July 2016]
 * xref:community/boardreports/april-2016.adoc[April 2016]
 * xref:community/boardreports/jan-2016.adoc[January 2016]
-+
+
 == 2015
+
 * xref:community/boardreports/nov-2015.adoc[November 2015]
 * xref:community/boardreports/july-2015.adoc[July 2015]
 * xref:community/boardreports/april-2015.adoc[April 2015]
 * xref:community/boardreports/feb-2015.adoc[February 2015]
-+
+
 == 2014
+
 * xref:community/boardreports/oct-2014.adoc[October 2014]
 * xref:community/boardreports/july-2014.adoc[July 2014]
 * xref:community/boardreports/april-2014.adoc[April 2014]
 * xref:community/boardreports/january-2014.adoc[January 2014]
-+
+
 == 2013
+
 * xref:community/boardreports/oct-2013.adoc[October 2013]
 * xref:community/boardreports/july-2013.adoc[July 2013]
 * xref:community/boardreports/april-2013.adoc[April 2013]
 * xref:community/boardreports/january-2013.adoc[January 2013]
-+
+
 == 2012
+
 * xref:community/boardreports/october-2012.adoc[October 2012]
 * xref:community/boardreports/july-2012.adoc[July 2012]
 * xref:community/boardreports/april-2012.adoc[April 2012]
 * xref:community/boardreports/january-2012.adoc[January 2012]
-+
+
 == 2011
+
 * xref:community/boardreports/october-2011.adoc[October 2011]
 * xref:community/boardreports/july-2011.adoc[July 2011]
 * xref:community/boardreports/april-2011.adoc[April 2011]
 * xref:community/boardreports/march-2011.adoc[March 2011]
 * xref:community/boardreports/february-2011.adoc[February 2011]
 * xref:community/boardreports/january-2011.adoc[January 2011]
-+
+
 == 2010
+
 * xref:community/boardreports/december-2010.adoc[December 2010]
 * xref:community/boardreports/september-2010.adoc[September 2010]
 * xref:community/boardreports/june-2010.adoc[June 2010]
 * xref:community/boardreports/march-2010.adoc[March 2010]
-+
+
 == 2009
+
 * xref:community/boardreports/december-2009.adoc[December 2009]
 * xref:community/boardreports/november-2009.adoc[November 2009]
 * xref:community/boardreports/october-2009.adoc[October 2009]

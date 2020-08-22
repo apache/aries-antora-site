@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "clean-build": "npm run clean-install;npm run build",
+    "clean-install": "rm -rf node_modules/ .cache/ package-lock.json;npm i --cache=.cache/npm",
+    "build": "node_modules/.bin/antora antora-playbook-component.yml --stacktrace --fetch --clean"
+  },
+  "devDependencies": {
+    "@antora/cli": "^2.3.3",
+    "@antora/site-generator-default": "^2.3.3",
+    "@djencks/asciidoctor-antora-indexer": "^0.0.4",
+    "@apache-aries/aries-antora-ui": "https://github.com/djencks/aries-antora-ui.git"
+  }
+}

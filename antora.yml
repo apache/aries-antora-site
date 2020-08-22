@@ -1,4 +1,5 @@
 name: documentation
+title: Documentation
 version: master
 start_page: index.adoc
 nav:
