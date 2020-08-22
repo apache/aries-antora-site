@@ -1,0 +1,10 @@
+= 0.3 Javadocs
+
+* link:../_attachments/javadocs/application/0.3/index.html[Application 0.3]
+* link:../_attachments/javadocs/blueprint/0.3/index.html[Blueprint 0.3]
+* link:../_attachments/javadocs/jndi/0.3/index.html[JNDI 0.3]
+* link:../_attachments/javadocs/jpa/0.3/index.html[JPA 0.3]
+* link:../_attachments/javadocs/proxy/0.3/index.html[Proxy 0.3]
+* link:../_attachments/javadocs/quiesce/0.3/index.html[Quiesce 0.3]
+* link:../_attachments/javadocs/util/0.3/index.html[Util 0.3]
+

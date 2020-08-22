@@ -3,7 +3,7 @@
 == General information
 
 Apache Aries modules are distributed in source and binary form.
-These http://www.apache.org/dist/aries/KEYS[KEYS] can be used to verify the releases.
+These link:https://www.apache.org/dist/aries/KEYS[KEYS] can be used to verify the releases.
 
 All Apache Aries products are distributed under the terms of The Apache Software License (version 2.0).
 See the LICENSE file included in each distribution for additional license information.
@@ -13,158 +13,32 @@ See the LICENSE file included in each distribution for additional license inform
 The official downloads for Apache projects are hosted at Apache.
 For maven users we recommend to simply refer to the  individual maven artifacts instead of downloading by hand.
 
-http://www.apache.org/dist/aries/[Official Aries Downloads]
+link:https://www.apache.org/dist/aries/[Official Aries Downloads]
 
 == Maven central
 
-All Aries modules are released to http://search.maven.org[maven central].
+All Aries modules are released to link:https://search.maven.org[maven central].
 
 The Aries subprojects can be found at these locations
 
-* {blank}
-+
-[cols=4*]
-|===
-| [async](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.async)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [blueprint](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.blueprint)
-|===
-
-* {blank}
-+
-[cols=5*]
-|===
-| [eba-maven-plugin](http://search.maven.org/#artifactdetails
-| org.apache.aries
-| eba-maven-plugin
-| 1.0.0
-| maven-plugin)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [ejb](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.ejb)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [jmx](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.jmx)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [jndi](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.jndi)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [jpa](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.jpa)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [proxy](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.proxy)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [quiesce](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.quiesce)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [subsystem](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.subsystem)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [testsupport](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.testsupport)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [transaction](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.transaction)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [util](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.util)
-|===
-
-* {blank}
-+
-[cols=4*]
-|===
-| [web](http://search.maven.org/#search
-| ga
-| 1
-| g%3Aorg.apache.aries.web)
-|===
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.async[async]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.blueprint[blueprint]
+* link:https://search.maven.org/#artifactdetails|org.apache.aries|eba-maven-plugin|1.0.0|maven-plugin[eba-maven-plugin]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.ejb[ejb]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.jmx[jmx]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.jndi[jndi]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.jpa[jpa]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.proxy[proxy]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.quiesce[quiesce]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.subsystem[subsystem]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.testsupport[testsupport]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.transaction[transaction]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.util[util]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.web[web]
 
 == Apache Karaf
 
-http://karaf.apache.org[Apache Karaf] is a modular OSGi server that integrates very well with Aries.
+link:https://karaf.apache.org[Apache Karaf] is a modular OSGi server that integrates very well with Aries.
 Most aries subprojects can be installed into Apache Karaf using features.
 For example *feature:install jndi* installs the Aries jndi modules.
 
@@ -173,4 +47,4 @@ For example *feature:install jndi* installs the Aries jndi modules.
 The easiest way to use the samples is to download the source zip, navigate to the appropriate 'assembly' module and run mvn install to download all the released  binary artifacts.
 Alternatively you can build the entire source.
 
-http://www.apache.org/dyn/closer.cgi/aries/samples-1.0.0-source-release.zip[Aries Samples]
+link:https://www.apache.org/dyn/closer.cgi/aries/samples-1.0.0-source-release.zip[Aries Samples]
