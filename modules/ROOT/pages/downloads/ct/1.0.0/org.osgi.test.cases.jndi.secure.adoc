@@ -1,3 +1,4 @@
+++++
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,7 +28,7 @@
 					table {
 					border-collapse:collapse; width:100%; margin-top:20px;}
 					th { height:20px; }
-					} 
+					}
 				</style>
 <script language="javascript">
 					function toggle(name) {
@@ -39,7 +40,7 @@
 					else {
 					el.style.display = '';
 					}
-					}				
+					}
 				</script>
 </head>
 <body style="width:800px">
@@ -50,13 +51,13 @@
 <th>Property Key</th><th>Property Value</th>
 </tr>
 <tr>
-<td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.blueprint.java5-4.2.0.jar</td>
+<td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.jndi.secure-4.2.0.jar</td>
 </tr>
 <tr>
-<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@6855a338</td>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@212bcd4b</td>
 </tr>
 <tr>
-<td width="50%">Testrun</td><td>Wed Jun 20 10:52:21 BST 2012</td>
+<td width="50%">Testrun</td><td>Wed Jun 20 20:28:33 BST 2012</td>
 </tr>
 <tr>
 <th colspan="2">Bundles</th>
@@ -65,19 +66,7 @@
 <td>org.eclipse.osgi</td><td>3.5.0.v20090520</td>
 </tr>
 <tr>
-<td>org.osgi.test.cases.blueprint</td><td>4.2.0.201004301237</td>
-</tr>
-<tr>
-<td>osgi.cmpn</td><td>4.2.0.200908310645</td>
-</tr>
-<tr>
-<td>org.eclipse.equinox.cm</td><td>3.2.0.v20070116</td>
-</tr>
-<tr>
-<td>org.knopflerfish.log-API</td><td>3.0.1</td>
-</tr>
-<tr>
-<td>org.eclipse.equinox.event</td><td>1.1.100.v20090513</td>
+<td>osgi.enterprise</td><td>4.2.0.201003190513</td>
 </tr>
 <tr>
 <td>org.ops4j.pax.logging.pax-logging-api</td><td>1.5.0</td>
@@ -89,17 +78,17 @@
 <td>org.apache.aries.proxy</td><td>1.0.0.SNAPSHOT</td>
 </tr>
 <tr>
-<td>org.apache.aries.blueprint</td><td>1.0.0.SNAPSHOT</td>
+<td>org.apache.aries.jndi</td><td>1.0.0.SNAPSHOT</td>
 </tr>
 <tr>
-<td>org.osgi.test.cases.blueprint.java5</td><td>4.2.0.201004301237</td>
+<td>org.osgi.test.cases.jndi.secure</td><td>4.2.0.201004301238</td>
 </tr>
 </table>
 <h2>Testcases</h2>
-<p>The following table shows the results of each test. A red icon indicates that the 
+<p>The following table shows the results of each test. A red icon indicates that the
 					test failed or had an error. A green icon
-					indicates success. Any errors or failure messages 
-					will be displayed as a list beneath the test name. To see the 
+					indicates success. Any errors or failure messages
+					will be displayed as a list beneath the test name. To see the
 					exception, click on the info icon on the right.</p>
 <table width="100%">
 <tr>
@@ -108,59 +97,40 @@
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testGenericCollectionInjection</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testLookupAccessRestrictions</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testGenericPropertyInjection</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testBundleContextAccessRestrictions</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testListCollectionReferenceImport</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testSecureLookupWithSpecificInitialContextFactory</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testListCollectionServiceImport</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testSecureLookupWithInitialContextFactoryBuilder</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testCollectionReferenceImport</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testSecureGetObjectInstanceWithFactoryName</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testPatternInjection</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testSecureGetObjectInstanceWithFactoryNameAndAttributes</td><td>0</td><td>0</td><td></td>
 </tr>
 <tr>
 <td width="15px" class="
                                         ok
-                                    "></td><td class="code">testGenericConversionError</td><td>0</td><td>0</td><td></td>
-</tr>
-<tr>
-<td width="15px" class="
-                                        ok
-                                    "></td><td class="code">testGenericRawClassError</td><td>0</td><td>0</td><td></td>
-</tr>
-<tr>
-<td width="15px" class="
-                                        ok
-                                    "></td><td class="code">testReferenceListServiceError</td><td>0</td><td>0</td><td></td>
-</tr>
-<tr>
-<td width="15px" class="
-                                        ok
-                                    "></td><td class="code">testReferenceListError</td><td>0</td><td>0</td><td></td>
-</tr>
-<tr>
-<td width="15px" class="
-                                        ok
-                                    "></td><td class="code">testEnumConversionError</td><td>0</td><td>0</td><td></td>
+                                    "></td><td class="code">testSecureGetObjectInstanceWithBuilder</td><td>0</td><td>0</td><td></td>
 </tr>
 </table>
 <br>
 </body>
 </html>
+++++

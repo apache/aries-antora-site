@@ -2,16 +2,16 @@
 
 == 0.3
 
-* link:archived-releases/0.3/0.3.html[Downloads]
-* link:archived-releases/0.3/0.3-releasenotes.html[Release Notes]
-* link:ct/0.3/testresults.html[Compliance Tests]
+* xref:downloads/archived-releases/0.3/0.3.adoc[Downloads]
+* xref:downloads/archived-releases/0.3/0.3-releasenotes.adoc[Release Notes]
+* xref:downloads/ct/0.3/testresults.adoc[Compliance Tests]
 
 == 0.2-incubating
 
-* link:archived-releases/0.2-incubating/0.2-incubating.html[Downloads]
-* link:archived-releases/0.2-incubating/0.2-incubating-releasenotes.html[Release Notes]
-* link:ct/0.2-incubating/testresults.html[Compliance Tests]
+* xref:downloads/archived-releases/0.2-incubating/0.2-incubating.adoc[Downloads]
+* xref:downloads/archived-releases/0.2-incubating/0.2-incubating-releasenotes.adoc[Release Notes]
+* xref:downloads/ct/0.2-incubating/testresults.adoc[Compliance Tests]
 
 == 0.1-incubating
 
-* link:archived-releases/0.1-incubating/0.1-incubating.html[Downloads]
+* xref:downloads/archived-releases/0.1-incubating/0.1-incubating.adoc[Downloads]

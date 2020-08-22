@@ -1,3 +1,4 @@
+++++
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,7 +28,7 @@
 					table {
 					border-collapse:collapse; width:100%; margin-top:20px;}
 					th { height:20px; }
-					} 
+					}
 				</style>
 <script language="javascript">
 					function toggle(name) {
@@ -39,7 +40,7 @@
 					else {
 					el.style.display = '';
 					}
-					}				
+					}
 				</script>
 </head>
 <body style="width:800px">
@@ -53,16 +54,16 @@
 <td width="50%">Target</td><td>/Users/holly/Documents/aries/ct/jar/org.osgi.test.cases.jndi-4.2.0.jar</td>
 </tr>
 <tr>
-<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@97d01f</td>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@f9da4fc</td>
 </tr>
 <tr>
-<td width="50%">Testrun</td><td>Wed Jun 20 20:18:52 BST 2012</td>
+<td width="50%">Testrun</td><td>Wed Jun 20 20:24:06 BST 2012</td>
 </tr>
 <tr>
 <th colspan="2">Bundles</th>
 </tr>
 <tr>
-<td>org.eclipse.osgi</td><td>3.5.0.v20090520</td>
+<td>org.eclipse.osgi</td><td>3.7.0.v20110613</td>
 </tr>
 <tr>
 <td>osgi.enterprise</td><td>4.2.0.201003190513</td>
@@ -84,10 +85,10 @@
 </tr>
 </table>
 <h2>Testcases</h2>
-<p>The following table shows the results of each test. A red icon indicates that the 
+<p>The following table shows the results of each test. A red icon indicates that the
 					test failed or had an error. A green icon
-					indicates success. Any errors or failure messages 
-					will be displayed as a list beneath the test name. To see the 
+					indicates success. Any errors or failure messages
+					will be displayed as a list beneath the test name. To see the
 					exception, click on the info icon on the right.</p>
 <table width="100%">
 <tr>
@@ -755,3 +756,4 @@ javax.naming.NamingException: Unable to retrieve reference
 </table>
 </body>
 </html>
+++++

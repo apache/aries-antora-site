@@ -1,3 +1,4 @@
+++++
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,7 +28,7 @@
 					table {
 					border-collapse:collapse; width:100%; margin-top:20px;}
 					th { height:20px; }
-					} 
+					}
 				</style>
 <script language="javascript">
 					function toggle(name) {
@@ -39,7 +40,7 @@
 					else {
 					el.style.display = '';
 					}
-					}				
+					}
 				</script>
 </head>
 <body style="width:800px">
@@ -50,13 +51,13 @@
 <th>Property Key</th><th>Property Value</th>
 </tr>
 <tr>
-<td width="50%">Target</td><td>/Users/zoe/Workspaces/aries/ComplianceTests/ApacheAriesTests/jar/org.osgi.test.cases.jmx-4.2.0.jar</td>
+<td width="50%">Target</td><td>/Users/nottinga/Downloads/osgict/jar/org.osgi.test.cases.jmx-4.2.0.jar</td>
 </tr>
 <tr>
-<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@fb6354</td>
+<td width="50%">Framework</td><td>org.eclipse.osgi.launch.Equinox@235dd910</td>
 </tr>
 <tr>
-<td width="50%">Testrun</td><td>Wed Sep 01 20:28:48 BST 2010</td>
+<td width="50%">Testrun</td><td>Tue Aug 30 10:57:56 PDT 2011</td>
 </tr>
 <tr>
 <th colspan="2">Bundles</th>
@@ -65,10 +66,22 @@
 <td>org.eclipse.osgi</td><td>3.5.0.v20090520</td>
 </tr>
 <tr>
-<td>org.apache.felix.configadmin</td><td>1.2.4</td>
+<td>osgi.enterprise</td><td>4.2.0.201003190513</td>
 </tr>
 <tr>
-<td>org.apache.aries.jmx</td><td>0.2.0.incubating</td>
+<td>org.ops4j.pax.logging.pax-logging-api</td><td>1.4</td>
+</tr>
+<tr>
+<td>org.ops4j.pax.logging.pax-logging-service</td><td>1.4</td>
+</tr>
+<tr>
+<td>org.apache.felix.configadmin</td><td>1.2.8</td>
+</tr>
+<tr>
+<td>org.apache.aries.jmx</td><td>0.3.0</td>
+</tr>
+<tr>
+<td>org.apache.aries.util</td><td>0.3.0</td>
 </tr>
 <tr>
 <td>org.knopflerfish.bundle.useradmin</td><td>3.0.1</td>
@@ -77,29 +90,26 @@
 <td>org.knopflerfish.log-API</td><td>3.0.1</td>
 </tr>
 <tr>
-<td>org.apache.felix.log</td><td>1.0.0</td>
+<td>org.apache.felix.log</td><td>1.0.1</td>
 </tr>
 <tr>
-<td>osgi.cmpn</td><td>4.2.0.200908310645</td>
+<td>org.eclipse.equinox.ip</td><td>1.1.200.v20110502</td>
 </tr>
 <tr>
-<td>org.eclipse.equinox.ip</td><td>1.1.100.v20100503</td>
+<td>org.eclipse.equinox.util</td><td>1.0.300.v20110502</td>
 </tr>
 <tr>
-<td>org.eclipse.equinox.util</td><td>1.0.200.v20100503</td>
-</tr>
-<tr>
-<td>org.apache.felix.http.bundle</td><td>2.0.4</td>
+<td>org.apache.felix.http.bundle</td><td>2.2.0</td>
 </tr>
 <tr>
 <td>org.osgi.test.cases.jmx</td><td>4.2.0.201004301238</td>
 </tr>
 </table>
 <h2>Testcases</h2>
-<p>The following table shows the results of each test. A red icon indicates that the 
+<p>The following table shows the results of each test. A red icon indicates that the
 					test failed or had an error. A green icon
-					indicates success. Any errors or failure messages 
-					will be displayed as a list beneath the test name. To see the 
+					indicates success. Any errors or failure messages
+					will be displayed as a list beneath the test name. To see the
 					exception, click on the info icon on the right.</p>
 <table width="100%">
 <tr>
@@ -971,10 +981,10 @@ org.osgi.framework.BundleException: An error occurred trying to read the bundle
 	at aQute.junit.runtime.Target.doTesting(Target.java:234)
 	at aQute.junit.runtime.Target.run(Target.java:57)
 	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: java.io.FileNotFoundException: jar/osgi.enterprise-4.2.0.jar (No such file or directory)
+Caused by: java.io.FileNotFoundException: jar/org.osgi.impl.bundle.jmx-4.2.0.jar (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:66)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:120)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:79)
 	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:70)
 	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:161)
 	at org.eclipse.osgi.internal.baseadaptor.BundleInstall.begin(BundleInstall.java:56)
@@ -1016,10 +1026,10 @@ org.osgi.framework.BundleException: An error occurred trying to read the bundle
 	at aQute.junit.runtime.Target.doTesting(Target.java:234)
 	at aQute.junit.runtime.Target.run(Target.java:57)
 	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: java.io.FileNotFoundException: jar/osgi.enterprise-4.2.0.jar (No such file or directory)
+Caused by: java.io.FileNotFoundException: jar/org.osgi.impl.bundle.jmx-4.2.0.jar (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:66)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:120)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:79)
 	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:70)
 	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:161)
 	at org.eclipse.osgi.internal.baseadaptor.BundleInstall.begin(BundleInstall.java:56)
@@ -1061,10 +1071,10 @@ org.osgi.framework.BundleException: An error occurred trying to read the bundle
 	at aQute.junit.runtime.Target.doTesting(Target.java:234)
 	at aQute.junit.runtime.Target.run(Target.java:57)
 	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: java.io.FileNotFoundException: jar/osgi.enterprise-4.2.0.jar (No such file or directory)
+Caused by: java.io.FileNotFoundException: jar/org.osgi.impl.bundle.jmx-4.2.0.jar (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:66)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:120)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:79)
 	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:70)
 	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:161)
 	at org.eclipse.osgi.internal.baseadaptor.BundleInstall.begin(BundleInstall.java:56)
@@ -1106,10 +1116,10 @@ org.osgi.framework.BundleException: An error occurred trying to read the bundle
 	at aQute.junit.runtime.Target.doTesting(Target.java:234)
 	at aQute.junit.runtime.Target.run(Target.java:57)
 	at aQute.junit.runtime.Target.main(Target.java:37)
-Caused by: java.io.FileNotFoundException: jar/osgi.enterprise-4.2.0.jar (No such file or directory)
+Caused by: java.io.FileNotFoundException: jar/org.osgi.impl.bundle.jmx-4.2.0.jar (No such file or directory)
 	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:66)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:120)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:79)
 	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:70)
 	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:161)
 	at org.eclipse.osgi.internal.baseadaptor.BundleInstall.begin(BundleInstall.java:56)
@@ -2256,3 +2266,4 @@ Caused by: java.io.FileNotFoundException: jar/osgi.enterprise-4.2.0.jar (No such
 </table>
 </body>
 </html>
+++++
