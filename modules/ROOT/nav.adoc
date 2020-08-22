@@ -1,5 +1,5 @@
-//ulist with attributes  { level: '2', relative: 'community/*.adoc' }
 * Community
+//ulist with attributes  { level: '2', relative: 'community/*.adoc' }
 ** xref:master@documentation:ROOT:community/boardreports.adoc[]
 ** xref:master@documentation:ROOT:community/overview.adoc[]
 ** xref:master@documentation:ROOT:community/resources.adoc[]
@@ -7,8 +7,9 @@
 ** xref:master@documentation:ROOT:community/logos.adoc[]
 ** xref:master@documentation:ROOT:community/mailinglists.adoc[]
 ** xref:master@documentation:ROOT:community/people.adoc[]
-//ulist with attributes  { level: '3', relative: 'community/boardreports/*.adoc' }
+
 ** Board Reports
+//ulist with attributes  { level: '3', relative: 'community/boardreports/*.adoc' }
 *** xref:master@documentation:ROOT:community/boardreports/april-2011.adoc[]
 *** xref:master@documentation:ROOT:community/boardreports/april-2012.adoc[]
 *** xref:master@documentation:ROOT:community/boardreports/april-2013.adoc[]
@@ -50,8 +51,9 @@
 *** xref:master@documentation:ROOT:community/boardreports/oct-2016.adoc[]
 *** xref:master@documentation:ROOT:community/boardreports/oct-2017.adoc[]
 *** xref:master@documentation:ROOT:community/boardreports/september-2010.adoc[]
-//ulist with attributes  { level: '2', relative: 'development/*.adoc' }
+
 * Development
+//ulist with attributes  { level: '2', relative: 'development/*.adoc' }
 ** xref:master@documentation:ROOT:development/versionpolicy.adoc[]
 ** xref:master@documentation:ROOT:development/buildingaries.adoc[]
 ** xref:master@documentation:ROOT:development/guidelines.adoc[]
@@ -62,44 +64,106 @@
 ** xref:master@documentation:ROOT:development/ReleaseProcessRequirements.adoc[]
 ** xref:master@documentation:ROOT:development/releasingaries.adoc[]
 ** xref:master@documentation:ROOT:development/verifyingrelease.adoc[]
-//ulist with attributes  { level: '2', relative: 'documentation/*.adoc' }
+
 * Documentation
+//ulist with attributes  { level: '2', relative: 'documentation/*.adoc' }
 ** xref:master@documentation:ROOT:documentation/application-dependencies.adoc[]
 ** xref:master@documentation:ROOT:documentation/articles.adoc[]
 ** xref:master@documentation:ROOT:documentation/integrators-guide.adoc[]
 ** xref:master@documentation:ROOT:documentation/tools.adoc[]
 ** xref:master@documentation:ROOT:documentation/tutorials.adoc[]
-//ulist with attributes  { level: '3', relative: 'documentation/tools/*.adoc' }
+
 ** Tools
+//ulist with attributes  { level: '3', relative: 'documentation/tools/*.adoc' }
 *** xref:master@documentation:ROOT:documentation/tools/repositoryGenerator.adoc[]
-//ulist with attributes  { level: '3', relative: 'documentation/tutorials/*.adoc' }
+
 ** Tutorials
+//ulist with attributes  { level: '3', relative: 'documentation/tutorials/*.adoc' }
 *** xref:master@documentation:ROOT:documentation/tutorials/blueprinthelloworldtutorial.adoc[]
 *** xref:master@documentation:ROOT:documentation/tutorials/greetertutorial.adoc[]
-//ulist with attributes  { level: '2', relative: 'downloads/**/*.adoc' }
+
 * Downloads
-** xref:master@documentation:ROOT:downloads/archived-releases/0.1-incubating/0.1-incubating.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.3/0.3.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/0.2-incubating.adoc[]
+//ulist with attributes  { level: '2', relative: 'downloads/*.adoc' }
+** xref:master@documentation:ROOT:downloads/javadoc.adoc[]
 ** xref:master@documentation:ROOT:downloads/currentrelease.adoc[]
 ** xref:master@documentation:ROOT:downloads/archived-releases.adoc[]
 ** xref:master@documentation:ROOT:downloads/currentreleases.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/0.2-incubating-releasenotes.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.3/0.3-releasenotes.adoc[]
 ** xref:master@documentation:ROOT:downloads/testresults.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/0.2-incubating-testresults.adoc[]
-** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/testresults.adoc[]
-** xref:master@documentation:ROOT:downloads/ct/0.3/testresults.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.3/ariestrader-0.3.adoc[]
 ** xref:master@documentation:ROOT:downloads/ariestrader-1.0.0.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.1-incubating/ariestrader-0.1-incubating.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/ariestrader-0.2-incubating.adoc[]
 ** xref:master@documentation:ROOT:downloads/blogsample-1.0.0.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/blogsample-0.2-incubating.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.3/blogsample-0.3.adoc[]
-** xref:master@documentation:ROOT:downloads/archived-releases/0.1-incubating/blogsample-0.1-incubating.adoc[]
-//ulist with attributes  { level: '2', relative: 'modules/*.adoc' }
+
+** Archived Releases
+
+*** 0.1-incubating
+//ulist with attributes  { level: '4',
+//relative: 'downloads/archived-releases/0.1-incubating/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.1-incubating/0.1-incubating.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.1-incubating/ariestrader-0.1-incubating.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.1-incubating/blogsample-0.1-incubating.adoc[]
+
+*** 0.2-incubating
+//ulist with attributes  { level: '4',
+//relative: 'downloads/archived-releases/0.2-incubating/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/0.2-incubating.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/0.2-incubating-releasenotes.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/0.2-incubating-testresults.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/ariestrader-0.2-incubating.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.2-incubating/blogsample-0.2-incubating.adoc[]
+
+*** 0.3-incubating
+//ulist with attributes  { level: '4',
+//relative: 'downloads/archived-releases/0.3/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.3/0.3.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.3/0.3-releasenotes.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.3/ariestrader-0.3.adoc[]
+**** xref:master@documentation:ROOT:downloads/archived-releases/0.3/blogsample-0.3.adoc[]
+
+** CT
+
+*** 0.2-incubating
+//ulist with attributes  { level: '3', relative: 'downloads/ct/0.2-incubating/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/org.osgi.test.cases.blueprint.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/org.osgi.test.cases.blueprint.java5.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/org.osgi.test.cases.blueprint.secure.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/org.osgi.test.cases.jmx.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/org.osgi.test.cases.jndi.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/org.osgi.test.cases.transaction.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.2-incubating/testresults.adoc[]
+
+*** 0.3
+//ulist with attributes  { level: '3', relative: 'downloads/ct/0.3/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.blueprint.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.blueprint.java5.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.blueprint.secure.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.jmx.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.jndi.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.jndi.secure.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/org.osgi.test.cases.transaction.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/0.3/testresults.adoc[]
+
+*** 1.0.0
+//ulist with attributes  { level: '3', relative: 'downloads/ct/1.0.0/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.blueprint.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.blueprint.java5.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.blueprint.secure.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.jmx.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.jndi.43.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.jndi.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.jndi.secure.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.jpa.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/1.0.0/org.osgi.test.cases.transaction.adoc[]
+
+*** current-release (1.0??)
+//ulist with attributes  { level: '3', relative: 'downloads/ct/current-release/*.adoc' }
+**** xref:master@documentation:ROOT:downloads/ct/current-release/org.osgi.test.cases.blueprint.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/current-release/org.osgi.test.cases.blueprint.java5.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/current-release/org.osgi.test.cases.blueprint.secure.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/current-release/org.osgi.test.cases.jmx.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/current-release/org.osgi.test.cases.jndi.adoc[]
+**** xref:master@documentation:ROOT:downloads/ct/current-release/org.osgi.test.cases.transaction.adoc[]
+
 * Modules
+//ulist with attributes  { level: '2', relative: 'modules/*.adoc' }
 ** xref:master@documentation:ROOT:modules/applications.adoc[]
 ** xref:master@documentation:ROOT:modules/containers.adoc[]
 ** xref:master@documentation:ROOT:modules/jpaproject.adoc[]
@@ -120,13 +184,15 @@
 ** xref:master@documentation:ROOT:modules/samples.adoc[]
 ** xref:master@documentation:ROOT:modules/spi-fly.adoc[]
 ** xref:master@documentation:ROOT:modules/transactionsproject.adoc[]
-//ulist with attributes  { level: '3', relative: 'modules/samples/*.adoc' }
+
 ** Samples
+//ulist with attributes  { level: '3', relative: 'modules/samples/*.adoc' }
 *** xref:master@documentation:ROOT:modules/samples/goatsample.adoc[]
 *** xref:master@documentation:ROOT:modules/samples/ariestrader.adoc[]
 *** xref:master@documentation:ROOT:modules/samples/blog-sample.adoc[]
-//ulist with attributes  { level: '3', relative: 'modules/tx-control/*.adoc' }
+
 ** Transaction Control
+//ulist with attributes  { level: '3', relative: 'modules/tx-control/*.adoc' }
 *** xref:master@documentation:ROOT:modules/tx-control/advancedScopes.adoc[]
 *** xref:master@documentation:ROOT:modules/tx-control/localTransactions.adoc[]
 *** xref:master@documentation:ROOT:modules/tx-control/localJDBC.adoc[]

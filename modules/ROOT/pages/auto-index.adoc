@@ -1,6 +1,6 @@
 = Temporary auto-index page
 //uncomment to generate temporary nav file contents on console.
-//:antora-indexer-log-lists:
+:antora-indexer-log-lists:
 
 * Community
 
@@ -28,7 +28,37 @@ indexList::[level=3,relative=documentation/tutorials/*.adoc]
 
 * Downloads
 
-indexList::[level=2,relative=downloads/**/*.adoc]
+indexList::[level=2,relative=downloads/*.adoc]
+
+** Archived Releases
+*** 0.1-incubating
+
+indexList::[level=4,relative=downloads/archived-releases/0.1-incubating/*.adoc]
+
+*** 0.2-incubating
+
+indexList::[level=4,relative=downloads/archived-releases/0.2-incubating/*.adoc]
+
+*** 0.3-incubating
+
+indexList::[level=4,relative=downloads/archived-releases/0.3/*.adoc]
+
+** CT
+*** 0.2-incubating
+
+indexList::[level=4,relative=downloads/ct/0.2-incubating/*.adoc]
+
+*** 0.3
+
+indexList::[level=4,relative=downloads/ct/0.3/*.adoc]
+
+*** 1.0.0
+
+indexList::[level=4,relative=downloads/ct/1.0.0/*.adoc]
+
+*** current-release (1.0??)
+
+indexList::[level=4,relative=downloads/ct/current-release/*.adoc]
 
 * Modules
 
