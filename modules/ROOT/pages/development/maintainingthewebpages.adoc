@@ -1,6 +1,9 @@
-= MaintainingTheWebPages
+= Maintaining The Web Site
 
-NOTE: this page is totally and completely outdated.
+The web site is built with https://antora.org[Antora].
+Instructions coming soon.
+
+NOTE: the rest of this page is totally and completely outdated.
 It needs to be replaced by instructions for the current site.
 
 == How the Aries web site works
