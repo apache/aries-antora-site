@@ -5,10 +5,10 @@ pipeline {
 
     stages {
         stage('trigger-site-build') {
-            when {
-                branch 'master'
+//             when {
+//                 branch 'master'
 //                 changeset '**/*.adoc'
-            }
+//             }
 
             steps {
                 build job: 'Aries/aries-website', wait: false
