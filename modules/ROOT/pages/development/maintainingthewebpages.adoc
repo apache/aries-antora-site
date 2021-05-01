@@ -1,6 +1,6 @@
 = Maintaining The Web Site
 
-The web site is built with https://antora.org[Antora] run through the https://ci-builds.apache.org[Apache Jenkins CI].
+The web site is built with https://antora.org[Antora] run through https://ci-builds.apache.org[Apache Jenkins CI].
 Instructions coming soon.
 
 NOTE: the rest of this page is totally and completely outdated.

@@ -7,7 +7,7 @@ pipeline {
         stage('trigger-site-build') {
             when {
                 branch 'master'
-                changeset '**/*.adoc'
+//                 changeset '**/*.adoc'
             }
 
             steps {
