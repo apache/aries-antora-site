@@ -1,6 +1,6 @@
 = Maintaining The Web Site
 
-The web site is built with https://antora.org[Antora] run through https://ci-builds.apache.org[Apache Jenkins CI].
+The web site is built with https://antora.org[Antora] run through https://ci-builds.apache.org[Apache Jenkins CI] and published to a https://gitbox.apache.org/repos/asf?p=aries-site-pub.git;a=shortlog;h=refs/heads/asf-site[dedicated git repository] with an https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories[.asf.yaml] https://gitbox.apache.org/repos/asf?p=aries-site-pub.git;a=blob;f=.asf.yaml;hb=HEAD[configuration file].
 Instructions coming soon.
 
 NOTE: the rest of this page is totally and completely outdated.
