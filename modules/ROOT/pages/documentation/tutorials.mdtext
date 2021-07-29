@@ -1,8 +1,0 @@
-Title: Tutorials
-<a name="Tutorials-Tutorials"></a>
-# Tutorials
-
-- [Blueprint Hello World tutorial](tutorials/blueprinthelloworldtutorial.html)
-- [Greeter: another Blueprint Tutorial](tutorials/greetertutorial.html)
-- [Apache Karaf Tutorials](http://liquid-reality.de/display/liquid/Karaf+Tutorials) - Touch blueprint, jndi, jpa, transaction
-
