@@ -1,87 +1,119 @@
 = Maintaining The Web Site
 
 The web site is built with https://antora.org[Antora] run through https://ci-builds.apache.org[Apache Jenkins CI] and published to a https://gitbox.apache.org/repos/asf?p=aries-site-pub.git;a=shortlog;h=refs/heads/asf-site[dedicated git repository] with an https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories[.asf.yaml] https://gitbox.apache.org/repos/asf?p=aries-site-pub.git;a=blob;f=.asf.yaml;hb=HEAD[configuration file].
-Instructions coming soon.
 
-NOTE: the rest of this page is totally and completely outdated.
-It needs to be replaced by instructions for the current site.
+== Overall organization
 
-== How the Aries web site works
+For simplicity, this references the GitHub mirrors of the Apache gitbox repos.
 
-The Aries site is built using CMS.
-To edit the site you must be an Aries committer, the  ID and password are the same ones as you use for Aries SVN.
+General content::
+Content not specific to a particular subproject and unmigrated content is in the https://github.com/apache/aries-antora-site[aries-antora-site] repository.
+At the moment there is only one Antora component, version, and module, so the content is all under `modules/ROOT/pages`.
 
-The easiest way to edit pages is to install the CMS bookmarklet as described https://cms.apache.org/#bookmark[here]
+Subproject-specific content::
+Content specific to a subproject may be put in the subproject repo in the standard Antora layout.
+For instance, SCR content could be in `aries` under `scr/docs/modules/ROOT/pages`.
+This feature is not yet used.
 
-Navigate to the web page you would like to edit and then click the CMS bookmarklet.
+Antora playbook::
+The Antora playbook together with  the Node project to fetch and set up the required dependencies is in the https://github.com/apache/aries-antora[aries-antora] repository.
 
-The steps in making a change to the site are:
+Antora UI::
+The UI for this website is in the https://github.com/apache/aries-antora-ui[aries-antora-ui] repository.
+For simplicity this is currently set up as an extension of the Antora default UI using https://gitlab.com/djencks/antora-ui-builder[].
 
-* Edit
-* Submit
-* Commit your changes
-* Check the 'staged' site
-* If the content looks good, publish the site
+Published site content::
+The website build publishes the content to https://github.com/apache/aries-site-pub[aries-site-pub] in the `asf-site` branch.
+The `.asf.yaml` file is configured to publish the content to Apache servers.
 
-The Wiki syntax is called Markdown and is documented http://www.freewisdom.org/projects/python-markdown/[here].
-Some extensions are installed in  the CMS system (eg tables, syntax highlighting).
+Automated site build::
+The site is built using Jenkins jobs https://ci-builds.apache.org/job/Aries/job/website-build[aries/website-build] and https://ci-builds.apache.org/job/Aries/job/website-content-trigger[Aries/website-content-trigger].
+Committing to the `aries-antora-site` or `aries-antora` repositories will trigger a website build and publish.
+Changes to the UI will not trigger an automated build, but PMC members may trigger a build manually with the https://ci-builds.apache.org/job/Aries/job/website-build/build?delay=0sec[Build Now] button.
+If subproject content is moved to subproject repositories more trigger jobs will be needed.
 
-More information on CMS is  available http://wiki.apache.org/general/ApacheCms2010[here]
+== Extensions currently in use
 
-== Making major changes
+https://gitlab.com/djencks/asciidoctor-antora-indexer[asciidoctor-antora-indexer]::
+This queries the Antora content catalog and renders the results as lists, tables, etc.
+It is currently used in the xref:auto-index.adoc[] page to partially automate generation.
 
-Because the site is all in SVN its possible to check it out, make and test changes locally and then check in again much as you woudl with code changes.
-To do this you will need:
+== Basic AsciiDoc
 
-* A local copy of the cms build tools
-* A local setup of Apache
+The Intellij AsciiDoc plugin provides extensive syntax checking, side-by-side rendering, and a lot of other help.
 
-First, checkout the site , like this:
+Consult the Asciidoctor and Antora documentation for complete coverage of syntax and features.
 
- svn co https://svn.apache.org/repos/asf/aries/site/trunk/ site
+Please use "ventilated prose", with one sentence per line.
 
-== To build the site using the build tools.
+* A blank line indicates a new paragraph.
+* A page starts with a title, indicated by `= Title`.
+* Sections are marked with `==`, `===`, etc, the number of `=` indicating section nesting.
+* Sections are automatically assigned ids that can be used as the fragment in links.
+To manually specify an id, precede the section line with `[#my-id]` on a separate line.
+* Code blocks look like this:
+[source,adoc]
+------
+[source,java] <1>
+----  <2>
+class Foo {
+...
+}
+----
+------
+<1> Any language you want: highlighting is available for most.
+<2> Block separator `----`
 
-First check the cms build tools out of SVN:
+=== Page links
 
- svn co https://svn.apache.org/repos/infra/websites/cms/build/ buildtools
+Between pages::
+Use the `xref:` inline macro:
+`+++xref:other-page.adoc[]+++`.
 
-To run the build_site.pl script you will need to install the Python version  of Markup.
-The instructions for finding and installing Python pre-reqs are given http://wiki.apache.org/general/ApacheCMSFAQ[here]
+* The path to the other page starts from the `pages` directory: it is not relative to the current page.
+* For a non-fragment reference, the default link text is the other page title.
+Custom text may be specified inside the `[]` brackets.
+* For fragment references you must specify the link text.
 
-Then to build the site use this command:
+Within a page::
+Use the form `+++<<#_fragment_name, link text>>+++`.
+For a link to a section, the default link text is the section title.
 
-perl build_site.pl --source-base /path/to/newsite/trunk/ --target-base /path/to/output/
+NOTE: The Intellij asciidoc plugin has Antora-aware syntax checking and auto-complete, including the generated section ids.
 
-which will create *.html in /path/to/output/content
 
-== Check the site on a local server.
+== Local build
 
-Use a vhost to check the site.
-On a Mac this means adding the following stanza to /etc/apache2/extra/httpd-vhosts.conf
+You need Node and npm installed.
+You also need git to clone the repositories locally, but the build itself does not use git.
 
-<VirtualHost *:80>     DocumentRoot "/Users/zoe/Sites/zaries/www"     ServerName zaries     ErrorLog "/Users/zoe/Sites/zaries/error.log"     CustomLog "/Users/zoe/Sites/zaries/access.log" custom
+I do not recommend following the instructions on the Antora site, which advise installing Antora globally.
+The playbook project is instead set up to use an npm script to install Antora and all required dependencies locally
+At a minimum:
 
- LogLevel debug
+* Clone the `aries-antora` playbook project.
+* Run `npm run plain-install`.
+* Run `npm run build`.
 
-</VirtualHost>
+This will build the site locally into build/site, using the remote content sources, such as `aries-antora-site`.
 
-To test the site,  move it like this:
+Most likely you will want to modify content sources locally, and build using your local sources, before committing and pushing your changes.
+To enable this:
 
-mv /path/to/output/content /Users/zoe/Sites/zaries/www
+* Clone the `aries-antora-site` repository and any other content repositories you wish to work with next to the playbook project.
+* Modify the `antora-playbook.yml` to point to the local clones rather than the remote repositories.
+Be sure to specify `branches: HEAD` to use the worktree content rather than the local committed repository content.
+The appropriate changes are already in the playbook, commented out, with comments, for the `aries-antora-site` repository.
+* Build the site as above.
 
-Then navigate to http://zaries in a browser.
+=== Working with the UI
 
-#Add menuitem  Check out the site by using  svn co https://svn.apache.org/repos/asf/aries/site/trunk/ site
+* Clone the `aries-antora-ui` project next to the playbook project.
+* Run `npm i`.
+* Run `./node_modules/gulp/bin/gulp.js` to assemble the UI.
+* To see the results, run `cp build/aries-antora-ui-bundle.zip ../aries-antora/node_modules/@apache-aries/aries-antora-ui/build/aries-antora-ui-bundle.zip` and build the playbook project.
+* When you are satisfied with your changes, commit both source changes and the assembled UI bundle and push to the remote repository.
+* UI bundle changes do not trigger a site build; you'll need to start one manually.
 
-update the file under templates/navigation.mdtext
-
-check in the changes by using svn commit
-
-The following steps may not needed if the changes were displayed ok.
-
-Navigate to a lower level page in Apache Aries site and click the CMS bookmarklet.
-
-Check the staging page to verify the menuitem is displayed correct.
-
-Publish the site.
+Most likely making changes to src/partials/* templates will be fairly self-explanatory.
+Other changes are likely to need a fairly detailed understanding of the Antora default UI.
