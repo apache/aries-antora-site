@@ -19,7 +19,7 @@ under the License.
 = SPI Fly
 
 image:https://github.com/apache/aries/actions/workflows/spi-fly.yml/badge.svg[SPI Fly - CI Build,link=https://github.com/apache/aries/actions/workflows/spi-fly.yml]
-image:https://img.shields.io/maven-central/v/org.apache.aries.spifly/spifly[Maven Central,link=https://search.maven.org/search?q=g:org.apache.aries.spifly]
+image:https://img.shields.io/maven-central/v/org.apache.aries.spifly/spifly?label=Maven%20Central[Maven Central,link=https://search.maven.org/search?q=g:org.apache.aries.spifly]
 
 This page describes the SPI Fly component.
 The SPI Fly component is aimed at providing OSGi support for JRE SPI mechanisms, including the usage of `java.util.ServiceLoader`,  `META-INF/services` and similar methods.
