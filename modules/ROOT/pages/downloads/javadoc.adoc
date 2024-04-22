@@ -7,4 +7,4 @@
 * link:../_attachments/javadocs/proxy/0.3/index.html[Proxy 0.3]
 * link:../_attachments/javadocs/quiesce/0.3/index.html[Quiesce 0.3]
 * link:../_attachments/javadocs/util/0.3/index.html[Util 0.3]
-
+* Typed Event link:../_attachments/javadocs/typedevent/0.0.2/bus/index.html[Bus], link:../_attachments/javadocs/typedevent/0.0.2/remote-api/index.html[Remote API], link:../_attachments/javadocs/typedevent/0.0.2/remote-spi/index.html[Remote SPI], link:../_attachments/javadocs/typedevent/0.0.2/remote-remoteservices/index.html[Remote Services]

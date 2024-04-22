@@ -33,6 +33,7 @@ The Aries subprojects can be found at these locations
 * link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.subsystem[subsystem]
 * link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.testsupport[testsupport]
 * link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.transaction[transaction]
+* link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.typedevent[typed events]
 * link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.util[util]
 * link:https://search.maven.org/#search|ga|1|g%3Aorg.apache.aries.web[web]
 

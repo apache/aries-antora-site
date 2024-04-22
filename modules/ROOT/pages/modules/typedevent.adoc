@@ -1,0 +1,14 @@
+= Aries Typed Events Service
+
+== OSGi Typed Event Service
+
+This set of modules is an implementation of the OSGi Typed Event Service Specification https://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.typedevent.html
+
+The project maintainers aim to provide a fully compliant implementation, and will attempt to keep pace with any new versions as they are released.
+
+== Getting started
+
+The current released version of Aries Typed Event is 0.0.2, and it is available in https://mvnrepository.com/artifact/org.apache.aries.typedevent[Maven Central].
+The org.apache.aries.typedevent.bus module contains the core implementation, with remote services compatible plugins available for more advanced usage.
+
+
