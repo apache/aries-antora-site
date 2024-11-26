@@ -18,10 +18,14 @@ In order to work through the tutorial you will need to do checkout and build cop
 
 When you have checked out and built the Aries code your workspace will contain the four projects highlighted in the picture below.
 This is a screen shot taken from my Eclipse package explorer:
-image:HW1.png[hw1]
+
+image::documentation/tutorials/HW1.png[hw1]
+
 The project called org.apache.aries.samples.helloworld.blueprint.assembly contains no Java code and is just used to pull together the minimal OSGi platform that is needed to run the sample.
 Expanding the org.apache.aries.samples.helloworld.blueprint.api project shows this:
-image:HW2.png[hh2]
+
+image::documentation/tutorials/HW2.png[hw2]
+
 There are two interesting features of this project, the HelloWorldService.java interface and empty META-INF directory.
 HelloWorldService.java is the interface for the Helloworld service.
 It is good OSGi practice to keep interfaces and implementation classes in separate bundles.
@@ -30,13 +34,17 @@ The META-INF directory is where you would expect to see a file called MANIFEST.M
 You don't see it because we are using a Maven plugin (look at the pom.xml) to generate the bundle manifest automatically.
 
 Expanding the org.apache.aries.samples.helloworld.blueprint.server project shows
-image:HW3.png[hw3]
+
+image::documentation/tutorials/HW3.png[hw3]
+
 There are again two interesting files.
 HelloWorldServiceImpl.java is an implementation of the HelloWorldService interface in the first blueprint-helloworld-api project.
 The file config.xml is the Blueprint configuration for this package.
 
 The org.apache.aries.samples.helloworld.blueprint.client project looks like this
-image:HW4.png[hw4]
+
+image::documentation/tutorials/HW4.png[hw4]
+
 The client implementation is in HelloWorldClient.java.
 The file config.xml contains the Blueprint for the client.
 
@@ -47,8 +55,8 @@ They also contain the information that the Blueprint runtime needs to register a
 This allows for service-based interactions between bundles.
 
 This is a view of what the xml in the two config.xml files is describing:
-image::documentation/tutorials/BPTutorial5F.png[hw5]
 
+image::documentation/tutorials/BPTutorial5F.png[hw5]
 
 The client configuration file has one bean definition which names the Java class that it requires and gives the name of the method that will be run when the bean has been initialised.
 The bean definition also describes a property, helloWorldService, which points (see the arrow) to the reference definition.
@@ -68,8 +76,8 @@ image::documentation/tutorials/BPTutorial7F.png[hw7]
 
 Both the Java classes are very simple, there are just a couple of minor points to make about each one.
 The HelloWorldClient class looks like this:
-image::documentation/tutorials/BPTutorial8F.png[hw8]
 
+image::documentation/tutorials/BPTutorial8F.png[hw8]
 
 . The setHelloWorldService() method will be called by the Blueprint container in order to inject an object implementing the HelloWorldService interface.
 . The startUp() method will be run when the bundle is started: remember that this was specified in the Blueprint.
@@ -79,8 +87,8 @@ This is the default Blueprint behaviour.
 
 The HelloWorldServiceImpl class is even simpler.
 It has two methods:
-image::documentation/tutorials/BPTutorial9F.png[hw9]
 
+image::documentation/tutorials/BPTutorial9F.png[hw9]
 
 . A startUp() method which writes a message to say that the bundle is being started
 . A hello() method which writes a 'hello' message
@@ -96,7 +104,9 @@ To start it up go to the target directory in  org.apache.aries.samples.helloworl
 You will see some messages, after which you should get the 'osgi>' prompt;
 sometimes you will need to press return to see it.
 At the prompt, type 'ss' to see the status of the bundles:
+
 image::documentation/tutorials/BPTutorial10.png[hw10]
+
 Next, start the Blueprint container bundle by typing 'start 5' at the osgi prompt.
 You will see many debug messages in the code, this is because the target/configuration/config.ini specifies the message level to be DEBUG, if there are too many messages you can change this to 'INFO'.
 The debug messages are quite interesting to look through in themselves, but a little beyond the scope of this tutorial.
