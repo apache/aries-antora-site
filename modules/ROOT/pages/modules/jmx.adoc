@@ -13,10 +13,9 @@ from Maven Central: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache
 * The Aries Util bundle, e.g.
 from Maven Central: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22org.apache.aries.util%22[org.apache.aries.util]
 
-As prescribed by the OSGi JMX specification, to hook it in with an MBean Server the relevant MBean Server needs to be registered in the OSGi Service Registry.
+As prescribed by the OSGi JMX specification, to hook it in with an MBean Server the relevant MBean Server needs to be registered in the OSGi Service Registry. A simple bundle that registers the Platform MBean Server is available on Maven Central: https://mvnrepository.com/artifact/org.apache.aries.jmx/org.apache.aries.jmx.mbeanserver-platform[org.apache.aries.jmx.mbeanserver-platform].
 
-The easiest way to get things to do this is to use the platform mbean server, and register that.
-For example create a simple bundle that contains the following Bundle Activator:
+You can also create a simple bundle that contains the following Bundle Activator:
 
 ....
 import java.lang.management.ManagementFactory;
