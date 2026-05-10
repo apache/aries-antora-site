@@ -9,6 +9,6 @@
     "@antora/cli": "^2.3.3",
     "@antora/site-generator-default": "^2.3.3",
     "@djencks/asciidoctor-antora-indexer": "^0.0.4",
-    "@apache-aries/aries-antora-ui": "https://github.com/djencks/aries-antora-ui.git"
+    "@apache-aries/aries-antora-ui": "https://github.com/apache/aries-antora-ui.git"
   }
 }
