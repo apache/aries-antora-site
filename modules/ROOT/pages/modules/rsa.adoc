@@ -1,76 +1,105 @@
 = RSA (Remote Service Admin)
 
-The Aries Remote Service Admin (RSA) project allows to transparently use OSGi services for remote communication.
-OSGi services can be marked for export by adding a service property `service.exported.interfaces=*`.
-Various other properties  can be used to customize how the service is to be exposed.
+The Aries Remote Service Admin (RSA) project allows regular OSGi services to be transparently accessed remotely.
+OSGi services can be marked for export by adding the service property `service.exported.interfaces=*`.
+Various other properties can be used to customize how the service is to be exposed.
 
-For more information, check out section "122 JPA Service Specification Version 1.0" in the "OSGi Service Platform Enterprise Specification, Release 4, Version 4.2" available for public download from the http://www.osgi.org/Download/Release4V43[OSGi Alliance].
+For more information, see section 122 "Remote Service Admin Service Specification"
+in the "OSGi Compendium Release 8" specification, available from the
+https://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.remoteserviceadmin.html[OSGi Working Group].
 
 == Source
 
-The Aries RSA source is in a separate https://git-wip-us.apache.org/repos/asf/aries-rsa.git[git repository aries-rsa] there is also a https://github.com/apache/aries-rsa[mirror on github].
+The Aries RSA source code is available on https://github.com/apache/aries-rsa[GitHub].
 
 == Build
 
- mvn clean install
+ ./mvnw clean install
 
 == Architecture
 
 image::https://cwiki.apache.org/confluence/download/attachments/30739778/remote-service-admin-spec.png?version=2&modificationDate=1362365400000&api=v2[Remote Service Admin Architecture overview]
 
-=== Some definitions
+=== Some Definitions
 
-* EndpointDescription Describes a remote service using service interfaces, remote url and all other properties to import the remote service.
-* EndpointListener a service that is to be notified when remote Endpoints described by OSGi filters appear or disappear.
+* Export - the process of making a local service available for access by remote hosts.
+* Import - the process of making a remote service available for access by local services,
+  by creating a local proxy whose invocation is sent to the remote service behind the scenes.
+* `EndpointDescription` - describes a remote service via a set of properties containing both the original
+  service properties and all metadata needed to reach and use it remotely
+  (e.g. the exported interfaces, URI, transport details, etc).
+* `EndpointEventListener` - an interface implemented by services that are used either to notify
+  (on the exporting side) or be notified about (on the importing side) remote endpoints that
+  appear or disappear (filtered by scope as needed).
 
 === https://github.com/apache/aries-rsa/tree/master/topology-manager[Topology Manager]
 
-* Listens to local services and decides which to expose.
-It can also add properties to change the way services are exposed.
-For the services to be exported it calls RemoteServiceAdmin.exportService to do the actual export.
-Then notifies EndpointListeners about the new Endpoint.
-* Listens for service requests from consumers and creates EndpointListeners for these interests.
+The "brain" that manages imports and exports:
 
-The TopologyManager by default exposes all suitably marked local services for export and imports all service interests with matching  remote Endpoints.
+* Listens to local services and decides which to export and how to do so based on their properties.
+  It calls `RemoteServiceAdmin.exportService` to perform the actual export,
+  then notifies ``EndpointEventListener``s about the new endpoint.
+* Listens for service lookup/tracking by consumers and creates ``EndpointEventListener``s to track these interests,
+  so it can decide when a remotely exported service should be imported locally.
 
-It is the best place to implement system wide governance rules.
-Some examples what can be done:
+The default Topology Manager exposes all suitably marked local services for export
+and imports all remote endpoints for which there are locally interested consumers.
 
-* Enhancing all exposed remote endpoints with SSL, basic auth, logging
-* Exporting OSGi services with annotations for JAX-WS or JAX-RS even when not specially marked for export
-
-According to its role the TopologyManager of course does not directly implement the enhancements above.
-It simply creates the necessary calls to a suitable RemoteServiceAdmin.
+Custom Topology Managers can be used to implement system-wide governance rules,
+such as enhancing all exposed remote endpoints with SSL, basic auth, logging,
+or exporting OSGi services with annotations for JAX-WS or JAX-RS even when
+they are not explicitly marked for export.
 
 === https://github.com/apache/aries-rsa/tree/master/rsa[Remote Service Admin]
 
-Is called by the Topology Manager to expose local services as remote endpoints and create local proxy services as clients for  remote endpoints.
+Does the "heavy lifting" of the actual exporting and importing. It is called by the Topology Manager
+to expose local services as remotely accessible endpoints and to create local proxy services as clients for remote endpoints.
 
-Aries RSA has a custom SPI https://github.com/apache/aries-rsa/blob/master/spi/src/main/java/org/apache/aries/rsa/spi/DistributionProvider.java[DistributionProvider] that allows to easily create new transports and serializations.
+A distribution provider is the transport mechanism by which service
+method invocations are sent to be executed remotely and the return values are sent back.
+Aries RSA has a custom SPI `https://github.com/apache/aries-rsa/blob/master/spi/src/main/java/org/apache/aries/rsa/spi/DistributionProvider.java[DistributionProvider]`
+that allows anyone to easily implement new transports and serializations in a pluggable manner.
+
 Existing providers are:
 
-* http://cxf.apache.org/distributed-osgi.html[CXF-DOSGi]
- ** uses Apache CXF for transport
- ** service endpoints consumable with non-java software (XML/JSON)
 * https://github.com/apache/aries-rsa/tree/master/provider/tcp[TCP]
- ** Java serialization over TCP (one port per service)
+ ** standard Java serialization over TCP
  ** very few dependencies
- ** easy to comprehend blueprint for own transport implementations
+ ** multiplexing over a single port or separate port per service
+ ** SSL/TLS
+ ** easy to comprehend blueprint for custom transport implementations
 * https://github.com/apache/aries-rsa/tree/master/provider/fastbin[Fastbin]
- ** tuned Java serialization (or Protobuf) over TCP using NIO
+ ** optimized Java serialization (or Protobuf) over TCP using NIO
  ** multiplexing over a single port
- ** transparently handles InputSteams and OutputStreams in remote services
- ** synchronous and asnychronous calls supported
+ ** transparently handles ``InputSteam``s and ``OutputStream``s in remote services
+ ** synchronous and asynchronous calls supported
 
 === Discovery
 
-A discovery implementation uses EndpointListeners to listen for local Endpoints and publishs them for other containers.
-It also listens to remote Endpoints and notifies EndpointListeners about their presence.
+A discovery implementation is the mechanism for distributed delivery of notifications about endpoints.
+It uses ``EndpointEventListener``s on the exporting side to listen for local
+endpoints being created or destroyed and forwards those notifications to remote containers.
+On the importing side it receives those remote notifications and notifies all interested local
+``EndpointEventListener``s (such as Topology Managers) about these endpoint changes.
 
 Existing implementations:
 
-* https://github.com/apache/aries-rsa/tree/master/discovery/local[Local discovery] using xml descriptors
-* https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper[Zookeeper based discovery]
+* https://github.com/apache/aries-rsa/tree/master/discovery/local[Local discovery]
+  Scans bundles for XML endpoint descriptions and notifies local ``EndpointEventListener``s
+  about the described endpoints so that they can be imported.
+* https://github.com/apache/aries-rsa/tree/master/discovery/config[Config discovery]
+  Tracks ConfigAdmin factory configurations and notifies local ``EndpointEventListener``s
+  about the configured remote endpoints so that they can be imported.
+* https://github.com/apache/aries-rsa/tree/master/discovery/TCP[TCP discovery]
+  Opens direct TCP connections between every pair of pre-configured peers in a network
+  and uses standard Java serialization to send endpoint notifications between them.
+  A lightweight implementation for a small number of nodes.
+* https://github.com/apache/aries-rsa/tree/master/discovery/zookeeper[ZooKeeper discovery]
+  Uses a distributed ZooKeeper cluster as a registry where all endpoint changes in the
+  network are tracked. Scales well in networks with a large number of nodes.
+* https://github.com/apache/aries-rsa/tree/master/discovery/MDNS[MDNS discovery]
+  Uses the mDNS multicast protocol to inform nodes in a local network about their
+  peers, and then SSE over HTTP on each to send the endpoint data itself.
 
 == A simple example using Apache Karaf
 
@@ -82,14 +111,17 @@ The example uses declarative services to publish and bind services.
 
 === Modules
 
-* api : EchoService interface
-* service : EchoService implementation
-* consumer : Small consumer that uses the EchoService
+* api - the `EchoService` interface
+* service - the `EchoService` implementation
+* consumer - a small consumer that uses the `EchoService`
 
-The example installation uses the tcp transport to do the remoting but the example code is not tied to any transport.
+The example installation uses the TCP transport to do the remoting
+but the example code is not tied to any specific transport.
 
-== Example using fastbin transport
+== Example using Fastbin transport
 
-A similar https://github.com/apache/aries-rsa/tree/master/examples/echofastbin[example] exists for the fastbin transport . Follow the Readme to install the example in Apache Karaf.
+A similar https://github.com/apache/aries-rsa/tree/master/examples/echofastbin[example]
+exists for the Fastbin transport. Follow the Readme to install the example in Apache Karaf.
 
-The example implements an echo service that showcases synchronous calls, asnychronous calls and InputStream as parameter and return value.
+The example implements an echo service that showcases synchronous calls,
+asynchronous calls and ``InputStream``s as parameter and return value.
