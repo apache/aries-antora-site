@@ -12,7 +12,7 @@ This includes implementations (and extensions) of the following Enterprise OSGi 
 * https://osgi.org/specification/osgi.enterprise/7.0.0/service.jpa.html[*JPA Service Specification*]
 * https://osgi.org/specification/osgi.enterprise/7.0.0/service.jta.html[*JTA Transaction Services Specification*]
 * https://osgi.org/specification/osgi.enterprise/7.0.0/util.pushstream.html[*Push Stream Specification*]
-* https://osgi.org/specification/osgi.enterprise/7.0.0/service.remoteserviceadmin.html[*Remote Service Admin Service Specification*]
+* https://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.remoteserviceadmin.html[*Remote Service Admin Service Specification*]
 * https://osgi.org/specification/osgi.enterprise/7.0.0/service.loader.html[*Service Loader Mediator Specification*]
 * https://osgi.org/specification/osgi.enterprise/7.0.0/service.subsystem.html[*Subsystem Service Specification*]
 * https://osgi.org/specification/osgi.enterprise/7.0.0/service.transaction.control.html[*Transaction Control Service Specification*]
